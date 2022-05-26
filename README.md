@@ -1,15 +1,4 @@
 <p align="center">
-  <img     width="100"
-    height="100"
-    src="https://i.imgur.com/ZKxBsFu.png"
-  >
-</p>
-<h6 align="center">The Great Keanu<h6>
-
-## <h1 align="center">Hotfiles 🔥</h1>
-
-### Thanks for visiting!
-<p align="center">
   <img src="https://i.imgur.com/ZKxBsFu.png" height="100" width="100">
 </p>
 <h6 align="center">The Great Keanu</h6><h6>
