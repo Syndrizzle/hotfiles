@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+FILE="$HOME/.cache/layout-state.txt"
+STATE=$(cat $FILE)
+
+if [[ $1 == "--toggle" ]]; then
+    
+    if [[ ! -f "$FILE" ]]; then
+        touch $FILE
+        echo "floating" > $FILE
+    else
+        FILE="$HOME/.cache/layout-state.txt"
+        if [[ $STATE == "floating" ]]; then
+            echo "tiling" > $FILE
+            wormc layout tiling
+            elif [[ $STATE == "tiling" ]]; then
+            echo "floating" > $FILE
+            wormc layout floating
+        fi
+    fi
+fi
+
+if [[ $1 == "--status" ]]; then
+        if [[ $STATE == "floating" ]]; then
+                echo "󱂬"
+        elif [[ $STATE == "tiling" ]]; then
+                echo "󰕮"
+        fi
+fi

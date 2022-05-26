@@ -1,0 +1,37 @@
+# Autostart applications by listing the commands here, don't forget to add a '&' after each command.
+
+# Start the compositor:
+picom -b --experimental-backends &
+
+# Set the wallpaper:
+feh --bg-fill ~/.wallpapers/Pacman\ 4K.png &
+
+# PolicyKit Agent:
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+
+# Tint2
+tint2 &
+
+# Plank Dock
+# plank &
+
+# Notification Center
+deadd-notification-center &
+
+# XFCE4 Power Manager
+xfce4-power-manager --daemon &
+
+# Clipboard!
+clipit &
+
+# Volume and Brightness Indicator:
+tvolnoti --theme dark &
+
+# Blur wallpaper on windows
+# feh-blur -b 4 &
+#
+# Xresources file
+xrdb -merge $HOME/.Xresources &
+
+# Dunst
+dunst &

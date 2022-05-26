@@ -1,0 +1,38 @@
+Terminal,alacritty,/home/syndrizzle/.config/jgmenu/MenuIcons/terminal.png
+File manager,thunar,/home/syndrizzle/.config/jgmenu/MenuIcons/file-manager.png
+Web Browser,firefox,/home/syndrizzle/.config/jgmenu/MenuIcons/web-browser.png
+Text Editor,mousepad,/home/syndrizzle/.config/jgmenu/MenuIcons/text-editor.png
+^sep()
+Applications,^checkout(lx-apps),/home/syndrizzle/.config/jgmenu/MenuIcons/applications.png
+Apps as Root,^checkout(root-apps),/home/syndrizzle/.config/jgmenu/MenuIcons/root-apps.png
+Quick Commands, ^checkout(quick-cmds), /home/syndrizzle/.config/jgmenu/MenuIcons/quick-cmds.png
+Screenshot, ^checkout(screenshot), /home/syndrizzle/.config/jgmenu/MenuIcons/screenshot.png
+^sep()
+Lock,betterlockscreen --lock,/home/syndrizzle/.config/jgmenu/MenuIcons/lock.png
+Exit Worm,oblogout,/home/syndrizzle/.config/jgmenu/MenuIcons/system.png
+
+
+
+^tag(root-apps)
+Terminal (Root), gksu alacritty, /home/syndrizzle/.config/jgmenu/MenuIcons/terminal.png
+File Manager (Root), gksu thunar, /home/syndrizzle/.config/jgmenu/MenuIcons/file-manager.png
+Vim (Root), fakeroot vim /, /home/syndrizzle/.config/jgmenu/MenuIcons/text-editor.png
+GParted (Root), gksu gparted, /home/syndrizzle/.config/jgmenu/MenuIcons/places.png
+
+
+^tag(quick-cmds)
+Color Picker, ~/.config/jgmenu/scripts/color-gpicker, cs-color
+Furminal, ~/.config/jgmenu/scripts/furminal, utilities-terminal
+Visualizer, ~/.config/jgmenu/scripts/visualizer, sonic-visualiser
+Sticky Notes, primenote -c new, sticky
+
+
+^tag(screenshot)
+Screenshot Now, ~/.config/jgmenu/scripts/screenshot --now, /home/syndrizzle/.config/jgmenu/MenuIcons/screenshot.png
+Screenshot in 5s, ~/.config/jgmenu/scripts/screenshot --in5, /home/syndrizzle/.config/jgmenu/MenuIcons/screenshot.png
+Screenshot in 10s, ~/.config/jgmenu/scripts/screenshot --in10, /home/syndrizzle/.config/jgmenu/MenuIcons/screenshot.png
+Screenshot Window, ~/.config/jgmenu/scripts/screenshot --win, /home/syndrizzle/.config/jgmenu/MenuIcons/screenshot.png
+Screenshot Area, ~/.config/jgmenu/scripts/screenshot --area, /home/syndrizzle/.config/jgmenu/MenuIcons/screenshot.png
+
+
+^tag(lx-apps)

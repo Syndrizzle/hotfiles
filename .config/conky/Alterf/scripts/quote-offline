@@ -1,0 +1,82 @@
+#!/bin/bash
+ 
+# Keep this updated when you add or take away quotes on the case list
+num_quotes=70
+ 
+# Generate a random quote number variable, 'rand'
+rand=$[ ( $RANDOM % $num_quotes ) + 1 ]
+case $rand in  #BEGIN CASE
+        1) quote="Living to learn, learning to live. (Erik Dubois)";;
+        2) quote="Nearly all men can stand adversity, but if you want to test a man's character, give him power. (Abraham Lincoln)";;
+        3) quote="We can't solve problems by using the same kind of thinking we used when we created them. (Albert Einstein)";;
+        4) quote="A real decision is measured by the fact that you've taken a new action. If there's no action, you haven't truly decided. (Anthony Robbins)";;
+        5) quote="Successful people are always looking for opportunities to help others. Unsuccessful people are always asking, What's in it for me. (Brian Tracey)";;
+        6) quote="The only problem with troubleshooting is that sometimes trouble shoots back.";;
+        7) quote="If you give someone a program, you will frustrate them for a day. If you teach them how to program, you will frustrate them for a lifetime.";;
+        8) quote="You know you're a geek when.. You try to shoo a fly away from the monitor with your cursor. That just happened to me. It was scary.";;
+        9) quote="We all know Linux is great.. it does infinite loops in 5 seconds. (Earl Nightingale)";;
+        10) quote="Take a chance! All life is a chance. The man who goes the furthest is generally the one who is willing to do and dare. (Dale Carnegie)";;
+        11) quote="Mistakes are painful when they happen, but years later a collection of mistakes is what is called experience. (Dennis Waitley)";;
+        12) quote="I never lose. Either I win, or I learn. (Laurent aka Darknet Matrix)";;
+        13) quote="There is no better feeling than seeing the fruits of your labour. (Nathaniel aka Smoke King)";;
+        14) quote="Words do two major things: They provide food for the mind and create light for understanding and awareness. (Jim Rohn)";;
+        15) quote="You have power over your mind, not outside events. Realize this, and you will find strength.";;
+        16) quote="If I don't have to do it, I won't. If I have to do it, I'll make it quick.";;
+        17) quote="If you can dream it, you can do it.";;
+        18) quote="The pessimist sees difficulty in every opportunity. The optimist sees the opportunity in every difficulty.";;
+        19) quote="Don't let yesterday take up too much of today.";;
+        20) quote="It's not whether you get knocked down, it 's whether you get up.";;
+        21) quote="If you want something, go get it, period.";;
+        22) quote="We generate fears while we sit. We overcome them by action.";;
+        23) quote="It always seems impossible until it's done.";;
+        24) quote="You are never too old to set another goal or to dream a new dream.";;
+        25) quote="People who are crazy enough to think they can change the world, are the ones who do.";;
+        26) quote="Strength does not come from winning. Your struggles develop your strengths. When you go through hardships and decide not to surrender, that is strength.";;
+        27) quote="A truly strong person does not need the approval of others any more than a lion needs the approval of sheep.";;
+        28) quote="Sometimes you don't realize your own strength until you come face to face with your greatest weakness.";;
+        29) quote="The Way To Get Started Is To Quit Talking And Begin Doing.";;
+        30) quote="Knowing Is Not Enough; We Must Apply. Wishing Is Not Enough; We Must Do.";;
+        31) quote="A smooth sea never made a skilled sailor.";;
+        32) quote="Don't wait for the perfect moment, take the moment and make it perfect.";;
+        33) quote="To get something you never had, you have to do something you never did.";;
+        34) quote="Don't let small minds convince you that your dreams are too big.";;
+        35) quote="When you feel like quitting, think about why you started.";;
+        36) quote="One day your life will flash before your eyes. Make sure it's worth watching.";;
+        37) quote="To be a champ, you have to believe in yourself when nobody else will.";;
+        38) quote="Success occurs when your dreams get bigger than your excuses.";;
+        39) quote="You can never make the same mistake twice, because the second time you make it, it's not a mistake, it's a choice.";;
+        40) quote="The pain you feel today will be the strength you feel tomorrow.";;
+        41) quote="If there are no ups and downs in your life, it means you are dead.";;
+        42) quote="Cowards never start, the weaks never finish, winners never quit.";;
+        43) quote="The brave do not live forever, but the cautious do not live at all.";;
+        44) quote="Be careful the environment you choose for it will shape you; be careful the friends you choose for you will become like them. (W. Clement Stone)";;
+        45) quote="Every pro was once an amateur. Every expert was once a beginner. So dream big and start now!";;
+        46) quote="It's not the things you do that you regret at the end, it's the moments when you didn't take a chance.";;
+        47) quote="Many of life's failures are experienced by people who did not realize how close they were to success when they gave up. (Thomas Edison)";;
+        48) quote="Money is numbers and numbers never end. If it takes money to be happy, your search for happiness will never end.";;
+        49) quote="The first step to getting what you want, is having the courage to get rid of what you don't.";;
+        50) quote="Don't quit. Suffer now and live the rest of your life as a champion.";;
+        51) quote="If no one comes from the future to stop you from doing it, then how bad of a decision can it really be?";;
+        52) quote="Instead of giving myself reasons why i can't, i give myself reasons why i can.";;
+        53) quote="If you really want to do something, you will find a way. If you don't, you will find an excuse.";;
+        54) quote="Imitate until you emulate; match and surpass those who launched you. It's the highest form of thankfulness. (Napoleon Hill)";;
+        55) quote="Do something today that your future self will thank you for.";;
+        56) quote="The only time 'success' comes before 'work' is in the dictionary.";;
+        57) quote="How many mondays have been and gone since you said 'i will start next week'? Take action, start today.";;
+        58) quote="Don't be upset by the result you didn't get with the work you didn't do.";;
+        59) quote="Do not pray for an easy life, pray for the strength to endure a difficult one.";;
+        60) quote="Discipline is doing what needs to be done even though you don't want to.";;
+        61) quote="The difference between a master and a beginner is that the master has failed more times than the beginner has ever tried.";;
+        62) quote="The moment when you are ready to quit is usually the moment right before the miracle happens. Don't give up!";;
+        63) quote="Don't worry about the failures, worry about the chances you miss when you don't even try.";;
+        64) quote="If you don't build your dream, someone else will hire you to help them build theirs.";;
+        65) quote="I hated every minute of training, but i said 'don't quit, suffer now and live the rest of your life as a champion.";;
+        67) quote="If you are unwilling to risk the unusual, you will have to settle for the ordinary.";;
+        68) quote="Life is like a boxing match. Defeat is declared not when you fall, but when you refuse to stand again.";;
+        69) quote="The only thing standing between you and your goal is the bullshit story you keep telling yourself as to why you can't achieve it.";;
+        70) quote="When life knocks us down, we have choice whether or not to get back up again.";;
+
+esac  # END CASE
+ 
+# Display the random quote from case statement, and format it to line wrap at 30 characters
+echo "$quote" | fmt -50

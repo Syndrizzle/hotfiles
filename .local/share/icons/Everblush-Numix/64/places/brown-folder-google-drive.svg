@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+ <defs>
+  <radialGradient r="24" cy="40.5" cx="24" gradientTransform="matrix(1.6666667,0,0,0.2777777,-8,1030.4456)" gradientUnits="userSpaceOnUse" id="radialGradient3216">
+   <stop style="stop-color:#000;stop-opacity:1"/>
+   <stop offset="1" style="stop-color:#000;stop-opacity:0.196"/>
+  </radialGradient>
+ </defs>
+ <g transform="translate(0,-988.3622)">
+  <path d="m 32 1035.03 c -13.1 0 -24.704 1.044 -32 2.667 l 0 8 c 7.296 1.622 18.898 2.667 32 2.667 13.1 0 24.704 -1.044 32 -2.667 l 0 -8 c -7.296 -1.623 -18.898 -2.667 -32 -2.667 z" style="fill:url(#radialGradient3216);opacity:0.1;fill-opacity:1;stroke:none"/>
+  <rect width="60" height="42" x="2" y="1002.36" rx="6.522" ry="6.562" style="fill:#5d4037;fill-opacity:1;stroke:none"/>
+  <path d="m 8.522 1001.7 c -3.613 0 -6.522 2.973 -6.522 6.667 l 0 2.667 c 0 -3.693 2.909 -6.667 6.522 -6.667 l 46.957 0 c 3.613 0 6.522 2.973 6.522 6.667 l 0 -2.667 c 0 -3.693 -2.909 -6.667 -6.522 -6.667 l -46.957 0 z" style="fill:#fff;opacity:0.2;fill-opacity:1;stroke:none"/>
+  <path d="m 8.522 1012.36 10.435 0 c 14.348 -1.333 11.739 -16 20.87 -16 l 15.652 0 c 3.613 0 6.522 2.973 6.522 6.667 l 0 34.667 c 0 3.693 -2.909 6.667 -6.522 6.667 l -46.957 0 c -3.613 0 -6.522 -2.973 -6.522 -6.667 l 0 -18.667 c 0 -4 2.609 -6.667 6.522 -6.667 z" style="fill:#8d6e63;fill-opacity:1;stroke:none"/>
+  <path d="m 2 1035.03 0 2.667 c 0 3.693 2.909 6.667 6.522 6.667 l 46.957 0 c 3.613 0 6.522 -2.973 6.522 -6.667 l 0 -2.667 c 0 3.693 -2.909 7.333 -6.522 7.333 l -46.957 0 c -3.613 0 -6.522 -3.64 -6.522 -7.333 z" style="fill:#000;opacity:0.15;fill-opacity:1;stroke:none"/>
+  <path d="m 14.09 1020.36 6.06 11 6.094 0 -6.094 -11 -6.06 0 z m -0.969 0.969 -6.03 9.75 2.813 5.656 5.875 -10.313 -2.656 -5.094 z m 0.844 11.03 -3.094 5 12.281 0 3.094 -5 -12.281 0 z" style="fill:#000;fill-opacity:0.098;fill-rule:evenodd"/>
+  <path d="m 14.09 1018.36 6.06 11 6.094 0 -6.094 -11 -6.06 0 z m -0.969 0.969 -6.03 9.75 2.813 5.656 5.875 -10.313 -2.656 -5.094 z m 0.844 11.03 -3.094 5 12.281 0 3.094 -5 -12.281 0 z" style="fill:#fff8e1;fill-opacity:1;fill-rule:evenodd"/>
+ </g>
+</svg>

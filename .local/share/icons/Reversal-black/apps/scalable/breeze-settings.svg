@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <filter id="filter1057-3" x="-.027" y="-.027" width="1.054" height="1.054" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.61875"/>
+  </filter>
+  <linearGradient id="linearGradient1053-6" x1="-127" x2="-72" y1="60" y2="5" gradientTransform="matrix(.26459 0 0 .26459 54.79 5.6973)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#32d7ff" offset="0"/>
+   <stop stop-color="#329bff" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-19.998 -5.8323)">
+  <rect transform="matrix(.26459 0 0 .26459 19.997 5.8322)" x="4.5" y="4.5" width="55" height="55" ry="15" fill="#141414" filter="url(#filter1057-3)" opacity=".3" stroke-linecap="round" stroke-width="2.7444"/>
+  <rect x="21.188" y="7.0228" width="14.552" height="14.552" ry="3.9688" fill="url(#linearGradient1053-6)" stroke-linecap="round" stroke-width=".72612"/>
+  <g stroke-width=".026145">
+   <path d="m33.707 9.9417h-10.478c-0.39891 0-0.71806 0.31915-0.71806 0.71806v7.2781c0 0.39891 0.31915 0.71806 0.71806 0.71806h10.47c0.39891 0 0.71806-0.31915 0.71806-0.71806v-7.2781c0.0089-0.39891-0.31915-0.71806-0.7092-0.71806z" fill="#f1f3f7"/>
+   <rect x="23.229" y="11.706" width="10.478" height="6.1966" fill="#fcfcfd"/>
+   <circle cx="33.477" cy="10.873" r=".23049" fill="#f0582f"/>
+   <circle cx="32.67" cy="10.873" r=".23049" fill="#fbd303"/>
+   <circle cx="31.863" cy="10.873" r=".23049" fill="#6eb1e1"/>
+  </g>
+  <path d="m28.836 12.889c-0.30113-1e-6 -0.55042 0.21232-0.60747 0.4961l-1.7487 8e-6 3e-6 0.24804 1.7487-9e-6c0.05704 0.28377 0.30634 0.49609 0.60746 0.49609 0.30113 1e-6 0.55042-0.21232 0.60747-0.4961l1.0048 1e-6 -4e-6 -0.24804-1.0048-1e-6c-0.05704-0.28376-0.30634-0.49609-0.60746-0.49609m-1.7363 2.7286c-0.34354-5e-6 -0.62011 0.27658-0.62012 0.62012 3e-6 0.34355 0.27657 0.62011 0.62011 0.62011 0.30113-1e-6 0.55042-0.21232 0.60747-0.49609l2.741 8e-6 -4e-6 -0.24804h-2.741c-0.05704-0.28376-0.30634-0.49609-0.60746-0.49609m4e-6 0.24804c0.20613-4e-6 0.37207 0.16593 0.37207 0.37207-5e-6 0.20612-0.16594 0.37207-0.37207 0.37207-0.20613 4e-6 -0.37207-0.16594-0.37207-0.37207 5e-6 -0.20612 0.16593-0.37207 0.37207-0.37207" fill="#329fff" stroke-width=".24804"/>
+ </g>
+</svg>

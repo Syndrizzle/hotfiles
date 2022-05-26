@@ -1,0 +1,74 @@
+#!/bin/bash
+DEVICE=$(echo info | bluetoothctl | grep 'Alias:' | awk -F:  '{ print $2 }')
+DEVICE_PATH=$(upower --dump | tr : _ | grep headset | awk 'FNR == 1' | awk '{print $2}')
+BATTERY=$(upower -i $DEVICE_PATH | grep percentage | awk '{print $2}')
+POWERED="$(bluetoothctl show | grep Powered | awk '{print $2}')"
+get_icon() {
+    # off
+    if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
+    then
+        echo ""
+    else
+        # on
+        if [ $(echo info | bluetoothctl | grep 'Device' | wc -c) -eq 0 ]
+        then
+            echo ""
+            # connected
+        else
+            echo ""
+        fi
+    fi
+}
+
+get_name() {
+    # off
+    if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
+    then
+        echo "Bluetooth Off"
+    else
+        # on
+        if [ $(echo info | bluetoothctl | grep 'Device' | wc -c) -eq 0 ]
+        then
+            echo "Bluetooth Idle"
+            # connected
+        else
+            echo ${DEVICE}
+        fi
+    fi
+}
+
+get_battery() {
+    # off
+    if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
+    then
+        echo "---"
+    else
+        # on
+        if [ $(echo info | bluetoothctl | grep 'Device' | wc -c) -eq 0 ]
+        then
+            echo "---"
+            # connected
+        else
+            echo ${BATTERY}
+        fi
+    fi
+}
+
+toggle() {
+  if [[ "$POWERED" == "no" ]]; then
+    eval "bluetoothctl power on"
+  else
+    eval "bluetoothctl power off"
+  fi
+}
+
+
+if [[ "$1" == "--icon" ]]; then
+    get_icon
+    elif [[ "$1" == "--name" ]]; then
+    get_name
+    elif [[ "$1" == "--battery" ]]; then
+    get_battery
+    elif [[ "$1" == "--toggle" ]]; then
+    toggle
+fi

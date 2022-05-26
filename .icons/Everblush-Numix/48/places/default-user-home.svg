@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+ <defs>
+  <radialGradient r="24" cy="40.5" cx="24" gradientTransform="matrix(1.25,0,0,0.20833327,-6,1035.9247)" gradientUnits="userSpaceOnUse" id="radialGradient3266">
+   <stop style="stop-color:#000;stop-opacity:1"/>
+   <stop offset="1" style="stop-color:#000;stop-opacity:0.196"/>
+  </radialGradient>
+ </defs>
+ <g transform="translate(0,-1004.3622)">
+  <path d="m 24 1039.36 c -9.827 0 -18.528 0.783 -24 2 l 0 6 c 5.472 1.217 14.173 2 24 2 9.827 0 18.528 -0.783 24 -2 l 0 -6 c -5.472 -1.217 -14.173 -2 -24 -2 z" style="fill:url(#radialGradient3266);opacity:0.1;fill-opacity:1;stroke:none"/>
+  <rect width="46" height="32" x="1" y="1014.36" rx="5" style="fill:#f57c00;fill-opacity:1;stroke:none"/>
+  <path d="m 6 1014.36 c -2.77 0 -5 2.23 -5 5 l 0 2 c 0 -2.77 2.23 -5 5 -5 l 36 0 c 2.77 0 5 2.23 5 5 l 0 -2 c 0 -2.77 -2.23 -5 -5 -5 l -36 0 z" style="fill:#fff;opacity:0.2;fill-opacity:1;stroke:none"/>
+  <path d="m 6 1022.36 8 0 c 11 -1 9 -12 16 -12 l 12 0 c 2.77 0 5 2.23 5 5 l 0 26 c 0 2.77 -2.23 5 -5 5 l -36 0 c -2.77 0 -5 -2.23 -5 -5 l 0 -14 c 0 -3 2 -5 5 -5 z" style="fill:#ffb300;fill-opacity:1;stroke:none"/>
+  <path d="m 1 1039.36 0 2 c 0 2.77 2.23 5 5 5 l 36 0 c 2.77 0 5 -2.23 5 -5 l 0 -2 c 0 2.77 -2.23 5 -5 5 l -36 0 c -2.77 0 -5 -2.23 -5 -5 z" style="fill:#000;opacity:0.15;fill-opacity:1;stroke:none"/>
+  <path d="m 13 22.25 c -0.25 0 -0.5 0.25 -1 0.75 l -5 5 c -2.203 2 -3 2 0 2 l 0 5 c 0 1.108 0.892 2 2 2 l 2 0 0 -5 4 0 0 5 2 0 c 1.108 0 2 -0.892 2 -2 l 0 -5 c 3 0 2.288 0 0 -2 l 0 -4 c 0 -0.554 0 -1 -1 -1 -1 0 -1 0.446 -1 1 l 0 2 -3 -3 c -0.5 -0.5 -0.75 -0.75 -1 -0.75 z" transform="translate(0,1004.3622)" style="fill:#000;fill-opacity:0.098"/>
+  <g transform="translate(5,1024.3622)" style="fill:#fff8e1;opacity:1;fill-opacity:1">
+   <path d="m 2 8 0 6 c 0 1.108 0.892 2 2 2 l 2 0 0 -5 4 0 0 5 2 0 c 1.108 0 2 -0.892 2 -2 l 0 -6 z"/>
+   <path d="m 2 7 c -2.203 2 -3 2 0 2 l 12 0 c 3 0 2.288 0 0 -2 l -5 -5 c -1 -1 -1 -1 -2 0 z" style="stroke:none"/>
+   <path d="m 13 2 c 1 0 1 0.446 1 1 l 0 4 -2 0 0 -4 c 0 -0.554 0 -1 1 -1 z" style="stroke:none"/>
+  </g>
+ </g>
+</svg>

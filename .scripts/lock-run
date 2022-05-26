@@ -1,0 +1,8 @@
+#!/bin/sh
+
+$HOME/.scripts/i3lock-widgets &&
+
+pkill -u "$USER" -USR2 dunst
+/usr/bin/eww -c $HOME/.config/eww/Lock/ close-all
+pkill cycle-dim
+pkill wait-suspend

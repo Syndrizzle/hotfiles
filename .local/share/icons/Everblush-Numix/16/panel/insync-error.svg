@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+ <circle cy="8.5" style="fill:#ef555c;opacity:1;fill-opacity:1;stroke:none;fill-rule:nonzero" r="1.5" cx="8"/>
+ <rect style="fill:#ef555c;opacity:1;fill-opacity:1;stroke:none;fill-rule:nonzero" x="7" y="11" rx="0.336" ry="0.247" width="2" height="5"/>
+ <path style="visibility:visible;shape-rendering:auto;color-interpolation-filters:linearRGB;fill:#ef555c;opacity:1;image-rendering:auto;fill-opacity:1;stroke:none;display:inline;color:#000;fill-rule:nonzero;color-rendering:auto;color-interpolation:sRGB" d="M 9,3 C 5.698,3 3,5.698 3,9 H 5 C 5,6.779 6.779,5 9,5 Z" mix-blend-mode="normal" isolation="auto"/>
+ <path style="visibility:visible;shape-rendering:auto;color-interpolation-filters:linearRGB;fill:#ef555c;opacity:1;image-rendering:auto;fill-opacity:1;stroke:none;display:inline;color:#000;fill-rule:nonzero;color-rendering:auto;color-interpolation:sRGB" d="M 9,0 C 4.041,0 0,4.04 0,9 H 2 C 2,5.122 5.122,2 9,2 Z" mix-blend-mode="normal" isolation="auto"/>
+</svg>

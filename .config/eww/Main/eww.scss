@@ -1,0 +1,619 @@
+/** Colors *******************************************/
+$bg: #181f21;
+$bg-alt: #22292b;
+$fg: #dadada;
+$fg-alt: #bdc3c2;
+$red: #e06e6e;
+$red-alt: #ef7d7d;
+$green: #8ccf7e;
+$green-alt: #9bdead;
+$yellow: #e5c76b;
+$yellow-alt: #f4d67a;
+$blue: #67b0e8;
+$blue-alt: #67cbe7;
+$purple: #c47fd5;
+$purple-alt: #ce89df;
+$cyan: #6cd0ca;
+$grey: #3b4244;
+$grey-alt: #b3b9b8;
+
+
+/** Global *******************************************/
+* {
+        all: unset;
+        font-family: "Favorites";
+        font-family: "Material Design Icons Desktop";
+        font-family: "Proxima Nova";
+        transition: 200ms ease-out;
+}
+
+/** Background ***************************************/
+.bg {
+        background-image: url("images/bg.png");
+        background-color: $bg;
+        opacity: 1;
+}
+
+/** Generic window ***********************************/
+.genwin {
+        background-color: $bg;
+        border-radius: 15px;
+        border: 2px solid $bg;
+}
+
+
+/** System ********************************************/
+.iconcpu,
+.iconmem,
+.icongpu,
+.iconstor {
+        font-size: 32px;
+        font-weight: normal;
+}
+
+.iconcpu {
+        color: $red;
+}
+
+.text-cpu {
+        color: $red;
+        font-weight: bold;
+}
+
+.iconmem {
+        color: $blue;
+}
+
+.text-ram {
+        color: $blue;
+        font-weight: bold;
+}
+
+.icongpu {
+        color: $yellow;
+}
+
+.text-gpu {
+        color: $yellow;
+        font-weight: bold;
+}
+
+.iconstor {
+        color: $green;
+}
+
+.text-disk {
+        color: $green;
+        font-weight: bold;
+}
+
+.cpu_bar,
+.mem_bar,
+.gpu_bar,
+.stor_bar,
+scale trough {
+        all: unset;
+        background-color: $grey;
+        border-radius: 16px;
+        min-height: 5px;
+        min-width: 100px;
+}
+
+.cpu_bar,
+.mem_bar,
+.gpu_bar,
+.stor_bar,
+scale trough highlight {
+        all: unset;
+        border-radius: 16px;
+}
+
+.cpu_bar scale trough highlight {
+        background-color: $red;
+}
+
+.mem_bar scale trough highlight {
+        background-color: $blue
+}
+
+.gpu_bar scale trough highlight {
+        background-color: $yellow;
+}
+
+.stor_bar scale trough highlight {
+        background-color: $green;
+}
+
+/** Fetch ********************************************/
+.fetch {
+        font-size: 18px;
+        background-color: $bg;
+        border-radius: 16;
+        border: 2px solid $bg;
+}
+
+.fetch_items {
+        margin: 30;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 20;
+        border-radius: 10;
+}
+
+.wm {
+        font-family: "JetBrainsMono Nerd Font";
+        color: $red;
+}
+
+.distro {
+        font-family: "JetBrainsMono Nerd Font";
+        color: $green;
+}
+
+.shell {
+        font-family: "JetBrainsMono Nerd Font";
+        color: $yellow;
+}
+
+.uptime {
+        font-family: "JetBrainsMono Nerd Font";
+        color: $blue;
+}
+
+.packages {
+        font-family: "JetBrainsMono Nerd Font";
+        color: $purple;
+}
+
+/** Fetch ********************************************/
+.one {
+        color: $red;
+}
+
+.two {
+        color: $green;
+}
+
+.three {
+        color: $yellow;
+}
+
+.four {
+        color: $blue;
+}
+
+.five {
+        color: $purple;
+}
+
+.six {
+        color: $fg;
+}
+
+.dots {
+        font-size: 15px;
+        border-radius: 16;
+
+}
+
+/** Spotify ********************************************/
+.spotify-album {
+        background-repeat: no-repeat;
+        background-size: 130px;
+        min-height: 130px;
+        min-width: 130px;
+        margin: 35px 0px 30px 35px;
+        border-radius: 15px;
+}
+
+.spotify-info {
+        font-size: 30px;
+        font-weight: bold;
+        border-radius: 15px;
+        min-width: 40px;
+        min-height: 40px;
+        color: $blue;
+}
+
+.spotify-artist {
+        color: $fg-alt
+}
+
+.spotify-buttons button {
+        font-size: 30px;
+        color: $fg;
+}
+
+.spotify-buttons button:hover {
+        color: $green;
+}
+
+.spotify-pp {
+        color: $fg;
+}
+
+.spotify-pp:hover {
+        color: $green;
+}
+
+.spotify-box {
+        padding: 0px 35px 0px 90px;
+}
+
+
+/** Power ********************************************/
+.power {
+        background-color: $bg;
+        border-radius: 15px;
+        padding: 20px 35px 20px 35px;
+        font-size: 38px;
+        border: 2px solid $bg;
+}
+
+.shutdown {
+        color: $red;
+}
+
+.reboot {
+        color: $green;
+}
+
+.switch {
+        color: $yellow;
+}
+
+.logout {
+        color: $blue;
+}
+
+.lock {
+        color: $purple;
+}
+
+.suspend {
+        color: $fg;
+}
+/** Applications ********************************************/
+.app-box {
+        margin: 30px 32px 30px 32px;
+}
+
+.app-firefox {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.app-alacritty {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.app-nautilus {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.app-software {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.app-spotify {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.app-code {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+/** Links ********************************************/
+.links {
+        padding-left: 20px;
+        padding-top: 10px;
+}
+
+.reddit {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.github {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.youtube {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 0px;
+}
+
+.study {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.gmail {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 8px;
+}
+
+.dribble {
+        background-repeat: no-repeat;
+        background-size: 48px;
+        min-height: 48px;
+        min-width: 48px;
+        margin: 0px 8px 0px 0px;
+}
+
+/** Profile ******************************************/
+.face {
+        background-size: 150px;
+        min-height: 150px;
+        min-width: 150px;
+        margin: 40px 0px 0px 0px;
+        border-radius: 10%;
+}
+
+.name {
+        color: $green;
+        font-size: 30px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        padding-top: 20px;
+}
+
+.username {
+        color: $yellow;
+        font-size: 22px;
+        font-weight: bold;
+        margin: -15px 0px 0px 0px;
+}
+
+.username-hostname {
+        font-family: "JetBrainsMono Nerd Font";
+        font-size: 18px;
+        color: $grey-alt;
+}
+/** Clock ********************************************/
+.time {
+        color: $red;
+        font-size: 40px;
+        font-weight: bolder;
+        padding-top: 15px;
+}
+
+.date {
+        color: $yellow;
+        font-size: 20px;
+        font-weight: bold;
+}
+
+/** Weather ***************************************/
+.iconweather {
+        font-family: "JetBrainsMono Nerd Font";
+        font-size: 40px;
+        font-weight: normal;
+}
+
+.label-temp {
+        color: $green;
+        font-size: 30px;
+        font-weight: bold;
+}
+
+.label-stat {
+        color: $yellow;
+        font-size: 20px;
+        font-weight: bold;
+
+}
+
+.label-quote {
+        color: $fg;
+        font-size: 14px;
+        font-weight: 700;
+}
+
+.weather-box {
+        padding: 20px 60px 0px 60px;
+}
+/** Bluetooth ********************************************/
+.bt-name {
+        color: $red;
+        font-weight: 900;
+        font-size: 22px;
+}
+
+.bt-icon-box {
+        margin-top: 16px;
+        padding-left: 115px;
+        padding-right: 115px;
+}
+
+.bt-icon {
+        font-size: 30px;
+        border-radius: 20px;
+        background-color: $yellow;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+}
+
+.bluetooth-box {
+        padding-left: 10px;
+}
+
+/** Mail ********************************************/
+.iconmail {
+	color: $blue;
+        font-size: 70px;
+}
+
+.mail {
+	background-color: $bg;
+	border-radius: 16px;
+        border: 2px solid $bg;
+}
+
+.mailbox {
+	background-color: $bg;
+	border-radius: 10px;
+	margin: 20px 0px 20px 0px;
+}
+.label_mails {
+	color: $fg;
+	font-size : 32px;
+	font-weight : bold;
+	margin: 0px 12px 0px 12px;
+}
+
+/** Karma ********************************************/
+.iconreddit {
+	color: $red;
+        font-size: 70px;
+}
+
+.karma {
+	background-color: $bg;
+	border-radius: 16px;
+        border: 2px solid $bg;
+}
+
+.redditbox {
+	background-color: $bg;
+	border-radius: 10px;
+	margin: 20px 0px 20px 0px;
+}
+.label_karma {
+	color: $fg;
+	font-size : 32px;
+	font-weight : bold;
+	margin: 0px 12px 0px 0px;
+}
+
+/** Volume Slider ********************************************/
+.volume-slider-box {
+        background-color: $bg;
+        min-width: 20px;
+}
+
+.volume-slider trough {
+        border-radius: 20px;
+        background-color: $grey;
+        min-width: 10px;
+        box-shadow: 0px 0px 7px #141414;
+        margin: 20px 5px 0px 5px;
+}
+
+.volume-slider highlight {
+        border-radius: 20px;
+        background: linear-gradient(to bottom, $red, $red-alt);
+}
+
+.volume-slider-icon {
+        color: $green;
+        font-size: 28px;
+        margin-top: 10px;
+}
+
+/** Brightness Slider ********************************************/
+.brightness-slider-box {
+        background-color: $bg;
+        min-width: 20px;
+}
+
+.brightness-slider trough {
+        border-radius: 20px;
+        background-color: $grey;
+        min-width: 10px;
+        box-shadow: 0px 0px 7px #141414;
+        margin: 20px 5px 0px 5px;
+}
+
+.brightness-slider highlight {
+        border-radius: 20px;
+        background: linear-gradient(to bottom, $yellow, $yellow-alt);
+}
+
+.brightness-slider-icon {
+        color: $blue;
+        font-size: 28px;
+        margin-top: 10px;
+}
+
+/** Quote ********************************************/
+.quote-image {
+        font-size: 50px;
+        padding-top: 20px;
+        color: #e5c76b;
+}
+
+.quote {
+        padding: 20px 20px 0px 20px;
+        font-weight: bold;
+}
+
+.quote-box {
+        background-color: $bg;
+}
+
+/** Battery ********************************************/
+.battery trough {
+        background-color: $grey;
+        min-width: 92px;
+}
+
+.battery highlight {
+        background: linear-gradient(to top, $blue, $cyan);
+}
+
+/** Close Button ********************************************/
+
+.close {
+        background-color: $grey;
+        color: $fg-alt;
+        font-size: 90px;
+}
+
+.close:hover {
+        background-color: $red;
+        color: $fg;
+        opacity: 1.0;
+}

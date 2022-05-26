@@ -1,0 +1,504 @@
+#!/usr/bin/env python3
+# _*_ coding: utf-8 _*_
+
+"""
+A psutil-based command to display customizable system usage info in a single line, intended for Tint2 executors
+
+Author: Piotr Miller
+e-mail: nwg.piotr@gmail.com
+Website: http://nwg.pl
+Project: https://github.com/nwg-piotr/psuinfo
+License: GPL3
+
+Inspired by https://github.com/tknomanzr/scripts/blob/master/tint2/executors/cpu.py by William Bradley (@tknomanzr)
+"""
+
+import sys
+import psutil
+import time
+import os
+
+
+def main():
+    fahrenheit = False
+    names = False
+    testing = False
+    time_start = None
+    components = "gStfM"
+    separator = "  "
+    home = os.getenv("HOME")
+    draw_icons = False
+
+    pcpu, avg, speed, freqs, temp, fans, b_time, memory, swap, disks_usage, which, ul, dl, xfer_start, xfer_finish, \
+        path_to_icon, c_name= None, None, None, None, None, None, None, None, None, None, None, None, None, None, \
+        None, None, None
+
+    for i in range(1, len(sys.argv)):
+        if sys.argv[i] == "-h" or sys.argv[i] == "--help":
+            print_help()
+            exit(0)
+
+        if sys.argv[i] == "-F":
+            fahrenheit = True
+
+        if sys.argv[i] == "-N":
+            names = True
+
+        if sys.argv[i] == "-T":
+            testing = True
+
+        if sys.argv[i].startswith("-C"):
+            components = sys.argv[i][2::]
+
+        if sys.argv[i].startswith("-S"):
+            try:
+                # if number given
+                spacing = int(sys.argv[i][2::])
+                separator = " " * spacing
+            except ValueError:
+                # string given
+                separator = sys.argv[i][2::]
+
+        if sys.argv[i].startswith("-W"):
+            try:
+                which = int(sys.argv[i][2::])
+            except ValueError:
+                pass
+
+        if sys.argv[i].upper() == "-ALL":
+            components = "gpaQStfMcWDUk"
+            names = True
+            testing = True
+
+        if sys.argv[i].startswith("-I"):
+            draw_icons = True
+            # We can only have one icon per executor, so let's strip components to the first one
+            components = sys.argv[i][2]
+            # exception for UL/DL speed; to assign an icon to it we need to calculate speeds first
+            if components != "k":
+                path_to_icon = icon_path(home, components)
+
+        if sys.argv[i].startswith("-M"):
+            # We can only have a custom name for a single component
+            components = components[0]
+            names = True
+            c_name = sys.argv[i][2::]
+
+    if testing:
+        time_start = int(round(time.time() * 1000))
+
+    output = ""
+
+    # Prepare ONLY requested data, ONLY once
+    if "g" or "p" in components:
+        try:
+            pcpu = psutil.cpu_percent(interval=1, percpu=True)
+        except:
+            pass
+
+    if "a" in components:
+        try:
+            avg = str(psutil.cpu_percent(interval=1))
+            if len(avg) < 4:
+                avg = " " + avg
+        except:
+            pass
+
+    if "s" or "S" in components:
+        try:
+            speed = psutil.cpu_freq(False)
+        except:
+            pass
+
+    if "q" or "Q" in components:
+        try:
+            freqs = psutil.cpu_freq(True)
+            if len(freqs) == 0:
+                freqs = None
+        except:
+            pass
+
+    if "t" in components:
+        try:
+            temp = psutil.sensors_temperatures(fahrenheit)
+        except:
+            pass
+
+    if "f" in components:
+        try:
+            fans = psutil.sensors_fans()
+        except:
+            pass
+
+    if "m" or "M" or "z" or "Z" in components:
+        try:
+            memory = psutil.virtual_memory()
+        except:
+            pass
+
+    if "w" or "W" or "x" in components:
+        try:
+            swap = psutil.swap_memory()
+        except:
+            pass
+
+    if "k" in components:
+        try:
+            xfer_start = psutil.net_io_counters()
+            time.sleep(1)
+            xfer_finish = psutil.net_io_counters()
+            ul = (xfer_finish[0] - xfer_start[0]) / 1024
+            dl = (xfer_finish[1] - xfer_start[1]) / 1024
+            # We've not selected an icon previously. Now we have enough data.
+            if draw_icons:
+                path_to_icon = net_icon(home, ul, dl)
+        except:
+            pass
+
+    drives = []
+    # Find drive names, mountpoints
+    if "d" or "D" or "n" or "N" in components:
+        try:
+            d = psutil.disk_partitions()
+            # This will store name, mountpoint
+            for entry in d:
+                n = entry[0].split("/")
+                name = n[len(n) - 1]
+                # name, mountpoint
+                drive = name, entry[1]
+                drives.append(drive)
+        except:
+            pass
+
+    if "d" or "D" in components:
+        try:
+            disks_usage = []
+            for drive in drives:
+                # Search drives by path
+                data = psutil.disk_usage(drive[1])
+                # Store name, used, total, percent
+                essential = drive[0].upper(), data[1], data[0], data[3]
+                disks_usage.append(essential)
+        except:
+            pass
+
+    if "n" in components or "N" in components:
+        try:
+            disks_usage = []
+            for drive in drives:
+                # Search drives by path
+                data = psutil.disk_usage(drive[1])
+                # Store mountpoint, used, total, percent
+                essential = drive[1], data[1], data[0], data[3]
+                disks_usage.append(essential)
+        except:
+            pass
+
+    if "u" or "U" in components:
+        try:
+            b_time = psutil.boot_time()
+        except:
+            pass
+
+    # Build output component after component
+    output += separator
+
+    for char in components:
+        if char == "g" and pcpu is not None:
+            if c_name:
+                output += c_name
+            output += graph_per_cpu(pcpu) + separator
+
+        if char == "p" and pcpu is not None:
+            if names:
+                output += c_name if c_name else "CPU: "
+            output += per_cpu(pcpu) + separator
+
+        if char == "a" and avg is not None:
+            if names:
+                output += c_name if c_name else "avCPU: "
+            output += avg + "%" + separator
+
+        if char == "q" and freqs is not None:
+            if names:
+                output += c_name if c_name else "CPU: "
+            output += freq_per_cpu(freqs)[0][:-1] + " GHz" + separator
+
+        if char == "Q" and freqs is not None:
+            if names:
+                output += c_name if c_name else "CPU: "
+            result = freq_per_cpu(freqs)
+            output += result[0][:-1] + "/" + str(result[1]) + " GHz" + separator
+
+        if char == "s" and speed is not None:
+            if names:
+                output += c_name if c_name else "SPD: "
+            output += str(round(speed[0] / 1000, 1)) + " GHz" + separator
+
+        if char == "S" and speed is not None:
+            if names:
+                output += c_name if c_name else "avSPD: "
+            output += str(round(speed[0] / 1000, 1)) + "/" + str(round(speed[2] / 1000, 1)) + " GHz" + separator
+
+        if char == "t" and temp is not None and len(temp) > 0:
+            if names:
+                output += c_name if c_name else "CORE: "
+            if "k10temp" in temp.keys():
+                # ryzen, multiple Die temperatures for threadripper/Epyc
+                try:
+                    ryzen_die_temps = [sensor.current for sensor in temp["k10temp"] if sensor.label == 'Tdie'
+                                       or sensor.label == 'Tctl']
+                    output += str(int(max(ryzen_die_temps)))
+                except:
+                    pass
+            if "zenpower" in temp.keys():
+                # zen3 is not supported in k10.  Fix is to load zenpower and unload k10
+                try:
+                    ryzen_die_temps = [sensor.current for sensor in temp["zenpower"] if sensor.label == 'Tdie'
+                                       or sensor.label == 'Tctl']
+                    output += str(int(max(ryzen_die_temps)))
+                except:
+                    pass
+            if "coretemp" in temp.keys():
+                # intel
+                output += str(int(temp["coretemp"][0][1]))
+            output += "℉" if fahrenheit else "℃"
+            output += separator
+
+        if char == "f" and fans is not None and len(fans) > 0:
+            if names:
+                output += c_name if c_name else "FAN: "
+            fan0 = next(iter(fans.values()))
+            output += str(fan0[0][1]) + "/m" + separator
+
+        if char == 'm' and memory is not None:
+            if names:
+                output += c_name if c_name else "MEM: "
+            output += str(round((memory[0] - memory[1]) / 1073741824, 1)) + " GB" + separator
+
+        if char == 'M' and memory is not None:
+            if names:
+                output += c_name if c_name else "MEM: "
+            output += str(round((memory[3]) / 1073741824, 1)) + "/" + str(
+                round(memory[0] / 1073741824, 1)) + " GB" + separator
+
+        if char == 'c' and memory is not None:
+            if names:
+                output += c_name if c_name else "MEM: "
+            output += str(memory[2]) + "%" + separator
+
+        if char == 'C' and memory is not None:
+            if names:
+                output += c_name if c_name else "MEM: "
+            output += str(100 - memory[2]) + "%" + separator
+
+        if char == 'u' and b_time is not None:
+            up_time = int(time.time()) - b_time
+            m, s = divmod(up_time, 60)
+            h, m = divmod(m, 60)
+            if names:
+                output += c_name if c_name else "UP: "
+            output += "%d:%02d" % (h, m) + separator
+
+        if char == 'U' and b_time is not None:
+            up_time = int(time.time()) - b_time
+            m, s = divmod(up_time, 60)
+            h, m = divmod(m, 60)
+            if names:
+                output += c_name if c_name else "UP: "
+            output += "%d:%02d:%02d" % (h, m, s) + separator
+
+        if char == "w" and swap is not None:
+            if names:
+                output += c_name if c_name else "SWAP: "
+            output += str(round(swap[1] / 1073741824, 1)) + " GB" + separator
+
+        if char == "W" and swap is not None:
+            if names:
+                output += c_name if c_name else "SWAP: "
+            output += str(round(swap[1] / 1073741824, 1)) + "/"
+            output += str(round(swap[0] / 1073741824, 1)) + " GB" + separator
+
+        if char == "x" and swap is not None:
+            if names:
+                output += c_name if c_name else "SWAP: "
+            output += str(swap[3]) + "%" + separator
+
+        if char == "d" or char == "n" and disks_usage is not None:
+            if which is not None:
+                try:
+                    entry = disks_usage[which]
+                    output += entry[0] + ": "
+                    output += str(entry[3]) + "%" + separator
+                except IndexError:
+                    pass
+            else:
+                for entry in disks_usage:
+                    output += entry[0] + ": "
+                    output += str(entry[3]) + "%" + separator
+
+        if char == "D" or char == "N" and disks_usage is not None:
+            if c_name:
+                output += c_name
+            if which is not None:
+                try:
+                    entry = disks_usage[which]
+                    output += entry[0] + ": "
+                    output += str(round(entry[1] / 1073741824, 1)) + "/"
+                    output += str(round(entry[2] / 1073741824, 1)) + " GB" + separator
+                except IndexError:
+                    pass
+            else:
+                for entry in disks_usage:
+                    output += entry[0] + ": "
+                    output += str(round(entry[1] / 1073741824, 1)) + "/"
+                    output += str(round(entry[2] / 1073741824, 1)) + " GB" + separator
+
+        if char == "k":
+            if names and xfer_start is not None and xfer_finish is not None:
+                output += c_name if c_name else "Net: "
+            output += '{:0.2f}'.format((xfer_finish[0] - xfer_start[0]) / 1024) + '  {:0.2f} kB/s'.format(
+                (xfer_finish[1] - xfer_start[1]) / 1024) + separator
+
+    if testing:
+        output += "[" + str(int((round(time.time() * 1000)) - time_start) / 1000) + "s]" + separator
+
+    # remove leading and trailing separator
+    l = len(separator)
+    if l > 0:
+        output = output[l:-l]
+
+    if draw_icons:
+        print(path_to_icon)
+
+    print(output)
+
+
+def per_cpu(result):
+    string = ""
+    for val in result:
+        proc = str(int(round(val, 1)))
+        if len(proc) < 2:
+            proc = " " + proc
+        string += proc + "% "
+    return string
+
+
+def freq_per_cpu(result):
+    string = ""
+    max_freq = 0
+    for val in result:
+        freq = str(round(val[0] / 1000, 1))
+        string += freq + "|"
+        max_freq = str(round(val[2] / 1000, 1))
+
+    return string, max_freq
+
+
+def graph_per_cpu(result):
+    graph = "_▁▂▃▄▅▆▇███"
+
+    string = ""
+    for val in result:
+        proc = int(round(val / 10, 0))
+        string += graph[proc]
+    return string
+
+
+def print_help():
+
+    print("\npsuinfo [-C{components}] | [-I{component}] [-F] [-N] [-S<number>] | [-S<string>] [-T] [-W{number}] [-all] [-h] [--help]")
+
+    print("\n-C defines multiple components. -I defines a single component. If none given, -CgStfM argument will be used by default.\n")
+    print("  g - (g)raphical CPU load bar")
+    print("  p - (p)ercentage for each core (text)")
+    print("  a - (a)verage CPU load (text)")
+    print("  q - fre(q)ency for each thread")
+    print("  Q - fre(Q)ency for each thread/max frequency")
+    print("  s - current CPU (s)peed")
+    print("  S - current/max CPU (S)peed")
+    print("  t - CPU (t)emperature")
+    print("  f - (f)an speed")
+    print("  m - (m)emory in use")
+    print("  M - (M)emory in use/total")
+    print("  c - used memory per(c)entage")
+    print("  C - free memory per(C)entage")
+    print("  w - s(w)ap memory in use")
+    print("  W - s(W)ap memory in use/total")
+    print("  x - swap usage in %")
+    print("  d - (d)rives as names usage in %")
+    print("  D - (D)rives as names used/total")
+    print("  n - drives as mou(n)tpoints usage in %")
+    print("  N - drives as mou(N)tpoints used/total")
+    print("  u - (u)ptime HH:MM")
+    print("  U - (U)ptime HH:MM:SS")
+    print("  k - current networ(k) traffic as upload/download in kB/s")
+
+    print("\n-F - use Fahrenheit instead of ℃")
+    print("-N - display field names (except for (g)raphical CPU load bar)")
+    print("-S<number> - number of spaces between components (-S2 if none given)")
+    print("-S<string> for custom separator (use \' | \' to include spaces)")
+    print("-M<string> for custom component name (\'My custom name: \')")
+    print("-T - test execution time")
+    print("-all - display all possible data (for use in terminal)\n")
+
+    print("-I<component> - show an icon before text; 1 component per executor allowed")
+    print("-W<number> - select 0 to n-th element from multiple output (drives, mountpoints)\n")
+
+
+def icon_path(home, component):
+    icons = {'g': '',
+             'p': 'cpu.svg',
+             'a': 'cpu.svg',
+             'q': 'cpu.svg',
+             'Q': 'cpu.svg',
+             's': 'cpu.svg',
+             'S': 'cpu.svg',
+             't': 'temp.svg',
+             'f': 'fan.svg',
+             'm': 'mem.svg',
+             'M': 'mem.svg',
+             'c': 'mem.svg',
+             'C': 'mem.svg',
+             'w': 'swap.svg',
+             'W': 'swap.svg',
+             'x': 'swap.svg',
+             'd': 'hdd.svg',
+             'D': 'hdd.svg',
+             'n': 'hdd.svg',
+             'N': 'hdd.svg',
+             'u': 'up.svg',
+             'U': 'up.svg'}
+    try:
+        f_name = icons[component]
+    except KeyError:
+        return ""
+
+    return icon_to_use(home, f_name)
+
+
+def net_icon(home, ul, dl):
+
+    if ul >= 0.01 and dl >= 0.01:
+        f_name = "xfer-b.svg"
+    elif ul >= 0.01:
+        f_name = "xfer-u.svg"
+    elif dl >= 0.01:
+        f_name = "xfer-d.svg"
+    else:
+        f_name = "xfer.svg"
+
+    return icon_to_use(home, f_name)
+
+
+def icon_to_use(home, f_name):
+    icon_custom = home + '/.local/share/psuinfo/' + f_name
+    icon_default = "/usr/share/psuinfo/" + f_name
+    if os.path.isfile(icon_custom):
+        return icon_custom
+    else:
+        return icon_default
+
+
+if __name__ == "__main__":
+    main()

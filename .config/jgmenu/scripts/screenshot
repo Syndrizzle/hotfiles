@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+## Openbox Pipemenu to take screenshots with maim
+
+time=`date +%Y-%m-%d-%H-%M-%S`
+geometry=`xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
+dir="`xdg-user-dir PICTURES`/Screenshots"
+file="Screenshot_${time}_${geometry}.png"
+
+# notify and view screenshot
+notify_view () {
+	dunstify -u low --replace=699 -i ~/.config/jgmenu/MenuIcons/screenshot.png "Copied to clipboard."
+	viewnior ${dir}/"$file"
+	if [[ -e "$dir/$file" ]]; then
+		dunstify -u low --replace=699 -i ~/.config/jgmenu/MenuIcons/screenshot.png "Screenshot Saved."
+	else
+		dunstify -u low --replace=699 -i ~/.config/jgmenu/MenuIcons/screenshot.png "Screenshot Deleted."
+	fi
+}
+
+# countdown
+countdown () {
+	for sec in `seq $1 -1 1`; do
+		dunstify -t 1000 --replace=699 -i ~/.config/jgmenu/MenuIcons/quick-cmds.png "Taking shot in : $sec"
+		sleep 1
+	done
+}
+
+# take shots
+shotnow () {
+	cd ${dir} && sleep 0.5 && maim -f png | tee "$file" | xclip -selection clipboard -t image/png
+	notify_view
+}
+
+shot5 () {
+	countdown '5'
+	sleep 1 && cd ${dir} && maim -f png | tee "$file" | xclip -selection clipboard -t image/png
+	notify_view
+}
+
+shot10 () {
+	countdown '10'
+	sleep 1 && cd ${dir} && maim -f png | tee "$file" | xclip -selection clipboard -t image/png
+	notify_view
+}
+
+shotwin () {
+	cd ${dir} && maim -f png -i `xdotool getactivewindow` | tee "$file" | xclip -selection clipboard -t image/png
+	notify_view
+}
+
+shotarea () {
+	cd ${dir} && maim -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | tee "$file" | xclip -selection clipboard -t image/png
+	notify_view
+}
+
+if [[ ! -d "$dir" ]]; then
+	mkdir -p "$dir"
+fi
+
+if [[ "$1" == "--now" ]]; then
+	shotnow
+elif [[ "$1" == "--in5" ]]; then
+	shot5
+elif [[ "$1" == "--in10" ]]; then
+	shot10
+elif [[ "$1" == "--win" ]]; then
+	shotwin
+elif [[ "$1" == "--area" ]]; then
+	shotarea
+fi
+
+exit 0

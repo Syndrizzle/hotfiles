@@ -1,0 +1,39 @@
+#!/bin/sh
+
+if [[ $1 == --bbswitch ]] || [[ $1 == --volume ]] || [[ $1 == --brightness ]] || [[ $1 == --lbrightness ]] || [[ $1 == --battery ]] || [[ $1 == --wifi ]]; then
+    if [[ $2 == menu ]]; then
+        exec /usr/lib/t2ec/menus.sh $1
+    fi
+fi
+
+if [[ $1 == --desktop ]]; then
+    exec /usr/lib/t2ec/desktop.py $2
+elif [[ $1 == --bbswitch ]]; then
+    exec /usr/lib/t2ec/bbswitch-status-temp.sh $2
+elif [[ $1 == --paswitch ]]; then
+    exec /usr/lib/t2ec/pa-jgmenu.py
+elif [[ $1 == --volume ]]; then
+    exec /usr/lib/t2ec/volume-icon.sh $2
+elif [[ $1 == --brightness ]]; then
+    exec /usr/lib/t2ec/brightness-icon.sh $2
+elif [[ $1 == --lbrightness ]]; then
+    exec /usr/lib/t2ec/brightness-icon-light.sh $2
+elif [[ $1 == --battery ]]; then
+    exec /usr/lib/t2ec/battery-icon.sh $2
+elif [[ $1 == --wifi ]]; then
+    exec /usr/lib/t2ec/wifi-name.sh "$2"
+elif [[ $1 == --update ]]; then
+    exec /usr/lib/t2ec/arch-update.py "${@:2}"
+elif [[ $1 == --weather ]]; then
+    exec /usr/lib/t2ec/weather.py "${@:2}"
+elif [[ $1 == --zbox ]]; then
+    if [[ $(which rof 2>/dev/null) == *"/rof"* ]]; then
+        exec /usr/lib/t2ec/zenity-box.sh $2
+    else
+        echo "'rof-git' package missing"
+    fi
+elif [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; then
+    exec /usr/lib/t2ec/help.sh
+else
+    echo "Try 't2ec -h' for help"
+fi

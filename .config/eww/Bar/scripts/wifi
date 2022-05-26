@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Dependencies: `iwconfig`
+
+wifi=$(awk 'NR==3 {printf("%.0f",$3*10/7)}' /proc/net/wireless)
+ssid=$(iwgetid | awk -F '"' '{ print $2 }')
+
+icon() {
+    if [[ "$wifi" -ge "75" ]]; then
+        echo $HOME/.local/icons/System/wifi-full.svg
+    elif [[ "$wifi" -ge "50" ]]; then
+        echo $HOME/.local/icons/System/wifi-med.svg
+    elif [[ "$wifi" -ge "25" ]]; then
+        echo $HOME/.local/icons/System/wifi-low.svg
+    elif [[ "$wifi" -ge "0" ]]; then
+        echo $HOME/.local/icons/System/wifi-lowest.svg
+    else
+        echo $HOME/.local/icons/System/no-wifi.svg
+    fi
+}
+
+if [[ $1 = "-l" ]]; then
+    echo ${ssid}
+elif [[ $1 = "-i" ]]; then
+    icon
+fi

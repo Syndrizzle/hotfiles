@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+ <defs>
+  <radialGradient cy="40.5" id="radialGradient3016" cx="24" gradientUnits="userSpaceOnUse" r="24" gradientTransform="matrix(0.41667 0 0 0.06944 -2 10.521)">
+   <stop style="stop-color:#000;stop-opacity:1"/>
+   <stop offset="1" style="stop-color:#000;stop-opacity:0.196"/>
+  </radialGradient>
+ </defs>
+ <rect width="8" height="1" style="fill:#7a7a68;fill-opacity:1;stroke:none" y="4.998" x="4"/>
+ <path d="m 8 11.668 c -3.276 0 -6.176 0.261 -8 0.667 l 0 2 c 1.824 0.406 4.724 0.667 8 0.667 3.276 0 6.176 -0.261 8 -0.667 l 0 -2 c -1.824 -0.406 -4.724 -0.667 -8 -0.667 z" style="fill:url(#radialGradient3016);opacity:0.1;fill-opacity:1;stroke:none"/>
+ <rect ry="1.562" rx="1.522" width="14" height="10" style="fill:#f57c00;fill-opacity:1;stroke:none" y="3.998" x="1"/>
+ <path d="M 2.522,3.9978 C 1.679,3.9978 1,4.6878 1,5.5438 l 0,0.619 c 0,-0.857 0.679,-1.165 1.522,-1.165 l 10.957,0 c 0.843,0 1.522,0.308 1.522,1.165 l 0,-0.619 c 0,-0.857 -0.679,-1.546 -1.522,-1.546 z" style="fill:#fff;opacity:0.2;fill-opacity:1;stroke:none"/>
+ <path d="m 4 4.998 l -2 2 l 1 0 l 0 3 l 2 0 l 0 -3 l 1 0 l -2 -2 z" style="fill:#fff1ed;opacity:0.6;fill-opacity:1;stroke:none"/>
+ <path d="m 2.522,8.9978 2.435,0 c 3.348,-0.333 2.739,-4 4.87,-4 l 3.652,0 c 0.843,0 1.522,0.743 1.522,1.667 l 0,5.667 c 0,0.923 -0.679,1.667 -1.522,1.667 l -10.957,0 C 1.679,13.9988 1,13.2558 1,12.3318 l 0,-1.667 c 0,-1 0.609,-1.667 1.522,-1.667 z" style="fill:#ffb300;fill-opacity:1;stroke:none"/>
+ <path d="m 1,11.6678 0,0.667 c 0,0.923 0.679,1.667 1.522,1.667 l 10.957,0 c 0.843,0 1.522,-0.743 1.522,-1.667 l 0,-0.667 c 0,0.923 -0.679,1.333 -1.522,1.333 l -10.957,0 C 1.679,13.0008 1,12.5908 1,11.6678 Z" style="fill:#000;opacity:0.15;fill-opacity:1;stroke:none"/>
+</svg>

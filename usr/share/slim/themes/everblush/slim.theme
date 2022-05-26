@@ -1,0 +1,34 @@
+# everblush theme for SLIM
+
+# Messages (ie: shutdown)
+
+msg_color               #dadada
+msg_font                Poppins:size=18:bold:dpi=75
+msg_x                   50%
+msg_y                   30%
+
+# Session Name
+
+session_color               #dadada
+session_font                Inter:size=16:bold:dpi=96
+session_x                   50%
+session_y                   92%
+
+# valid values: stretch, tile
+
+background_style        stretch
+background_color        #181f21
+
+# Input controls
+
+input_panel_x           50%
+input_panel_y           50%
+input_name_x            205
+input_name_y            492
+input_pass_x            205
+input_pass_y            600
+input_font              Inter:size=16:dpi=96:style=Bold
+input_color           #22292b
+
+username_msg            
+password_msg            

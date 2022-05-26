@@ -1,0 +1,24 @@
+#!/bin/bash
+
+while true;
+do
+	inactiu=$(xprintidle)
+	if [ $inactiu -gt 15000 ]
+	then
+		/usr/bin/eww -c $HOME/.config/eww/Lock/ close-all && xset dpms force off
+	fi
+	if [ $inactiu -lt 10000 ]
+	then
+		/usr/bin/eww -c $HOME/.config/eww/Lock/ open-many player-spotify lock-weather battery-lock volume-slider-lock
+	fi
+	sleep 5
+done
+#while true;
+#do
+#inactiu=$(xprintidle)
+#	if [ $inactiu -lt 2000 ]
+#	then
+#		$HOME/.scripts/eww open-many player-spotify weather calendari &
+#	fi
+#	sleep 1
+#done

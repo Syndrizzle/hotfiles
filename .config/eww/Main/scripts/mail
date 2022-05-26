@@ -1,0 +1,8 @@
+#!/bin/python
+
+# You need to go to https://myaccount.google.com/lesssecureapps?pli=1 and enable it for this to work.
+import imaplib
+obj = imaplib.IMAP4_SSL('imap.gmail.com',993)
+obj.login('godofthunder508@gmail.com','princen508') # write your email and password
+obj.select()
+print(len(obj.search(None, 'UnSeen')[1][0].split()))

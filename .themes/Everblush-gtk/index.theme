@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Everblush Phocus gtk 
+Comment=Port of Everblush colorscheme for gtk with Phocus 
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Everblush Phocus gtk
+MetacityTheme=Everblush
+IconTheme=gnome
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close

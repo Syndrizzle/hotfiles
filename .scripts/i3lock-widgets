@@ -1,0 +1,46 @@
+#!/bin/sh
+
+fg_color=dadada00
+wrong_color=e06e6eaa
+highlight_color=3b4244ff
+verif_color=8ccf7eff
+date_hour_color=dadadaff
+
+slowfade () {
+    dis=$(echo -n "$DISPLAY" | tr -c '[:alnum:]' _)
+    ifc='com.github.chjj.compton'
+    obj='/com/github/chjj/compton'
+    if [[ "$1" == "start" ]]; then
+        dbus-send --print-reply --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_in_step double:0.02
+        dbus-send --print-reply --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_out_step double:0.02
+    else
+        dbus-send --print-reply --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_in_step double:0.1
+        dbus-send --print-reply --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_out_step double:0.1
+    fi
+}
+
+#playerctl -a pause
+$HOME/.scripts/cycle-dim &
+pkill -u "$USER" -USR1 dunst
+$HOME/.scripts/wait-suspend &
+sleep 1 && /usr/bin/eww -c $HOME/.config/eww/Lock/ open-many player-spotify lock-weather battery-lock volume-slider-lock &
+slowfade start
+i3lock -p default -n --force-clock -i ~/.config/eww/Lock/lock-bg.png \
+--ind-pos="w/2:h/2+158" --time-pos="w/2:h/4-5" --date-pos="w/2:h/4+55" --greeter-pos="w/2:h/2" \
+--insidever-color=b3b9b866 --insidewrong-color=$wrong_color --inside-color=b3b9b800 \
+--ringver-color=$verif_color --ringwrong-color=$wrong_color --ring-color=$fg_color \
+--keyhl-color=$highlight_color --bshl-color=$highlight_color --separator-color=dadada00 \
+--date-color=$date_hour_color --time-color=$date_hour_color --greeter-color=$fg_color  \
+--time-str="%I:%M" --time-size=120 \
+--date-str="%a, %d %b" --date-size=35 \
+--greeter-text="$date_now" --greeter-size=25 \
+--line-uses-inside --radius 115 --ring-width 4 --indicator \
+--verif-text=""  --wrong-text="" --noinput-text="" \
+--clock --date-font="Proxima Nova" --time-font="Proxima Nova" \
+--pass-media-keys
+slowfade end
+

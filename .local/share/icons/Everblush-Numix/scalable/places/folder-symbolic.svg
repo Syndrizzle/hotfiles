@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+ <rect width="14" height="10" x="1" y="4" rx="1.522" ry="1.562" style="fill:#bdbdbd;fill-opacity:0.502;stroke:none"/>
+ <path d="m 2.522 6 2.435 0 c 3.348 -0.333 2.739 -4 4.87 -4 l 3.652 0 c 0.843 0 1.522 0.743 1.522 1.667 l 0 8.667 c 0 0.923 -0.679 1.667 -1.522 1.667 l -10.957 0 c -0.843 0 -1.522 -0.743 -1.522 -1.667 l 0 -4.667 c 0 -1 0.609 -1.667 1.522 -1.667 z" style="fill:#bebebe;fill-opacity:1;stroke:none"/>
+</svg>

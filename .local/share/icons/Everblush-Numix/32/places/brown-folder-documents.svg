@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+ <defs>
+  <radialGradient r="24" cy="40.5" cx="24" gradientTransform="matrix(0.83333334,0,0,0.13888885,-4,1041.4039)" gradientUnits="userSpaceOnUse" id="radialGradient3159">
+   <stop style="stop-color:#000;stop-opacity:1"/>
+   <stop offset="1" style="stop-color:#000;stop-opacity:0.196"/>
+  </radialGradient>
+ </defs>
+ <g transform="translate(0,-1020.3622)">
+  <path d="m 16 1043.7 c -6.551 0 -12.352 0.522 -16 1.333 l 0 4 c 3.648 0.811 9.449 1.333 16 1.333 6.551 0 12.352 -0.522 16 -1.333 l 0 -4 c -3.648 -0.811 -9.449 -1.333 -16 -1.333 z" style="fill:url(#radialGradient3159);opacity:0.1;fill-opacity:1;stroke:none"/>
+  <rect width="30" height="21" x="1" y="1027.36" rx="3.261" ry="3.281" style="fill:#5d4037;fill-opacity:1;stroke:none"/>
+  <path d="m 4.261 1027.03 c -1.807 0 -3.261 1.487 -3.261 3.333 l 0 1.333 c 0 -1.847 1.454 -3.333 3.261 -3.333 l 23.478 0 c 1.807 0 3.261 1.487 3.261 3.333 l 0 -1.333 c 0 -1.847 -1.454 -3.333 -3.261 -3.333 l -23.478 0 z" style="fill:#fff;opacity:0.2;fill-opacity:1;stroke:none"/>
+  <path d="m 4.261 1032.36 5.217 0 c 7.174 -0.667 5.87 -8 10.435 -8 l 7.826 0 c 1.807 0 3.261 1.487 3.261 3.333 l 0 17.333 c 0 1.847 -1.454 3.333 -3.261 3.333 l -23.478 0 c -1.807 0 -3.261 -1.487 -3.261 -3.333 l 0 -9.333 c 0 -2 1.304 -3.333 3.261 -3.333 z" style="fill:#8d6e63;fill-opacity:1;stroke:none"/>
+  <path d="m 1 1043.7 0 1.333 c 0 1.847 1.454 3.333 3.261 3.333 l 23.478 0 c 1.807 0 3.261 -1.487 3.261 -3.333 l 0 -1.333 c 0 1.847 -1.454 3.667 -3.261 3.667 l -23.478 0 c -1.807 0 -3.261 -1.82 -3.261 -3.667 z" style="fill:#000;opacity:0.15;fill-opacity:1;stroke:none"/>
+  <path d="m 6,16 c -0.75,0 -1,0.2857 -1,1 l 0,7 c 0,0.7143 0.25,1 1,1 l 5,0 c 0.75,0 1,-0.2857 1,-1 l 0,-5 -1,-1 -1,-1 -1,-1 z m 0,1 3,0 0,2 2,0 0,5 -5,0 z m 1.125,3 C 7.05575,20 7,20.111503 7,20.25 l 0,0.5 C 7,20.888497 7.05575,21 7.125,21 l 2.75,0 C 9.94425,21 10,20.888497 10,20.75 l 0,-0.5 C 10,20.111503 9.94425,20 9.875,20 z m 0,2 C 7.05575,22 7,22.111503 7,22.25 l 0,0.5 C 7,22.888497 7.05575,23 7.125,23 l 2.75,0 C 9.94425,23 10,22.888497 10,22.75 l 0,-0.5 C 10,22.111503 9.94425,22 9.875,22 z" transform="translate(0,1020.3622)" style="fill:#000;fill-opacity:0.098;stroke:none"/>
+  <path d="m 6 1035.36 c -0.75 0 -1 0.286 -1 1 l 0 7 c 0 0.714 0.25 1 1 1 l 5 0 c 0.75 0 1 -0.286 1 -1 l 0 -5 -3 -3 z m 0 1 4 0 0 0 1 1 0 6 -5 0 z" style="fill:#fff8e1;fill-opacity:1;stroke:none"/>
+  <path d="m 9 1035.36 0 3 3 0 z" style="fill:#fff8e1;fill-opacity:1;stroke:none"/>
+  <rect ry="0.25" rx="0.125" y="1039.36" x="7" height="1" width="3" style="fill:#fff8e1;fill-opacity:1;stroke:none"/>
+  <rect width="3" height="1" x="7" y="1041.36" rx="0.125" ry="0.25" style="fill:#fff8e1;fill-opacity:1;stroke:none"/>
+ </g>
+</svg>

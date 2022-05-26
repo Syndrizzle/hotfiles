@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# This script display an appropriate brightness icon according to the brightness level
+
+# Author: Piotr Miller
+# e-mail: nwg.piotr@gmail.com
+# Website: http://nwg.pl
+# Project: https://github.com/nwg-piotr/tint2-executors
+# License: GPL3
+
+# Dependencies: `xbacklight` or `light-git'
+
+# Prefer the `light` package, use `xbacklight` if `light` not found
+if [[ $(which light) == *"/light"* ]]
+then
+    b=$(light -G)
+else
+    b=$(xbacklight -get)
+fi
+
+# Lets round the float result
+bri=$(echo "($b+0.5)/1" | bc)
+
+icon() {
+if [[ "$bri" -gt "90" ]]; then
+    echo $HOME/.local/icons/System/bri-high.svg
+elif [[ "$bri" -gt "50" ]]; then
+    echo $HOME/.local/icons/System/bri-threefourth.svg
+elif [[ "$bri" -gt "30" ]]; then
+    echo $HOME/.local/icons/System/bri-medium.svg
+else
+    echo $HOME/.local/icons/System/bri-low.svg
+fi
+}
+
+if  [[ $1 = "-l" ]]; then
+    b=$(light -G)
+    bri=$(echo "($b+0.5)/1" | bc)
+    echo $bri
+elif  [[ $1 = "-i" ]]; then
+    icon
+fi

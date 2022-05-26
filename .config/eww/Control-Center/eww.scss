@@ -1,0 +1,329 @@
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+.control-center {
+  background-color: #181f21;
+  font-family: "feather", "Iosevka Nerd Font", sans-serif;
+  border-radius: 20px;
+}
+
+.control-center-headers {
+  padding: 2em 3em 1em 2em;
+  color: #ef7d7d;
+}
+
+.control-center-headers-label {
+  font-size: 28;
+  font-weight: bold;
+  color: #8ccf7e;
+  font-family: Proxima Nova;
+  text-shadow: 0px 0px 10px #000000;
+}
+
+.control-center-headers-clear {
+  font-weight: bold;
+  padding: 0.7em 0.7em 0.7em 0.7em;
+  margin-bottom: 0.2em;
+  color: #67b0e8;
+  background-color: #22292b;
+  border-radius: 15px;
+  font-family: "Proxima Nova";
+  box-shadow: 0px 0px 10px hsl(0, 0%, 7%);
+}
+
+.control-center-headers-clear:hover {
+  background-color: #181f21;
+}
+
+.control-center-empty-box {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.control-center-empty-label {
+  padding-top: 2em;
+  color: #ef7d7d;
+  font-size: 22;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.control-center-scroll-box {
+  padding: 2em 1.5em 0 1.1em;
+}
+
+.control-center-card-eventbox {
+  background-color: #22292b;
+  border-radius: 15px;
+}
+
+.control-center-card-eventbox:hover {
+  background-color: #181f21;
+}
+
+.control-center-card-box {
+  padding: 2em;
+}
+
+.control-center-separator {
+  padding: 0;
+  color: #b3b9b8;
+}
+
+.control-center-LOW {
+  background-color: #3b4244;
+  color: #e5c76b;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.control-center-NORMAL {
+  background-color: #3b4244;
+  color: #c47fd5;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.control-center-CRITICAL {
+  background-color: #3b4244;
+  color: #ef7d7d;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.control-center-OTHER {
+  background-color: #3b4244;
+  color: #8ccf7e;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.control-center-spotify {
+  background-color: #3b4244;
+  color: #8ccf7e;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.control-center-sxhkd {
+  background-color: #3b4244;
+  color: #67b0e8;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.control-center-brightness {
+  background-color: #3b4244;
+  color: #e5c76b;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.control-center-summary {
+  font-weight: bold;
+  font-size: 17;
+  color: #e5c76b;
+}
+
+.control-center-card-notify-close {
+  color: #b3b9b8;
+  border-radius: 50%;
+  margin-bottom: 0.3em;
+}
+
+.control-center-card-notify-close:hover {
+  color: #ef7d7d;
+  border-radius: 3px;
+  background-color: #3b4244;
+}
+
+.control-center-body {
+  color: #dadada;
+}
+
+.control-center-tray {
+  background-color: #22292b;
+  margin: 20px 20px 0px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #141414;
+}
+
+.control-center-buttons {
+  background-color: #181f21;
+  margin: 10px 10px 0px 10px;
+  border-radius: 20px;
+  padding: 15px 0px 15px 0px;
+}
+
+.net-status-on {
+  color: #181f21;
+  background-color: #67b0e8;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.net-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.volume-status-on {
+  color: #181f21;
+  background-color: #8ccf7e;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.volume-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.bluetooth-status-on {
+  color: #181f21;
+  background-color: #c47fd5;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.bluetooth-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.dunst-status-on {
+  color: #181f21;
+  background-color: #e06e6e;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.dunst-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.redshift-status-on {
+  color: #181f21;
+  background-color: #e5c76b;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.redshift-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.volume-slider-stuff {
+  margin: 20px 20px 10px 20px;
+}
+
+.volume-slider-icon {
+  color: #e5c76b;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 22px;
+  background-color: #3b4244;
+  border-radius: 50px;
+}
+
+
+.volume-slider trough {
+  border-radius: 20px;
+  background-color: #3b4244;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.volume-slider highlight {
+  padding: 0.5em;
+  border-radius: 20px;
+  background: linear-gradient(to left, #e06e6e, #ef7d7d);
+}
+
+.mic-slider-stuff {
+  margin: 10px 20px 10px 20px;
+}
+
+.mic-slider-icon {
+  color: #c47fd5;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 22px;
+  background-color: #3b4244;
+  border-radius: 50px;
+}
+
+
+.mic-slider trough {
+  border-radius: 20px;
+  background-color: #3b4244;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.mic-slider highlight {
+  padding: 0.5em;
+  border-radius: 20px;
+  background: linear-gradient(to left, #67b0e8, #67cbe7);
+}
+
+.brightness-slider-stuff {
+  margin: 7px 20px 7px 20px;
+}
+
+.brightness-slider-icon {
+  color: #8ccf7e;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 20px;
+  background-color: #3b4244;
+  border-radius: 50px;
+}
+
+.brightness-slider trough {
+    border-radius: 20px;
+    background-color: #3b4244;
+    box-shadow: 0px 0px 7px #141414;
+ }
+  
+  .brightness-slider highlight {
+    padding: 0.5em;
+    border-radius: 20px;
+    background: linear-gradient(to left, #e5c76b, #f4d67a);
+  }
