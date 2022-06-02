@@ -1,0 +1,142 @@
+$bg: #232634;
+$bg-alt: #292c3c;
+$fg: #cdd6f4;
+$fg-alt: #bac2de;
+$red: #e78284;
+$red-alt: #ed8796;
+$green: #a6d189;
+$green-alt: #a6da95;
+$yellow: #e5c890;
+$yellow-alt: #eed49f;
+$orange: #ef9f76;
+$orange-alt: #f5a97f;
+$blue: #8caaee;
+$blue-alt: #8aadf4;
+$purple: #ca9ee6;
+$purple-alt: #c6a0f6;
+$cyan: #99d1db;
+$cyan-alt: #91d7e3;
+$gray: #626880;
+$gray-alt: #5b6078;
+
+*{
+  font-family: "Proxima Nova";
+  font-family: "JetBrainsMono Nerd Font";
+  all: unset;
+}
+window {
+  background-color: unset;
+  color: $orange;
+}
+
+
+
+.genwin {
+	background-color: $bg;
+	border-radius: 16px;
+}
+
+/** Weather ***************************************/
+.weather_win{
+	background-color: unset;	
+}
+
+.iconweather {
+	font-family: JetBrainsMono Nerd Font;
+	font-size : 80px;
+	font-weight : normal;
+	margin : 15px 0px 0px 30px;
+	margin: 0;
+}
+
+.label_temp {
+	color : $green;
+	font-size : 60px;
+	font-weight : bold;
+	margin : -15px 30px 0px 0px;
+	margin: 0;
+}
+
+.label_stat {
+	color : $yellow;
+	color: $fg;
+	font-size : 28px;
+	font-weight : bold;
+}
+
+/** Player-spoty *******************************/
+.musicart {
+  background-size: 140px;
+  min-height: 140px;
+  min-width: 140px;
+  margin: 10px;
+  border-radius: 5px;
+  // padding: 10px;
+}
+
+.musictitle {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color : $orange;
+}
+
+.musicartist {  
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color : $gray-alt;
+}
+
+
+.musicalbum {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+	color: $gray-alt;
+}
+
+
+
+/** Volume ***********************/
+
+.vol-icon {
+  color: $red;
+  font-size: 30px;
+  font-family: "Favorites";
+}
+
+.vol-slider trough {
+  background-color: $gray;
+  min-height: 12px;
+  border-radius: 20px;
+} 
+
+.vol-slider highlight {
+  background-color: $red;
+  border-radius: 20px;
+}
+
+/** Battery ***********************/
+
+.bat-icon {
+  background-size: contain;
+  background-position: center;
+  min-height: 60px;
+  min-width: 60px;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
+.bat-label {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  padding: 0px 10px 0px 0px;
+  color: $purple;
+  font-size: 30px;
+}

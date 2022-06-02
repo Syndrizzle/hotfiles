@@ -1,0 +1,12 @@
+#!/bin/bash
+tmp_dir="/tmp/worm/spotify"
+tmp_artist_path=$tmp_dir/artist
+
+if [ ! -d $tmp_dir ]; then
+	mkdir -p $tmp_dir
+fi
+
+artist=$(playerctl metadata -p spotify --format '{{ artist }}')
+echo $artist > $tmp_artist_path
+cat /tmp/worm/spotify/artist
+		

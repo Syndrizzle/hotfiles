@@ -1,0 +1,125 @@
+$bg: #232634;
+$bg-alt: #292c3c;
+$fg: #cdd6f4;
+$fg-alt: #bac2de;
+$red: #e78284;
+$red-alt: #ed8796;
+$green: #a6d189;
+$green-alt: #a6da95;
+$yellow: #e5c890;
+$yellow-alt: #eed49f;
+$orange: #ef9f76;
+$orange-alt: #f5a97f;
+$blue: #8caaee;
+$blue-alt: #8aadf4;
+$purple: #ca9ee6;
+$purple-alt: #c6a0f6;
+$cyan: #99d1db;
+$cyan-alt: #91d7e3;
+$gray: #626880;
+$gray-alt: #5b6078;
+
+* {
+  font-family: "Proxima Nova";
+  font-family: "Favorites";
+  all: unset;
+}
+
+.volume-window {
+  background-color: unset;
+}
+
+.volume-spacer,
+.menu-spacer {
+  transition: all 400ms cubic-bezier(0.1, -0, 0, 1.49);
+}
+
+.volume-widget {
+  background-color: $bg;
+  border: 2px solid $purple;
+  border-radius: 15px;
+  padding: 0px 10px 0px;
+  min-height: 32px;
+}
+
+.volume-icon {
+  font-family: "Favorites";
+  font-size: 26px;
+}
+
+.volume-icon-muted {
+  color: $red;
+}
+
+.volume-slider {
+  background-color: $gray;
+  border-radius: 4px;
+  margin: 16px 0px 16px;
+  contents {
+    trough {
+      border-radius: 5px;
+      slider {
+        background: transparent;
+      }
+      highlight {
+        background: $green;
+        padding: 5px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.volume-slider-muted {
+  background-color: $gray;
+  contents {
+    trough {
+      highlight {
+        background: $red;
+      }
+    }
+  }
+}
+
+
+.brightness-window {
+    background-color: unset;
+  }
+  
+  .brightness-spacer,
+  .menu-spacer {
+    transition: all 400ms cubic-bezier(0.1, -0, 0, 1.49);
+  }
+  
+  .brightness-widget {
+    background-color: $bg;
+    border: 2px solid $purple;
+    border-radius: 15px;
+    padding: 0px 10px 0px;
+    min-height: 32px;
+  }
+  
+  .brightness-icon {
+    font-family: "Material Design Icons Desktop";
+    font-size: 26px;
+  }
+  
+  .brightness-slider {
+    background-color: $gray;
+    border-radius: 4px;
+    margin: 16px 0px 16px;
+    contents {
+      trough {
+        border-radius: 5px;
+        slider {
+          background: transparent;
+        }
+        highlight {
+          background: $green;
+          padding: 5px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+

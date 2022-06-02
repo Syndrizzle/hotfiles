@@ -1,0 +1,174 @@
+;; =================== VARS =====================
+(defpoll music-status :interval "1s" "scripts/music-info.sh")
+(defvar music-reveal false)
+(defvar bat-reveal false)
+(defvar wifi-reveal false)
+(defvar bluetooth-reveal false)
+(defvar volume-reveal false)
+(defvar brightness-reveal false)
+(defpoll hours :interval "1s" "date '+%I'")
+(defpoll minutes :interval "1s" "date '+%M'")
+(defpoll time-state :interval "1s" "date '+%p'")
+(defpoll layout-status :interval "1s" "scripts/change-layout --status")
+(defpoll battery :interval "3ss" "scripts/battery -i")
+(defpoll battery-lvl :interval "3s" "scripts/battery -l")
+(defpoll brightness-lvl :interval "3s" "scripts/brightness -l")
+(defpoll volume-lvl :interval "3s" "scripts/volume -l")
+(defpoll bluetooth :interval "3s" "scripts/bluetooth -i")
+(defpoll bluetooth-state :interval "3s" "scripts/bluetooth -l")
+(defpoll ssid :interval "3s" "scripts/wifi -l")
+(defpoll calendar-day :interval "20h" "+%d")
+(defpoll calendar-year :interval "20h" "+%Y")
+(defpoll calendar-month :interval "20h" "%+B")
+(defpoll CPU_USAGE :interval "2s" `scripts/system --cpu`)
+(defpoll MEM_USAGE :interval "2s" `scripts/system --mem`)
+(defpoll GPU :interval "2s" `scripts/system --gpu`)
+(defpoll STORAGE :interval "2s" `scripts/system --storage`)
+
+;; =================== WIDGETS =====================
+(defwidget sep []
+  (box :class "seperator-box" :vexpand "false" :hexpand "false"
+    (label :class "seperator" :text "|")))
+
+(defwidget left []
+  (box :orientation "h" :space-evenly "false" :class "launcher-box"
+    (button :class "app-launcher" :tooltip "Open Application Launcher" :onclick "scripts/launch-apps -l" "󱓞")
+    (button :class "control-center-launcher" :tooltip "Open Control Center." :onclick "scripts/launch-apps -a" "")
+    (button :class "dashboard-launcher" :tooltip "Open Dashboard." :onclick "scripts/launch-apps -d" "")
+    (button :class "layout-toggle" :tooltip "Change layout to floating or tiling." :onclick "scripts/change-layout --toggle" layout-status)
+    (button :class "open-term" :tooltip "Open Terminal." :onclick "scripts/launch-apps -t" "")
+    (button :class "open-vitals" :tooltip "System Usage" :onclick "scripts/launch-apps -v" "󰣐 Vitals")))
+
+(defwidget music []
+  (eventbox :onhover "/usr/bin/eww -c $HOME/.config/eww/Bar/ update music-reveal=true"
+    :onhoverlost "/usr/bin/eww -c $HOME/.config/eww/Bar/ update music-reveal=false"
+    (box :class "music-box" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (label :class "logo" :text "")
+      (button :class "song-title" music-status)
+      (revealer :transition "slideleft" :reveal music-reveal :duration "350ms"
+        (box :vexpand "false" :hexpand "false" :orientation "h"
+          (button :class "song-prev" :onclick "playerctl previous" "")
+          (button :class "song-pp" :onclick "playerctl play-pause" "")
+          (button :class "song-next" :onclick "playerctl next" ""))))))
+
+(defwidget systray []
+  (box :class "systray-box" :space-evenly "false" :hexpand "false" :vexpand "false"
+    (button :class "systray" :onclick "~/.scripts/systray.sh" "")))
+
+(defwidget clock []
+  (box :class "clock-box" :space-evenly "false" :hexpand "false" :vexpand "false"
+    (button :class "clock" :onclick "scripts/launch-apps -c" "${hours}:${minutes} ${time-state}")))
+
+(defwidget battery []
+  (eventbox :onhover "/usr/bin/eww -c $HOME/.config/eww/Bar/ update bat-reveal=true"
+    :onhoverlost "/usr/bin/eww -c $HOME/.config/eww/Bar/ update bat-reveal=false"
+    (box :class "battery-box" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (box :class "bat-icon" :style "background-image: url('${battery}');")
+      (revealer :transition "slideright" :reveal bat-reveal :duration "350ms"
+        (label :class "bat-label" :text "${battery-lvl}")))))
+
+(defwidget wifi []
+  (eventbox :onhover "/usr/bin/eww -c $HOME/.config/eww/Bar/ update wifi-reveal=true"
+    :onhoverlost "/usr/bin/eww -c $HOME/.config/eww/Bar/ update wifi-reveal=false"
+    (box :class "wifi-box" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (box :class "wifi-icon" :style "background-image: url('../../../.local/icons/wifi-full.svg');")
+      (revealer :transition "slideright" :reveal wifi-reveal :duration "350ms"
+        (label :class "wifi-label" :text "${ssid}")))))
+
+(defwidget brightness []
+  (eventbox :onhover "/usr/bin/eww -c $HOME/.config/eww/Bar/ update brightness-reveal=true"
+    :onhoverlost "/usr/bin/eww -c $HOME/.config/eww/Bar/ update brightness-reveal=false"
+    (box :class "brightness-box" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (box :class "brightness-icon" :style "background-image: url('../../../.local/icons/bri-high.svg');")
+      (revealer :transition "slideright" :reveal brightness-reveal :duration "350ms"
+        (scale :class "brightness-scale" :width 100 :active true :value brightness-lvl :min 0 :max 101 :orientation "h" :onchange "brightnessctl s {}%")))))
+
+(defwidget volume []
+  (eventbox :onhover "/usr/bin/eww -c $HOME/.config/eww/Bar/ update volume-reveal=true"
+    :onhoverlost "/usr/bin/eww -c $HOME/.config/eww/Bar/ update volume-reveal=false"
+    (box :class "volume-box" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (label :class "volume-icon" :text "")
+      (revealer :transition "slideright" :reveal volume-reveal :duration "350ms"
+        (scale :class "volume-scale" :width 100 :active true :value volume-lvl :min 0 :max 101 :orientation "h" :onchange "amixer set Master {}% && canberra-gtk-play -f /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")))))
+
+(defwidget bluetooth []
+  (eventbox :onhover "/usr/bin/eww -c $HOME/.config/eww/Bar/ update bluetooth-reveal=true"
+    :onhoverlost "/usr/bin/eww -c $HOME/.config/eww/Bar/ update bluetooth-reveal=false"
+    (box :class "bluetooth-box" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (label :class "bluetooth-icon" :text bluetooth)
+      (revealer :transition "slideright" :reveal bluetooth-reveal :duration "350ms"
+        (label :class "bluetooth-label" :text bluetooth-state )))))
+
+(defwidget wigcalendar [] (box :class "calendar" :orientation "v" :spacing 10 (calendar :class "calendar" :day calendar-day
+  :month calendar-month :year calendar-year)))
+
+(defwidget system []
+  (box :class "genwin" :vexpand "false" :hexpand "false"
+    (box :orientation "v" :spacing 25 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (box :class "cpu_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "iconcpu" :text "󰘚")
+        (scale :min 0 :max 100 :value CPU_USAGE :text :active "false")
+        (label :class "text-cpu" :text "${CPU_USAGE}%"))
+      (box :class "mem_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "iconmem" :text "󰍛")
+        (scale :min 0 :max 100 :value MEM_USAGE :active "false")
+        (label :class "text-ram" :text "${MEM_USAGE}%"))
+      (box :class "gpu_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "icongpu" :text "󰆦")
+        (scale :min 0 :max 100 :value GPU :active "false")
+        (label :class "text-gpu" :text "${GPU}%"))
+      (box :class "stor_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "iconstor" :text "󰋊")
+        (scale :min 0 :max 100 :value STORAGE :active "false")
+        (label :class "text-disk" :text "${STORAGE}%")))))
+  
+(defwidget center []
+  (box :orientation "h"
+    :space-evenly false
+    :halign "center"
+    :class "center-modules"
+    (music)))
+
+(defwidget end []
+  (box :orientation "h"
+    :space-evenly false
+    :halign "end"
+    :class "center-modules"
+    (bluetooth)
+    (volume)
+    (brightness)
+    (wifi)
+    (battery)
+    (sep)
+    (systray)
+    (clock)))
+
+(defwidget start []
+  (box :orientation "h"
+    :space-evenly false
+    :halign "start"
+    :class "start-modules"
+    (left)))
+
+(defwidget bar-stuff []
+  (box :class "bar-class"
+    :orientation "h"
+    (start)
+    (center)
+    (end)))
+
+;; =================== WINDOWS =====================
+
+(defwindow panel
+  :geometry (geometry :x "0%" :y "-15px" :width "98%" :height "55px" :anchor "bottom center")
+  :stacking "bg"
+  :windowtype "dock"
+  :monitor 0
+  (bar-stuff))
+
+(defwindow wincalendar :monitor 0 :geometry (geometry :x "690px" :y "275px" :anchor "center" :width "500px" :height "350px") 
+  (calendar))
+
+(defwindow system :monitor 0 :stacking "fg" :focusable "false" :screen 1
+  :geometry (geometry :x 120 :y 710 :width 300 :height 283)
+  (system))

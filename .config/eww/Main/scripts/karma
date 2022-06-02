@@ -1,0 +1,13 @@
+#!/bin/python
+
+# do `pip install praw` to install the library otherwise this will not work.
+import praw
+reddit = praw.Reddit(
+    client_id="cliend_ID",
+    client_secret="client_SECRET",
+    username="Reddit username",
+    user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0",
+    password="reddit password"
+)
+user = reddit.redditor('username for karma lookup')
+print(user.link_karma + user.comment_karma + user.awarder_karma + user.awardee_karma)

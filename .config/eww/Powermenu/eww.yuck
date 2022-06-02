@@ -1,0 +1,56 @@
+(defpoll username :interval "10h" "scripts/details.sh --name")
+(defpoll profile-picture :interval "10h" "scripts/details.sh --image")
+(defpoll message :interval "10h" "scripts/quote.py")
+
+(defwidget bg []
+  (box :hexpand "false" :class "bg"))
+
+(defwidget closer []
+  (eventbox :onclick "eww -c $HOME/.config/eww/Powermenu close-all"))
+
+(defwidget buttons []
+  (box :orientation "h" :class "power-buttons-box" :spacing 70
+    (button :class "shutdown" :onclick "shutdown -h now" "")
+    (button :class "restart" :onclick "reboot" "")
+    (button :class "suspend" :onclick "systemctl suspend" "")
+    (button :class "logout" :onclick "pkill worm" "")
+    (button :class "lock" :onclick "../../../.scripts/lock-run" "")))
+
+(defwidget close-exit []
+  (box :class "close-exit-box" :space-evenly "false"
+    (button :class "close-exit-button" :onclick "eww -c $HOME/.config/eww/Powermenu close-all" "󰅙")))
+
+(defwidget quotes []
+  (box :orientation "h" :space-evenly "false" :halign "center" :valign "center" :hexpand "false"
+    (label :class "quote" :text "${message}")))
+
+(defwidget profile []
+  (box :orientation "v" :class "profile-and-name-box" :spacing 30 :hexpand "false"
+    (box :space-evenly "false" :hexpand "false" :class "profile" :style "background-image: url('${profile-picture}');")
+    (label :class "name" :text "${username}" :valign "start")))
+
+(defwindow background :stacking "fg" :monitor 0 :focusable "false" :windowtype "desktop"
+  :geometry (geometry :width "100%" :height "100%")
+  (bg))
+
+(defwindow background-closer
+  :monitor 0
+  :geometry (geometry :width "100%" :height "100%")
+  :stacking "fg"
+  (closer))
+
+(defwindow buttons-exit :stacking "fg" :monitor 0 :focusable "false"
+  :geometry (geometry :width "170px" :anchor "top center" :y 580)
+  (buttons))
+
+(defwindow profile-exit :stacking "fg" :monitor 0 :focusable "false"
+  :geometry (geometry :width "170px" :anchor "top center" :y 200)
+  (profile))
+
+(defwindow quotes-exit :stacking "fg" :monitor 0 :focusable "false"
+  :geometry (geometry :anchor "top center" :y 480)
+  (quotes))
+
+(defwindow close-exit :stacking "fg" :monitor 0 :focusable "false"
+  :geometry (geometry :x 1860 :y 30 :width "40px" :height "40px")
+  (close-exit))

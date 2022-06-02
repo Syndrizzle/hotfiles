@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "/tmp/spotify/cover.png"

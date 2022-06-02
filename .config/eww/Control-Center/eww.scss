@@ -1,0 +1,358 @@
+/** Colors *******************************************/
+$bg: #232634;
+$bg-alt: #292c3c;
+$another-bg-alt: #313244;
+$fg: #cdd6f4;
+$fg-alt: #bac2de;
+$red: #e78284;
+$red-alt: #ed8796;
+$green: #a6d189;
+$green-alt: #a6da95;
+$yellow: #e5c890;
+$yellow-alt: #eed49f;
+$orange: #ef9f76;
+$orange-alt: #f5a97f;
+$blue: #8caaee;
+$blue-alt: #8aadf4;
+$purple: #ca9ee6;
+$purple-alt: #c6a0f6;
+$cyan: #99d1db;
+$cyan-alt: #91d7e3;
+$gray: #626880;
+$gray-alt: #5b6078;
+
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+.control-center {
+  background-color: $bg;
+  font-family: "Iosevka Nerd Font", "Material Design Icons Desktop";
+  border-radius: 20px;
+}
+
+.control-center-headers {
+  padding: 1.5em 3em 1em 2em;
+  color: $red;
+}
+
+.control-center-headers-label {
+  font-size: 28;
+  font-weight: bold;
+  color: $green;
+  font-family: Proxima Nova;
+  text-shadow: 0px 0px 10px #000000;
+}
+
+.control-center-headers-clear {
+  font-weight: bold;
+  padding: 0.7em 0.7em 0.7em 0.7em;
+  margin-bottom: 0.2em;
+  color: $blue;
+  background-color: $bg-alt;
+  border-radius: 30px;
+  font-family: "Material Design Icons Desktop";
+  font-size: 22px;
+  box-shadow: 0px 0px 10px #121212;
+}
+
+.control-center-headers-clear:hover {
+  background-color: $bg;
+}
+
+.control-center-empty-box {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.control-center-empty-label {
+  padding-top: 2em;
+  color: $orange;
+  font-size: 22;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.control-center-scroll-box {
+  padding: 2em 1.5em 0 1.1em;
+}
+
+.control-center-card-eventbox {
+  background-color: $bg-alt;
+  border-radius: 15px;
+}
+
+.control-center-card-eventbox:hover {
+  background-color: $another-bg-alt;
+}
+
+.control-center-card-box {
+  padding: 2em;
+}
+
+.control-center-separator {
+  padding: 0;
+  color: $gray-alt;
+}
+
+.control-center-LOW {
+  background-color: $gray;
+  color: $yellow;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.control-center-NORMAL {
+  background-color: $gray;
+  color: $purple;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.control-center-CRITICAL {
+  background-color: $gray;
+  color: $red;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.control-center-OTHER {
+  background-color: $gray;
+  color: $green;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.control-center-spotify {
+  background-color: $gray;
+  color: $green;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.control-center-sxhkd {
+  background-color: $gray;
+  color: $blue;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.control-center-brightness {
+  background-color: $gray;
+  color: $yellow;
+  padding: 0 1em 0 0.7em;
+  font-size: 30;
+}
+
+.control-center-summary {
+  font-weight: bold;
+  font-size: 17;
+  color: $yellow;
+}
+
+.control-center-card-notify-close {
+  color: $gray-alt;
+  border-radius: 50%;
+  margin-bottom: 0.3em;
+}
+
+.control-center-card-notify-close:hover {
+  color: $red;
+  border-radius: 3px;
+  background-color: $gray;
+}
+
+.control-center-body {
+  color: $fg;
+}
+
+.control-center-tray {
+  background-color: $bg-alt;
+  margin: 20px 20px 0px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #141414;
+}
+
+.control-center-buttons {
+  background-color: $bg;
+  margin: 10px 10px 0px 10px;
+  border-radius: 20px;
+  padding: 15px 0px 15px 0px;
+}
+
+.net-status-on {
+  color: $bg;
+  background-color: $blue;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.net-status-off {
+  color: $fg;
+  background-color: $gray;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.volume-status-on {
+  color: $bg;
+  background-color: $green;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.volume-status-off {
+  color: $fg;
+  background-color: $gray;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.bluetooth-status-on {
+  color: $bg;
+  background-color: $purple;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.bluetooth-status-off {
+  color: $fg;
+  background-color: $gray;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.dunst-status-on {
+  font-family: "Feather";
+  color: $bg;
+  background-color: $red;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.dunst-status-off {
+  font-family: "Feather";
+  color: $fg;
+  background-color:  $gray;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.redshift-status-on {
+  color: $bg;
+  background-color: $yellow;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.redshift-status-off {
+  color: $fg;
+  background-color: $gray;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.volume-slider-stuff {
+  margin: 20px 20px 10px 20px;
+}
+
+.volume-slider-icon {
+  color: $yellow;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 22px;
+  background-color: $gray;
+  border-radius: 50px;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+
+.volume-slider trough {
+  border-radius: 20px;
+  background-color: $gray;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.volume-slider highlight {
+  padding: 0.5em;
+  border-radius: 20px;
+  background: linear-gradient(to left, $red, $red-alt);
+}
+
+.mic-slider-stuff {
+  margin: 10px 20px 10px 20px;
+}
+
+.mic-slider-icon {
+  color: $purple;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 22px;
+  background-color: $gray;
+  border-radius: 50px;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+
+.mic-slider trough {
+  border-radius: 20px;
+  background-color: $gray;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.mic-slider highlight {
+  padding: 0.5em;
+  border-radius: 20px;
+  background: linear-gradient(to left, $blue, $blue-alt);
+}
+
+.brightness-slider-stuff {
+  margin: 7px 20px 7px 20px;
+}
+
+.brightness-slider-icon {
+  color: $green;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 20px;
+  background-color: $gray;
+  border-radius: 50px;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.brightness-slider trough {
+    border-radius: 20px;
+    background-color: $gray;
+    box-shadow: 0px 0px 7px #141414;
+ }
+  
+  .brightness-slider highlight {
+    padding: 0.5em;
+    border-radius: 20px;
+    background: linear-gradient(to left, $yellow, $yellow-alt);
+  }

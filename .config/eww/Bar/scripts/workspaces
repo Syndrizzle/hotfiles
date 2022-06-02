@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# from https://github.com/druskus20/eugh
+
+d0=""
+d1=""
+d2=""
+d3=""
+d4=""
+# Checks if a list ($1) contains an element ($2)
+contains() {
+    for e in $1; do
+        [ "$e" -eq "$2" ] && echo 1 && return
+    done
+    echo 0
+}
+
+function print_workspaces {
+    buf=""
+    desktops=$(wmctrl -d | awk '{print $10}')
+    focused_desktop=$(wmctrl -d | grep '*' | awk '{print $1}')
+    for d in $desktops; do
+        if [ "$(contains "$focused_desktop" "$d")" -eq 1 ]; then
+            ws=$d
+            class="focused"
+        elif [ "$(contains "$occupied_desktops" "$d")" -eq 1 ]; then
+            ws=$d
+            class="occupied"
+        else
+            ws=$d
+            class="empty"
+        fi
+        ws_eval="d${ws}"
+        ws_res=$(eval "echo \${$ws_eval}")
+        buf="$buf (button :class \"$class\" :onclick \"wmctrl -s $ws\" \"$ws_res\")"
+    done
+
+    echo "(box :orientation \"h\" :spacing 10 :class \"workspaces\" $buf)"
+}
+
+print_workspaces

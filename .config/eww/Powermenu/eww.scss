@@ -1,0 +1,94 @@
+* {
+    all: unset;
+    transition: 200ms ease-out;
+    background-color: transparent;
+}
+
+.bg {
+    background: rgba($color: #131020, $alpha: 0.5);
+}
+
+.power-buttons-box {
+    background-color: unset;
+}
+
+.profile {
+    background-size: 170px;
+    min-height: 170px;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+}
+
+.name {
+    font-family: "Proxima Nova";
+    font-size: 25px;
+    font-weight: bold;
+    color: #cdd6f4;
+}
+
+.quote {
+    font-family: "Proxima Nova";
+    font-size: 80px;
+    color: #cdd6f4;
+}
+
+.shutdown {
+    font-family: "feather";
+    font-size: 70px;
+    background: rgba($color: #b7bdf8, $alpha: 0.3);
+    margin: 50px 0px 50px 50px;
+    padding: 50px 50px 50px 50px;
+    border-radius: 1000px;
+    color: #ed8796;
+}
+
+.restart {
+    font-family: "feather";
+    font-size: 70px;
+    background: rgba($color: #b7bdf8, $alpha: 0.3);
+    margin: 50px 0px 50px 50px;
+    padding: 50px 50px 50px 50px;
+    border-radius: 1000px;
+    color: #a6da95;
+}
+
+
+.logout {
+    font-family: "feather";
+    font-size: 70px;
+    background: rgba($color: #b7bdf8, $alpha: 0.3);
+    margin: 50px 0px 50px 50px;
+    padding: 50px 50px 50px 50px;
+    border-radius: 1000px;
+    color: #8aadf4;
+}
+
+
+.lock {
+    font-family: "feather";
+    font-size: 70px;
+    background: rgba($color: #b7bdf8, $alpha: 0.3);
+    margin: 50px 0px 50px 50px;
+    padding: 50px 50px 50px 50px;
+    border-radius: 1000px;
+    color: #c6a0f6;
+}
+
+.suspend {
+    font-family: "feather";
+    font-size: 70px;
+    background: rgba($color: #b7bdf8, $alpha: 0.3);
+    margin: 50px 0px 50px 50px;
+    padding: 50px 50px 50px 50px;
+    border-radius: 1000px;
+    color: #eed49f;
+}
+
+.close-exit-button {
+    padding: 4px 4px 4px 4px;
+    font-family: "Material Design Icons Desktop";
+    font-size: 32px;
+    background: rgba($color: #b7bdf8, $alpha: 0.3);
+    color: #ed8796;
+    border-radius: 100px;
+}

@@ -1,0 +1,65 @@
+(defvar volume-hidden false)
+(defvar volume-level 50)
+(defvar volume-muted false)
+(defvar brightness-hidden false)
+(defvar brightness-level 50)
+(defwindow volume-indicator
+  :monitor 0
+  :geometry (geometry :y "100px" :x "0px" :width "250px" :height "200px" :anchor "center bottom")
+  :windowtype "dock"
+  :wm-ignore true
+  :stacking "fg"
+  
+  (box :class "volume-window"
+    :orientation "v"
+    :space-evenly "false"
+    (box :class "volume-spacer" :style {volume-hidden ? "padding-top: 215px;" : "padding-top: 30px;"})
+    (box :class "volume-widget"
+      :orientation "h"
+      :space-evenly false
+      :spacing 10
+      (label :text {volume-muted ? "" :
+        volume-level == 0 ? "" :
+        volume-level < 25 ? "" :
+        volume-level < 50 ? "" :
+        volume-level < 75 ? "" :
+        ""}
+        
+      :class 'volume-icon ${volume-muted ? "volume-icon-muted" : ""}')
+      
+      (scale :class 'volume-slider ${volume-muted ? "volume-slider-muted" : ""}'
+        :hexpand "true"
+        :min 0
+        :max 101
+        :height 8
+        :value volume-level
+      :onchange "pamixer --set-volume {}"))))
+
+(defwindow brightness-indicator
+  :monitor 0
+  :geometry (geometry :y "100px" :x "0px" :width "250px" :height "200px" :anchor "center bottom")
+  :windowtype "dock"
+  :wm-ignore true
+  :stacking "fg"
+  (box :class "brightness-window"
+    :orientation "v"
+    :space-evenly "false"
+    (box :class "brightness-spacer" :style {brightness-hidden ? "padding-top: 215px;" : "padding-top: 30px;"})
+    (box :class "brightness-widget"
+      :orientation "h"
+      :space-evenly false
+      :spacing 10
+      (label :text {brightness-level < 25 ? "󰃞" :
+        brightness-level < 50 ? "󰃟" :
+        brightness-level < 75 ? "󰃝" :
+        "󰃠"}
+      :class 'brightness-icon')
+      
+      (scale :class 'brightness-slider'
+        :hexpand "true"
+        :min 0
+        :max 101
+        :height 8
+        :value brightness-level
+      :onchange "brightnessctl s {}%"))))
+

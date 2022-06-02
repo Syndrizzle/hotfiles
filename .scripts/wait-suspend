@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while true;
+do
+	inactiu=$(xprintidle)
+	if [ $inactiu -gt 900000 ]
+	then
+		systemctl suspend
+	fi
+	sleep 1m 
+done

@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Credits: RaphaelRochet/arch-update
+# https://github.com/RaphaelRochet/arch-update
+
+upd=$(/bin/sh -c "/usr/bin/checkupdates && /usr/bin/paru -Qqu -a")
+
+icon() {
+        if [[ ! -z "$upd" ]]; then
+                echo $HOME/.local/icons/System/updates-available.svg
+                count=$(/bin/sh -c "/usr/bin/checkupdates && /usr/bin/paru -Qqu -a" | wc -l)
+                notify-send "You have pending updates:" "Updates Available: <b>$count</b>" --icon="$HOME/.local/icons/System/updates-available.svg" --expire-time=5000
+        else
+                echo $HOME/.local/icons/System/no-updates.svg
+        fi
+}
+
+count() {
+        if [[ ! -z "$upd" ]]; then
+                count=$(/bin/sh -c "/usr/bin/checkupdates && /usr/bin/paru -Qqu -a" | wc -l)
+                echo "Pending Updates: $count"
+        else
+                count=$(/bin/sh -c "/usr/bin/checkupdates && /usr/bin/paru -Qqu -a" | wc -l)
+                echo "Pending Updates: $count"
+        fi
+}
+
+updates() {
+        echo $upd
+}
+
+if [[ $1 == '-i' ]]; then
+        icon
+elif [[ $1 == '-l' ]]; then
+        count
+elif [[ $1 == '-u' ]]; then
+        updates
+fi

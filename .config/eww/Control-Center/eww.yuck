@@ -1,0 +1,124 @@
+;; for notifications
+(deflisten control-center-cards "scripts/logger.zsh subscribe")
+(defpoll control-center-critical :interval "1s" "scripts/logger.zsh crits")
+
+;; for controls and tray
+(defvar net-toggle "scripts/net.sh --toggle" )
+(defpoll net-status :interval "1s" "scripts/net.sh --status")
+(defvar volume-toggle "scripts/vol.sh --toggle")
+(defpoll volume-status :interval "1s" "scripts/vol.sh --status")
+(defvar bluetooth-toggle "scripts/bluetooth.sh --toggle")
+(defpoll bluetooth-status :interval "1s" "scripts/bluetooth.sh --status")
+(defpoll bluetooth-icon :interval "1s" "scripts/bluetooth.sh --icon")
+(defvar dunst-toggle "scripts/dunst.sh --toggle")
+(defpoll dunst-status :interval "1s" "scripts/dunst.sh --status")
+(defpoll redshift :interval "1s" "[ $(pidof redshift) ] && echo '󰛨' || echo '󰹏'")
+
+;; for sliders
+(defpoll volume :interval "1s" "~/.config/eww/Control-Center/scripts/getvol.sh")
+(defpoll volume-slider-indicator :interval "0s" "scripts/volume-slider.sh")
+(defpoll mic :interval "1s" "~/.config/eww/Control-Center/scripts/getmic.sh")
+(defpoll mic-slider-indicator :interval "0s" "scripts/mic-slider.sh")
+(defpoll brightness :interval "1s" "~/.config/eww/Control-Center/scripts/brightness-slider.sh --value")
+(defpoll brightness-slider-indicator :interval "0s" "scripts/brightness-slider.sh --icon")
+
+(defwidget control-center[]
+  (box :orientation "vertical"
+    :space-evenly false
+    (box :space-evenly false
+      :class "control-center-headers"
+      :hexpand true
+      
+      (label :text "Notifications"
+        :class "control-center-headers-label"
+        :halign "start"
+      :hexpand true)
+      (button :onclick "scripts/logger.zsh clear"
+        :class "control-center-headers-clear"
+        :halign "end"
+      "󰎟"))
+    
+    (literal :content control-center-cards)
+    (tray)))
+
+(defwidget card [?class summary body glyph ?glyph_class ?SL ?M ?L ?R]
+  (eventbox :onmiddleclick M
+    :onclick L
+    :onrightclick R
+    :class "control-center-card-eventbox"
+    (box :space-evenly false
+      (label :class "control-center-glyph ${glyph_class}"
+      :text glyph)
+      
+      (box :orientation "vertical"
+        :class class
+        :space-evenly false
+        :class "control-center-card-box"
+        
+        (box :space-evenly false
+          (label :limit-width 25
+            :wrap true
+            :text summary
+            :class "control-center-summary"
+            :halign "start"
+          :hexpand true)
+          (button :onclick "scripts/logger.zsh rm_id ${SL}"
+            :class "control-center-card-notify-close"
+            :halign "end"
+            (label :text "󰅙")))
+        
+        (label :text "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          :class "control-center-separator"
+        :halign "center")
+        (label :limit-width 40
+          :halign "start"
+          :wrap true
+          :text body
+        :class "control-center-body")))))
+
+(defwidget tray []
+  (box :class "control-center-tray" :height 280
+    (box :orientation "v" :space-evenly "false"
+      (box :class "control-center-buttons" :orientation "h"
+        (button :tooltip "Toggle Network [Wi-Fi]" :class "net-status-button ${net-status == "󰤨" ? "net-status-on" : "net-status-off"}" :onclick net-toggle net-status)
+        (button :tooltip "Toggle Sound" :class "volume-status-button ${volume-status == "󰕾" ? "volume-status-on" : "volume-status-off"}" :onclick volume-toggle volume-status)
+        (button :tooltip "Toggle Bluetooth" :class "bluetooth-status-button ${bluetooth-status == "󰂯" ? "bluetooth-status-on" : "bluetooth-status-off"}" :onclick bluetooth-toggle bluetooth-icon)
+        (button :tooltip "Toggle Do not Disturb" :class "dunst-status-button ${dunst-status == "" ? "dunst-status-on" : "dunst-status-off"}" :onclick dunst-toggle dunst-status)
+        (button :tooltip "Toggle Night Light" :class "redshift-status-button ${redshift == "󰛨" ? "redshift-status-on" : "redshift-status-off"}" :onclick "[ $(pidof redshift) ] && pkill redshift || redshift &" redshift))
+      (box :orientation "h" :class "volume-slider-stuff" :space-evenly "false"
+        (button :onclick "amixer set Master toggle" :class "volume-slider-icon" "${volume-slider-indicator}")
+        (scale :class "volume-slider"
+                :value volume
+                :orientation "h"
+                :width 370
+                :active true
+                :max 101
+                :min 0
+                :onchange "amixer set Master {}% && canberra-gtk-play -f /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"))
+      (box :orientation "h" :class "mic-slider-stuff" :space-evenly "false"
+        (button :onclick "amixer set Capture toggle" :class "mic-slider-icon" "${mic-slider-indicator}")
+        (scale :class "mic-slider"
+                :value mic
+                :orientation "h"
+                :width 370
+                :active true
+                :max 101
+                :min 0
+                :onchange "amixer set Capture {}%"))
+      (box :orientation "h" :class "brightness-slider-stuff" :space-evenly "false"
+        (button :class "brightness-slider-icon" "${brightness-slider-indicator}")
+        (scale :class "brightness-slider"
+                :orientation "h"
+                :max 101
+                :min 0
+                :active true
+                :value brightness
+                :width 370
+                :onchange "brightnessctl s {}%")))))
+
+(defwindow control-center :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :monitor 0
+  :geometry (geometry :x 76 :width 498 :height 985 :y 20 :x 20)
+  (control-center))

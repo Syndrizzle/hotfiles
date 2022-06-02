@@ -1,0 +1,2 @@
+#!/bin/bash
+eww -c $HOME/.config/eww/Control-Center open --toggle control-center

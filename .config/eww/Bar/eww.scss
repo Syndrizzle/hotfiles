@@ -1,0 +1,375 @@
+$bg: #232634;
+$bg-alt: #292c3c;
+$fg: #cdd6f4;
+$fg-alt: #bac2de;
+$red: #e78284;
+$red-alt: #ed8796;
+$green: #a6d189;
+$green-alt: #a6da95;
+$yellow: #e5c890;
+$yellow-alt: #eed49f;
+$orange: #ef9f76;
+$orange-alt: #f5a97f;
+$blue: #8caaee;
+$blue-alt: #8aadf4;
+$purple: #ca9ee6;
+$purple-alt: #c6a0f6;
+$cyan: #99d1db;
+$cyan-alt: #91d7e3;
+$gray: #626880;
+$gray-alt: #5b6078;
+
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+.panel {
+  background-color: #232634;
+}
+
+.genwin {
+  background-color: #232634;
+  border-radius: 15px;
+}
+
+
+.app-launcher {
+  font-family: "Material Design Icons Desktop";
+  font-size: 24px;
+  padding: 0px 6px 0px 6px;
+  margin: 9px 11px 9px 11px;
+  border-radius: 10px;
+  color: $purple;
+}
+
+.control-center-launcher {
+  font-family: "Favorites";
+  font-size: 28px;
+  padding: 0px 4px 0px 4px;
+  margin: 9px 11px 9px 0px;
+  border-radius: 10px;
+  color: $red;
+}
+
+.dashboard-launcher {
+  font-family: "Favorites";
+  font-size: 28px;
+  padding: 0px 4px 0px 4px;
+  margin: 9px 11px 9px 0px;
+  border-radius: 10px;
+  color: $orange;
+}
+
+.song-title {
+  color: $fg;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 3px 5px 0px 0px;
+}
+
+.song-pp {
+  color: $blue;
+  font-size: 20px;
+  margin: 3px 0px 0px 5px;
+  font-family: "Favorites";
+}
+
+.song-prev,
+.song-next {
+  color: $yellow;
+  font-size: 20px;
+  margin: 3px 0px 0px 5px;
+  font-family: "Favorites";
+}
+
+.systray-box {
+  margin: 9px 14px 9px 14px;
+}
+
+.systray {
+  font-family: "Favorites";
+  font-size: 16px;
+  background-color: $gray;
+  padding: 0px 5px 0px 5px;
+  margin: 5px 0px 5px 0px;
+  border-radius: 8px;
+  color: $fg;
+}
+
+.clock {
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 20px;
+  color: $fg-alt;
+}
+
+.logo {
+  color: $green;
+  font-family: "Favorites";
+  font-size: 28px;
+  padding-right: 10px;
+}
+
+.layout-toggle {
+  font-family: "Material Design Icons Desktop";
+  font-size: 28px;
+  padding: 0px 4px 0px 4px;
+  margin: 9px 11px 9px 0px;
+  color: $blue;
+  border-radius: 10px;
+}
+
+.open-term {
+  font-family: "Favorites";
+  font-size: 28px;
+  padding: 0px 4px 0px 4px;
+  margin: 9px 11px 9px 0px;
+  border-radius: 10px;
+  color: $yellow;
+  font-weight: bold;
+}
+
+.bat-icon {
+  background-size: contain;
+  background-position: center;
+  min-height: 30px;
+  min-width: 30px;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
+.bat-label {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  padding: 0px 10px 0px 0px;
+  color: $green;
+  font-size: 20px;
+}
+
+.seperator {
+  font-size: 30px;
+  font-weight: bold;
+  color: $gray-alt;
+  padding: 0px 0px 0px 10px;
+}
+
+.wifi-icon {
+  background-size: contain;
+  background-position: center;
+  min-height: 22px;
+  min-width: 22px;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
+.wifi-label {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  padding: 0px 10px 0px 0px;
+  color: $red;
+  font-size: 20px;
+}
+
+.brightness-icon {
+  background-size: contain;
+  background-position: center;
+  min-height: 24px;
+  min-width: 24px;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
+.brightness-scale trough {
+  border-radius: 20px;
+  background-color: $gray;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.brightness-scale highlight {
+  padding: 0.5em;
+  border-radius: 20px;
+  background: linear-gradient(to right, $yellow-alt, $yellow);
+}
+
+.volume-icon {
+  font-family: "Favorites";
+  font-size: 22px;
+  color: $green;
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
+.volume-scale trough {
+  border-radius: 20px;
+  background-color: $gray;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.volume-scale highlight {
+  padding: 0.5em;
+  border-radius: 20px;
+  background: linear-gradient(to left, $green, $green-alt);
+}
+
+.bluetooth-icon {
+  font-family: "Material Design Icons Desktop";
+  font-size: 22px;
+  color: $red;
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
+.bluetooth-label {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  padding: 0px 10px 0px 0px;
+  color: $green;
+  font-size: 20px;
+}
+
+/*********Calendar*********/
+calendar {
+  background-color: $bg;
+  font-size: 24px;
+  color: $fg;
+  border-radius: 15px;
+}
+
+calendar:selected {
+  color: $orange;
+}
+
+calendar {
+  &.highlight {
+       padding: 20px;
+   }
+
+   padding: 5px 5px 5px 5px;
+   margin-left: 10px;
+ }
+
+calendar.header {
+  color: $green;
+  font-weight: 900;
+  font-size: 24px;
+  background-color: $bg;
+  border: $bg;
+}
+
+calendar.button {
+  color: $blue;
+  font-weight: bold;
+  background-color: $bg;
+  padding-left: 10px;
+}
+
+calendar.highlight {
+  color: $yellow;
+  font-weight: bold;
+  background-color: $bg;
+}
+
+calendar:indeterminate {
+  color: $red;
+  background-color: $bg;
+}
+
+.calendar {
+  background-color: $bg;
+}
+
+/** System ********************************************/
+.iconcpu,
+.iconmem,
+.icongpu,
+.iconstor {
+        font-size: 32px;
+        font-weight: normal;
+}
+
+.iconcpu {
+        color: $red;
+}
+
+.text-cpu {
+        color: $red;
+        font-weight: bold;
+}
+
+.iconmem {
+        color: $blue;
+}
+
+.text-ram {
+        color: $blue;
+        font-weight: bold;
+}
+
+.icongpu {
+        color: $yellow;
+}
+
+.text-gpu {
+        color: $yellow;
+        font-weight: bold;
+}
+
+.iconstor {
+        color: $green;
+}
+
+.text-disk {
+        color: $green;
+        font-weight: bold;
+}
+
+.cpu_bar,
+.mem_bar,
+.gpu_bar,
+.stor_bar,
+scale trough {
+        all: unset;
+        background-color: $gray;
+        border-radius: 16px;
+        min-height: 5px;
+        min-width: 100px;
+}
+
+.cpu_bar,
+.mem_bar,
+.gpu_bar,
+.stor_bar,
+scale trough highlight {
+        all: unset;
+        border-radius: 16px;
+}
+
+.cpu_bar scale trough highlight {
+        background-color: $red;
+}
+
+.mem_bar scale trough highlight {
+        background-color: $blue
+}
+
+.gpu_bar scale trough highlight {
+        background-color: $yellow;
+}
+
+.stor_bar scale trough highlight {
+        background-color: $green;
+}
+
+.open-vitals {
+  font-family: "Proxima Nova", "Material Design Icons Desktop";
+  font-size: 22px;
+  font-weight: bold;
+  padding: 2px 8px 0px 8px;
+  margin: 9px 11px 9px 0px;
+  border-radius: 10px;
+  color: $green;
+}

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+clock_time() {
+        date "+%I:%M"
+        # uncomment for 24-h clock
+        # date "+%H:%M"
+}
+
+clock_date() {
+        date "+%A, %b %Y"
+}
+
+if [[ "$1" == "--time" ]]; then
+	clock_time
+elif [[ "$1" == "--date" ]]; then
+	clock_date
+fi

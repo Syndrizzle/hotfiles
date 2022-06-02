@@ -1,0 +1,71 @@
+;;  weather
+(defwidget weather []
+  (box :class "weather_win"
+    (box :orientation "v" :spacing 0 :space-evenly "false" :vexpand "false" :hexpand "false"
+      (box :orientation "h" :spacing 0 :space-evenly "true" :vexpand "false" :hexpand "false"
+        (label :class "label_temp" :halign "start" :text TEMP)
+        (label :class "iconweather" :style "color: ${HEX};" :text ICON))
+      (box :orientation "h" :spacing 0 :vexpand "false" :hexpand "false"
+        (label :class "label_stat" :halign "start" :text STAT)))))
+;;  spotify player
+(defwidget player []
+  (box :orientation "h" :space-evenly "false"
+    (box :class "musicart" :style "background-image: url('${cover}');" art)
+    (box :orientation "v" :space-evenly "false"
+      (box :halign "start" :class "musictitle" music2)
+      (box :halign "start" :class "musicartist" music3)
+      (box :halign "start" :class "musicalbum" music4))))
+;      	(box :halign "start" :orientation "h" :class "volume" :space-evenly "false"
+  ; 			(scale :min 0 :max 101 :value volume :onchange "amixer -D pulse sset Master {}%" )
+  
+  (defwidget volume-slider-lock []
+    (box :orientation "h" :space-evenly "false" :spacing 20
+      (label :class "vol-icon" :text vol-icon)
+      (scale :class "vol-slider" :max 101 :min 0 :width 200 :value vol-info :active true :orientation "h" :onchange "amixer set Master {}%")))
+  
+  (defwidget battery-lock []
+    (box :class "bat-box" :orientation "h" :space-evenly "false"
+      (box :class "bat-icon" :style "background-image: url('${battery}');")
+      (label :class "bat-label" :text "${battery-lvl}")))
+  ;; Weather vars
+  (defpoll ICON :interval "15m"  "~/.config/eww/Lock/scripts/weather_info --icon")
+  (defpoll STAT :interval "15m"  "~/.config/eww/Lock/scripts/weather_info --stat")
+  (defpoll TEMP :interval "15m"  "~/.config/eww/Lock/scripts/weather_info --temp")
+  (defpoll HEX :interval "15m"  "~/.config/eww/Lock/scripts/weather_info --hex")
+  ;;  Music vars
+  (defpoll music :interval "5s"  "[ $(ps h -C spotify | wc -l) != 0 ] && playerctl metadata --format '{{ artist }} - {{ title }}'")
+  (defpoll music2 :interval "5s"  "[ $(ps h -C spotify | wc -l) != 0 ] && playerctl metadata --format '󰝚 {{ title }}'")
+  (defpoll music3 :interval "5s"  "[ $(ps h -C spotify | wc -l) != 0 ] && playerctl metadata --format '󰡉 {{ artist }}'")
+  (defpoll music4 :interval "5s"  "[ $(ps h -C spotify | wc -l) != 0 ] && playerctl metadata --format '󰀥 {{ album }}'")
+  (defpoll art :interval "5s"  "~/.config/eww/Lock/scripts/getart")
+  (defpoll volume :interval "3ms"  "~/.config/eww/Lock/scripts/getvol")
+  (defpoll bright :interval "1ms"  "~/.config/eww/Lock/scripts/getbri")
+  (defpoll musicstat :interval "1s"  "~/.scripts/spotifystatus")
+  (defpoll cover :interval "5s"  "[ $(ps h -C spotify | wc -l) != 0 ] && ~/.config/eww/Lock/scripts/echoart")
+  ;;  Vol var
+  (defpoll vol-icon :interval "1s" "scripts/volume -i")
+  (defpoll vol-info :interval "1s" "scripts/volume -l")
+  ;; Bat Var
+  (defpoll battery :interval "3ss" "scripts/battery -i")
+  (defpoll battery-lvl :interval "3s" "scripts/battery -l")
+  
+  
+  ;;  lock-weather
+  (defwindow lock-weather :stacking "fg" :focusable "false" :monitor 0
+    :geometry (geometry :x "60px" :y "20px" :width 300 :height 100)
+    (weather))
+  (defwindow player-spotify :monitor 0
+    :geometry (geometry :x "40px" :y "-40px" :width "600px" :height "150px" :anchor "left bottom")
+    (player))
+  (defwindow volume-slider-lock :monitor 0
+    :geometry (geometry :x -100 :y "-2px" :width "100px" :height "150px" :anchor "right bottom")
+    (volume-slider-lock))
+  
+  (defwindow battery-lock :monitor 0
+    :geometry (geometry :x -50 :y "-2px" :width "100px" :height "150px" :anchor "right top")
+    (battery-lock))
+  
+  
+  
+  
+  

@@ -1,0 +1,45 @@
+#!/bin/bash
+
+terminal() {
+        cd $HOME
+        alacritty
+}
+
+control-center() {
+        cd $HOME
+        eww -c $HOME/.config/eww/Control-Center open --toggle control-center
+}
+
+app-launcher() {
+        cd $HOME
+        rofi -show drun -theme $HOME/.local/share/rofi/themes/catppuccin.rasi
+}
+
+calendar() {
+        cd $HOME
+        eww -c $HOME/.config/eww/Bar/ open --toggle wincalendar
+}
+
+vitals() {
+        cd $HOME
+        eww -c $HOME/.config/eww/Bar/ open --toggle system
+}
+
+dashboard() {
+        cd $HOME
+        eww -c $HOME/.config/eww/Main/ open-many --toggle background system fetch dots spotify power applications links profile clock weather bluetooth mail karma volume-slider brightness-slider quote battery close
+}
+
+if [[ $1 == "-t" ]]; then
+        terminal
+elif [[ $1 == "-l" ]]; then
+        app-launcher
+elif [[ $1 == "-c" ]]; then
+        calendar
+elif [[ $1 == "-v" ]]; then
+        vitals
+elif [[ $1 == "-a" ]]; then
+        control-center
+elif [[ $1 == "-d" ]]; then
+        dashboard
+fi

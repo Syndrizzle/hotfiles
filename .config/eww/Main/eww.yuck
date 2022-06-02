@@ -1,0 +1,366 @@
+; ========================================================================
+;				VARIABLES
+; ========================================================================
+
+;; System vars
+(defpoll HOST :interval "5s" `hostname`)
+(defpoll CPU_USAGE :interval "1s" `scripts/system --cpu`)
+(defpoll MEM_USAGE :interval "1s" `scripts/system --mem`)
+(defpoll GPU :interval "1s" `scripts/system --gpu`)
+(defpoll STORAGE :interval "5s" `scripts/system --storage`)
+(defpoll TEXT_RAM :interval "1s" `psuinfo -Im | awk 'FNR == 2'`)
+
+;; fetch vars
+(defpoll wm :interval "12h" `wmctrl -m | grep Name: | awk '{print $2}'`)
+(defpoll shell :interval "10m" `echo $SHELL | awk -F'/' '{print $NF}'`)
+(defpoll uptime :interval "1m" "uptime -p | sed -e 's/up //;s/ hours,/h/;s/ minutes/m/'")
+(defpoll packages :interval "5m" `pacman -Q | wc -l`)
+
+
+;; spotify
+(defpoll title :interval "1s"  "scripts/get-title --status")
+(defpoll cover :interval "3s"  "scripts/spotify-echo-cover")
+(defpoll art :interval "3s"  "scripts/spotify-get-cover")
+(defpoll pp-icon :interval "1s"  "scripts/get-title --icon")
+(defpoll artist :interval "1s" "scripts/spotify-get-artist")
+
+;; profile
+(defvar image "images/profile.png")
+(defvar name "Syndrizzle")
+(defpoll username :interval "10h" `whoami`)
+(defpoll hostname :interval "10h" `hostnamectl | grep Static | awk '{print $3}'`)
+
+;; time
+(defpoll time :interval "1s" "scripts/time --time")
+(defpoll date :interval "1s" "scripts/time --date")
+
+;; weather
+(defpoll icon :interval "15m" `scripts/weather-info --icon`)
+(defpoll stat :interval "15m" `scripts/weather-info --stat`)
+(defpoll temp :interval "15m" `scripts/weather-info --temp`)
+(defpoll hex :interval "15m" `scripts/weather-info --hex`)
+(defpoll wetquote :interval "15m" `scripts/weather-info --quote`)
+(defpoll wetquote2 :interval "15m" `scripts/weather-info --quote2`)
+
+;; bluetooth
+(defpoll bt-icon :interval "1s" `scripts/bluetooth --icon`)
+(defpoll bt-name :interval "1s" `scripts/bluetooth --name`)
+(defpoll bt-battery :interval "1s" `scripts/bluetooth --battery`)
+
+;; mail
+(defpoll mail :interval "1h" `scripts/mail`)
+
+;; karma
+(defpoll karma :interval "10m" `scripts/karma`)
+
+;; volume slider
+(defpoll volume :interval "1s" "~/.config/eww/Main/scripts/getvol.sh")
+(defpoll volume-slider-indicator :interval "0s" "scripts/volume-slider.sh")
+
+;; brightness slider
+(defpoll brightness :interval "1s" "~/.config/eww/Main/scripts/brightness-slider.sh --value")
+(defpoll brightness-slider-indicator :interval "0s" "scripts/brightness-slider.sh --icon")
+
+;; quotes
+(defpoll quote :interval "10m" "scripts/quotes")
+
+;; battery
+(defpoll battery :interval "2m" "cat /sys/class/power_supply/BAT*/capacity")
+; ========================================================================
+;				WIDGETS
+; ========================================================================
+
+;; background
+(defwidget bg []
+  (box :class "bg")
+)
+
+;; system
+(defwidget system []
+  (box :class "genwin" :vexpand "false" :hexpand "false"
+    (box :orientation "v" :spacing 25 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+      (box :class "cpu_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "iconcpu" :text "󰘚")
+        (scale :min 0 :max 100 :value CPU_USAGE :active "false")
+        (label :class "text-cpu" :text "${CPU_USAGE}%"))
+      (box :class "mem_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "iconmem" :text "󰍛")
+        (scale :min 0 :max 100 :value MEM_USAGE :active "false")
+        (label :class "text-ram" :text "${MEM_USAGE}%"))
+      (box :class "gpu_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "icongpu" :text "󰆦")
+        (scale :min 0 :max 100 :value GPU :active "false")
+        (label :class "text-gpu" :text "${GPU}%"))
+      (box :class "stor_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "iconstor" :text "󰋊")
+        (scale :min 0 :max 100 :value STORAGE :active "false")
+        (label :class "text-disk" :text "${STORAGE}%")))))
+
+;; fetch
+(defwidget fetch []
+  (box :orientation "v" :class "fetch" :halign "center" :valign "center" :width 305
+    (box :class "fetch_items" :orientation "v" :spacing 10 :halign "center"
+      (label :class "distro" :halign "start"
+      :text " : Arch")
+      (label :class "wm" :halign "start"
+      :text " : ${wm}")
+      (label :class "shell" :halign "start"
+      :text " : ${shell}")
+      (label :class "uptime" :halign "start"
+      :text " : ${uptime}")
+      (label :class "packages" :halign "start"
+      :text " : ${packages}"))))
+
+
+;; dots
+(defwidget dots []
+  (box :class "fetch" :orientation "v" :halign "center" :width 305
+    (box :class "dots" :orientation "h" :halign "center" :spacing 15 :valign "center"
+      (label :class "one" :text "󱓻")
+      (label :class "two" :text "󱓻")
+      (label :class "three" :text "󱓻")
+      (label :class "four" :text "󱓻")
+      (label :class "five" :text "󱓻")
+      (label :class "six" :text "󱓻"))))
+
+;; spotify
+(defwidget spotify []
+  (box :orientation "h" :space-evenly "false" :class "genwin"
+    (box :class "spotify-album" :style "background-image: url('${cover}');" {art})
+    (box :orientation "v" :space-evenly "false" :valign "center" :halign "center" :spacing 20 :class "spotify-box"
+      (box :class "spotify-stuff" :orientation "v" :space-evenly "false" :spacing 10:vexpand "false" :hexpand "false"
+        (label :class "spotify-info" :text "${title}" :limit-width "13")
+        (label :class "spotify-artist" :text "${artist}" :limit-width "13"))
+      (box :class "spotify-buttons" :orientation "h" :halign "center" :space-evenly "false" :spacing 20
+        (button :onclick "playerctl previous" "󰙣")
+        (button :onclick "playerctl -p spotify play-pause" :class "spotify-pp" "${pp-icon}")
+        (button :onclick "playerctl -p spotify next" "󰙡")))))
+
+;; power-menu
+(defwidget power []
+  (box :orientation "v" :space-evenly "false" :class "power" :spacing 20 :halign "center" :width 305
+    (box :orientation "h" :space-evenly "false" :class "power-one" :spacing 60 :halign "center"
+      (button :class "shutdown" :tooltip "Shutdown" :onclick  "shutdown -h now" "󰐥")
+      (button :class "reboot" :tooltip "Reboot" :onclick  "reboot" "󰜉")
+      (button :class "switch" :tooltip "Switch User" :onclick  "dm-tool switch-to-greeter" "󱤛"))
+    (box :orientation "h" :space-evenly "false" :class "power-two" :spacing 60 :halign "center"
+      (button :class "logout" :tooltip "Logout" :onclick  "sudo killall slim" "󰍃")
+      (button :class "lock" :tooltip "Lock" :onclick  "lock-run" "󰌾")
+      (button :class "suspend" :tooltip "suspend" :onclick "systemctl suspend" "󰤄"))))
+
+;; applications
+(defwidget applications []
+  (box :orientation "v" :space-evenly "false" :class "genwin"
+    (box :orientation "v" :space-evenly "false" :class "app-box" :vexpand "false" :hexpand "false" :valign "center" :spacing 25
+      (button :tooltip "Launch Firefox" :style "background-image :url('images/apps/firefox.svg');" :class "app-firefox" :onclick "scripts/launch-apps --firefox")
+      (button :tooltip "Launch Terminal" :style "background-image :url('images/apps/alacritty.svg');" :class "app-alacritty" :onclick "scripts/launch-apps --alacritty")
+      (button :tooltip "Launch Files" :style "background-image :url('images/apps/nautilus.svg');" :class "app-nautilus" :onclick "scripts/launch-apps --files")
+      (button :tooltip "Launch Spotify" :style "background-image :url('images/apps/spotify.svg');" :class "app-spotify" :onclick "scripts/launch-apps --spotify")
+      (button :tooltip "Launch Code" :style "background-image :url('images/apps/vscode.svg');" :class "app-code" :onclick "scripts/launch-apps --code")
+      (button :tooltip "Launch Software" :style "background-image :url('images/apps/software.svg');" :class "app-software" :onclick "scripts/launch-apps --software"))))
+
+;; links
+(defwidget links []
+  (box :orientation "v" :space-evenly "false" :class "genwin" :spacing 10
+    (box :orientation "h" :space-evenly "false" :class "links" :vexpand "false" :hexpand "false" :valign "center" :spacing 20
+      (button :tooltip "Open Reddit" :style "background-image :url('images/reddit.svg');" :class "reddit" :onclick "firefox https://reddit.com")
+      (button :tooltip "Open Github" :style "background-image :url('images/github.svg');" :class "github" :onclick "firefox https://github.com")
+      (button :tooltip "Open Youtube" :style "background-image :url('images/youtube.svg');" :class "youtube" :onclick "firefox https://youtube.com"))
+    (box :orientation "h" :space-evenly "false" :class "links" :vexpand "false" :hexpand "false" :valign "center" :spacing 20
+      (button :tooltip "Open PhysicsWallah" :style "background-image :url('images/study.svg');" :class "study" :onclick "firefox https://pw.live/study")
+      (button :tooltip "Open GMail" :style "background-image :url('images/gmail.svg');" :class "gmail" :onclick "firefox https://gmail.com")
+      (button :tooltip "Open Dribble" :style "background-image :url('images/dribble.svg');" :class "dribble" :onclick "firefox https://dribble.com"))))
+
+;; profile
+(defwidget profile []
+  (box :class "genwin" :orientation "v" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false"
+    (box :style "background-image: url('${image}');" :class "face" :halign "center")
+    (label :class "name" :halign "center" :wrap "true" :limit-width 25 :text name)
+    (label :class "username" :halign "center" :wrap "true" :limit-width 25 :text "Keanu Christ")
+    (label :class "username-hostname" :halign "center" :text "${username}@${hostname}")))
+
+;; clock
+(defwidget clock []
+  (box :class "genwin" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center" :height 120 :spacing 8
+    (label :class "time" :valign "center" :wrap "true" :text "${time}")
+    (label :class "date" :valign "center" :wrap "true" :text "${date}")))
+
+;; weather
+(defwidget weather []
+  (box :class "genwin" :space-evenly "false" :vexpand "false" :hexpand "false"
+    (box :orientation "v" :spacing 0 :space-evenly "false" :vexpand "false" :hexpand "false" :class "weather-box"
+      (box :orientation "v" :vexpand "false" :hexpand "false"
+        (label :class "iconweather" :halign "center" :style "color: ${hex};" :text icon)
+        (label :class "label-temp" :halign "center" :text temp))
+      (box :orientation "v" :spacing 10 :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "label-stat" :text stat)
+        (label :class "label-quote" :text wetquote)
+        (label :class "label-quote" :text wetquote2)))))
+
+;; bluetooth
+(defwidget bluetooth []
+  (box :class "genwin" :space-evenly "false" :vexpand "false" :hexpand "false"
+    (box :orientation "v" :vexpand "false" :hexpand "false" :spacing 0 :space-evenly "false" :class "bluetooth-box"
+      (box :orientation "v" :class "bt-icon-box" :valign "start" :halign "center"
+        (button :valign "start" :class "bt-icon" :onclick "scripts/bluetooth --toggle" "${bt-icon} ${bt-battery}"))
+      (box :orientation "v" :spacing 0 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+        (label :class "bt-name" :text bt-name)))))
+
+;; mail
+(defwidget mail []
+  (box :class "mail"
+    (box :orientation "h" :halign "center" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+      (button :class "iconmail" :onclick "firefox https://gmail.com" "󰊫")
+      (box :class "mailbox" :space-evenly "false" :vexpand "false" :hexpand "false"
+        (button :class "label_mails" :onclick "firefox https://gmail.com" mail)))))
+
+;; karma
+(defwidget karma []
+  (box :class "karma"
+    (box :orientation "h" :halign "center" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+      (button :class "iconreddit" :onclick "firefox https://reddit.com" "󰑍")
+      (box :class "redditbox" :space-evenly "false" :vexpand "false" :hexpand "false"
+        (button :class "label_karma" :onclick "firefox https://reddit.com" karma)))))
+
+;;volume slider
+(defwidget volume-slider []
+  (box :orientation "v" :class "volume-slider-box" :space-evenly "false"
+    (scale :class "volume-slider"
+      :value volume
+      :orientation "v"
+      :height 320
+      :active true
+      :max 101
+      :min 0
+      :flipped true
+    :onchange "amixer set Master {}% && canberra-gtk-play -f /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga")
+    (button :onclick "amixer set Master toggle" :class "volume-slider-icon" "${volume-slider-indicator}")))
+
+;; brightness
+(defwidget brightness-slider []
+  (box :orientation "v" :class "brightness-slider-box" :space-evenly "false"
+    (scale :class "brightness-slider"
+      :value brightness
+      :orientation "v"
+      :height 320
+      :active true
+      :max 101
+      :min 0
+      :flipped true
+    :onchange "brightnessctl s {}%")
+    (label :class "brightness-slider-icon" :text "${brightness-slider-indicator}")))
+
+;; quote
+(defwidget quote []
+  (box :orientation "v" :space-evenly "false" :class "quote-box"
+    (label :class "quote-image" :halign "center" :text "󱀡")
+    (label :class "quote" :halign "center" :xalign "0.5" :text {quote} :wrap "true")))
+
+;;battery
+(defwidget battery []
+  (box :orientation "v" :space-evenly "false" :class "battery-box"
+    (scale :max 101
+      :min 0
+      :orientation "v"
+      :height 235
+      :value battery
+      :flipped true
+      :active false
+    :class "battery")))
+
+(defwidget close []
+  (box :orientation "h" :space-evenly "false" :class "close-box"
+    (button :class "close" :onclick "eww -c $HOME/.config/eww/Main/ open-many --toggle background system fetch dots spotify power applications links profile clock weather bluetooth mail karma volume-slider brightness-slider quote battery close" "󰅗")))
+; ========================================================================
+;				WINDOWS
+; ========================================================================
+
+;; background
+(defwindow background :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 0 :y 0 :width "1920px" :height "1080px")
+  (bg))
+
+;; system
+(defwindow system :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 965 :y 700 :width 300 :height 283)
+  (system))
+;; fetch
+(defwindow fetch :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 1290 :y 507 :width 305 :height 200)
+  (fetch))
+;; dots
+(defwindow dots :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 1290 :y 755 :width 305 :height 55)
+  (dots))
+;; spotify
+(defwindow spotify :stacking "fg" :monitor 0 :screen 1
+  :geometry (geometry :x 460 :y 777 :width 477 :height 207)
+  (spotify))
+;; power
+(defwindow power :stacking "fg" :monitor 0 :screen 1
+  :geometry (geometry :x 1290 :y 840 :width 305 :height 70)
+  (power))
+
+;; apps
+(defwindow applications :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 300 :y 507 :width 100 :height 140)
+  (applications))
+
+;; links
+(defwindow links :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 965 :y 507 :width 300 :height 160)
+  (links))
+
+;; profile
+(defwindow profile :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 300 :y 100 :width 350 :height 380)
+  (profile))
+
+;; clock
+(defwindow clock :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 675 :y 100 :width 400 :height 120)
+  (clock))
+
+;; weather
+(defwindow weather :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 675 :y 245 :width 400 :height 235)
+  (weather))
+
+;; bluetooth
+(defwindow bluetooth :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 1097 :y 360 :width 327 :height 119)
+  (bluetooth))
+
+;; mail
+(defwindow mail :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 1097 :y 230 :width 327 :height 106)
+  (mail))
+
+;; karma
+(defwindow karma :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 1097 :y 100 :width 327 :height 106)
+  (karma))
+
+;; volume-slider
+(defwindow volume-slider :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 1450 :y 97 :width 60 :height 382)
+  (volume-slider))
+
+;;brightness-stuff
+(defwindow brightness-slider :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 1535 :y 97 :width 60 :height 382)
+  (brightness-slider))
+
+;; quote
+(defwindow quote :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 460 :y 507 :width 350 :height 235)
+  (quote))
+
+;; battery
+(defwindow battery :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 840 :y 507 :width 92 :height 235)
+  (battery))
+
+(defwindow close :stacking "fg" :monitor 0 :focusable "false" :screen 1
+  :geometry (geometry :x 1800 :y 20 :width 90 :height 90)
+  (close))
