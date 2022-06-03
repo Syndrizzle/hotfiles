@@ -10,6 +10,7 @@
 	<a href="https://github.com/syndrizzle/hotfiles/issues">
 		<img alt="Issues" src="https://img.shields.io/github/issues/syndrizzle/hotfiles?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a>
 </p>
+
 ### Thanks for visiting!
 
 Welcome to my GitHub repository of personal dotfiles! 😃 Here you can find configuration files for various desktops, tho this is still a Work-In-Progress thing.
@@ -221,7 +222,7 @@ Then run `sudo pip3 install rofimoji` to install rofimoji.
 7. Rofi Greenclip (Clipboard GUI):
 Simply run `wget -O /usr/bin/greenclip https://github.com/erebe/greenclip/releases/download/v4.2/greenclip ` to install Rofi Greenclip to your System
 
-### 2\.Theming And Appearance:
+### 2\. Theming And Appearance:
 #### 1. Fonts:
 The fonts can be found [fonts](https://github.com/syndrizzle/hotfiles/tree/worm/usr/share/fonts) directory. Just run `sudo mv * /usr/share/fonts` to install them to your system.
 * **UI Font:** Proxima Nova
