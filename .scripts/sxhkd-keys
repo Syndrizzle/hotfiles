@@ -1,0 +1,5 @@
+#!/bin/bash
+
+awk '/[a-z]/ && last {print "<small>",$0,"\t","\t",last,"</small>"} {last=""} /^#/{last=$0}' ~/.config/worm/sxhkdrc |
+    column -t -s $'\t' |
+    rofi -dmenu -i -markup-rows -no-show-icons -width 1000 -lines 20 -yoffset 40
