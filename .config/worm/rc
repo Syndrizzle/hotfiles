@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+exec xrdb -merge ~/.Xresources &
+exec xfce4-power-manager --daemon &
+exec xsetroot -cursor_name left_ptr &
+exec nitrogen --restore &
+exec alttab -i 54x54 -bg "#181f21" -fg "#dadada" -t 50x50 -frame "#8ccf7e" -bc "#67b0e8" -bw 5 -inact "#9bdead" &
+exec picom --experimental-backends -b &
+exec sxhkd -c ~/.config/worm/sxhkdrc &
+exec systemd-inhibit --what=handle-power-key sleep infinity &
+exec parcellite &
+exec greenclip daemon &
+exec eww -c ~/.config/eww/Bar/ open --toggle panel &
+exec eww -c ~/.config/eww/Indicators/ daemon &
+exec eww -c ~/.config/eww/Control-Center/ daemon &
+exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+exec bash $HOME/.config/conky/Alterf/start.sh &
+configError() {
+  dunstify -u critical "Worm Configuration Error!" "$2" &
+}
+
+wormc border-width 0
+wormc border-active-pixel $((16#ff67b0e8))
+wormc border-inactive-pixel $((16#ffb3b9b8))
+wormc frame-active-pixel $((16#ff1E1D2F))
+wormc frame-inactive-pixel $((16#ff1E1D2F))
+wormc text-active-pixel $((16#ffcdd6f4))
+wormc text-inactive-pixel $((16#ff6c7086))
+wormc text-offset 20 25
+wormc layout floating
+wormc struts 20 85 20 20
+wormc gaps 20
+wormc frame-height 40
+wormc frame-right 'I;M;C;'
+wormc frame-left 'T;'
+wormc button-size 16
+wormc button-offset 12 12
+wormc close-active-path ~/.config/worm/icons/close.png
+wormc close-inactive-path ~/.config/worm/icons/close.png
+wormc close-inactive-hovered-path ~/.config/worm/icons/close-hover.png
+wormc close-active-hovered-path ~/.config/worm/icons/close-hover.png
+wormc minimize-active-path ~/.config/worm/icons/minimize.png
+wormc minimize-inactive-path ~/.config/worm/icons/minimize.png
+wormc minimize-inactive-hovered-path ~/.config/worm/icons/minimize-hover.png
+wormc minimize-active-hovered-path ~/.config/worm/icons/minimize-hover.png
+wormc maximize-active-path ~/.config/worm/icons/maximize.png
+wormc maximize-inactive-path ~/.config/worm/icons/maximize.png
+wormc maximize-inactive-hovered-path ~/.config/worm/icons/maximize-hover.png
+wormc maximize-active-hovered-path ~/.config/worm/icons/maximize-hover.png
+wormc text-font 'Proxima Nova:size=12:style=Bold:antialias=true'
+wormc root-menu /usr/bin/jgmenu_run

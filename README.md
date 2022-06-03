@@ -34,8 +34,7 @@ Welcome to my GitHub repository of personal dotfiles! 😃 Here you can find con
 
 ### 🔔 Figma Files:
 
-##### There are some figma files that you might need while configuring the dotfiles.
-
+**There are some figma files that you might need while configuring the dotfiles.**
 *   The lock screen (Since it is just glued, lol.) -> [Figma](https://www.figma.com/file/i2PIFn8hfkX71CsnMtViWv/SLiM-login-template)
 *   The Conky background -> [Figma](https://www.figma.com/file/T4pKJ1IyOj2M1csbP7WEIU/Conky-Alterf-Catppuccin)
 *   The Lock Screen Background -> [Figma](https://www.figma.com/file/RqQuZn54bFBGgUQm9Gs1D4/Lock-Screen-bg)
@@ -349,7 +348,15 @@ xdg-user-dirs-update
 ```
 in your terminal and reboot, this regenerates your XDG folders. now right click on the folder you want to move and select `Send to > Side Pane`, or you can just drag and drop them.
 
-  
+### Lockscreen and Greeter Stuff
+In order to make XFCE4 Power Manager recognize that you have a lock screen, just run this command:
+```bash
+xfconf-query -c xfce4-session -p /general/LockCommand -s "$HOME/.scripts/lock-run" --create -t string
+```
+What this does is it runs this command whenever you call the lock screen, like by closing the lid, suspend...etc.
+
+Make sure to change the default username in `/etc/slim.conf` from `syndrizzle` to your username.
+
 ## Stargazers over time [![Stargazers over time](https://starchart.cc/Syndrizzle/hotfiles.svg)](https://starchart.cc/Syndrizzle/hotfiles)
 Credits
 =======

@@ -1,0 +1,102 @@
+# Restart worm
+super + ctrl + r
+	worm
+ 
+# Quit worm
+ctrl + alt + q
+	pkill worm
+
+# Close app
+alt + F4
+	wormc close-active-client
+
+# Maximize app
+super + f
+	wormc maximize-active-client
+
+# Minimize app
+super + h
+	wormc minimize-active-client
+
+# Tags
+super + {_, shift + } {1-9}
+	wormc {switch,move-active}-tag {1-9}
+
+# Set master windows
+super + m
+	wormc master-active
+
+# Float a window
+super + shift + space
+	wormc float-active
+
+# Open terminal
+ctrl + alt + t
+	alacritty
+
+# Play music
+XF86AudioPlay 
+        playerctl play
+
+# Pause music
+XF86AudioPause
+	playerctl pause
+
+# Music next
+XF86AudioNext
+	playerctl next
+
+# Music previous
+XF86AudioPrev
+	playerctl previous
+
+ctrl + alt + period
+	eww -c $HOME/.config/eww/Main/ open-many --toggle background system fetch dots spotify power applications links profile clock weather bluetooth mail karma
+
+# Volume Up
+XF86AudioRaiseVolume
+  pamixer -i 5 --unmute && $HOME/.config/eww/Indicators/volume.sh 
+
+# Volume Down
+XF86AudioLowerVolume
+  pamixer -d 5 --unmute && $HOME/.config/eww/Indicators/volume.sh
+
+# Brightness Up
+XF86MonBrightnessUp
+  brightnessctl s 20+ && $HOME/.config/eww/Indicators/brightness.sh
+
+# Brightness Down
+XF86MonBrightnessDown
+  brightnessctl s 20- && $HOME/.config/eww/Indicators/brightness.sh
+ 
+# Power Off
+PowerOff
+  eww -c $HOME/.config/eww/Powermenu/ open-many --toggle background background-closer buttons-exit profile-exit quotes-exit close-exit
+
+# Volume Mute
+XF86AudioMute
+  pamixer -t && $HOME/.config/eww/Indicators/volume.sh
+
+# Open Keybindings Help
+ctrl + slash
+  sxhkd-keys
+
+# Open Emoji selector
+ctrl + period
+  rofimoji
+
+# Open Clipboard manager
+super + v 
+  rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+# Open File manager
+ctrl + alt + f 
+  thunar
+
+# Open Browser
+ctrl + alt + b 
+  brave
+
+# Lock Screen
+ctrl + l 
+  $HOME/.scripts/lock-run

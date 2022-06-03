@@ -5,11 +5,14 @@ do
 	inactiu=$(xprintidle)
 	if [ $inactiu -gt 15000 ]
 	then
-		/usr/bin/eww -c $HOME/.config/eww/Lock/ close-all && xset dpms force off
+		eww -c $HOME/.config/eww/Lock close-all 
+                xset dpms force off
+                eww -c $HOME/.config/eww/Powermenu close-all
 	fi
 	if [ $inactiu -lt 10000 ]
 	then
-		/usr/bin/eww -c $HOME/.config/eww/Lock/ open-many player-spotify lock-weather battery-lock volume-slider-lock
+		eww -c $HOME/.config/eww/Lock/ open-many player-spotify lock-weather battery-lock volume-slider-lock
+                eww -c $HOME/.config/eww/Powermenu close-all
 	fi
 	sleep 5
 done

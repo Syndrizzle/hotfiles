@@ -26,7 +26,7 @@
 
 ;; profile
 (defvar image "images/profile.png")
-(defvar name "Syndrizzle")
+(defvar name "Your Name")
 (defpoll username :interval "10h" `whoami`)
 (defpoll hostname :interval "10h" `hostnamectl | grep Static | awk '{print $3}'`)
 

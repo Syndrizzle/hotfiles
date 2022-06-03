@@ -26,7 +26,8 @@ slowfade () {
 $HOME/.scripts/cycle-dim &
 pkill -u "$USER" -USR1 dunst
 $HOME/.scripts/wait-suspend &
-sleep 1 && /usr/bin/eww -c $HOME/.config/eww/Lock/ open-many player-spotify lock-weather battery-lock volume-slider-lock &
+sleep 1 && eww -c $HOME/.config/eww/Lock/ open-many player-spotify lock-weather battery-lock volume-slider-lock &
+eww -c $HOME/.config/eww/Powermenu close-all &
 slowfade start
 i3lock -p default -n --force-clock -i ~/.config/eww/Lock/lock-bg.png \
 --ind-pos="w/2:h/2+158" --time-pos="w/2:h/4-5" --date-pos="w/2:h/4+55" --greeter-pos="w/2:h/2" \
