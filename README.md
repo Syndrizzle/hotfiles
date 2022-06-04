@@ -145,12 +145,12 @@ A one time command to install all these things with **your favorite AUR Helper**
 
 ```bash
 paru -S xdg-user-dirs git slim dunst tint2 jgmenu rofi alacritty nitrogen sxhkd i3lock-color picom-jonaburg-fix lua starship fish cava gtk brightnessctl zsh playerctl pipewire pipewire-pulse thunar
-papirus-icon-theme curl jq libappindicator-gtk3 org.freedesktop.secrets light wireless_tools maim gpick mate-polkit yaru-sound-theme xdg-desktop-portal-gtk xdg-desktop-portal mpv jgmenu lxappearance xfce-power-manager xfce4-settings xprintidle vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez bluez-utils imagemagick parcellite xclip pamixer pavucontrol rofimoji rofi-greenclip 
+papirus-icon-theme curl jq libappindicator-gtk3 org.freedesktop.secrets light wireless_tools maim gpick mate-polkit yaru-sound-theme xdg-desktop-portal-gtk xdg-desktop-portal mpv jgmenu lxappearance xfce4-power-manager xfce4-settings xprintidle vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez bluez-utils imagemagick parcellite xclip pamixer pavucontrol rofimoji rofi-greenclip 
 ```
 
 **Installation of packages on Fedora(36):**
 ```bash
-sudo dnf install xdg-user-dirs git slim dunst tint2 jgmenu rofi alacritty nitrogen sxhkd lua starship fish cava gtk3 brightnessctl zsh playerctl pipewire pipewire-pulseaudio Thunar papirus-icon-theme curl jq libappindicator-gtk3 gnome-keyring light wireless-tools maim gpick mate-polkit yaru-sound-theme xdg-desktop-portal-gtk xdg-desktop-portal jgmenu lxappearance xfce-power-manager xfce4-settings vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez ImageMagick parcellite xclip pavucontrol rofimoji
+sudo dnf install xdg-user-dirs git slim dunst tint2 jgmenu rofi alacritty nitrogen sxhkd lua starship fish cava gtk3 brightnessctl zsh playerctl pipewire pipewire-pulseaudio Thunar papirus-icon-theme curl jq libappindicator-gtk3 gnome-keyring light wireless-tools maim gpick mate-polkit yaru-sound-theme xdg-desktop-portal-gtk xdg-desktop-portal jgmenu lxappearance xfce4-power-manager xfce4-settings vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez ImageMagick parcellite xclip pavucontrol rofimoji
 ```
 
 **NOTE:** Some packages are not available in the official fedora repositories, they can be installed using the methods below:
@@ -184,7 +184,7 @@ Simply run `wget -O /usr/bin/greenclip https://github.com/erebe/greenclip/releas
 
 **Installation of packages on Ubuntu(22.04 LTS):**
 ```bash
-sudo apt install xdg-user-dirs git slim dunst tint2 jgmenu rofi nitrogen sxhkd lua fish cava brightnessctl zsh playerctl pipewire pipewire-pulse thunar papirus-icon-theme curl jq libayatana-appindicator3-1 gnome-keyring light wireless-tools maim gpick mate-polkit yaru-theme-sound xdg-desktop-portal-gtk xdg-desktop-portal mpv jgmenu lxappearance xfce-power-manager xfce4-settings xprintidle vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez imagemagick parcellite xclip pavucontrol
+sudo apt install xdg-user-dirs git slim dunst tint2 jgmenu rofi nitrogen sxhkd lua fish cava brightnessctl zsh playerctl pipewire pipewire-pulse thunar papirus-icon-theme curl jq libayatana-appindicator3-1 gnome-keyring light wireless-tools maim gpick mate-polkit yaru-theme-sound xdg-desktop-portal-gtk xdg-desktop-portal mpv jgmenu lxappearance xfce4-power-manager xfce4-settings xprintidle vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez imagemagick parcellite xclip pavucontrol
 ```
 
 **NOTE:** Some packages are not available in the official ubuntu repositories, they can be installed using methods below:
