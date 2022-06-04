@@ -35,7 +35,8 @@ Welcome to my GitHub repository of personal dotfiles! 😃 Here you can find con
 
 ### 🔔 Figma Files:
 
-**There are some figma files that you might need while configuring the dotfiles.**
+**There are some figma files that you might need while configuring the dotfiles.**<br>
+You only need these figma files if you are not using my dotfiles, and just need these things. You only need the `Lock Screen` figma file while using my dotfiles, and that too if you are using the SLiM greeter. Editing it is very easy.
 *   The lock screen (Since it is just glued, lol.) -> [Figma](https://www.figma.com/file/i2PIFn8hfkX71CsnMtViWv/SLiM-login-template)
 *   The Conky background -> [Figma](https://www.figma.com/file/T4pKJ1IyOj2M1csbP7WEIU/Conky-Alterf-Catppuccin)
 *   The Lock Screen Background -> [Figma](https://www.figma.com/file/RqQuZn54bFBGgUQm9Gs1D4/Lock-Screen-bg)
@@ -168,19 +169,19 @@ meson --buildtype=release . build
 ninja -C build
 ninja -C build install 
 ```
-to install Picom (Jonaburg Fix) to your system.
+to install Picom (Jonaburg Fix) to your system.<br>
 3. MPV:
 For this you will need to enable RPM Fusion repository. 
 Just do `sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm` to install RPM Fusion Free.
-Then do `sudo dnf install mpv` to install MPV.
+Then do `sudo dnf install mpv` to install MPV.<br>
 4. `xprintidle`
 For this you need the RPM Sphere repository. 
 Just do `sudo dnf install https://github.com/rpmsphere/noarch/raw/master/r/rpmsphere-release-36-1.noarch.rpm` to install the RPM Sphere Repository.
-Then do `sudo dnf install xprintidle` to install xprintidle on your system.
+Then do `sudo dnf install xprintidle` to install xprintidle on your system.<br>
 5. Pulseaudio Mixer (pamixer):
-Follow the installation instructions in the README of the project [here](https://github.com/cdemoulins/pamixer#installation)
+Follow the installation instructions in the README of the project [here](https://github.com/cdemoulins/pamixer#installation)<br>
 6. Rofi Greenclip (Clipboard GUI):
-Simply run `wget -O /usr/bin/greenclip https://github.com/erebe/greenclip/releases/download/v4.2/greenclip` to install Rofi Greenclip to your System.
+Simply run `wget -O /usr/bin/greenclip https://github.com/erebe/greenclip/releases/download/v4.2/greenclip` to install Rofi Greenclip to your System.<br>
 
 **Installation of packages on Ubuntu(22.04 LTS):**
 ```bash
@@ -195,7 +196,7 @@ sudo apt update
 sudo apt install alacritty
 ```
 2. i3lock-color:
-Refer to the official [README.md](https://github.com/Raymo111/i3lock-color) on how to install i3lock-color on your system.
+Refer to the official [README.md](https://github.com/Raymo111/i3lock-color) on how to install i3lock-color on your system.<br>
 3. Picom (Jonaburg Fix):
 ```bash
 sudo apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
@@ -208,19 +209,19 @@ meson --buildtype=release . build
 ninja -C build
 ninja -C build install 
 ```
-to install Picom (Jonaburg Fix) to your system.
+to install Picom (Jonaburg Fix) to your system.<br>
 4. Starship Prompt:
 ```bash
 curl -fsSL https://starship.rs/install.sh | bash
 ```
-Run this in your terminal to install starship prompt.
+Run this in your terminal to install starship prompt.<br>
 5. Pulseaudio Mixer (pamixer):
-Follow the installation instructions in the README of the project [here](https://github.com/cdemoulins/pamixer#installation)
+Follow the installation instructions in the README of the project [here](https://github.com/cdemoulins/pamixer#installation)<br>
 6. RofiMoji (Emoji Selector)
 Make sure you have `python3-pip` installed.
-Then run `sudo pip3 install rofimoji` to install rofimoji.
+Then run `sudo pip3 install rofimoji` to install rofimoji.<br>
 7. Rofi Greenclip (Clipboard GUI):
-Simply run `wget -O /usr/bin/greenclip https://github.com/erebe/greenclip/releases/download/v4.2/greenclip ` to install Rofi Greenclip to your System
+Simply run `wget -O /usr/bin/greenclip https://github.com/erebe/greenclip/releases/download/v4.2/greenclip ` to install Rofi Greenclip to your System<br>
 
 ### 2\. Theming And Appearance:
 #### 1. Fonts:
@@ -333,10 +334,10 @@ Head over to https://mail.google.com/mail/#settings/fwdandpop and click on the `
 Edit the Mail file located as `~/.config/eww/Main/scripts/mail` and fill in your G-Mail ID and the App password we created earlier.
 
 ### 3. Rofi for everything!
-You can use rofi for selecting emojis, view your clipboard and even view the keybindings incase you forget something!
-To bring up the emoji selector, press <kbd>Ctrl</kbd> + <kbd>.</kbd>
-To bring up the Keybindings viewer, press <kbd>Ctrl</kbd> + <kbd>/</kbd>
-**NOTE:** You will need to move the `sxhkd-keys` script to your `/usr/bin/` folder:
+You can use rofi for selecting emojis, view your clipboard and even view the keybindings incase you forget something!<br>
+To bring up the emoji selector, press <kbd>Ctrl</kbd> + <kbd>.</kbd><br>
+To bring up the Keybindings viewer, press <kbd>Ctrl</kbd> + <kbd>/</kbd><br>
+**NOTE:** You will need to move the `sxhkd-keys` script to your `/usr/bin/` folder:<br>
 ```bash
 sudo mv ~/.scripts/sxhkd-keys /usr/bin/sxhkd-keys
 ```
@@ -358,7 +359,10 @@ What this does is it runs this command whenever you call the lock screen, like b
 
 Make sure to change the default username in `/etc/slim.conf` from `syndrizzle` to your username.
 
-## Stargazers over time [![Stargazers over time](https://starchart.cc/Syndrizzle/hotfiles.svg)](https://starchart.cc/Syndrizzle/hotfiles)
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Syndrizzle/hotfiles&type=Date)](https://star-history.com/#Syndrizzle/hotfiles&Date)  
+
 Credits
 =======
 
