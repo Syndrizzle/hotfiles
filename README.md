@@ -145,8 +145,7 @@ With this we are done with the installation of EWW. Now we have to install the p
 A one time command to install all these things with **your favorite AUR Helper** is given below, in this case we are using `paru`, you can any other, I don't mind 🙃
 
 ```bash
-paru -S xdg-user-dirs git slim dunst tint2 jgmenu rofi alacritty nitrogen sxhkd i3lock-color picom-jonaburg-fix lua starship fish cava gtk brightnessctl zsh playerctl pipewire pipewire-pulse thunar
-papirus-icon-theme curl jq libappindicator-gtk3 org.freedesktop.secrets light wireless_tools maim gpick mate-polkit yaru-sound-theme xdg-desktop-portal-gtk xdg-desktop-portal mpv jgmenu lxappearance xfce4-power-manager xfce4-settings xprintidle vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez bluez-utils imagemagick parcellite xclip pamixer pavucontrol rofimoji rofi-greenclip 
+paru -S xdg-user-dirs git slim dunst tint2 jgmenu rofi alacritty nitrogen sxhkd i3lock-color picom-jonaburg-fix lua starship fish cava gtk brightnessctl zsh playerctl pipewire pipewire-pulse thunar papirus-icon-theme curl jq libappindicator-gtk3 org.freedesktop.secrets light wireless_tools maim gpick mate-polkit yaru-sound-theme xdg-desktop-portal-gtk xdg-desktop-portal mpv jgmenu lxappearance xfce4-power-manager xfce4-settings xprintidle vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez bluez-utils imagemagick parcellite xclip pamixer pavucontrol rofimoji rofi-greenclip 
 ```
 
 **Installation of packages on Fedora(36):**
