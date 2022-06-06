@@ -9,6 +9,8 @@
 		<img alt="Forks" src="https://img.shields.io/github/forks/syndrizzle/hotfiles.svg?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41"/></a>&nbsp;&nbsp;
 	<a href="https://github.com/syndrizzle/hotfiles/issues">
 		<img alt="Issues" src="https://img.shields.io/github/issues/syndrizzle/hotfiles?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"></a>
+	<a href="https://github.com/syndrizzle/hotfiles/issues">
+		<img alt="Issues" src="https://img.shields.io/github/license/syndrizzle/hotfiles?style=for-the-badge&logo=mitsubishi&color=A6E3A1&logoColor=D9E0EE&labelColor=302D41"></a>
 </p>
 
 ### Thanks for visiting!
@@ -77,7 +79,7 @@ Installing WormWM is a bit weird, since it is written in nim, you will need to c
 **1. On ArchLinux**
 Simply run:
 ```bash
-paru -S worm-git
+paru -S worm-git nim
 ```
 to install it using your favorite AUR helper.
 
@@ -145,7 +147,7 @@ With this we are done with the installation of EWW. Now we have to install the p
 A one time command to install all these things with **your favorite AUR Helper** is given below, in this case we are using `paru`, you can any other, I don't mind 🙃
 
 ```bash
-paru -S xdg-user-dirs git slim dunst tint2 jgmenu rofi alacritty nitrogen sxhkd i3lock-color picom-jonaburg-fix lua starship fish cava gtk brightnessctl zsh playerctl pipewire pipewire-pulse thunar papirus-icon-theme curl jq libappindicator-gtk3 org.freedesktop.secrets light wireless_tools maim gpick mate-polkit yaru-sound-theme xdg-desktop-portal-gtk xdg-desktop-portal mpv jgmenu lxappearance xfce4-power-manager xfce4-settings xprintidle vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez bluez-utils imagemagick parcellite xclip pamixer pavucontrol rofimoji rofi-greenclip 
+paru -S xdg-user-dirs git slim dunst tint2 jgmenu rofi alacritty nitrogen sxhkd i3lock-color picom-jonaburg-fix lua starship fish cava gtk brightnessctl zsh playerctl pipewire pipewire-pulse thunar papirus-icon-theme curl jq libappindicator-gtk3 org.freedesktop.secrets light wireless_tools maim gpick mate-polkit yaru-sound-theme xdg-desktop-portal-gtk xdg-desktop-portal mpv jgmenu lxappearance xfce4-power-manager xfce4-settings xprintidle vdirsyncer khal moreutils fortune-mod wmctrl bc unzip bluez bluez-utils imagemagick parcellite xclip pamixer pavucontrol rofimoji rofi-greenclip ninja glibc gcc
 ```
 
 **Installation of packages on Fedora(36):**
@@ -246,7 +248,7 @@ To install them, simply run the following commands:
 git clone https://github.com/catppuccin/papirus-folders.git
 cd papirus-folders
 sudo cp -r src/* /usr/share/icons/Papirus  
-./papirus-folders -C cat-blue --theme Papirus-Dark
+./papirus-folders -C blue --theme Papirus-Dark
 ```
 This modifies the papirus icon theme to use the catppuccin themed folders.
 
@@ -256,8 +258,8 @@ We are using the catppuccin cursors so this can blend well with the icon theme.
 git clone https://github.com/catppuccin/cursors.git
 cd cursors
 cd cursors
-tar -xvzf Catppuccin-Blue-Cursors.tar.gz
-sudo mv Catppuccin-Blue-Cursors /usr/share/icons/
+unzip Catppuccin-Mocha-Blue-Cursors.zip
+sudo mv Catppuccin-Mocha-Blue-Cursors /usr/share/icons/
 ```
 This installs the cursor theme in the root directory for all users.
 
