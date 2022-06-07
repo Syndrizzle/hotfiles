@@ -103,10 +103,11 @@ nimble build -d:release
 ```
 to compile the window manager.
 
-The static worm binary will be available to you after this step, just move it somewhere in your path,
+The static worm and wormc binaries will be available to you after this step, just move them somewhere in your path,
 For example,
 ```bash
 sudo mv worm /usr/bin/worm
+sudo mv wormc /usr/bin/wormc
 ```
 
 Since we are using SLiM Display Manager, we don't need an Xsession file for the window manager. Instead, SLiM relies on `~/.xinitrc` file, so we just need to append the `worm` command inside the file.
