@@ -373,6 +373,7 @@ Thanks to [pagankeymaster](https://github.com/pagankeymaster) for helping me to 
 *   Thanks again to all the members of the [r/unixporn discord server](https://discord.gg/d53yESY) who helped me.
 *   This rice was inspired by many other rices out there, like [the-glorious-dotfiles](https://github.com/manilarome/the-glorious-dotfiles/), [Axarva's xmonad rice](https://github.com/Axarva/dotfiles-2.0), [adi1090x's widgets](https://github.com/adi1090x/widgets/). Thanks to all of them for their work!
 *   All the icons are from [icons8](https://icons8.com), [flaticon](https://flaticon.com), [iconscout](https://iconscout.com) and various other sources (Sorry I don't remember each one of them :/)
+*   The wallpapers in this rice are been taken from https://pexels.com
 
 #### Stuff I have taken from repositories:
 
