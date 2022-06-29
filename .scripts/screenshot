@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+time=$(date +%Y-%m-%d-%H-%M-%S)
+geometry=$(xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current')
+dir="$(xdg-user-dir PICTURES)/Screenshots"
+file="Screenshot_${time}_${geometry}.png"
+tmp_file="$HOME/.cache/temp-$file"
+notify_view () {
+	dunstify -u low --replace=699 --appname=Screenshot -i "$dir"/"$file" "Screenshot" "Screenshot has been saved and copied to clipboard."
+}
+
+# take shots
+shotfull () {
+	cd "${dir}" && sleep 0.5 && maim -f png  | tee "$file" | xclip -selection clipboard -t image/png
+	notify_view
+}
+
+shotarea () {
+	cd "${dir}" && maim -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | tee "$file" | xclip -selection clipboard -t image/png
+	notify_view
+}
+
+shotareacb () {
+        cd "${dir}" && maim -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | tee "$tmp_file" | xclip -selection clipboard -t image/png 
+        dunstify -u low --replace=699 --appname=Screenshot -i "$tmp_file" "Screenshot" "Screenshot has been copied to clipboard."
+}
+
+shotfullcb () {
+        cd "${dir}" && sleep 0.5 && maim -f png  | tee "$tmp_file" | xclip -selection clipboard -t image/png
+        dunstify -u low --replace=699 --appname=Screenshot -i "$tmp_file" "Screenshot" "Screenshot has been copied to clipboard."
+}
+
+if [[ ! -d "$dir" ]]; then
+	mkdir -p "$dir"
+fi
+
+if [[ "$1" == "--full" ]]; then
+	shotfull
+elif [[ "$1" == "--full-cb" ]]; then
+	shotfull
+elif [[ "$1" == "--area" ]]; then
+	shotarea
+elif [[ "$1" == "--area-cb" ]]; then
+        shotareacb
+elif [[ "$1" == "" ]]; then
+        echo "The require arguments are:
+
+Area - Select a window or an area
+Full - Screenshot the whole desktop.
+
+./screenshot --full, --full-cb
+./screenshot --area, area-cb
+
+The -cb function only copies to clipboard without saving."
+elif [[ "$1" == "--help" ]]; then
+        echo "The require arguments are:
+
+Area - Select a window or an area
+Full - Screenshot the whole desktop.
+
+./screenshot --now, --now-cb
+./screenshot --area, area-cb
+
+The -cb function only copies to clipboard without saving."
+fi
+
+exit 0

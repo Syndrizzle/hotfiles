@@ -1,0 +1,12 @@
+#!/bin/bash
+
+tmp_dir="$HOME/.cache"
+spotify_title="$(playerctl --player=spotify metadata --format '{{ title }}')"
+tmp_temp_path=$tmp_dir/temp-$spotify_title.png
+
+if [ ! -d "$tmp_dir" ]; then
+	mkdir -p "$tmp_dir"
+fi
+
+artlink="$(playerctl -p spotify metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g')"
+curl -s "$artlink" --output "$tmp_temp_path"
