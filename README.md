@@ -93,6 +93,11 @@ sudo make install
 #### 3. Picom Pijulius Fork
 This picom fork has the best window animations you can get. For eyecandy we are using this fork, this isn't available in the AUR, so you need to install it manually:
 
+First install all the dependencies required to build the compositor:
+```bash
+sudo pacman -S libconfig libev libxdg-basedir pcre pixman xcb-util-image xcb-util-renderutil hicolor-icon-theme libglvnd libx11 libxcb libxext libdbus
+```
+Then do the following:
 ```bash
 cd ~/Downloads
 git clone https://github.com/pijulius/picom.git
