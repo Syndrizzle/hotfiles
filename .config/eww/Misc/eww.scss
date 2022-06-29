@@ -1,0 +1,169 @@
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+.powermenu {
+  background-color: $bg;
+  border-radius: 20px;
+}
+
+.greeting {
+  background-color: $bg-alt;
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.main-buttons-box {
+  background-color: $gray-alt;
+  margin: 20px 20px 20px 20px;
+  border-radius: 20px;
+}
+
+.shutdown {
+  background-color: $bg;
+  color: $red;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px;
+  font-size: 80px;
+}
+
+.reboot {
+  background-color: $bg;
+  color: $green;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px 20px 20px 0px;
+  font-size: 80px;
+}
+
+.reboot:hover,
+.shutdown:hover,
+.exit:hover {
+  background-color: $bg-alt;
+}
+
+.exit {
+  background-color: $bg;
+  color: $blue;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px 20px 20px 0px;
+  font-size: 80px;
+}
+
+.lock {
+  background-color: $bg;
+  color: $yellow;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px 20px 20px 0px;
+  font-size: 80px;
+}
+
+.volume-spacer,
+.menu-spacer {
+  transition: all 700ms cubic-bezier(0.1, -0, 0, 1.49);
+
+}
+
+.volume-window {
+  background-color: unset;
+}
+
+.indicator-volume-icon-muted {
+  font-family: "IcoMoon-Free";
+  font-size: 80px;
+  color: $red;
+  padding: 20px 0px 20px 0px;
+}
+
+
+.indicator-volume-slider {
+  background-color: $gray;
+  border-radius: 100px;
+  margin: 16px 20px 20px 20px;
+}
+
+.indicator-volume-slider trough {
+  border-radius: 100px;
+    slider {
+      background-color: transparent;
+    }
+}
+
+.indicator-volume-slider highlight {
+  background: $fg;
+  padding: 8px;
+  border-radius: 100px;
+}
+
+.volume-slider-muted trough {
+  background-color: $gray;
+}
+
+.volume-slider-muted highlight {
+  background: $red;
+}
+
+.volume-widget {
+  background-color: $bg;
+  border-radius: 15px;
+  padding: 0px 10px 0px 10px;
+  min-height: 32px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.indicator-volume-icon {
+  font-family: "IcoMoon-Free";
+  font-size: 110px;
+  color: $fg;
+  padding: 20px 0px 20px 0px;
+}
+
+.brightness-spacer,
+.menu-spacer {
+  transition: all 700ms cubic-bezier(0.1, -0, 0, 1.49);
+
+}
+
+.brightness-window {
+  background-color: unset;
+}
+
+.indicator-brightness-slider {
+  background-color: $gray;
+  border-radius: 100px;
+  margin: 16px 20px 20px 20px;
+}
+
+.indicator-brightness-slider trough {
+  border-radius: 100px;
+    slider {
+      background-color: transparent;
+    }
+}
+
+.indicator-brightness-slider highlight {
+  background: $fg;
+  padding: 8px;
+  border-radius: 100px;
+}
+
+.brightness-widget {
+  background-color: $bg;
+  border-radius: 15px;
+  padding: 0px 10px 0px 10px;
+  min-height: 32px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.indicator-brightness-icon {
+  font-family: "Material Design Icons Desktop";
+  font-size: 120px;
+  color: $fg;
+  padding: 20px 0px 20px 0px;
+}

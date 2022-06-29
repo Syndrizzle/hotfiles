@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [[ $1 == "picker" ]]; then
+    cd $HOME
+    eww close-all
+    $HOME/.scripts/color-picker
+elif [[ $1 == "settings" ]]; then
+    cd $HOME
+    eww close-all
+    xfce4-settings-manager
+elif [[ $1 == "volume" ]]; then
+    cd $HOME
+    eww close-all
+    pavucontrol
+elif [[ $1 == "display" ]]; then
+    cd $HOME
+    eww close-all
+    xfce4-display-settings
+elif [[ $1 == "power" ]]; then
+    cd $HOME
+    eww close-all
+    xfce4-power-manager --restart
+elif [[ $1 == "exit" ]]; then
+    cd $HOME
+    eww close-all
+    eww open-many --toggle background-closer powermenu 
+elif [[ $1 == "wifi" ]]; then
+    cd $HOME
+    eww close-all
+    networkmanager_dmenu 
+fi 

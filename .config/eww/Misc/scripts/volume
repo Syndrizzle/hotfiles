@@ -1,0 +1,23 @@
+#!/bin/sh
+
+killed=false
+for pid in $(pidof -x volume); do
+    if [ $pid != $$ ]; then
+        kill -9 $pid
+        killed=true
+    fi
+done >/dev/null
+
+if ! $killed; then
+    eww update volume-hidden=true
+    eww open volume-indicator
+fi
+
+eww update volume-level=$(amixer sget Master | awk -F'[][]' '/Right:|Mono:/ && NF > 1 {sub(/%/, ""); printf "%0.0f\n", $2}')
+eww update volume-muted=$(amixer sget Master | awk -F'[][]' '/Right:|Mono:/ && NF > 1 {print $4}' | sed 's/on/false/g' | sed 's/off/true/g')
+eww update volume-hidden=false
+sleep 2
+eww update volume-hidden=true
+sleep 1
+eww close volume-indicator
+unset killed

@@ -1,0 +1,25 @@
+MODE=$(system76-power profile | grep Profile | awk '{print $3}')
+
+toggle() {
+    if [[ $MODE == 'Balanced' ]]; then
+        system76-power profile performance
+    else
+        system76-power profile balanced
+    fi
+}
+
+icon() {
+    if [[ $MODE == 'Balanced' ]]; then
+        echo "󰔢"
+    else
+        echo "󰔡"
+    fi
+}
+
+if [[ $1 == "--toggle" ]]; then
+    toggle
+elif [[ $1 == "--mode" ]]; then
+    echo $MODE
+elif [[ $1 == "--icon" ]]; then
+    icon
+fi

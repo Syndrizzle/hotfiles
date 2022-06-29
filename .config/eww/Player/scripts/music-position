@@ -1,0 +1,4 @@
+#!/bin/bash
+
+POS=$(playerctl -p spotify position)
+python -c "print(float($POS*1000000))"

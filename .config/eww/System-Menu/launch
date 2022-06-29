@@ -1,0 +1,9 @@
+#!/bin/bash
+
+TIPS_STATUS=$(cat $HOME/.config/eww/System-Menu/scripts/tips/tips-lock)
+
+if [[ $TIPS_STATUS == "on" ]]; then
+    eww open-many --toggle background-closer system-menu tips
+else 
+    eww open-many --toggle background-closer system-menu
+fi

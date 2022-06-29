@@ -1,0 +1,37 @@
+#!/bin/bash
+
+STATUS=$(cat $HOME/.config/eww/System-Menu/scripts/tips/tips-lock)
+
+toggle() {
+    if [[ $STATUS == "on" ]]; then
+        echo "off" > $HOME/.config/eww/System-Menu/scripts/tips/tips-lock
+        eww open --toggle tips
+    else
+        echo "on" > $HOME/.config/eww/System-Menu/scripts/tips/tips-lock
+        eww open --toggle tips
+    fi
+}
+
+icon() {
+    if [[ $STATUS == "on" ]]; then
+        echo ""
+    else
+        echo ""
+    fi
+}
+
+status() {
+    if [[ $STATUS == "on" ]]; then
+        echo "Tips on"
+    else
+        echo "Tips off"
+    fi
+}
+
+if [[ $1 == "--toggle" ]]; then
+    toggle
+elif [[ $1 == "--icon" ]]; then
+    icon
+elif [[ $1 == "--status" ]]; then
+    status
+fi

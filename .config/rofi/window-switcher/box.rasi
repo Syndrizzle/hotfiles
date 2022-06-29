@@ -1,0 +1,126 @@
+configuration {
+    font:                    "Sofia Pro 13";
+    show-icons:              true;
+    icon-theme:              "Papirus";
+    disable-history:         true;
+    fullscreen:              false;
+    hide-scrollbar:          true;
+    sidebar-mode:            false;
+    display-window:          "";
+    window-format :          "{t}";
+    window-thumbnail:        false;
+}
+
+* {
+    background: #1A1B26;
+    background-alt: argb:00202124;
+    background-bar: #C0CAF5;
+    foreground: #c0caf5;
+    foreground-alt: #a9b1d6;
+    accent: #44475a;
+    border: #9ece6a;
+    selected: #292E42;
+    red: #db4b4b;
+}
+
+window {
+    background-color: @background;
+    text-color: @foreground;
+    border: 0px;
+    border-color: @background-bar;
+    border-radius: 20px;
+    height: 18.8%;
+    location: center;
+    x-offset: 0;
+    y-offset: 0;
+}
+
+prompt {
+    enabled: false;
+    padding: 0.25% 0.75% 0% -0.25%;
+    background-color: @background;
+    text-color: @foreground-alt;
+    font: "Sofia Pro:style=Bold 12";
+}
+
+entry {
+    enabled: false;
+    background-color: @background;
+    text-color: @foreground;
+    placeholder-color: @foreground;
+    expand: false;
+    horizontal-align: 0;
+    placeholder: "Switch to...";
+    padding: 0% 0% 0% 0%;
+    blink: true;
+    font: "Sofia Pro 14";
+}
+
+inputbar {
+    enabled: false;
+    children: [ prompt, entry];
+    background-color: @background-bar;
+    text-color: @foreground-alt;
+    expand: false;
+    border: 0.3% 0% 0.3% 0%;
+    border-radius: 100%;
+    border-color: @accent;
+    margin: 0% 0% 0% 0%;
+}
+
+listview {
+    background-color: @background;
+    margin: 0.3% 0% 0% 0%;
+    columns: 6;
+    row: 1;
+    spacing: 1%;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+    fixed-height  : true;
+}
+
+mainbox {
+    background-color: @background;
+    border: 0% 0% 0% 0%;
+    border-radius: 0% 0% 0% 0%;
+    border-color: @accent;
+    children: [ inputbar, listview];
+    spacing: -100%;
+    padding: 1.5% 1% 1% 1%;
+}
+
+element {
+    orientation: vertical;
+    border-radius: 100px;
+    padding: 2% 0% 0% 0%;
+}
+
+element-icon {
+    size: 100px;
+    border: 0px;
+}
+
+element-text {
+    expand: false;
+    horizontal-align: 0.5;
+    vertical-align: 0.9;
+    margin: 1% 0.5% 0.7% 0.5%;
+}
+
+element selected {
+    background-color: @selected;
+    text-color: @foreground;
+    border: 3px;
+    border-radius: 15px;
+    border-color: @border;
+}
+
+element-text, element-icon, element {
+	background-color:		inherit;
+	text-color:			@foreground;
+}
+
+listview, element, element selected, element-icon, element-text {
+	cursor:				pointer;
+}

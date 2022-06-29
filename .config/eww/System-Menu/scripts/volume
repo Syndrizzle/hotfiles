@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+STATUS=$(awk '/%/ {gsub(/[\[\]]/,""); print $6}' <(amixer sget Master) | awk 'FNR == 1')
+toggle() {
+    if [ $STATUS == "on" ]; then
+        amixer set Master toggle
+        notify-send --icon=volume-level-muted --urgency=normal "Volume " "Volume has been muted!"
+    else
+        amixer set Master toggle
+        notify-send --icon=volume-level-high --urgency=normal "Volume" "Volume has been unmuted!"
+    fi
+}
+
+icon() {
+    if [ $STATUS == "on" ]; then
+        echo "󰕾"
+    else
+        echo "󰖁"
+    fi
+}
+
+status() {
+    if [ $STATUS == "on" ]; then
+        echo "On"
+    else
+        echo "Off"
+    fi
+}
+
+if [[ $1 == "--toggle" ]]; then
+    toggle
+elif [[ $1 == "--icon" ]]; then
+    icon
+elif [[ $1 == "--status" ]]; then
+    status
+fi

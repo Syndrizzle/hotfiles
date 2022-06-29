@@ -1,0 +1,13 @@
+(include "./System-Menu/eww.yuck")
+(include "./Player/eww.yuck")
+(include "./Misc/eww.yuck")
+(include "./Main/eww.yuck")
+
+(defwidget closer []
+    (eventbox :onclick "eww close-all && bash ~/.config/polybar/scripts/tray --kill"))
+  
+(defwindow background-closer
+  :monitor 0
+  :geometry (geometry :width "100%" :height "100%")
+  :stacking "fg"
+  (closer))

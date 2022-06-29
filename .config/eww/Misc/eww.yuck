@@ -1,0 +1,109 @@
+;;variables
+(defpoll greeting :interval "10h" "Misc/scripts/quote")
+(defvar volume-hidden false)
+(defvar volume-level 50)
+(defvar volume-muted false)
+(defvar brightness-hidden false)
+(defvar brightness-level 50)
+
+;;widgets
+(defwidget powermenu[]
+  (box :class "main-box" :orientation "v" :space-evenly "false"
+    (label :class "greeting" :text greeting :space-evenly "false")
+    (box :class "main-buttons-box" :orientation "h" :space-evenly "false"
+      (button :tooltip "Shutdown your PC." :class "shutdown" :onclick "shutdown now" "󰐥")
+      (button :tooltip "Reboot your PC." :class "reboot" :onclick "reboot" "󰜉")
+      (button :tooltip "Exit BSPWM." :class "exit" :onclick "bspc quit" "󰍃")
+      (button :tooltip "Lock" :class "lock" :onclick "$HOME/.scripts/lock" "󰌾"))))
+
+(defwidget volume-indicator[]
+  (box :class "volume-window"
+    :orientation "v"
+    :space-evenly "false"
+    :hexpand "false"
+    :vexpand "false"
+    (box :class "volume-spacer" :hexpand "false" :vexpand "false" :space-evenly "true" :style {volume-hidden ? "padding-top: 700px;" : "padding-top: 100px;"}
+    (box :class "volume-widget"
+      :orientation "v"
+      :space-evenly "false"
+      :spacing 10
+      :hexpand "false"
+      :vexpand "false"
+      :halign "center"
+      (label :text {volume-muted ? "" :
+        volume-level == 0 ? "" :
+        volume-level < 25 ? "" :
+        volume-level < 50 ? "" :
+        volume-level < 75 ? "" :
+        ""}
+        :space-evenly "false"
+        :class 'indicator-volume-icon ${volume-muted ? "indicator-volume-icon-muted" : ""}')
+      
+      (scale :class 'indicator-volume-slider ${volume-muted ? "volume-slider-muted" : ""}'
+        :hexpand "true"
+        :min 0
+        :max 101
+        :height 40
+        :value volume-level
+        :space-evenly "false"
+        :hexpand "false"
+        :vexpand "false"
+        :width 210
+      :onchange "amixer set Master {}%")))))
+    
+(defwidget brightness-indicator[]
+  (box :class "brightness-window"
+    :orientation "v"
+    :space-evenly "false"
+    :hexpand "false"
+    :vexpand "false"
+    (box :class "brightness-spacer" :hexpand "false" :vexpand "false" :space-evenly "true" :style {brightness-hidden ? "padding-top: 700px;" : "padding-top: 100px;"}
+    (box :class "brightness-widget"
+      :orientation "v"
+      :space-evenly "false"
+      :spacing 10
+      :hexpand "false"
+      :vexpand "false"
+      :halign "center"
+      (label :text {brightness-level < 25 ? "󰃞" :
+        brightness-level < 50 ? "󰃟" :
+        brightness-level < 75 ? "󰃝" :
+        "󰃠"}
+        :space-evenly "false"
+        :class 'indicator-brightness-icon')
+      
+      (scale :class 'indicator-brightness-slider'
+        :hexpand "true"
+        :min 0
+        :max 101
+        :height 40
+        :value brightness-level
+        :space-evenly "false"
+        :hexpand "false"
+        :vexpand "false"
+        :width 210
+      :onchange "brightnessctl s {}%")))))
+
+;;windows
+(defwindow powermenu
+  :windowtype "normal"
+  :wm-ignore true
+  :monitor 0
+  :geometry (geometry :anchor "center" :width "400px" :height "100px")
+  (powermenu))
+
+(defwindow volume-indicator
+  :monitor 0
+  :geometry (geometry :y "400px" :x "0px" :width "500px" :height "200px" :anchor "center bottom")
+  :windowtype "dock"
+  :wm-ignore true
+  :stacking "fg"
+  (volume-indicator))
+
+(defwindow brightness-indicator
+  :monitor 0
+  :geometry (geometry :y "400px" :x "0px" :width "500px" :height "200px" :anchor "center bottom")
+  :windowtype "dock"
+  :wm-ignore true
+  :stacking "fg"
+  (brightness-indicator))

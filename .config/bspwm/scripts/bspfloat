@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Made by pagankeymaster: https://github.com/pagankeymaster
+lockfile="$HOME/.cache/bspwm_all_$1.lock"
+
+function evaluate() {
+  bspc node --state "$1" 2>/dev/null \
+  || { 
+    rm "$lockfile"; 
+    echo -e "No such state: '$1'\nChoose: {floating,tiled,pseudo_tiled,fullscreen}";
+    exit 1; 
+  }
+}
+
+if [ -f "$lockfile" ]; then
+  rm "$lockfile"
+else
+  touch "$lockfile"
+  { echo; bspc subscribe node_add; } | while read -r _; do 
+    current_desktop="$(bspc query --desktops --desktop focused --names)"
+    if [[ -f "$lockfile" ]]; then 
+      [ $current_desktop -eq $2 ] && evaluate "$1"
+    else
+      break
+    fi
+  done
+fi

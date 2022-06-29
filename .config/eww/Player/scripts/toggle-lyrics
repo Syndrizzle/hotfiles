@@ -1,0 +1,15 @@
+#!/bin/bash
+STATE=$(cat $HOME/.config/eww/Player/status/ly-status)
+
+if [[ $STATE == "On" ]]; then
+    eww close lyrics
+    pkill glava 
+    eww close visualizer
+    echo "Off" > $HOME/.config/eww/Player/status/ly-status
+else
+    eww open lyrics
+    eww close visualizer &
+    pkill visualizer
+    echo "On" > $HOME/.config/eww/Player/status/ly-status
+fi
+exit

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if pgrep easyeffects; then
+    pkill easyeffects
+    echo "Off" > $HOME/.config/eww/Player/status/eq-status
+    exit 1
+else
+    exec easyeffects --gapplication-service &
+    echo "On" > $HOME/.config/eww/Player/status/eq-status
+fi
+exit

@@ -1,0 +1,130 @@
+;; variables
+(defvar window false)
+(defpoll time :interval "1s" "date '+%I %M'")
+(defpoll date :interval "1s" "date '+%A, %B %d'")
+(deflisten notifications-cards "Main/scripts/logger.zsh subscribe")
+(defpoll notifications-crits :interval "1s" "Main/scripts/logger.zsh crits")
+(defpoll weather-icon :interval "20m" "Main/scripts/weather --icon")
+(defpoll weather-temp :interval "20m" "Main/scripts/weather --temp")
+(defpoll weather-desc :interval "20m" "Main/scripts/weather --stat")
+(defpoll weather-color :interval "20m" "Main/scripts/weather --hex")
+(defpoll calendar-day :interval "20h" "+%d")
+(defpoll calendar-year :interval "20h" "+%Y")
+(defpoll calendar-month :interval "20h" "%+B")
+(defpoll volume :interval "1s" "Main/scripts/system --vol")
+(defpoll brightness :interval "1s" "Main/scripts/system --bri")
+(defpoll cpu :interval "1s" "Main/scripts/system --cpu")
+(defpoll memory :interval "1s" "Main/scripts/system --mem")
+(defpoll profile-image :interval "10h" "Main/scripts/details --image")
+(defpoll profile-username :interval "1h" "whoami")
+(defpoll profile-name :interval "1h" "Main/scripts/details --name")
+(defpoll profile-kernel :interval "1h" "Main/scripts/details --kernel")
+(defpoll profile-os :interval "1h" "Main/scripts/details --os")
+(defpoll music-length :interval "1s" "Main/scripts/music-length")
+(defpoll music-title :interval "1s" "Main/scripts/music-title --status")
+(defpoll music-pp :interval "1s" "Main/scripts/music-title --icon")
+(defpoll music-artist :interval "1s" "Main/scripts/music-artist")
+(defpoll music-art :interval "1s" "Main/scripts/music-art")
+
+
+;; widgets
+(defwidget main []
+  (box :class "main-window" :space-evenly "false" :orientation "h"
+    (box :class "main-window-box" :orientation "h" :width 1150 :hexpand "false" :vexpand "false" :space-evenly "false"
+      (box :class "left-stuff-box" :space-evenly "false" :orientation "v" :halign "start"
+        (box :class "top-row" :orientation "h" :space-evenly "false"
+          (box :class "date-box" :space-evenly "false" :orientation "v" :hexpand "false" :vexpand "false"
+            (label :class "time" :text time)
+            (label :class "date" :text date))
+          (box :class "weather-box" :space-evenly "false"  :orientation "v"
+            (label :class "weather-desc" :halign "start" :text weather-desc)
+            (label :class "weather-temp" :halign "start" :text weather-temp)
+            (label :class "weather-icon" :halign "end" :valign "end" :text weather-icon :style "color: ${weather-color};")))
+        (box :class "second-row" :orientation "h" :space-evenly "false"
+          (box :class "stats-box" :space-evenly "false" :orientation "v" :spacing 15
+            (label :class "stats-header" :halign "start" :text "Stats")
+            (box :class "volume-stats" :hexpand "false" :vexpand "false" :space-evenly "false"
+              (label :tooltip "${volume}%" :class "volume-icon" :text "󰕾")
+              (scale :min 0 :max 101 :active false :value volume :class "volume-scale" :width 250))
+            (box :class "brightness-stats" :hexpand "false" :vexpand "false" :space-evenly "false"
+              (label :tooltip "${brightness}%" :class "brightness-icon" :text "󰃠")
+              (scale :min 0 :max 101 :active false :value brightness :class "brightness-scale" :width 250))
+            (box :class "cpu-stats" :hexpand "false" :vexpand "false" :space-evenly "false"
+              (label :tooltip "${cpu}%" :class "cpu-icon" :text "󰘚")
+              (scale :min 0 :max 101 :active false :value cpu :class "cpu-scale" :width 250))
+            (box :class "memory-stats" :hexpand "false" :vexpand "false" :space-evenly "false"
+              (label :tooltip "${memory}%" :class "memory-icon" :text "󰍛")
+              (scale :min 0 :max 101 :active false :value memory :class "memory-scale" :width 250)))
+          (box :class "critical-stuff-box" :space-evenly "false" :hexpand "false" :orientation "v"
+            (box :class "critical-header" :space-evenly false :vexpand true :halign "center" :spacing 25
+              (circular-progress :start-at 90 :class "critical-notification-circle" :value notifications-crits :thickness 10 "${notifications-crits}"))
+            (label :class "critical-notification-text" :text "Criticals")))
+        (box :class "third-row" :orientation "h" :space-evenly "false"
+          (box :class "music-art-box" :space-evenly "false" :orientation "v" :hexpand "false" :vexpand "false" :style "background-image: url('${music-art}');"
+            (box :class "music-stuff-box" :space-evenly "false" :hexpand "false" :vexpand "false" :orientation "v"
+              (label :class "music-title" :text music-title :halign "start" :limit-width 22 :tooltip music-title)
+              (label :class "music-artist" :text music-artist :halign "start" :limit-width 22 :tooltip music-artist)
+              (label :class "music-length" :text music-length :halign "start" :valign "end")))
+          (box :class "music-controls-box" :space-evenly "true" :hexpand "false" :vexpand "false" :orientation "v"
+            (button :class "music-previous" :halign "center" :onclick "playerctl previous" "󰒮")
+            (button :class "music-pp" :halign "center" :onclick "playerctl play-pause" "${music-pp}")
+            (button :class "music-next" :halign "center" :onclick "playerctl next" "󰒭")))
+        (box :class "profile-stuff-box" :space-evenly "false" :hexpand "false" :vexpand "false" :orientation "h" :height 140
+          (box :class "profile-img" :space-evenly "false" :hexpand "false" :vexpand "false" :orientation "v" :style "background-image: url('${profile-image}');")
+          (box :class "profile-stuff" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false" :spacing 5
+            (label :class "profile-name" :text profile-name :halign "start")
+            (label :class "profile-os" :text profile-os :halign "start")
+            (label :class "profile-kernel" :text profile-kernel :halign "start"))))
+      (box :class "seperator-box" :width 5 :space-evenly "false" :halign "center" :hexpand "false" :vexpand "false")
+      (box :class "right-stuff-box" :space-evenly "false" :orientation "v" :halign "end"
+        (box :class "notifications-box" :space-evenly "false" :orientation "v"
+          (box :orientation "v"
+            :space-evenly "false"
+            :class "notification-layout-box"
+            (box :space-evenly "false"
+              :class "notification-headers"
+              (label :text "Notifications"
+                :class "notification-headers-label"
+                :halign "center"))
+            (literal :content notifications-cards :class "notification-literal")
+            (button :onclick "Main/scripts/logger.zsh clear" :halign "end" :class "notification-headers-clear" "Clear All" )))))))
+
+(defwidget notification-card [?class summary body image ?SL ?M ?L ?R application]
+  (eventbox :onmiddleclick M
+    :onclick L
+    :onrightclick R
+    :class "notification-card-eventbox"
+    (box :space-evenly false :orientation "v"
+      (box :space-evenly "true" :orientation "h" :class "notification-card-header-box"
+          (label :class "notification-app-name" :text "${application}" :halign "start")
+          (button :onclick "Main/scripts/logger.zsh rm_id ${SL}"
+          :class "notification-card-notify-close" :halign "end"
+          (label :text "󰅙" :tooltip "Remove this notification.")))
+      (box :space-evenly "false" :orientation "h"
+      (box :class "notification-image" :style "background-image: url('${image}');")
+      (box :orientation "vertical"
+        :class class
+        :space-evenly false
+        :hexpand true
+        :class "notification-card-box"
+      
+        (box :space-evenly false
+          (label :limit-width 25
+            :wrap true
+            :text summary
+            :class "notification-summary"
+            :halign "start"
+          :hexpand true))
+        (label :limit-width 30
+          :wrap true
+          :text body
+          :halign "start"
+        :class "notification-body"))))))
+        
+;; windows
+(defwindow main
+  :windowtype "normal"
+  :wm-ignore true
+  :monitor 0
+  :geometry (geometry :x 76 :width 1150 :height 800 :y 90 :x 365)
+  (main))

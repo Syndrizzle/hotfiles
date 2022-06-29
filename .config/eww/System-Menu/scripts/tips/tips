@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+import random
+
+quote_msg = ['You can close an application just by pressing Alt + F4!',
+            'You can change your tiling style by clicking the blue button on the bar at top right!',
+            'You can move between workspaces by pressing 󰖳 + 1,2,3,4,5!',
+            'You can take full screen and area screenshots by pressing Shift + Print and Print button!',
+            'The last workspace floats every window!',
+            'You can move windows to workspaces by using Shift with the workspace switching keys!',
+            'Use ctrl+L to lock your desktop.',
+            'You can edit your wm config by right click > BSPWM > Edit Config option.']
+
+quote = random.choice(quote_msg)
+print(quote)

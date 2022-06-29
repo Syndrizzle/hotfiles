@@ -1,0 +1,4 @@
+#!/bin/bash
+
+TRACK_ID=$(playerctl -p spotify metadata mpris:trackid)
+dbus-send --type=method_call --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.SetPosition objpath:/com/spotify/track/0LnS7aOdOdI1dNKZqdOLz4 int64:120000000

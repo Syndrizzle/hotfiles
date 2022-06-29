@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+
+is_active=$(pgrep redshift)
+
+toggle() {
+    if [[ -n $is_active ]]; then
+        pkill redshift
+    else
+        redshift &
+    fi
+}
+
+icon() {
+    if [[ -n $is_active ]]; then
+        echo "󰛨"
+        exit 1
+    else
+        echo "󰹏"
+        exit 1
+    fi
+}
+
+status() {
+    if [[ -n $is_active ]]; then
+        echo "Turned on"
+        exit 1
+    else
+        echo "Turned off"
+        exit 1
+    fi
+}
+
+if [[ $1 == "--toggle" ]]; then
+    toggle
+elif [[ $1 == "--icon" ]]; then
+    icon
+elif [[ $1 == "--status" ]]; then
+    status
+fi

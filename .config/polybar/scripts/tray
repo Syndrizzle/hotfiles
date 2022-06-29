@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ $1 == "--toggle" ]]; then
+        if pgrep tint2; then
+                pkill tint2
+                echo "" > $HOME/.config/polybar/scripts/tray-status
+                exit 1
+        else
+                eww open --toggle background-closer && tint2 &
+                echo "" > $HOME/.config/polybar/scripts/tray-status
+        fi
+        exit
+fi
+
+if [[ $1 == "--kill" ]]; then
+        pkill tint2
+        echo "" > $HOME/.config/polybar/scripts/tray-status
+        exit 1
+fi

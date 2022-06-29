@@ -1,0 +1,119 @@
+configuration{
+    modi: "run,drun,window";
+    lines: 5;
+    font: "Sofia Pro 16";
+    show-icons: true;
+    icon-theme: "Papirus";
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: " 󰵆  Apps ";
+    display-run: " 󰆍  Run ";
+    display-window: " 󱂬  Window";
+    sidebar-mode: true;
+}
+
+@theme "tokyo-night"
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+    
+}
+
+window {
+    height: 500px;
+    border: 0px;
+    border-color: @fg-col;
+    background-color: @bg-col;
+    border-radius: 15;
+}
+
+mainbox {
+    background-color: @bg-col;
+    children: [ mode-switcher, inputbar, listview ];
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 5px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 10 10 0;
+    margin: 10 10 0 10;
+    columns: 4;
+    spacing: 15;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
+    orientation: vertical;
+    spacing: 10;
+}
+
+element-icon {
+    size: 56px;
+    horizontal-align: 0.5;
+}
+
+element selected {
+    background-color:  @fg-col2 ;
+    text-color: @bg-col  ;
+    border-radius: 8px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    expand: true;
+    font: "Sofia Pro Bold 14";
+  }
+
+mode-switcher {
+    spacing: 0;
+    margin: 5 10 5 10;
+    padding: 10 50 5 50;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @fg-col;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color:  @green ;
+  text-color: @bg-col;
+  border-radius: 10px;
+}

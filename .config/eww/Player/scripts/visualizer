@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if pgrep glava; then
+    pkill glava
+    exec eww open --toggle visualizer &
+    echo "Off" > $HOME/.config/eww/Player/status/vz-status
+    eww close lyrics
+    exit 1
+else
+    exec glava &
+    exec eww open --toggle visualizer &
+    echo "On" > $HOME/.config/eww/Player/status/vz-status
+    eww close lyrics
+fi
+exit

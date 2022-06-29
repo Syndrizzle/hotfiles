@@ -1,0 +1,345 @@
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+.main-window-box {
+  background-color: $bg;
+  font-family: "Sofia Pro", "JetBrainsMono Nerd Font", "Material Design Icons Desktop";
+}
+
+.date-box {
+  background-color: $gray-alt;
+  margin: 20px 20px 0px 20px;
+  min-width: 290px;
+  padding: 20px 10px 20px 10px;
+  border-radius: 15px;
+  color: $fg;
+}
+
+.time {
+  font-family: "Sofia Pro";
+  font-weight: bold;
+  font-size: 100px;
+}
+
+.date {
+  font-family: "Sofia Pro";
+  font-size: 30px;
+}
+
+.weather-box {
+  background-color: $gray-alt;
+  margin: 20px 20px 0px 0px;
+  padding: 20px 20px 20px 10px;
+  border-radius: 15px;
+  min-width: 200px;
+}
+
+.weather-desc {
+  color: $gray;
+  font-size: 20px;
+}
+
+.weather-temp {
+  font-size: 34px;
+  color: $fg;
+  padding-top: 10px;
+}
+
+.weather-icon {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 60px;
+}
+
+.stats-box {
+  background-color: $gray-alt;
+  margin: 20px 20px 0px 20px;
+  padding: 20px 35px 20px 25px;
+  border-radius: 15px;
+}
+
+.stats-header {
+  font-size: 22px;
+  font-weight: bold;
+  color: $gray;
+}
+
+.volume-icon,
+.brightness-icon,
+.cpu-icon,
+.memory-icon {
+  font-size: 24px;
+  color: $fg;
+}
+
+.volume-scale trough, .brightness-scale trough, .cpu-scale trough, .memory-scale trough {
+  all: unset;
+  background-color: $gray;
+  min-height: 10px;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.volume-scale highlight {
+  background-color: $green;
+  border-radius: 15px;
+}
+
+.brightness-scale highlight {
+  background-color: $yellow;
+  border-radius: 15px;
+}
+
+.cpu-scale highlight {
+  background-color: $red;
+  border-radius: 15px;
+}
+
+.memory-scale highlight {
+  background-color: $blue;
+  border-radius: 15px;
+}
+
+.critical-stuff-box {
+  margin: 20px 20px 0px 0px;
+  border-radius: 15px;
+  background-color: $gray-alt;
+  min-width: 205px;
+}
+
+.critical-notification-circle label {
+  padding: 50px 50px 45px 50px;
+}
+
+.critical-notification-circle {
+  color: $red;
+  background-color: $gray;
+  font-size: 40px;
+  margin: 20px 20px 20px 20px;
+}
+
+.critical-notification-text {
+  background-color: $red;
+  color: $fg;
+  border-radius: 0px 0px 15px 15px;
+  padding: 10px 0px 10px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.music-art-box {
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 450px;
+  min-height: 200px;
+  border-radius: 17px;
+  background-position: center;
+  margin: 20px 0px 0px 20px;
+}
+
+.music-title {
+  margin: 20px 0px 0px 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: $fg;
+}
+
+.music-artist {
+  margin: 10px 0px 0px 20px;
+  font-size: 20px;
+  color: $fg-alt;
+}
+
+.music-length {
+  margin: 90px 0px 0px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: $fg-alt;
+}
+
+.music-stuff-box {
+  min-height: 200px;
+  border-radius: 15px;
+  background: linear-gradient(to right, $bg-alt, transparent);
+}
+
+.music-controls-box {
+  margin: 20px 0px 0px 20px;
+  background-color: $gray-alt;
+  padding: 0px 23px 0px 23px;
+  border-radius: 15px;
+  min-width: 38px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+.music-next,
+.music-previous {
+  font-size: 30px;
+}
+
+.music-pp {
+  font-size: 44px;
+  color: $fg;
+}
+
+.music-next:hover,
+.music-previous:hover,
+.music-pp:hover {
+  color: $orange;
+}
+
+.profile-stuff-box {
+  margin: 20px 20px 0px 20px;
+  background-color: $gray-alt;
+  border-radius: 15px;
+  padding: 15px 20px 15px 20px;
+}
+
+.profile-img {
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-width: 90px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+}
+
+.profile-stuff {
+  padding: 7px 0px 0px 30px;
+  font-size: 22px;
+  color: $fg;
+}
+
+.profile-name {
+  font-weight: bold;
+}
+
+.seperator-box {
+  background-color: $bg-alt;
+}
+
+.notification-headers {
+  padding: 20px 45px 20px 32px;
+  color: $blue;
+}
+
+.notification-headers-label {
+  font-size: 28;
+  font-weight: bold;
+  font-family: Sofia Pro;
+  text-shadow: 0px 0px 10px #000000;
+  padding: 0px 160px 0px 160px;
+}
+
+.notification-card-eventbox {
+  background-color: $gray-alt;
+  border-radius: 15px;
+}
+
+.notification-headers-clear {
+  margin: 20px 25px 25px 0px;
+  background-color: $gray-alt;
+  border-radius: 15px;
+  padding: 15px 15px 13px 15px;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.notification-headers-clear:hover {
+  background-color: $gray;
+}
+
+.notifications-empty-box {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.notifications-empty-label {
+  padding-top: 10px;
+  color: $red;
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.notification-scroll-box {
+  margin: 0px 16px 0px 16px;
+}
+
+.notification-card-box {
+  padding: 20px 20px 20px 20px;
+}
+
+.notification-card-LOW {
+  background-color: $gray-alt;
+  color: $yellow;
+  padding: 0px 10px 0px 8px;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.notification-card-NORMAL {
+  background-color: $gray-alt;
+  color: $blue;
+  padding: 0px 10px 0px 8px;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.notification-card-CRITICAL {
+  background-color: $gray-alt;
+  color: $red;
+  padding: 0px 10px 0px 8px;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.notification-card-OTHER {
+  background-color: $gray-alt;
+  color: $green;
+  padding: 0px 10px 0px 8px;
+  font-size: 30;
+  border-radius: 15px;
+}
+
+.notification-summary {
+  font-weight: bold;
+  font-size: 22px;
+  padding-bottom: 10px;
+  color: $fg;
+}
+
+.notification-card-notify-close {
+  color: $red;
+  padding: 2px 2px 2px 2px;
+  font-size: 22px;
+}
+
+.notification-body {
+  color: $fg;
+  font-size: 18px;
+}
+
+.notification-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-width: 60px;
+  border-radius: 10px;
+  margin: 16px 0px 16px 20px;
+}
+
+.notification-card-header-box {
+  background-color: $bg-alt;
+  border-radius: 15px 15px 0px 0px;
+  padding: 5px 20px 5px 20px;
+}
+
+.notification-app-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: $fg;
+}

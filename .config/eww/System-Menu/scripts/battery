@@ -1,0 +1,76 @@
+#!/bin/sh
+
+# This script displays battery icon according to the charge level and charging state
+
+# Author: Piotr Miller
+# e-mail: nwg.piotr@gmail.com
+# Website: http://nwg.pl
+# Project: https://github.com/nwg-piotr/tint2-executors
+# License: GPL3
+
+# Dependencies: `acpi`
+
+bat=$(acpi -b)
+state=$(echo ${bat} | awk '{print $3}')
+
+if [[ "$state" = "Not" ]]; then
+    level=$(echo ${bat} | awk '{print $5}')
+    level=${level::-1}
+    
+else
+    level=$(echo ${bat} | awk '{print $4}')
+    if [[ "$state" == *"Unknown"* ]]; then
+        level=${level::-1}
+    else
+        if [[ "$level" == "100%" ]]; then
+            level=${level::-1}
+        else
+            level=${level::-2}
+        fi
+    fi
+fi
+
+icon() {
+    if [[ "$bat" == *"until"* ]]; then
+        
+        if [[ "$level" -ge "80" ]]; then
+            echo "   "
+            elif [[ "$level" -ge "60" ]]; then
+            echo "   "
+            elif [[ "$level" -ge "40" ]]; then
+            echo "   "
+            elif [[ "$level" -ge "20" ]]; then
+            echo "   "
+        else
+            echo "   "
+        fi
+    else
+        if [[ "$level" -ge "80" ]]; then
+            echo "  "
+            elif [[ "$level" -ge "60" ]]; then
+            echo "  "
+            elif [[ "$level" -ge "40" ]]; then
+            echo "  "
+            elif [[ "$level" -ge "20" ]]; then
+            echo "  "
+        else
+            echo "  "
+        fi
+    fi
+}
+
+class() {
+    if [[ "$bat" == *"until"* ]]; then
+        echo ""
+    else
+        echo " "
+    fi
+}
+
+if [[ $1 = "-l" ]]; then
+    echo "${level}%"
+elif [[ $1 == "-c" ]]; then
+    class
+elif [[ $1 = "-i" ]]; then
+    icon
+fi

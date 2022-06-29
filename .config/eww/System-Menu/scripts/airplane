@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+STATUS="$(rfkill list | sed -n 2p | awk '{print $3}')"
+
+icon() {
+    if [[ $STATUS == "no" ]]; then
+        echo "󰀞"
+    else
+        echo "󰀝"
+    fi
+}
+
+toggle() {
+    if [[ $STATUS == "no" ]]; then
+        rfkill block all
+        notify-send --urgency=normal "Airplane Mode" "Airplane mode has been turned on!"
+    else
+        rfkill unblock all
+        notify-send --urgency=normal "Airplane Mode" "Airplane mode has been turned off!"
+    fi
+}
+
+status() {
+    if [[ $STATUS == "no" ]]; then
+        echo "Off"
+    else
+        echo "On"
+    fi
+}
+
+if [[ $1 == "--toggle" ]]; then
+    toggle
+elif [[ $1 == "--icon" ]]; then
+    icon
+elif [[ $1 == "--status" ]]; then
+    status
+fi

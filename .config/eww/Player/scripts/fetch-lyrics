@@ -1,0 +1,2 @@
+#!/bin/bash
+python ~/.config/eww/Player/scripts/music-line.py && cat ~/.cache/line.txt 

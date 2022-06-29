@@ -1,0 +1,22 @@
+#!/bin/sh
+
+killed=false
+for pid in $(pidof -x brightness); do
+    if [ $pid != $$ ]; then
+        kill -9 $pid
+        killed=true
+    fi
+done >/dev/null
+
+if ! $killed; then
+    eww update brightness-hidden=true
+    eww open brightness-indicator
+fi
+
+eww update brightness-level=$(brightnessctl i -m | tr , " " | awk '{print $4}' | cut -c 1-2)
+eww update brightness-hidden=false
+sleep 2
+eww update brightness-hidden=true
+sleep 1
+eww close brightness-indicator
+unset killed
