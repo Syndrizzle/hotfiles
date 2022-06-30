@@ -1,0 +1,34 @@
+# tokyo night theme for SLIM
+
+# Messages (ie: shutdown)
+
+msg_color               #c0caf5
+msg_font                Sofia Pro:size=18:bold:dpi=120
+msg_x                   50%
+msg_y                   30%
+
+# Session Name
+
+session_color               #c0caf5
+session_font                Sofia Pro:size=16:bold:dpi=120
+session_x                   50%
+session_y                   92%
+
+# valid values: stretch, tile
+
+background_style        stretch
+background_color        #1a1b26
+
+# Input controls
+
+input_panel_x           20%
+input_panel_y           50%
+input_name_x            175
+input_name_y            407
+input_pass_x            175
+input_pass_y            494
+input_font              Sofia Pro:size=16:dpi=96:style=Bold
+input_color           #1a1b26
+
+username_msg            "Username:"
+password_msg            "Password:"

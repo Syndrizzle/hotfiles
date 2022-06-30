@@ -95,7 +95,7 @@ This picom fork has the best window animations you can get. For eyecandy we are 
 
 First install all the dependencies required to build the compositor:
 ```bash
-sudo pacman -S libconfig libev libxdg-basedir pcre pixman xcb-util-image xcb-util-renderutil hicolor-icon-theme libglvnd libx11 libxcb libxext libdbus
+sudo pacman -S libconfig libev libxdg-basedir pcre pixman xcb-util-image xcb-util-renderutil hicolor-icon-theme libglvnd libx11 libxcb libxext libdbus asciidoc
 ```
 Then do the following:
 ```bash
@@ -109,12 +109,12 @@ With that, we have all the dependencies. We can move to the next part.
 </details>
 <details>
 <summary><b>2. Installing GTK Theme:</b></summary>
-To march with the current colorscheme, we are using the [Tokyo-Night-GTK Theme](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme).
+To match with the current colorscheme, we are using the <a href="https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme">Tokyo Night GTK Theme</a>
 
 ```bash
 cd ~/Downloads
 git clone https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme.git
-cd Tokyo-Night-GTK-Theme/wallpapers/
+cd Tokyo-Night-GTK-Theme/
 mv themes/Tokyonight-Dark-BL /usr/share/themes/
 ```
 And that's it!
@@ -152,6 +152,43 @@ The usr folder contains the cursor theme and some executable scripts.
 
 </details>
 
+#### Miscllaneous:
+
+<details>
+<summary><b>Spicetify Theme: </b></summary>
+
+Since we copied the dotfiles, we can apply the spicetify theme now.
+First, install spicetify using:
+```bash
+paru -S spicetify-cli-git
+```
+
+Then, we need to give read and write access to our spotify folder for modifications:
+```bash
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+```
+
+After that we just need to run:
+
+```bash
+spicetify config current_theme Ziro
+spicetify config color_scheme tokyonight
+spicetify config extensions adblock.js
+spicetify backup apply
+```
+This would install the spicetify theme to your Spotify.
+
+</details>
+
+<details>
+<summary><b>Visual Studio Code Theme: </b></summary>
+To get a consistent look for visual studio code, you can install the <b>Tokyo Night</b> Theme from the visual studio code marketplace.
+
+[Click Here to access the theme link](https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night)
+
+</details>
+
 ## Gallery:
 <p align="center"><img src="https://i.imgur.com/EMuaeIv.png" width="1200"/></p>
 <h3 align="center">The Desktop</h3>
@@ -167,11 +204,11 @@ The usr folder contains the cursor theme and some executable scripts.
 <h3 align="center">Login Screen using SLiM</h3>
 
 ### More Fluff!
-<p align="center"><img src="https://i.imgur.com/s6mMGNJ.gif" width="1000"/>f</p>
+<p align="center"><img src="https://i.imgur.com/s6mMGNJ.gif" width="1000"/></p>
 <h3 align="center">Polybar with all the important information, visible to you when you need it!</h3>
-<p align="center"><img src="https://i.imgur.com/Ks0Us60.gif"/>f</p>
+<p align="center"><img src="https://i.imgur.com/Ks0Us60.gif"/></p>
 <h3 align="center">A beautiful notification center created with aesthetics and usability in mind.</h3>
-<p align="center"><img src="https://i.imgur.com/jC4JMF4.gif"/>f</p>
+<p align="center"><img src="https://i.imgur.com/jC4JMF4.gif"/></p>
 <h3 align="center">A system menu with a lot of configuration available at your fingertips!</h3>
 <p align="center"><img src="https://i.imgur.com/zx9Ch7p.gif"/></p>
 <h3 align="center">An eww based music player popup to control your music, get synced lyrics, and even a visualizer!</h3><br>
@@ -229,8 +266,9 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "$HOME/.scripts/lock-ru
 * [kizu](https://github.com/janleigh)
 * All the members of r/unixporn community and the discord server!
 ---
-**The wallpapers have been taken from [Wallhaven](https://wallhaven.cc), [pexels](https://pexels.com) and the [tokyo night gtk theme  repository](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme/tree/master/wallpapers)**<br>
-**The icons are from [icons8](https://icons8.com), [flaticon](https://flaticon.com), [materialdesignicons](https://materialdesignicons.com), [IcoMoon](https://icomoon.io), [feather-icons](https://feathericons.com/) and [Nerd Fonts](https://www.nerdfonts.com)**
+* **The wallpapers have been taken from [Wallhaven](https://wallhaven.cc), [pexels](https://pexels.com) and the [tokyo night gtk theme  repository](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme/tree/master/wallpapers)**<br>
+* **The icons are from [icons8](https://icons8.com), [flaticon](https://flaticon.com), [materialdesignicons](https://materialdesignicons.com), [IcoMoon](https://icomoon.io), [feather-icons](https://feathericons.com/) and [Nerd Fonts](https://www.nerdfonts.com)**<br>
+* The Conky theme was taken from [closebox73's Scorpio](https://github.com/closebox73/Scorpio) conky themes pack, named "Auva". It was modified to match the color scheme.
 
 
 <p align="center"><b>That's it! Have a nice day!</b></p>
