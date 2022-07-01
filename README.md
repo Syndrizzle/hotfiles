@@ -271,7 +271,11 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "$HOME/.scripts/lock-ru
 ## Support:
 You can always show your support towards these rices by donating me, as this takes a lot of time and hardwork, thank you for everything!
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A8DKCLY)
+<b>Ko-Fi:</b> <br>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A8DKCLY) <br>
+
+<b>Librepay:</b> <br>
+<a href="https://liberapay.com/syndrizzle/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
 ## Credits:
 
