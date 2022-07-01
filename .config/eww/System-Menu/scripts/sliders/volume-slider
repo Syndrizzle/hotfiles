@@ -29,5 +29,5 @@ getvol() {
 if [[ $1 == "--icon" ]]; then
     icon
 elif [[ $1 == "--value" ]]; then
-    getvol
+    getvol | tail -1
 fi

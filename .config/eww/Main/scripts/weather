@@ -112,7 +112,7 @@ elif [[ "$1" == "--icon" ]]; then
 elif [[ "$1" == "--temp" ]]; then
 	cat ${cache_weather_degree}
 elif [[ "$1" == "--hex" ]]; then
-	cat ${cache_weather_hex}
+	tail -F ${cache_weather_hex}
 elif [[ "$1" == "--stat" ]]; then
 	cat ${cache_weather_stat}
 fi

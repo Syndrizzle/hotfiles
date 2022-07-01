@@ -53,7 +53,7 @@
       (box :class "player-length-box" :space-evenly "false" :hexpand "false" :vexpand "false" :halign "end" :width 150
         (label :class "current-position" :text "${current-pos} ")
         (label :class "length-of-song" :text "/ ${length-info}"))
-      (box :class "player-control-box-right" :space-evenly "false" :hexpand "fal*se" :vexpand "false" :spacing 15 :halign "end"
+      (box :class "player-control-box-right" :space-evenly "false" :hexpand "false" :vexpand "false" :spacing 15 :halign "end"
         (button :class "visualizer-btn ${vz-status == "On" ? "visualizer-btn-on" : "visualizer-btn-off"}" :onclick "Player/scripts/visualizer" "󱑽")
         (button :class "equalizer-btn ${eq-status == "On" ? "equalizer-btn-on" : "equalizer-btn-off"}" :onclick "Player/scripts/equalizer" "󰺢")))))
 

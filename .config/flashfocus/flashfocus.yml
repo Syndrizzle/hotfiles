@@ -1,0 +1,92 @@
+## @@@@@@@@@@@@@@@@@@@@@@
+## Flashfocus config file
+## @@@@@@@@@@@@@@@@@@@@@@
+
+# Opacity of window during flash.
+flash-opacity: 0.5
+
+# Windows are restored to this opacity value at the end of a flash.
+default-opacity: 1
+
+# Length of flash in milliseconds.
+time: 500
+
+# If true, flashes are not faded out. This will improve performance but flashes
+# won't be smooth.
+simple: false
+
+# Number of animation frames in a flash.
+ntimepoints: 30
+
+# Set this to false if you don't want windows to flash on focus.
+flash-on-focus: true
+
+# Set this to false if you don't want fullscreen windows to flash.
+flash-fullscreen: true
+
+# Whether or not to flash windows if they are the only window on the desktop.
+# Possible values:
+#   'always':
+#      Always flash lone windows
+#   'never':
+#      Never flash lone windows
+#   'on_open_close':
+#      Lone windows will be flashed only if a) if they were just opened and b)
+#      if another window was just closed.
+#   'on_switch':
+#      Lone windows will be flashed only upon switching desktops.
+flash-lone-windows: 'always'
+
+
+# Defining window-specific flash rules
+#
+# X11-based window managers (e.g i3, bspwm)
+# -----------------------------------------
+# Flash rules are defined by matching the WM_CLASS property of a window. To get
+# the WM_CLASS property use 'xprop WM_CLASS' and click on a window. The
+# property is a tuple of the form (window-id, window-class). The window-class
+# is usually the name of the application, but not always.
+#
+#
+# Say I'd like to set all 'termite' windows to 80% opacity but leave other
+# windows at full opacity:
+#
+# rules:
+#   - window-class: Termite
+#     default-opacity: 0.8
+#
+#
+# I also would prefer that firefox windows are not flashed on focus:
+#
+# rules:
+#   - window-class: firefox
+#     flash-on-focus: False
+#   - window-class: Termite
+#     default-opacity: 0.8
+#
+#
+# For more complicated rules, you can use (python-style) regexes:
+#
+# rules:
+#   - window-id: ^(?!termite)$
+#     default-opacity: 0.8
+#
+#
+# Sway
+# ----
+# Native wayland apps can be matched using the app_id and window name. These
+# can be found using `swaymsg -t get_tree`. XWayland apps are matched with
+# using WM_CLASS as above (this can also be found with `swaymsg`)
+#
+# Given that termite is wayland native and firefox is not, the rules above
+# could instead be written:
+#
+# rules:
+#   - window-class: firefox
+#     flash-on-focus: False
+#   - app-id: termite
+#     default-opacity: 0.8
+#
+# rules:
+#   - window-name: ^(?!termite)$
+#     default-opacity: 0.8

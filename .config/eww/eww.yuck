@@ -4,7 +4,7 @@
 (include "./Main/eww.yuck")
 
 (defwidget closer []
-    (eventbox :onclick "eww close-all && bash ~/.config/polybar/scripts/tray --kill"))
+    (eventbox :onclick "eww close-all"))
   
 (defwindow background-closer
   :monitor 0

@@ -26,10 +26,10 @@
 (defpoll profiles-mode :interval "1s" "System-Menu/scripts/power-profile --mode")
 
 ;; for sliders
-(defpoll volume :interval "1s" "System-Menu/scripts/sliders/volume-slider --value")
-(defpoll volume-slider-indicator :interval "0s" "System-Menu/scripts/sliders/volume-slider --icon")
-(defpoll brightness :interval "1s" "System-Menu/scripts/sliders/brightness-slider --value")
-(defpoll brightness-slider-indicator :interval "0s" "System-Menu/scripts/sliders/brightness-slider --icon")
+(deflisten volume "System-Menu/scripts/sliders/volume-slider --value")
+(defpoll volume-slider-indicator :interval "0.5s" "System-Menu/scripts/sliders/volume-slider --icon")
+(deflisten brightness "System-Menu/scripts/sliders/brightness-slider --value")
+(defpoll brightness-slider-indicator :interval "0.5s" "System-Menu/scripts/sliders/brightness-slider --icon")
 
 ;; widget
 
@@ -39,9 +39,6 @@
       (label :class "tips-header" :halign "start" :text "󰋼 Tips:")
       (button :class "close-tips" :onclick "eww close tips" :tooltip "Close Tips" :halign "end" "󰅙"))
     (label :class "tips-body" :halign "start" :text "${tips}")))
-
-(defwidget closer []
-  (eventbox :onclick "eww close-all"))
 
 (defwidget system []
   (box :orientation "v" :space-evenly "false" :class "main-system-box"
@@ -102,13 +99,13 @@
       (box :orientation "h" :class "volume-slider-stuff" :space-evenly "false"
         (button :onclick "amixer set Master toggle" :class "volume-slider-icon" "${volume-slider-indicator}")
         (scale :class "volume-slider"
-          :value volume
+          :value {volume == "" ? 0 : volume}
           :orientation "h"
           :width 660
           :max 100
           :min 0
           :marks true
-        :onchange "amixer set Master {}%")
+        :onchange "amixer set Master {}% --quiet")
         (button :onclick "System-Menu/scripts/launch volume" :class "volume-slider-button" ""))
       (box :orientation "h" :class "brightness-slider-stuff" :space-evenly "false"
         (button :class "brightness-slider-icon" "${brightness-slider-indicator}")
@@ -116,9 +113,9 @@
           :orientation "h"
           :max 100
           :min 0
-          :value brightness
+          :value {brightness == "" ? 0 : brightness}
           :width 663
-        :onchange "brightnessctl s {}%")
+        :onchange "brightnessctl --quiet s {}%")
         (button :onclick "System-Menu/scripts/launch display" :class "brightness-slider-button" "")))
     (box :orientation "h" :space-evenly "true" :class "bottom-items-box"
       (box :orientation "h" :space-evenly "false" :class "battery-box" :halign "start"
@@ -139,12 +136,6 @@
   :monitor 0
   :geometry (geometry :x 76 :width 300 :height 300 :y 80 :x 1050)
   (system))
-
-(defwindow background-closer
-  :monitor 0
-  :geometry (geometry :width "100%" :height "100%")
-  :stacking "fg"
-  (closer))
 
 (defwindow tips
   :windowtype "normal"

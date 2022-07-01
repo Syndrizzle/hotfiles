@@ -7,7 +7,7 @@
 (defpoll weather-icon :interval "20m" "Main/scripts/weather --icon")
 (defpoll weather-temp :interval "20m" "Main/scripts/weather --temp")
 (defpoll weather-desc :interval "20m" "Main/scripts/weather --stat")
-(defpoll weather-color :interval "20m" "Main/scripts/weather --hex")
+(deflisten weather-color :initial "#7aa2f7" "Main/scripts/weather --hex")
 (defpoll calendar-day :interval "20h" "+%d")
 (defpoll calendar-year :interval "20h" "+%Y")
 (defpoll calendar-month :interval "20h" "%+B")
@@ -39,28 +39,28 @@
           (box :class "weather-box" :space-evenly "false"  :orientation "v"
             (label :class "weather-desc" :halign "start" :text weather-desc)
             (label :class "weather-temp" :halign "start" :text weather-temp)
-            (label :class "weather-icon" :halign "end" :valign "end" :text weather-icon :style "color: ${weather-color};")))
+            (label :class "weather-icon" :halign "end" :valign "end" :text weather-icon :style "color: ${weather-color}")))
         (box :class "second-row" :orientation "h" :space-evenly "false"
           (box :class "stats-box" :space-evenly "false" :orientation "v" :spacing 15
             (label :class "stats-header" :halign "start" :text "Stats")
             (box :class "volume-stats" :hexpand "false" :vexpand "false" :space-evenly "false"
               (label :tooltip "${volume}%" :class "volume-icon" :text "󰕾")
-              (scale :min 0 :max 101 :active false :value volume :class "volume-scale" :width 250))
+              (scale :min 0 :max 101 :active false :value {volume == "" ? 0 : volume} :class "volume-scale" :width 250))
             (box :class "brightness-stats" :hexpand "false" :vexpand "false" :space-evenly "false"
               (label :tooltip "${brightness}%" :class "brightness-icon" :text "󰃠")
-              (scale :min 0 :max 101 :active false :value brightness :class "brightness-scale" :width 250))
+              (scale :min 0 :max 101 :active false :value {brightness == "" ? 0 : brightness} :class "brightness-scale" :width 250))
             (box :class "cpu-stats" :hexpand "false" :vexpand "false" :space-evenly "false"
               (label :tooltip "${cpu}%" :class "cpu-icon" :text "󰘚")
-              (scale :min 0 :max 101 :active false :value cpu :class "cpu-scale" :width 250))
+              (scale :min 0 :max 101 :active false :value {cpu == "" ? 0 : cpu} :class "cpu-scale" :width 250))
             (box :class "memory-stats" :hexpand "false" :vexpand "false" :space-evenly "false"
               (label :tooltip "${memory}%" :class "memory-icon" :text "󰍛")
-              (scale :min 0 :max 101 :active false :value memory :class "memory-scale" :width 250)))
+              (scale :min 0 :max 101 :active false :value {memory == "" ? 0 : memory} :class "memory-scale" :width 250)))
           (box :class "critical-stuff-box" :space-evenly "false" :hexpand "false" :orientation "v"
             (box :class "critical-header" :space-evenly false :vexpand true :halign "center" :spacing 25
-              (circular-progress :start-at 90 :class "critical-notification-circle" :value notifications-crits :thickness 10 "${notifications-crits}"))
+              (circular-progress :start-at 90 :class "critical-notification-circle" :value {notifications-crits == "" ? 0 : notifications-crits} :thickness 10 "${notifications-crits}"))
             (label :class "critical-notification-text" :text "Criticals")))
         (box :class "third-row" :orientation "h" :space-evenly "false"
-          (box :class "music-art-box" :space-evenly "false" :orientation "v" :hexpand "false" :vexpand "false" :style "background-image: url('${music-art}');"
+          (box :class "music-art-box" :space-evenly "false" :orientation "v" :hexpand "false" :vexpand "false" :style "background-image: url(\"${music-art}\");"
             (box :class "music-stuff-box" :space-evenly "false" :hexpand "false" :vexpand "false" :orientation "v"
               (label :class "music-title" :text music-title :halign "start" :limit-width 22 :tooltip music-title)
               (label :class "music-artist" :text music-artist :halign "start" :limit-width 22 :tooltip music-artist)
@@ -70,7 +70,7 @@
             (button :class "music-pp" :halign "center" :onclick "playerctl play-pause" "${music-pp}")
             (button :class "music-next" :halign "center" :onclick "playerctl next" "󰒭")))
         (box :class "profile-stuff-box" :space-evenly "false" :hexpand "false" :vexpand "false" :orientation "h" :height 140
-          (box :class "profile-img" :space-evenly "false" :hexpand "false" :vexpand "false" :orientation "v" :style "background-image: url('${profile-image}');")
+          (box :class "profile-img" :space-evenly "false" :hexpand "false" :vexpand "false" :orientation "v" :style "background-image: url(\"${profile-image}\");")
           (box :class "profile-stuff" :orientation "v" :space-evenly "false" :hexpand "false" :vexpand "false" :spacing 5
             (label :class "profile-name" :text profile-name :halign "start")
             (label :class "profile-os" :text profile-os :halign "start")
@@ -101,7 +101,7 @@
           :class "notification-card-notify-close" :halign "end"
           (label :text "󰅙" :tooltip "Remove this notification.")))
       (box :space-evenly "false" :orientation "h"
-      (box :class "notification-image" :style "background-image: url('${image}');")
+      (box :class "notification-image" :style "background-image: url(\"${image}\");")
       (box :orientation "vertical"
         :class class
         :space-evenly false
