@@ -275,6 +275,8 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "$HOME/.scripts/lock-ru
 * [beyond9thousand](https://github.com/beyond9thousand)
 * [siduck](https://github.com/siduck)
 * [kizu](https://github.com/janleigh)
+* [Axarva](https://github.com/axarva)
+* [Aditya Shakya](https://github.com/adi1090x)
 * All the members of r/unixporn community and the discord server!
 ---
 * **The wallpapers have been taken from [Wallhaven](https://wallhaven.cc), [pexels](https://pexels.com) and the [tokyo night gtk theme  repository](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme/tree/master/wallpapers)**<br>
