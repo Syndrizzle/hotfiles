@@ -1,9 +1,11 @@
 <p align="center"><b>IMPORTANT:</b> Those who are looking for the old rice, it is on the worm branch, <a href="https://github.com/syndrizzle/hotfiles/tree/worm">click here</a> to check it out. </p>
 
 <img alt="picture 2" src="https://i.imgur.com/hrNbdfD.gif" />  
-<p align="center"><a href="#installation"><img alt="picture 2" src="https://i.imgur.com/Y7PKn7x.png" width="220" /></a><a href="#gallery"><img alt="picture 3" src="https://i.imgur.com/i9rmhBC.png" width="220" /></a><a href="#tips"><img alt="picture 4" src="https://i.imgur.com/cg3KPZc.png" width="220" /></a><a href="#credits"><img alt="picture 5" src="https://i.imgur.com/QA23l5X.png" width="220" /></a></p>
+<p align="center"><a href="#installation"><img alt="picture 2" src="https://i.imgur.com/Y7PKn7x.png" width="220"/></a><a href="#gallery"><img alt="picture 3" src="https://i.imgur.com/i9rmhBC.png" width="220"/></a><a href ="#support"><img alt="picture 1" src="https://i.imgur.com/LLIkH4D.png" width="220"/></a><a href="#credits"><img alt="picture 5" src="https://i.imgur.com/QA23l5X.png" width="220"/></a><a href="#tips"><img alt="picture 4" src="https://i.imgur.com/cg3KPZc.png" width="220"/></a></p>
 
-<p align="center"><img src="https://img.shields.io/github/stars/syndrizzle/hotfiles?color=%231a1b26&label=STARGAZERS&labelColor=%231a1b26&style=for-the-badge"/>&nbsp;&nbsp;<img src="https://visitor-badge-reloaded.herokuapp.com/badge?color=1a1b26&page_id=syndrizzle/hotfiles&style=for-the-badge&lcolor=1a1b26"/>&nbsp;&nbsp;<img src="https://img.shields.io/github/issues/syndrizzle/hotfiles?color=1a1b26&labelColor=1a1b26&style=for-the-badge"/>&nbsp;&nbsp;<img src="https://img.shields.io/github/license/syndrizzle/hotfiles?color=1a1b26&labelColor=1a1b26&style=for-the-badge"/></p>
+
+<p align="center"><img src="https://img.shields.io/github/stars/syndrizzle/hotfiles?color=%231a1b26&label=STARGAZERS&labelColor=%231a1b26&style=for-the-badge"/>&nbsp;&nbsp;<img src="https://visitor-badge-reloaded.herokuapp.com/badge?color=1a1b26&page_id=syndrizzle/hotfiles&style=for-the-badge&lcolor=1a1b26"/>&nbsp;&nbsp;<img src="https://img.shields.io/github/issues/syndrizzle/hotfiles?color=1a1b26&labelColor=1a1b26&style=for-the-badge"/>&nbsp;&nbsp;<img src="https://img.shields.io/github/license/syndrizzle/hotfiles?color=1a1b26&labelColor=1a1b26&style=for-the-badge"/></p>  
+
 
 ### Thanks for Visiting! 
 Welcome to my GitHub repository of personal dotfiles! These are beautifully created with usability and aestheticism kept in mind. Feel free to explore it, use it or ~~steal~~ copy it, but please give me the credits 😃. If you need any help, you can open an issue on GitHub or you can contact me on Discord: `Syndrizzle#3826`, I will be happy to help!
@@ -266,6 +268,10 @@ Since we are using xfce4-power-manager, we might want to make it toggle the lock
 xfconf-query -c xfce4-session -p /general/LockCommand -s "$HOME/.scripts/lock-run" --create -t string
 ```
 
+## Support:
+You can always show your support towards these rices by donating me, as this takes a lot of time and hardwork, thank you for everything!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A8DKCLY)
 
 ## Credits:
 
@@ -275,8 +281,6 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "$HOME/.scripts/lock-ru
 * [beyond9thousand](https://github.com/beyond9thousand)
 * [siduck](https://github.com/siduck)
 * [kizu](https://github.com/janleigh)
-* [Axarva](https://github.com/axarva)
-* [Aditya Shakya](https://github.com/adi1090x)
 * All the members of r/unixporn community and the discord server!
 ---
 * **The wallpapers have been taken from [Wallhaven](https://wallhaven.cc), [pexels](https://pexels.com) and the [tokyo night gtk theme  repository](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme/tree/master/wallpapers)**<br>
