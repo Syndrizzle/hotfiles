@@ -97,7 +97,7 @@ This picom fork has the best window animations you can get. For eyecandy we are 
 
 First install all the dependencies required to build the compositor:
 ```bash
-sudo pacman -S libconfig libev libxdg-basedir pcre pixman xcb-util-image xcb-util-renderutil hicolor-icon-theme libglvnd libx11 libxcb libxext libdbus asciidoc
+sudo pacman -S libconfig libev libxdg-basedir pcre pixman xcb-util-image xcb-util-renderutil hicolor-icon-theme libglvnd libx11 libxcb libxext libdbus asciidoc uthash
 ```
 Then do the following:
 ```bash
