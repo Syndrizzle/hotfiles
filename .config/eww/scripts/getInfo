@@ -1,0 +1,136 @@
+#!/bin/bash
+
+# shellcheck disable=SC1091
+source "$HOME/.api_keys"
+
+# Get reddit user karma
+if [[ $1 == "--reddit" ]]; then
+    python -c "import praw
+reddit = praw.Reddit(
+    client_id=\"$REDDIT_CLIENT_ID\",
+    client_secret=\"$REDDIT_CLIENT_SECRET\",
+    username=\"$REDDIT_USERNAME\",
+    user_agent=\"Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0\",
+    password=\"$REDDIT_PASSWORD\")
+user = reddit.redditor('$REDDIT_KARMA_USERNAME')
+print(user.link_karma + user.comment_karma + user.awarder_karma + user.awardee_karma)"
+
+fi
+
+# Get unread emails
+if [[ $1 == "--mail" ]]; then
+    python -c "import imaplib
+obj = imaplib.IMAP4_SSL('imap.gmail.com',993)
+obj.login('$EMAIL_ID','$EMAIL_PASSWORD') # write your email and password
+obj.select()
+print(len(obj.search(None, 'UnSeen')[1][0].split()))"
+
+fi
+
+# Get github notifications
+if [[ $1 == "--github" ]]; then
+    notifications=$(echo "user = \"$GITHUB_USER:$GITHUB_TOKEN\"" | curl -sf -K- https://api.github.com/notifications | jq ".[].unread" | grep -c true)
+
+    if [ "$notifications" -gt 0 ]; then
+        echo "$notifications"
+    else
+        echo "0"
+    fi
+
+fi
+
+# Get weather from openweathermap
+if [[ $1 == "--weather" ]]; then
+
+    # Fix units lol
+    if [[ $OWM_UNIT == "metric" ]]; then
+        OWM_SYMBOL="°C"
+    else
+        OWM_SYMBOL="°F"
+    fi
+
+    ## Collect data
+    cache_dir="$HOME/.cache/eww/weather"
+    cache_weather_degree=${cache_dir}/weather-degree
+    cache_weather_icon=${cache_dir}/weather-icon
+
+    ## Make cache dir
+    if [[ ! -d "$cache_dir" ]]; then
+        mkdir -p "${cache_dir}"
+    fi
+
+    ## Get data
+    get_weather_data() {
+        source "$HOME/.api_keys"
+        weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$OWM_KEY&q=$OWM_CITY&units=$OWM_UNIT")
+        echo "${weather}"
+        if [ -n "$weather" ]; then
+            weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
+            weather_icon_code=$(echo "$weather" | jq -r ".weather[].icon" | head -1)
+            if [ "$weather_icon_code" == "50d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "50n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "01d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "01n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "02d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "02n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "03d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "03n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "04d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "04n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "09d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "09n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "10d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "10n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "11d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "11n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "13d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "13n" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "40d" ]; then
+                weather_icon=" "
+            elif [ "$weather_icon_code" == "40n" ]; then
+                weather_icon="  "
+            else
+                weather_icon=" "
+            fi
+            echo "$weather_icon" >"${cache_weather_icon}"
+            echo "$weather_temp""$OWM_SYMBOL" >"${cache_weather_degree}"
+        else
+            echo " " >"${cache_weather_icon}"
+            echo "-" >"${cache_weather_degree}"
+        fi
+    }
+
+    ## Execute
+    if [[ "$2" == "--getdata" ]]; then
+        get_weather_data
+        eww update weather_icon="$("$HOME"/.config/eww/scripts/getInfo --weather --icon)"
+        eww update weather_temp="$("$HOME"/.config/eww/scripts/getInfo --weather --temp)"
+    elif [[ "$2" == "--icon" ]]; then
+        cat "${cache_weather_icon}"
+    elif [[ "$2" == "--temp" ]]; then
+        cat "${cache_weather_degree}"
+    fi
+fi
+
+if [[ $1 == "--update-weather" ]]; then
+    dunstify -i "/usr/share/icons/Papirus/48x48/apps/system-restart.svg" -a "Weather" "Updating Weather..." " "
+    "$HOME"/.config/eww/scripts/getInfo --weather --getdata
+fi

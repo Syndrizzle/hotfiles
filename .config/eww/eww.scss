@@ -1,0 +1,27 @@
+/** Colors *******************************************/
+$bg: #171B20;
+$bg-alt: #21262e;
+$bg-alt-alt: #242931;
+$fg: #b6beca;
+$red: #e05f65;
+$green: #73c291;
+$yellow: #f1cf8a;
+$blue: #70a5eb;
+$purple: #c68aee;
+$cyan: #74bee9;
+$gray: #4d5768;
+$gray-alt: #485263;
+
+@import "./bar/eww.scss";
+@import "./misc/eww.scss";
+@import "./notifications/eww.scss";
+@import "./system-menu/eww.scss";
+
+tooltip {
+    background-color: $bg;
+    border: 2px solid $bg-alt-alt;
+}
+
+* {
+    font-family: "Metropolis", "Phosphor";
+}

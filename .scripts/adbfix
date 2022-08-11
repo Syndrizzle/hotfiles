@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+
+#This script configure Android Debug Bridge permissions to solve the following
+#error: com.android.ddmlib.AdbCommandRejectedException: insufficient permissions for device
+#This error is produced when you try to install an APK from Android Studio in your device.
+#You can check the vendorId here:
+#https://developer.android.com/studio/run/device#setting-up
+#If your device's brand isn't listed check the info displayed by the command lsusb
+
+lsusb
+#My output was:
+#Bus 006 Device 002: ID 05c6:9091 Qualcomm, Inc.
+#The id for this line is 05c6
+echo -n "Enter the vendor  id of your mobile device: "
+read usbVendorId
+echo -n "Enter the product id of your device: "
+read usbProductId
+cd /etc/udev/rules.d/
+sudo touch 51-android.rules
+(
+sudo cat << _EOF_
+SUBSYSTEM=="usb", ATTR{idVendor}=="$usbVendorId", ATTR{idProduct}=="$usbProductId", MODE="0666", GROUP="plugdev"
+_EOF_
+) | sudo tee 51-android.rules
+
+#Give read and write permissions to the file
+sudo chmod a+r /etc/udev/rules.d/51-android.rules
+
+#Kill the Android Debug Bridge server to restart it
+# cd $HOME/Android/Sdk/platform-tools
+sudo adb kill-server
+
+#If this still doesn't work unplug the usb cable and connect again.
+#And repeat the last step Kill the ADB server.

@@ -1,0 +1,475 @@
+.notifications-cardimage-eventbox {
+    background-color: $bg-alt;
+    border-radius: 0.6em;
+}
+
+.notifications-cardimage-eventbox:hover {
+    background-color: $bg-alt-alt;
+}
+
+.notifications-cardimage-icon {
+    margin: 0 0 0 -0.21em;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.notifications-cardimage-image-box {
+    padding: 1em;
+    margin: 0em 1em 0em 1em;
+    background-color: $bg;
+    border-radius: 1em;
+}
+
+.notifications-cardimage-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 11%;
+}
+
+.notifications-cardimage-body-box {
+    font-size: 15px;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.notifications-cardimage-summary-box {
+    padding: 0.3em 0 0.3em 0.9em;
+    background-color: darken($bg-alt, 6%);
+    border-radius: 0.6em 0.6em 0 0;
+    color: $fg;
+}
+
+.notifications-cardimage-appname-label {
+    font-size: 16;
+    font-weight: bold;
+}
+
+.notifications-cardimage-close-button {
+    margin: 0.0em 1em 0.0em 0;
+    padding: 0.22em 0.2em 0.2em 0.23em;
+    background-color: $bg-alt-alt;
+    color: $red;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.notifications-cardimage-close-button:hover {
+    background-color: $gray-alt;
+    color: $red;
+}
+
+.notifications-cardimage-body-outer {
+    padding: 0 1em 0 0;
+}
+
+.notifications-cardimage-summary-label {
+    font-size: 20;
+    margin-top: 1em;
+    padding-bottom: 0.3em;
+    font-weight: bold;
+    color: $fg;
+}
+
+.notifications-cardimage-body-label {
+    font-size: 16;
+    color: $fg;
+}
+
+.notifications-cardimage-timestamp {
+    color: lighten($gray, 10%);
+    font-weight: bold;
+}
+
+.notifications-cardprog-eventbox {
+    background: $bg-alt;
+    border-radius: 0.5em;
+}
+
+.notifications-cardprog-eventbox:hover {
+    background: $bg-alt-alt;
+}
+
+.notifications-cardprog-image-box {
+    padding: 0 1em 0 1em;
+}
+
+.notifications-cardprog-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 11%;
+}
+
+.notifications-cardprog-body-box {
+    font-size: 15;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.notifications-cardprog-summary-box {
+    padding: 0.3em 0 0.3em 0.9em;
+    background-color: darken($bg-alt, 6%);
+    border-radius: 0.6em 0.6em 0 0;
+    color: $fg;
+}
+
+.notifications-cardprog-appname-label {
+    font-size: 16;
+    font-weight: bold;
+}
+
+.notifications-cardprog-close-button {
+    margin: 0.0em 1em 0.0em 0;
+    padding: 0.22em 0.2em 0.2em 0.23em;
+    background-color: $bg-alt-alt;
+    color: $red;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.notifications-cardprog-close-button:hover {
+    background-color: $gray-alt;
+    color: $red;
+}
+
+
+.notifications-cardprog-body-outer {
+    padding: 0 1em 0 0;
+}
+
+.notifications-cardprog-summary-label {
+    font-size: 20;
+    margin-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-weight: bold;
+    color: $fg;
+}
+
+.notifications-cardprog-body-label {
+    font-size: 16;
+    color: $fg;
+    padding-bottom: 0.3em;
+}
+
+.notifications-cardprog-timestamp {
+    color: lighten($gray, 10%);
+    font-weight: bold;
+}
+
+.notifications-cardprog-scale {
+    background-color: $gray;
+    border-radius: 1em;
+    margin: 0.5em 0 0.5em;
+
+    contents {
+        trough {
+            border-radius: 1em;
+
+            highlight {
+                background: linear-gradient(to right, $cyan, $blue);
+                padding: 0.7em;
+                border-radius: 1em;
+            }
+        }
+    }
+}
+
+.notifications-cardprog-value-label {
+    padding: 0 0.5em 0 0.5em;
+    margin: 0.2em 0 0.2em 0;
+    color: $bg;
+    font-weight: 700;
+    background-color: $yellow;
+    border-radius: 30%;
+}
+
+.notifications-cardscr-eventbox {
+    background-color: $bg-alt;
+    border-radius: 0.6em;
+}
+
+.notifications-cardscr-eventbox:hover {
+    background-color: $bg-alt-alt;
+}
+
+.notifications-cardscr-summary-box {
+    padding: 0.3em 0 0.3em 0.9em;
+    background-color: darken($bg-alt, 6%);
+    border-radius: 0.6em 0.6em 0 0;
+    color: $fg;
+}
+
+.notifications-cardscr-close-button {
+    margin: 0.2em 1em 0.2em 0;
+    padding: 0.22em 0.2em 0.2em 0.23em;
+    background-color: $bg-alt-alt;
+    color: $red;
+    font-size: 20px;
+    border-radius: 100%;
+}
+
+.notifications-cardscr-close-button:hover {
+    background-color: $gray-alt;
+    color: $red;
+}
+
+.notifications-cardscr-summary-label {
+    font-size: 20;
+    font-weight: bold;
+    color: $fg;
+}
+
+.notifications-cardscr-body-label {
+    font-size: 16;
+    color: $fg;
+}
+
+.notifications-cardscr-timestamp {
+    color: lighten($gray, 10%);
+    font-weight: bold;
+    padding-right: 1em;
+}
+
+.notifications-cardscr-image {
+    margin: 1em;
+    border-radius: 0.6em;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.notifications-cardscr-open-button,
+.notifications-cardscr-delete-button {
+    font-size: 20;
+    font-weight: bold;
+    padding: 0.6em 3.72em 0.6em 3.72em;
+    margin-bottom: 0.7em;
+    border-radius: 0.5em;
+    color: $bg;
+}
+
+.notifications-cardscr-open-button {
+    background-color: $blue;
+}
+
+.notifications-cardscr-open-button:hover {
+    color: $blue;
+    background-color: $bg;
+}
+
+.notifications-cardscr-delete-button {
+    background-color: $bg;
+    color: $red;
+}
+
+.notifications-cardscr-delete-button:hover {
+    background-color: $red;
+    color: $bg;
+}
+
+.notifications-dnd-box {
+    background-color: $bg-alt;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 1em;
+    margin-left: 1em;
+    border-radius: 0.8em;
+}
+
+.notifications-dnd-header {
+    font-size: 1.3em;
+    margin: 0.2em 0em 0em 0.7em;
+    font-weight: bold;
+    color: $fg;
+    padding-top: 0.8em;
+}
+
+.notifications-dnd-labels {
+    padding: 0em 1.5em 1em 1.5em;
+}
+
+.notifications-dnd-toggle {
+    padding: 0.3em 0.6em 0.3em 0.6em;
+    border-radius: 0.6em;
+    font-weight: bold;
+    margin-left: 9em;
+    margin-bottom: 0.25em;
+    color: $bg;
+    opacity: 0.6;
+}
+
+.notifications-dnd-toggle:hover {
+    opacity: 1.0;
+    border-radius: 1em;
+}
+
+.notifications-dnd-toggle-ON {
+    background-color: $red;
+}
+
+.notifications-dnd-toggle-OFF {
+    background-color: $green;
+}
+
+.notifications-empty-box {
+    padding: 1em 1em 10em 0;
+}
+
+.notifications-empty-label {
+    padding: 3em 1em 0em 1em;
+    color: $fg;
+    font-weight: 600;
+    font-size: 18;
+}
+
+.notifications-separator {
+    font-size: 0.5;
+    border-radius: 100%;
+    background-color: $bg-alt;
+    margin: 35em 25em 35em 25em;
+}
+
+.notifications-layout-box {
+    background-color: $bg;
+    font-family: "Metropolis", "Phosphor";
+    padding-bottom: 1em;
+    border-radius: 1em;
+}
+
+.dnd-icon-label {
+    font-size: 26;
+}
+
+.notifications-headers {
+    padding: 1em 2em 0 2em;
+    margin-bottom: 1.5em;
+    color: $green;
+}
+
+.notifications-headers-label {
+    font-size: 25;
+    font-weight: bold;
+    color: $green;
+    opacity: 0.8;
+}
+
+.notifications-headers-clear {
+    font-size: 30;
+    color: lighten($gray, 20%);
+}
+
+.notifications-headers-close {
+    font-size: 30;
+    color: lighten($gray, 20%);
+}
+
+.notifications-headers-clear:hover {
+    color: $red;
+}
+
+.notifications-headers-close:hover {
+    color: $red;
+}
+
+.notifications-scroll {
+    margin: 0 1.5em 0em 1.5em;
+}
+
+.notifications-cardprog-separator,
+.notifications-cardradial-separator,
+.notifications-cardimage-separator {
+    opacity: 0.0;
+}
+
+.notifications-cardimage-summary-box-CRITICAL {
+    background-color: darken($red, 10%);
+}
+
+.notifications-cardimage-summary-box-LOW {
+    background-color: darken($bg-alt, 10%);
+}
+
+.notifications-quad-tiles-box-one {
+    margin: 1em 1em 0em 1em;
+}
+
+.mail-button-box {
+    border-radius: 0.5em;
+    background-color: $bg-alt;
+    font-size: 2em;
+}
+
+.notifications-mail-button-label {
+    color: $fg;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-top: 0.15em;
+    padding: 0.6em 1em 0.6em 0em;
+}
+
+.notifications-reddit-button-label {
+    color: $fg;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-top: 0.15em;
+    padding: 0.6em 0.7em 0.6em 0em;
+}
+
+.notifications-github-button-label {
+    color: $fg;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 0.15em;
+    padding: 0.6em 0.7em 0.6em 0em;
+}
+
+.notifications-weather-button-label {
+    color: $fg;
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 0em 0.7em 0.02em 0em;
+}
+
+.notifications-mail-button-logo {
+    color: $red;
+}
+
+.notifications-reddit-button-logo {
+    color: $blue;
+}
+
+.notifications-github-button-logo {
+    color: $green;
+}
+
+.notifications-weather-button-logo {
+    color: $yellow;
+}
+
+.reddit-button-box {
+    border-radius: 0.5em;
+    background-color: $bg-alt;
+    font-size: 2em;
+}
+
+.github-button-box {
+    border-radius: 0.5em;
+    background-color: $bg-alt;
+    font-size: 2em;
+}
+
+.weather-button-box {
+    border-radius: 0.5em;
+    background-color: $bg-alt;
+    font-size: 2em;
+}
+
+.notifications-weather-button-logo {
+    padding-top: 0.05em;
+}
+
+.notifications-quad-tiles-box-two {
+    margin: 1em 1em 0em 1em;
+}
+
+.dnd-icon-label {
+    font-size: 2em;
+    color: $purple;
+    margin-top: 0.5em;
+}

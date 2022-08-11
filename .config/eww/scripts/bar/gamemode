@@ -1,0 +1,11 @@
+#!/bin/bash
+
+STATUS=$(gamemoded -s)
+
+if [[ $STATUS == "gamemode is active" ]]; then
+    eww update show_gamemode=true
+    echo ""
+else
+    eww update show_gamemode=false
+    echo ""
+fi

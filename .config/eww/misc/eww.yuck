@@ -1,0 +1,64 @@
+;; variables
+(defvar ws_list "")
+(defpoll greeting :interval "10h" "python scripts/quote.py")
+(defpoll calendar_day :interval "10h" "date '+%d'")
+(defpoll calendar_month :interval "10h" "MONTH=$(date +%m) && MONTH=$((MONTH - 1)) && echo $MONTH")
+(defpoll calendar_year :interval "10h" "date '+%Y'")
+(defpoll month_year :interval "24h" "date '+%B %Y'")
+;; Widgets
+(defwidget ws_list_widget []
+  (ws_widget :ws_literal ws_list))
+
+(defwidget ws_widget [?ws_literal]
+  (box :class "workspaces-box" :orientation "v" :space-evenly "false"
+    (label :class "workspaces-header" :text "Click on the buttons below to switch workspaces.")
+    (literal :content {ws_literal == "" ? ws_list : ws_literal})
+    (box :class "tip-box" :space-evenly false :halign "center" :orientation "v"
+      (label :class "tip-header" :text "PROTIP:")
+      (label :class "tip-body" :text "You can move between the workspaces by holding the Mod and pressing 1,2,3,4 respectively." :wrap true))))
+
+(defwidget powermenu[]
+  (box :class "main-box" :orientation "v" :space-evenly "false"
+    (label :class "greeting" :text greeting :space-evenly "false")
+    (box :class "main-buttons-box" :orientation "h" :space-evenly "false"
+      (button :tooltip "Close This" :class "close-powermenu" :onclick "eww close powermenu" "")
+      (button :tooltip "Shutdown your PC." :class "shutdown" :onclick "poweroff" "")
+      (button :tooltip "Reboot your PC." :class "reboot" :onclick "reboot" "")
+      (button :tooltip "Exit FVWM." :class "exit" :onclick "FvwmCommand Quit" "")
+      (button :tooltip "Lock" :class "lock" :onclick "eww close powermenu && $HOME/.scripts/lock" ""))))
+
+(defwidget calendar-widget []
+  (box :class "calendar-row" :orientation "v"
+    (box :class "cal-box" :orientation "v" :space-evenly "false"
+      (label :class "month-year" :text month_year)
+      (box :class "day-names" :orientation "h" :space-evenly "true"
+        (label :text "Su")
+        (label :text "Mo")
+        (label :text "Tu")
+        (label :text "We")
+        (label :text "Th")
+        (label :text "Fr")
+        (label :text "Sa"))
+      (calendar :class "cal" :show-details false :show-heading false :show-day-names false :day calendar_day :month calendar_month :year calendar_year))))
+
+;; Windows
+(defwindow workspaces
+  :geometry (geometry :x "-655px" :y "-80px" :width "30%" :height "30%" :anchor "bottom center")
+  :stacking "bg"
+  :windowtype "dock"
+  :monitor 0
+  (ws_widget))
+
+(defwindow powermenu
+  :windowtype "dock"
+  :wm-ignore true
+  :monitor 0
+  :geometry (geometry :anchor "center" :width "400px" :height "100px")
+  (powermenu))
+
+(defwindow calendar
+  :geometry (geometry :x "-20px" :y "-80px" :width "24%" :height "30%" :anchor "bottom right")
+  :stacking "bg"
+  :windowtype "dock"
+  :monitor 0
+  (calendar-widget))

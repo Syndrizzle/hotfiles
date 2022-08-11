@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+level=''
+icon=''
+STATUS=$(pamixer --get-mute)
+function fetch() {
+    muted=$(pamixer --get-mute)
+    level=$(pamixer --get-volume)
+    if [[ $muted == 'true' ]]; then
+        icon=
+    elif [ "$level" -le 33 ]; then
+        icon=
+    elif [ "$level" -le 66 ]; then
+        icon=
+    elif [ "$level" -le 100 ]; then
+        icon=
+    fi
+    # echo "{\"icon\": \"$icon\", \"level\": 'Volume: $level%'}"
+    echo $icon
+}
+
+function subscribe() {
+    local old new
+    fetch
+    old="$level"
+    while sleep 0.1; do
+        fetch
+        new="$level"
+        if [ "$new" -gt "$old" ]; then
+            old=$new
+        elif [ "$new" -lt "$old" ]; then
+            old=$new
+        fi
+    done
+}
+
+toggle() {
+    if [ $STATUS == "false" ]; then
+        amixer set Master toggle
+        notify-send --icon=volume-level-muted --urgency=normal "Volume is muted." "Volume has been muted, your PC has been shut the fucked up."
+    else
+        amixer set Master toggle
+        notify-send --icon=volume-level-high --urgency=normal "Volume has been turned on." "Sound is now on, you will hear farts!"
+    fi
+}
+
+if [[ $1 == "--icon" ]]; then
+    subscribe
+elif [[ $1 == "--toggle" ]]; then
+    toggle
+fi

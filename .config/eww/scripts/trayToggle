@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if pgrep tint2; then
+    pkill tint2
+    echo "" >$HOME/.config/eww/scripts/tray-status
+    exit 1
+else
+    tint2 &
+    echo "" >$HOME/.config/eww/scripts/tray-status
+fi
+exit

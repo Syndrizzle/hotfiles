@@ -1,0 +1,3 @@
+height=60
+id=$(xdotool search --onlyvisible --class tint2)
+xprop -id "$id" -f _NET_WM_STRUT 32c -set _NET_WM_STRUT "0, 0, $height, 0"

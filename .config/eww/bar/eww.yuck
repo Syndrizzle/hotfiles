@@ -1,0 +1,79 @@
+;; Variables
+(deflisten traystatus "tail -F scripts/tray-status")
+(defvar show_workspaces false)
+(defvar ws_small_list "")
+(defpoll time-bar :interval "1s" "date +'%b %d, %I:%M'")
+(defpoll wifi :interval "2s" "scripts/bar/wifi --icon")
+(defpoll wifi-tooltip :interval "1s" "scripts/bar/wifi --status")
+(deflisten volume_bar "scripts/bar/volume --icon")
+(defpoll bluetooth-bar :interval "1s" "scripts/bar/bluetooth")
+(defpoll mic-bar :interval "1s" "scripts/bar/mic")
+(defvar bluetooth_visible false)
+(defvar mic_visible false)
+(defvar volume_slider false)
+(defvar show_gamemode false)
+(defvar show_battery false)
+(defpoll bar_gamemode :interval "1s" "scripts/bar/gamemode")
+(defpoll bar_battery :interval "1s" "scripts/bar/battery")
+(defpoll volume-slider-value :interval "500ms" "scripts/sliders/volume-slider --value")
+
+;; Widgets
+(defwidget ws_list_small_widget []
+  (ws_small_widget :ws_small_literal ws_small_list))
+
+(defwidget left-box [?ws_small_literal]
+  (box :class "left-stuff" :orientation "h" :space-evenly "false" :hexpand "false" :vexpand "false"
+    (button :class "launcher" :onclick "scripts/launchApps --rofi" "")
+    (button :class "search" :onclick "scripts/launchApps --search" "")
+    (eventbox :onhover "eww update show_workspaces=true" :onhoverlost "eww update show_workspaces=false"
+      (box :class "workspaces-events-box"  :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+        (button :class "workspaces-btn" :onclick "eww open --toggle workspaces" "")
+        (revealer :transition "slideleft" :duration "350ms" :reveal show_workspaces
+          (literal :content {ws_small_literal == "" ? ws_small_list : ws_small_literal}))))
+    (box :class "notifications-and-tray-box" :space-evenly "false"
+      (button :class "notifsbtn" :onclick "eww open --toggle notifications" "")
+      (button :class "traybtn" :onclick "scripts/trayToggle" "${traystatus}"))))
+
+(defwidget right-box []
+  (box :class "right-bar-box" :space-evenly "false" :halign "end"
+  (box :class "system-status-box" :space-evenly "false"
+    (revealer :transition "slideright" :duration "350ms" :reveal show_gamemode
+      (label :tooltip "Gamemode is Active!" :class "gamemode-system-button" :text bar_gamemode))
+    (revealer :transition "slideright" :duration "350ms" :reveal mic_visible
+      (button :class "mic-system-button" :onclick "pamixer --default-source -t" mic-bar)))
+  (box :class "right-stuff-box" :space-evenly "false" :halign "end"
+    (box :class "system-buttons-box" :space-evenly "false" :spacing 10
+      (button :tooltip "${wifi-tooltip}" :class "wifi-system-button" :onclick "eww open --toggle system-menu" :onrightclick "scripts/bar/wifi --toggle" "${wifi}")
+      (revealer :transition "slideleft" :duration "350ms" :reveal bluetooth_visible
+        (button :class "bluetooth-system-button" :onclick "eww open --toggle system-menu" :onrightclick "scripts/bar/bluetooth --toggle" "${bluetooth-bar}"))
+      (eventbox :onhover "eww update volume_slider=true" :onhoverlost "eww update volume_slider=false"
+        (box :class "volume-system-box" :space-evenly "false"
+          (button :class "volume-system-button" :onclick "eww open --toggle system-menu" :onrightclick "scripts/bar/volume --toggle" "${volume_bar} ")
+          (revealer :transition "slideleft" :duration "350ms" :reveal volume_slider
+            (eventbox :onhover "eww update volume_slider=true"
+              (scale :class "volume-slider-bar"
+                :value volume-slider-value
+                :orientation "h"
+                :width 150
+                :max 100
+                :min 0
+              :onchange "amixer set Master {}%")))))
+      (box :class "bar-battery-box" :space-evenly "false"
+        (button :tooltip "Battery: ${battery-level}" :class "battery-system-button ${battery-class == "" ? "battery-system-button-charging" : "battery-system-button-discharging"}" :onclick "eww open --toggle system-menu" "${battery-icon}")
+        (revealer :transition "slideright" :duration "350ms" :reveal show_battery
+          (label :class "bar-battery-label" :text "${bar_battery}%"))))
+    (label :class "seperator-bar" :text "|")
+    (box :class "time-box-bar" ::space-evenly "false"
+      (button :class "time-bar" :onclick "eww open --toggle calendar" "${time-bar}")))))
+
+(defwidget bar []
+  (box :class "bar" :orientation "h" :space-evenly "true" (left-box) (right-box)))
+
+;; Windows
+(defwindow panel
+  :geometry (geometry :x "0%" :y "0px" :width "98%" :height 60 :anchor "bottom center")
+  :stacking "bg"
+  :windowtype "dock"
+  :monitor 0
+  :focusable false
+  (bar))

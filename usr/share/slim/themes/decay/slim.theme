@@ -1,0 +1,42 @@
+# Messages (ie: shutdown)
+
+msg_color               #171B20
+msg_font                Metropolis:size=18:bold:dpi=96
+msg_x                   50%
+msg_y                   30%
+
+# Session Name
+
+session_color               #e05f65
+session_font                Metropolis:size=22:style=Bold:dpi=96
+session_x                   50%
+session_y                   952
+
+# valid values: stretch, tile
+
+background_style        stretch
+background_color        #21262e
+
+# Input controls
+
+input_panel_x           50%
+input_panel_y           44%
+input_name_x            235
+input_name_y            345
+input_pass_x            235
+input_pass_y            455
+input_font              Metropolis:size=20:dpi=96:style=Bold
+input_color           #b6beca
+
+username_msg            Username
+password_msg            Password
+
+# Welcome message position. (relative to the panel)
+# use -1 for both values or comment the options to disable
+# the welcome message
+welcome_x              	70%
+welcome_y              	30%
+    
+# Font and color for the welcome message
+welcome_font          	Metropolis:size=22:bold:slant=italic
+welcome_color          	#171b20

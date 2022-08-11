@@ -1,0 +1,73 @@
+## This is the default dockbarx style
+
+## Rows that begins with # are comments
+## Change the name if you make a new style
+name=Decay
+
+## To add a background picture to the style simply add a file
+## named background.png to the arcive. The picture is automaticly
+## tiled to fill the popup. If the picture has transparency it can
+## be used together with gradients and the background color. 
+## Keep the file as small as possible.
+
+
+## Remove the # in front of a setting to start using it.
+## All the commented options in this file has the default value.
+
+## The background color for  the dock
+## Alpha goes from 0 (completely transparent) to 100 (completely opaque)
+## Remember that this alpha always is 100 if a non-composited window manager is used.
+bg_color="#171B20"
+bg_alpha=0
+
+
+## Thickness of the border (in pixels)
+border_width=0.0
+
+## The color for the border of the popup
+border_color="#171B20"
+
+## The percentual size of the dock compared to the group button size.
+## (The size given in the the dock preference is group button size.)
+rel_size=100
+
+## The radius of the corner roundness (in pixels).
+roundness=10
+
+## The amount of pixels on the sides of the group buttons
+## This number includes the border.
+# side_padding=6
+
+
+## Slope tells how steep the corners of the dock will be.
+## It's given in degrees. 90 gives a straigt corner,
+## higher numbers will make an inwards slope and lower an outwards slope.
+## Dont go too close to 0 or 180 otherwice you'll make an dock that takes up 
+## way too much sceen real estate. It's pretty much trial and error to get
+## something that looks right.
+# slope=90
+
+## Bend will bend the slope towards the screen edge. 0 means no bend and
+## 100 means maximum bend. A big bend will make the slope look closer to
+## 90 than it really is so you'll probably have to play with both numbers
+## until you find what you are looking for.
+# bend=0
+
+## Linear gradients
+## You can use up to three linear gradients at once. Just copy-paste and
+## change thenumber at the end of gradient to 2 or 3 to set the options for
+## the second or third gradient.
+## To use a linear gradient, just set use_linear_gradient to 1.
+# use_linear_gradient=0
+
+## The angle sets the direction of the linear gradient in degrees.
+## For a bottom dock, an angle of 0 will go from left to right, 
+## 180 will go from right to left, 90 will go from bottom to top 
+## and -90 from top to bottom. 
+# linear_gradient1_angle=0
+
+
+
+## A second bar can be placed upon the first bar. 
+## To use the second bar, use_bar2 needs to be set to 1.
+use_bar2=0

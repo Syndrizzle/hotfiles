@@ -1,0 +1,216 @@
+* {
+    all: unset;
+    transition: 200ms ease-in-out;
+  }
+  
+.bar {
+    background-color: $bg;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.left-stuff {
+    margin: 7px 10px 7px 10px;
+}
+
+.launcher {
+    padding: 3px 11px 3px 12px;
+    background-color: $bg-alt;
+    font-size: 24px;
+    border-radius: 100px;
+}
+
+.launcher:hover {
+    color: $yellow;
+    background-color: $gray-alt;
+    border-radius: 100px;
+}
+
+.seperator {
+    min-width: 5px;
+    background-color: $bg;
+}
+
+.search {
+    padding: 7px 12px 5px 12px;
+    margin: 0px 0px 0px 10px;
+    background-color: $bg-alt;
+    font-size: 22px;
+    border-radius: 100px;
+}
+
+.search:hover {
+    color: $green;
+    background-color: $gray-alt;
+    border-radius: 100px;
+}
+
+.workspaces-btn {
+    padding: 5px 8px 5px 8px;
+    background-color: $bg-alt;
+    border-radius: 100px;
+}
+
+.workspaces-events-box {
+    background-color: $bg-alt;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0px 0px 10px;
+    border-radius: 100px;
+    font-size: 20px;
+}
+
+.workspaces-small {
+    margin: 6px 0px 0px 0px;
+    padding: 0px 8px 0px 8px;
+}
+
+.workspaces-btn:hover {
+    color: $blue;
+    background-color: $gray-alt;
+    border-radius: 100px;
+}
+
+.notifications-and-tray-box {
+    background-color: $bg-alt;
+    font-size: 22px;
+    border-radius: 100px;
+    margin: 0px 0px 0px 10px;
+}
+
+.notifsbtn:hover {
+    background-color: $gray-alt;
+    border-radius: 100px;
+    color: $red;
+    padding: 0px 8px 0px 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+.notifsbtn {
+    background-color: $bg-alt;
+    border-radius: 100px;
+    padding: 0px 8px 0px 8px;
+    margin: 5px 5px 5px 5px;
+}
+
+.traybtn:hover {
+    background-color: $gray-alt;
+    color: $purple;
+    border-radius: 100px;
+    padding: 0px 7px 0px 7px;
+    margin: 5px 5px 5px 0px;
+}
+
+.traybtn {
+    background-color: $bg-alt;
+    border-radius: 100px;
+    padding: 0px 7px 0px 7px;
+    margin: 5px 5px 5px 0px;
+}
+
+.occupied-active-small:hover, .empty-active-small:hover, .occupied-inactive-small:hover, .empty-inactive-small:hover {
+    background-color: $gray;
+    border-radius: 100px;
+}
+
+.occupied-active-small, .empty-active-small, .occupied-inactive-small, .empty-inactive-small {
+    padding: 2px 3px 2px 3px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.occupied-active-small {
+    color: $blue;
+}
+
+.empty-inactive-small {
+    color: $gray;
+}
+
+.empty-active-small {
+    color: $blue;
+}
+
+.occupied-inactive-small {
+    color: $yellow;
+}
+
+.right-stuff-box {
+    background-color: $bg-alt;
+    margin: 7px 20px 7px 10px;
+    border-radius: 100px;
+    font-family: "Metropolis", "Phosphor";
+    padding: 0px 20px 0px 20px;
+}
+
+.system-buttons-box {
+    font-size: 22px;
+    padding-right: 15px;
+}
+
+.bluetooth-system-button:hover, .wifi-system-button:hover, .volume-system-button:hover, .battery-system-button:hover {
+    border-radius: 100px;
+    color: $blue;
+    margin: 12px 0px 12px 0px;
+}
+
+.bluetooth-system-button {
+    padding: 0px 5px 0px 5px;
+    font-weight: lighter;
+}
+
+.mic-system-button {
+    margin: 7px 0px 7px 0px;
+    background-color: $bg-alt;
+    font-size: 22px;
+    padding: 0px 13px 0px 13px;
+    border-radius: 100%;
+}
+
+.gamemode-system-button{
+    margin: 7px 10px 7px 0px;
+    background-color: $bg-alt;
+    font-size: 22px;
+    color: $yellow;
+    padding: 0px 13px 0px 13px;
+    border-radius: 100%;
+}
+
+.mic-system-button:hover {
+    color: $blue;
+}
+
+.battery-system-button-charging {
+    color: $green;
+}
+
+.time-box-bar {
+    padding-left: 15px;
+}
+
+.seperator-bar {
+    font-size: 36px;
+    margin-top: 3px;
+    color: $gray;
+}
+
+.volume-slider-bar trough {
+    background-color: $gray-alt;
+    border-radius: 15px;
+}
+
+.volume-slider-bar highlight {
+    padding: 0.3em;
+    background: linear-gradient(to top, $blue, $cyan);
+    border-radius: 15px;
+}
+
+.volume-slider-bar {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.time-bar:hover {
+    color: $yellow;
+}
+
+.bar-battery-label {
+    font-size: 20px;
+    margin: 3px 0px 0px 8px;
+}

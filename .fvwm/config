@@ -1,0 +1,606 @@
+#
+#  ███████╗███╗   ██╗██╗   ██╗
+#  ██╔════╝████╗  ██║██║   ██║
+#  █████╗  ██╔██╗ ██║██║   ██║
+#  ██╔══╝  ██║╚██╗██║╚██╗ ██╔╝
+#  ███████╗██║ ╚████║ ╚████╔╝ 
+#  ╚══════╝╚═╝  ╚═══╝  ╚═══╝                          
+#
+
+## Where The Titlebar Icons Are Stored
+SetEnv icons $[HOME]/.fvwm/icons
+
+# Set the root cursor
+CursorStyle ROOT		left_ptr
+CursorStyle TITLE		left_ptr
+CursorStyle DEFAULT		left_ptr
+CursorStyle SYS			left_ptr
+CursorStyle MENU		left_ptr
+
+#
+#  ███████╗██╗   ██╗███╗   ██╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
+#  ██╔════╝██║   ██║████╗  ██║██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+#  █████╗  ██║   ██║██╔██╗ ██║██║        ██║   ██║██║   ██║██╔██╗ ██║███████╗
+#  ██╔══╝  ██║   ██║██║╚██╗██║██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
+#  ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
+#  ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+#                                                                            
+
+# InfoStoreAdd can be used to store variable data internal to fvwm.
+# The variable can then be used in the configuration as $[infostore.name].
+#
+# You can also use environment variables but for data internal to fvwm
+# use InfoStore variables instead.
+#
+# The following is used in various menus and also sets the terminal
+# that FvwmConsole uses. Change this to your terminal of choice
+
+InfoStoreAdd terminal kitty
+
+###########
+# 1: Functions
+#
+# Fvwm can use custom functions for various tasks.
+# The syntax for defining a function named FunctionName is:
+#
+#   DestroyFunc FunctionName
+#   AddToFunc FunctionName
+#   + I [Action to do Immediately]
+#   + C [Action to do on a Mouse Click]
+#   + D [Action to do on a Mouse Double Click]
+#   + H [Action to do on a Mouse Hold]
+#   + M [Action to do on a Mouse Motion]
+###########
+
+# Start Function
+#
+# The start function is run right after fvwm is done reading
+# the config file. This function run after each restart
+# so using Test (Init) or Test (Restart) can further control
+# actions that are run during the first time run (Init) or
+# actions that are run after a restart.
+DestroyFunc StartFunction
+AddToFunc   StartFunction
++ I	Exec nitrogen --restore &
++ I Module FvwmCommandS
+
+# Run only once
+DestroyFunc InitFunction
+AddToFunc InitFunction
++ I Exec picom &
++ I Exec eww open panel &
++ I Exec parcellite &
++ I Exec xfce4-power-manager &
++ I Exec bash $HOME/.config/conky/Izar/start.sh
++ I Exec albert &
++ I Exec python $HOME/.config/eww/scripts/logger.py init
++ I Exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
++ I Exec exec dockx
+
+DestroyFunc Switcher
+AddToFunc Switcher
++ I Exec bash ~/.config/rofi/window-switcher/window-switcher.sh
+
+## Window Snapping
+# Snap left
+DestroyFunc SnapLeft
+AddToFunc SnapLeft
++ I Move 0 0
++ I Maximize True 49 100
++ I Raise
+# Snap right
+DestroyFunc SnapRight
+AddToFunc SnapRight
++ I Maximize True 50 100
++ I Move -0 0
++ I Raise
+# Zoom unmaximize large
+DestroyFunc SnapHalf
+AddToFunc SnapHalf
++ I Maximize True 75 75
++ I Move 50-50w 50-50w
++ I Raise
+# Zoom unmaximize small
+DestroyFunc SnapQuarter
+AddToFunc SnapQuarter
++ I Maximize True 50 50
++ I Move 50-50w 50-50w
++ I Raise
+# Zoom unmaximize tiny
+DestroyFunc SnapTiny
+AddToFunc SnapTiny
++ I Maximize True 36 28
++ I Move 50-50w 50-50w
++ I Raise
+
+# Mouse Bindings Functions
+DestroyFunc RaiseMoveX
+AddToFunc RaiseMoveX
++ I Raise
++ M $0
++ D $1
+
+DestroyFunc RaiseMove
+AddToFunc RaiseMove
++ I Raise
++ M $0
+
+DestroyFunc MoveToCurrent
+AddToFunc MoveToCurrent
++ I ThisWindow MoveToPage
++ I ThisWindow MoveToDesk
+
+# Function: ToggleTitle
+#
+# This function will toggle if fvwm shows the TitleBar.
+DestroyFunc ToggleTitle
+AddToFunc   ToggleTitle
++ I ThisWindow (State 1) WindowStyle Title
++ I TestRc (Match) State 1 False
++ I TestRc (Match) Break
++ I WindowStyle !Title
++ I State 1 True
+
+# Drag and move and resize
+DestroyFunc drag-n-move
+AddToFunc drag-n-move M move
+DestroyFunc drag-n-resize
+AddToFunc drag-n-resize M resize
+
+# Updates eww when there is a maximized window
+DestroyFunc SpawnWindow 
+AddToFunc   SpawnWindow 
++ I Exec bash ~/.config/eww/scripts/deskIndicator
++ I Exec bash ~/.config/eww/scripts/deskIndicatorSmall
+
+# Updates eww when there is a window closed
+DestroyFunc DestroyWindow 
+AddToFunc   DestroyWindow 
++ I Exec bash ~/.config/eww/scripts/deskIndicator
++ I Exec bash ~/.config/eww/scripts/deskIndicatorSmall
+
+# Updates eww when there is a desk switch
+DestroyFunc ChangeDeskFunc 
+AddToFunc   ChangeDeskFunc 
++ I Exec bash ~/.config/eww/scripts/deskIndicator
++ I Exec bash ~/.config/eww/scripts/deskIndicatorSmall
+
+#
+#  ███████╗████████╗██╗   ██╗██╗     ██╗███╗   ██╗ ██████╗ 
+#  ██╔════╝╚══██╔══╝╚██╗ ██╔╝██║     ██║████╗  ██║██╔════╝ 
+#  ███████╗   ██║    ╚████╔╝ ██║     ██║██╔██╗ ██║██║  ███╗
+#  ╚════██║   ██║     ╚██╔╝  ██║     ██║██║╚██╗██║██║   ██║
+#  ███████║   ██║      ██║   ███████╗██║██║ ╚████║╚██████╔╝
+#  ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+#                                                          
+
+# Desktops and Pages
+#
+# Fvwm has both Virtual Desktops and Pages. Each Desktop is built from
+# a grid of Pages. The following sets the name of four Desktops and then
+# divides each Desktop into a 2x2 grid of Pages that are positioned as
+#
+#   +---+---+
+#   |   |   |
+#   +---+---+
+#   |   |   |
+#   +---+---+
+#
+
+# Set the desktop size, so that there is just 4 of them naturally.
+DeskTopSize 1x4
+EwmhNumberOfDesktops 4
+
+# Margins on each virtual desktop, so it doesn't overlap the panel and has some spacing.
+EwmhBaseStruts 20 20 20 80
+
+# EdgeScroll will move the view port between the Pages when the mouse
+# moves to the edge of the screen. This set the amount of distance to
+# scroll at 100% (full page) and the EdgeResistance which is a timer
+# for how long the mouse as at the edge before it scrolls.
+#
+# Set EdgeScroll 0 0 and/or EdgeResistance -1 to disable.
+EdgeScroll 0 0
+EdgeResistance -1
+
+# This sets the ClickTime and MoveThreshold used to determine
+# Double Clicks, Hold and Move for the mouse.
+ClickTime 250
+MoveThreshold 3
+
+## Window Specific Styles
+Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
+Style FvwmIdent WindowListSkip
+
+# Default Font
+DefaultFont "xft:Metropolis:size=12:antialias=True"
+
+## Place It On Center instead of MinOverlapPlacement
+Style * PositionPlacement Center
+Style * GrabFocusOff, !UsePPosition
+
+# Sets all windows to OpaqueMove (vs a wired frame) and  windows will
+# snap to each other and the edge of the screen.
+OpaqueMoveSize unlimited
+Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
+
+# Transient Windows (such as open file windows)
+Style * DecorateTransient, StackTransientParent
+Style * !FPGrabFocusTransient, FPReleaseFocusTransient
+
+# Ignore Numlock and other modifiers for bindings
+# See http://fvwm.org/documentation/faq/#why-do-numlock-capslock-and-scrolllock-interfere-with-clicktofocus-andor-my-mouse-bindings
+IgnoreModifiers L25
+
+## Decoration Styles
+Style * TitleAtLeft
+Style * ResizeHintOverride
+Style * BorderWidth 0, HandleWidth 0
+Style * Colorset 1, HilightColorset 2
+Style * BorderColorset 1, HilightBorderColorset 2
+
+# Disable Icons from appearing on desktop.
+# Comment this out or use Style * Icon to get the icons back.
+Style * !Icon
+HideGeometryWindow
+# Focus on ClickToFocus
+Style * ClickToFocus, MouseFocusClickRaises
+Style * StickyIcon
+
+# Window Specific Styles
+Style RightPanel !Title, !Borders, !Handles, Sticky, \
+                 WindowListSkip, NeverFocus
+Style ConfirmQuit !Title, PositionPlacement Center, WindowListSkip, Layer 6
+Style FvwmIdent WindowListSkip
+Style jgmenu !Title, !Borders, !Handles, Sticky, NoHandles, ClickToFocus, PositionPlacement 0 -0
+Style eww-panel !Title, !Borders, !Handles, Sticky, StaysOnBottom, NoHandles, EWMHIgnoreStrutHints, EWMHPlacementIgnoreWorkingArea, WindowListSkip, PositionPlacement 0 -0, NeverFocus
+Style Dockx !Title, !Borders, !Handles, Sticky
+Style eww-workspaces !Title, !Borders, !Handles, Sticky, StaysOnTop, NoHandles, EWMHIgnoreStrutHints, EWMHPlacementIgnoreWorkingArea, WindowListSkip, ClickToFocus
+Style tint2 !Title, !Borders, !Handles, Sticky, StaysOnTop, NoHandles, EWMHIgnoreStrutHints, EWMHPlacementIgnoreWorkingArea, WindowListSkip, PositionPlacement 0 -0, ClickToFocus
+Style eww-notifications !Title, !Borders, !Handles, StaysOnTop
+Style albert !Title, !Borders, !Handles, StaysOnTop
+Style eww-calendar !Title, !Borders, !Handles, Sticky, StaysOnTop, NoHandles, EWMHIgnoreStrutHints, EWMHPlacementIgnoreWorkingArea, WindowListSkip, ClickToFocus
+
+
+#
+#   ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗
+#  ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝
+#  ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗
+#  ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║
+#  ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
+#   ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+#                                                    
+
+# Colorsets can be used to configure the color of the various
+# parts of fvwm such as window decor, menus, modules, etc.
+#
+# Colorset Convention
+#
+#   0 - Default
+#   1 - Inactive Windows
+#   2 - Active Window
+#   3 - Inactive Windows Borders
+#   4 - Active Windows Borders
+#   5 - Menu - Inactive Item
+#   6 - Menu - Active Item
+#   7 - Menu - Grayed Item
+#   8 - Menu - Title
+#   9 - Reserved
+#  10+ Modules
+#      10 - Module Default
+#      11 - Module Hilight
+#      12 - Module ActiveButton (Mouse Hover)
+#      13 - FvwmPager Active Page
+#      14 - FvwmIconMan Iconified Button
+
+Colorset 0  fg #b6beca, bg #171B20, hi, sh, Plain, NoShape
+Colorset 1  fgTint #171B20 100, bgTint #171B20 100, RootTransparent
+Colorset 2  fgTint #171B20 100, bgTint #171B20 100, RootTransparent
+Colorset 3  fg #171B20, bg #4d5768, hi #4d5768, sh #21262e, Plain, NoShape
+Colorset 4  fg #171B20, bg #4d5768, hi #4d5768, sh #171B20, Plain, NoShape
+Colorset 5  fg #b6beca, bg #171B20, hi, sh, Plain, NoShape
+Colorset 6  fg #b6beca, bg #21262e, hi, sh, Plain, NoShape
+Colorset 7  fg #4d5768, bg #b6beca, hi, sh, Plain, NoShape
+Colorset 8  fg #b6beca, bg #171B20, hi, sh, Plain, NoShape
+Colorset 10 fg #b6beca, bg #171B20, hi #21262e, sh #21262e, Plain, NoShape
+Colorset 11 fg #b6beca, bg #70a5eb, hi #b6beca, sh #b6beca, Plain, NoShape
+Colorset 12 fg #2d2d2d, bg #b6beca, hi, sh, Plain, NoShape
+Colorset 13 fg #b6beca, bg #1a1e23, hi, sh, Plain, NoShape
+Colorset 14 fg #4d5768, bg #171B20, hi #21262e, sh #21262e, Plain, NoShape
+
+
+#
+#  ███╗   ███╗███████╗███╗   ██╗██╗   ██╗███████╗
+#  ████╗ ████║██╔════╝████╗  ██║██║   ██║██╔════╝
+#  ██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║███████╗
+#  ██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║╚════██║
+#  ██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝███████║
+#  ╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
+#                                                
+
+## Menu Styling                   
+MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
+MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsShort, BorderWidth 0
+MenuStyle * TrianglesSolid, TrianglesUseFore
+MenuStyle * ItemFormat "%30.90l%.30>", VerticalItemSpacing 14 14
+
+# Root Menu
+#
+# The root menu will PopUp with a click in the root
+# window or using alt-f1 (or menu).
+DestroyFunc JGMenu
+AddToFunc   JGMenu 
++ C Exec exec jgmenu_run
+
+## Titlebar Right Click
+DestroyMenu MenuWindowOps
+AddToMenu   MenuWindowOps
++ "Send To" Popup MenuSendTo
++ "Move" Move
++ "Resize" Resize
++ "Iconify" Iconify
++ "Maximize" Maximize
++ "Shade" WindowShade
++ "Stick" Stick
++ "" Nop
++ "Close" Close
++ "More..." Menu MenuWindowOpsLong This 0 0
+
+## Titlebar Right Click >> More
+DestroyMenu MenuWindowOpsLong
+AddToMenu   MenuWindowOpsLong
++ "Send To" Popup MenuSendTo
++ "Move" Move
++ "Resize" Resize
++ "(De)Iconify" Iconify
++ "(Un)Maximize" Maximize
++ "(Un)Shade" WindowShade
++ "(Un)Sticky" Stick
++ "(No)TitleBar" Pick (CirculateHit) ToggleTitle
++ "" Nop
++ "Close" Close
++ "Destroy" Destroy
++ "" Nop
++ "Raise" Raise
++ "Lower" Lower
++ "" Nop
++ "StaysOnTop" Pick (CirculateHit) Layer 0 6
++ "StaysPut" Pick (CirculateHit) Layer 0 4
++ "StaysOnBottom" Pick (CirculateHit) Layer 0 2
++ "" Nop
++ "Identify" Module FvwmIdent
+
+## Right Click on Minimized Window
+DestroyMenu MenuIconOps
+AddToMenu   MenuIconOps
++ "(De)Iconify" Iconify
++ "(Un)Maximize" Maximize
++ "(Un)Shade" WindowShade
++ "(Un)Sticky" Stick
++ "(No)TitleBar" Pick (CirculateHit) ToggleTitle
++ "" Nop
++ "Close" Close
++ "Destroy" Destroy
++ "" Nop
++ "Raise" Raise
++ "Lower" Lower
++ "" Nop
++ "StaysOnTop" Pick (CirculateHit) Layer 0 6
++ "StaysPut" Pick (CirculateHit) Layer 0 4
++ "StaysOnBottom" Pick (CirculateHit) Layer 0 2
++ "" Nop
++ "Identify" Module FvwmIdent
+
+## Titlebar Right Click >> Send To
+DestroyMenu MenuSendTo
+AddToMenu MenuSendTo
++ " Workspace 1 " MoveToDesk 0 0
++ " Workspace 2 " MoveToDesk 1 0
++ " Workspace 3 " MoveToDesk 2 0
++ " Workspace 4 " MoveToDesk 3 0
+
+#
+#  ██╗  ██╗███████╗██╗   ██╗██████╗ ██╗███╗   ██╗██████╗ ██╗███╗   ██╗ ██████╗ ███████╗
+#  ██║ ██╔╝██╔════╝╚██╗ ██╔╝██╔══██╗██║████╗  ██║██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝
+#  █████╔╝ █████╗   ╚████╔╝ ██████╔╝██║██╔██╗ ██║██║  ██║██║██╔██╗ ██║██║  ███╗███████╗
+#  ██╔═██╗ ██╔══╝    ╚██╔╝  ██╔══██╗██║██║╚██╗██║██║  ██║██║██║╚██╗██║██║   ██║╚════██║
+#  ██║  ██╗███████╗   ██║   ██████╔╝██║██║ ╚████║██████╔╝██║██║ ╚████║╚██████╔╝███████║
+#  ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
+#                                                                                      
+
+# Contexts:
+#     R = Root Window                 rrrrrrrrrrrrrrrrrrrrrr
+#     W = Application Window          rIrrrr<---------^rrrrr
+#     F = Frame Corners               rrrrrr[13TTTT642]rrrrr
+#     S = Frame Sides                 rIrrrr[wwwwwwwww]rrrrr
+#     T = Title Bar                   rrrrrr[wwwwwwwww]rrrrr
+#     I = Icon                        rIrrrrv_________>rrrrr
+#                                     rrrrrrrrrrrrrrrrrrrrrr
+#
+#     Numbers are buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+#
+# Modifiers: (A)ny, (C)ontrol, (S)hift, (M)eta, (N)othing
+#
+# Format: Key <X>  <Context> <Modifier> <Action>
+#         Mouse <X> <Context> <Modifier> <Action>
+
+# Alt-F1 or Menu to load the root menu and Alt-Tab for a WindowList.
+# Ctrl-F1/F2/F3/F4 will switch between the Virtual Desktops.
+# Super_R (windows key) will launch a terminal.
+#
+# Open menus using other ways:
+Key F1 A M Menu JGMenu
+Key Menu A A Menu JGMenu
+
+# Jump between desktops
+Key 1 A 4 GotoDesk 0 0
+Key 2 A 4 GotoDesk 0 1
+Key 3 A 4 GotoDesk 0 2
+Key 4 A 4 GotoDesk 0 3
+
+# Execute a terminal
+Key Return A 4 Exec exec kitty
+
+# Close a running application
+Key F4 A M Close
+
+# Lock
+Key l A C Exec bash ~/.scripts/lock
+
+# Maximize a window B)
+Key t WT 4 Maximize
+
+# Generic Alt+Tab switcher
+Key tab A 1 Switcher
+
+# Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+#   1 - Open the WindowOps menu.
+#   2 - Close on single click, Destory on double click.
+#   4 - Maximize (right/middle button will only maximize vertical/horizontal)
+#   6 - Iconify (minimize)
+Mouse 1 1 A Menu MenuWindowOps Delete
+Mouse 1 2 A Close
+Mouse 1 4 A Maximize
+Mouse 1 6 A Iconify
+
+#   TitleBar: Click to Raise, Move, Double Click to Maximize
+#             Mouse Wheel Up/Down to WindowShade On/Off
+#   Borders: Click to  Resize
+Mouse 4	T    A WindowShade True
+Mouse 5	T    A Wraise, Move to Resize
+
+# Music control
+Key XF86AudioNext A A Exec playerctl next
+Key XF86AudioPrev A A Exec playerctl previous
+Key XF86AudioPlay A A Exec playerctl play-pause
+Key XF86AudioPause A A Exec playerctl play-pause
+
+# Brightness control
+Key XF86MonBrightnessUp A A Exec bash ~/.scripts/backlight.sh inc 10
+Key XF86MonBrightnessDown A A Exec bash ~/.scripts/backlight.sh dec 10
+
+# Volume control
+Key XF86AudioRaiseVolume A A Exec ~/.scripts/volume.sh inc 10
+Key XF86AudioLowerVolume A A Exec ~/.scripts/volume.sh dec 10
+Key XF86AudioMute A A Exec ~/.scripts/volume.sh mute
+
+# Open Rofi
+# Key space A 4 Exec exec rofi -show drun
+
+# Super + Shift + 1-4 to send to another workspace
+Key 1 A 4S MovetoPage 0 0
+Key 2 A 4S MovetoPage 1 0
+Key 3 A 4S MovetoPage 2 0
+Key 4 A 4S MovetoPage 3 0
+
+# Screenshot
+Key Print A A Exec bash $HOME/.scripts/shot.sh
+
+# Open File Manager
+Key f A 4 Exec exec thunar
+
+# Open Browser
+Key b A 4 Exec exec firefox
+
+#   Root Window: Left Click - Main Menu
+#                Right Click - WindowOps Menu
+#                Middle Click - Window List Menu
+#   Right click TitleBar/Borders for WindowOps Menu
+Mouse 1	T    A RaiseMoveX Move Maximize
+Mouse 1	FS   A RaiseMoveindowShade False
+Mouse 3	R    A JGMenu
+Mouse 2	R    A JGMenu
+Mouse 1	R    A JGMenu
+Mouse 1	I    A RaiseMoveX Move "Iconify off"
+Mouse 3	T    A Menu MenuWindowOps
+Mouse 3 I    A Menu MenuIconOps
+Mouse 1 W HM drag-n-move
+Mouse 3 W HM drag-n-resize
+Mouse 2 W HM RaiseLower
+
+# Window snapping
+Key Left A 4 SnapLeft
+Key Right A 4 SnapRight
+Key Up A 4 SnapHalf
+Key Down A 4 SnapQuarter
+Key n A 4 SnapTiny
+
+## On minimized windows
+Mouse 1 I A Iconify off
+Mouse 3 I A Menu MenuIconOps
+
+#
+#  ██████╗ ███████╗ ██████╗ ██████╗ ██████╗ ███████╗
+#  ██╔══██╗██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔════╝
+#  ██║  ██║█████╗  ██║     ██║   ██║██████╔╝███████╗
+#  ██║  ██║██╔══╝  ██║     ██║   ██║██╔══██╗╚════██║
+#  ██████╔╝███████╗╚██████╗╚██████╔╝██║  ██║███████║
+#  ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+#                                                   
+
+# Buttons Locations 1 3 5 7 9 T T T T T 0 8 6 4 2
+# 2 >> Close, 4 >> Maximize, 6 >> Minimize, 1 >> Window Menu
+TitleStyle Centered Height 50 -- Flat
+ButtonStyle Reset
+ButtonStyle All -- Flat
+ButtonStyle All -- UseTitleStyle
+AddButtonStyle All Vector 2 1x1@4 1x1@4
+AddButtonStyle 2 \
+	ActiveUp (Pixmap $[icons]/close.png -- Flat) \
+	ActiveDown (Pixmap $[icons]/close.png -- Flat) \
+	InactiveUp (Pixmap $[icons]/close.png -- Flat)
+AddButtonStyle 4 \
+	ActiveUp (Pixmap $[icons]/maximize.png -- Flat) \
+	ActiveDown (Pixmap $[icons]/maximize.png -- Flat) \
+	Inactive (Pixmap $[icons]/maximize.png -- Flat)
+AddButtonStyle 6 \
+	ActiveUp (Pixmap $[icons]/minimize.png -- Flat) \
+	ActiveDown (Pixmap $[icons]/minimize.png, -- Flat) \
+	Inactive (Pixmap $[icons]/minimize.png -- Flat)
+AddButtonStyle 1 \
+	ActiveUp (Pixmap $[icons]/menu.png -- Flat) \
+	ActiveDown (Pixmap $[icons]/menu.png -- Flat) \
+	Inactive (Pixmap $[icons]/menu.png -- Flat)
+
+#
+#  ███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+#  ████╗ ████║██╔═══██╗██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+#  ██╔████╔██║██║   ██║██║  ██║██║   ██║██║     █████╗  ███████╗
+#  ██║╚██╔╝██║██║   ██║██║  ██║██║   ██║██║     ██╔══╝  ╚════██║
+#  ██║ ╚═╝ ██║╚██████╔╝██████╔╝╚██████╔╝███████╗███████╗███████║
+#  ╚═╝     ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
+#       
+
+## FvwmIdent
+# To get various window info
+# Used in Titlebar Right Click >> More >> Identify
+DestroyModuleConfig FvwmIdent:*
+*FvwmIdent: Colorset 10
+*FvwmIdent: Font "xft:Metropolis:Regular:size=12:antialias=True"
+
+## FvwmScript
+# To create desktop widget like date time & quit popup menu
+# Only used for quit popup menu this time
+DestroyModuleConfig FvwmScript:*
+*FvwmScript: DefaultColorset 10
+
+## FvwmEvent, used for updating the workspace switcher in Eww.
+DestroyModuleConfig FvwmEvent: *
+
+## Triggers FvwmEvent when a window is maximized
+DestroyModuleConfig FMSpawnWindow: *
+*FMSpawnWindow: Cmd Function
+*FMSpawnWindow: add_window SpawnWindow
+
+DestroyModuleConfig FMDestroyWindow: *
+*FMDestroyWindow: Cmd Function
+*FMDestroyWindow: destroy_window DestroyWindow
+    
+## Triggers FvwmEvent when desktop is changed
+DestroyModuleConfig FMChangeDesk: *
+*FMChangeDesk: Cmd Function
+*FMChangeDesk: new_desk ChangeDeskFunc
+    
+Module FvwmEvent FMDestroyWindow
+Module FvwmEvent FMChangeDesk
+Module FvwmEvent FMSpawnWindow

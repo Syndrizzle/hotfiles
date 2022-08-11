@@ -1,0 +1,24 @@
+@icon,,28,17,16,16,0,left,top,#7AA2F7,#7AA2F7,/usr/share/jgmenu/MenuIcons/search.png
+@search,,51,16,150,20,2,left,top,#c0caf5,#7aa2f7,Search
+Terminal,kitty,/usr/share/jgmenu/MenuIcons/terminal.png
+Web Browser,brave,/usr/share/jgmenu/MenuIcons/web-browser.png
+File manager,thunar,/usr/share/jgmenu/MenuIcons/file-manager.png
+Text Editor,gedit,/usr/share/jgmenu/MenuIcons/edit-note.png
+Music Player,spotify,/usr/share/jgmenu/MenuIcons/music.png
+
+^sep()
+Applications,^checkout(lx-apps),/usr/share/jgmenu/MenuIcons/applications.png
+Control Center,eww open notifications,/usr/share/jgmenu/MenuIcons/dashboard.png
+System Menu,eww open system-menu,/usr/share/jgmenu/MenuIcons/system-menu.png
+^sep()
+Exit,eww open-many --toggle background-closer powermenu,/usr/share/jgmenu/MenuIcons/exit.png
+FVWM,^checkout(fvwm),/usr/share/jgmenu/MenuIcons/bspwm.png
+
+^tag(fvwm)
+Website, firefox http://fvwm.org/, /usr/share/jgmenu/MenuIcons/bspwm.png
+Documentation, brave http://fvwm.org/wiki/, /usr/share/jgmenu/MenuIcons/search.png
+Edit Config, kitty -c vim ~/.fvwm/config, /usr/share/jgmenu/MenuIcons/edit-note.png
+Restart, FvwmCommand Restart, /usr/share/jgmenu/MenuIcons/restart.png
+Exit, FvwmCommand Quit, /usr/share/jgmenu/MenuIcons/exit.png
+
+^tag(lx-apps)
