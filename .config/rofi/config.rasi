@@ -1,0 +1,104 @@
+configuration{
+    modi: "combi";
+    lines: 5;
+    font: "Metropolis 18";
+    show-icons: true;
+    icon-theme: "Papirus";
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    location: 7;
+    display-combi: 			"";
+    disable-history: false;
+    hide-scrollbar: false;
+    sidebar-mode: false;
+}
+
+@theme "decay"
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 800px;
+    border: 0px;
+    border-color: @fg-col;
+    x-offset: 20;
+    y-offset: -80;
+    background-color: @bg-col;
+    border-radius: 15;
+}
+
+mainbox {
+    background-color: @bg-col;
+    children: [ inputbar, listview ];
+    spacing:                       	0%;
+    padding:                        2% 1% 2% 1%;
+}
+
+inputbar {
+	children: 						[ prompt, entry ];
+    background-color: @bg-col;
+    expand:                         false;
+	border:							0.1% 0.1% 0.1% 0.1%;
+    border-radius:                  12px;
+	border-color:					@border-col;
+    margin:                         2% 1% 0% 1%;
+    padding:                        0%;
+
+}
+
+prompt {
+    background-color: @bg-col;
+    padding: 15px 0px 0px 10px;
+    font: "Phosphor 23";
+    text-color: @fg-col;
+    margin: 0.5px 0px 0px 20px;
+}
+
+entry {
+    padding: 15px;
+    margin: 4px 20px 0px 0px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+    placeholder: " Browse Apps, Files...";
+    horizontal-align:               0;
+    expand:                         true;
+    blink:                          true;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 10 00 0;
+    margin: 20 10 0 10;
+    columns: 4;
+    spacing: 0;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 10px 20px 10px 20px;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
+    orientation: vertical;
+    spacing: 10;
+}
+
+element-icon {
+    size: 56px;
+    horizontal-align: 0.5;
+}
+
+element selected {
+    background-color:  @bg-col-light ;
+    text-color: @fg-col  ;
+    border-radius: 15px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    expand: true;
+    font: "Metropolis 14";
+  }
