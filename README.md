@@ -6,9 +6,7 @@
 
 ## 1. [FVWM Edition [NEW!]](https://github.com/syndrizzle/hotfiles/tree/fvwm)
 <img src="https://img.shields.io/badge/Maintained:-Yes!-brightgreen?style=flat">
-<br>
 <img src="https://img.shields.io/badge/Health:-Optimized%20(Suitable%20for%20daily%20use)-brightgreen?style=flat">
-<br>
 <img src="https://img.shields.io/badge/RAM Usage:-~800MB-brightgreen?style=flat">
 
 <p align="center"> <img src="assets/fvwm.png" align="center" width="750"> </p>
@@ -16,18 +14,14 @@
 
 ## 2. [BSPWM Edition](https://github.com/syndrizzle/hotfiles/tree/bspwm)
 <img src="https://img.shields.io/badge/Maintained:-No! (Only bugfixes)-red?style=flat">
-<br>
 <img src="https://img.shields.io/badge/Health:-Optimized%20(Suitable%20for%20daily%20use)-brightgreen?style=flat">
-<br>
 <img src="https://img.shields.io/badge/RAM Usage:-~600MB-brightgreen?style=flat">
 
 <p align="center"> <img src="assets/bspwm.png" align="center" width="750"> </p>
 
 ## 3. [Worm Edition](https://github.com/syndrizzle/hotfiles/tree/worm)
 <img src="https://img.shields.io/badge/Maintained:-No!-red?style=flat">
-<br>
 <img src="https://img.shields.io/badge/Health:-Not Optimized!%20(Kinda not usable for daily use.)-red?style=flat">
-<br>
 <img src="https://img.shields.io/badge/RAM Usage:-~700MB-brightgreen?style=flat">
 
 <p align="center"> <img src="assets/worm.png" align="center" width="750"> </p>
