@@ -1,4 +1,4 @@
-<p align="center"> <img src="https://i.imgur.com/wKJBQId.gif" align="center" width="600"> </p>
+<p align="center"> <img src=".git/hotfiles_fvwm.gif" align="center" width="600"> </p>
 
 <p align="center"><a href="#installation"><img alt="picture 1" src="https://i.imgur.com/v820gOe.gif" width="150" /></a>&nbsp;&nbsp;&nbsp;<a href="#gallery"><img alt="picture 3" src="https://i.imgur.com/dB9MC33.gif" width="150" /></a>&nbsp;&nbsp;&nbsp;<a href="#post-installation-notes"><img alt="picture 4" src="https://i.imgur.com/VovEDmf.gif" width="150"/></a>&nbsp;&nbsp;&nbsp;<a href="#credits"><img alt="picture 5" src="https://i.imgur.com/gJHFRGk.gif" width="150" /></a></p>  
 
