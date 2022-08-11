@@ -17,7 +17,7 @@ inten=""
 # notify and view screenshot
 function notify_view() {
   notify-send -i xclipboard -a shot_clipboard -u low Screenshot "Copied to clipboard."
-  viewnior "$dir/$file"
+  xdg-open "$dir/$file"
   if [[ -e "$dir/$file" ]]; then
     notify-send -i "$dir/$file" -a shot -u low Screenshot "Screenshot Saved."
   else
