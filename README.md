@@ -178,7 +178,7 @@ After that we just need to run:
 ```bash
 bash
 spicetify config current_theme Ziro
-spicetify config color_scheme tokyonight
+spicetify config color_scheme decay
 spicetify config extensions adblock.js
 spicetify backup apply
 ```
