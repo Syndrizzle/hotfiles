@@ -119,7 +119,7 @@ That's it! We have successfully installed all the dependencies!
 </details>
 <details>
 <summary><b>Installation on Ubuntu</b></summary>
-Coming Soon!
+Do it yourself, or why not stop using Ubuntu?
 </details>
 </details>
 <details>
@@ -129,7 +129,7 @@ Since we are using Decay, as our color scheme, we need to install the Decay GTK 
 ```bash
 git clone https://github.com/decaycs/gtk3 decay-gtk3
 cd decay-gtk3/decay
-npm install -g sass
+sudo npm install -g sass
 make && sudo make install
 ```
 </details>
@@ -142,14 +142,14 @@ Clone the dotfiles:
 cd ~/Downloads
 git clone https://github.com/syndrizzle/hotfiles.git -b fvwm
 cd hotfiles
-cp -r .* ~/
+cp -r .config .cache .fvwm .icons .local .scripts .wallpapers ~/
 cp .xinitrc .Xresources .gtkrc-2.0 .api_keys ~/
 ```
 
 Move the `slim.conf` in the `/etc` directory and also move stuff from the `usr/` directory:
 ```bash
 sudo cp etc/slim.conf /etc/slim.conf
-sudo cp -r usr/ /usr/
+sudo cp -r usr/* /usr/
 ```
 
 And you are done! Enjoy!
