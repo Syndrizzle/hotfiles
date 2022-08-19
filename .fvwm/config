@@ -260,7 +260,7 @@ Style tint2 !Title, !Borders, !Handles, Sticky, StaysOnTop, NoHandles, EWMHIgnor
 Style eww-notifications !Title, !Borders, !Handles, StaysOnTop
 Style albert !Title, !Borders, !Handles, StaysOnTop
 Style eww-calendar !Title, !Borders, !Handles, Sticky, StaysOnTop, NoHandles, EWMHIgnoreStrutHints, EWMHPlacementIgnoreWorkingArea, WindowListSkip, ClickToFocus
-
+Style Fig_desktop !Title, !Borders, !Handles, Sticky, StaysOnTop, NoHandles, EWMHIgnoreStrutHints, EWMHPlacementIgnoreWorkingArea, WindowListSkip, PositionPlacement 0 -0, ClickToFocus
 
 #
 #   ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗

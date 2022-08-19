@@ -152,7 +152,7 @@ sudo cp etc/slim.conf /etc/slim.conf
 sudo cp -r usr/* /usr/
 ```
 
-And you are done! Enjoy!
+And you are done! Now, head over to [Post Installation](#post-installation-notes) to complete the installation.
 </details>
 
 ---
@@ -290,6 +290,15 @@ Following are the keybindings of the setup:
     <li><kbd>Alt+F4</kbd>: Quit an application.</li>
 <br>
 The general keybindings like volume, brightness, music/media keys also work as intended, tho it may vary from keyboard to keyboard.
+</details>
+
+<details>
+<summary><b>Setting up the wallpaper:</b></summary>
+If you boot into the installed setup, you might find that there is no wallpaper on your desktop, worry not though! Since we installed nitrogen, setting up the wallpaper is easy as a piece of cake!  
+
+Open nitrogen, and then go to `Preferences`  
+Now, click on `Add`, and select the `.wallpapers` directory, it is in your Home directory. If it is not visible, then do <kbd>Ctrl + H</kbd> to make it visible.
+After that, click on OK, and set the desired wallpaper :), it will remain persistent.
 </details>
 
 ## Support

@@ -62,7 +62,7 @@
     (box :class "second-row-system" :hexpand "false" :vexpand "false" :space-evenly "false" :spacing 10
       (box :class "redshift-box" :space-evenly "false" :orientation "v"
         (box :class "redshift-buttons-box" :space-evenly "false"
-          (button :class "redshift-button  ${redshift-icon == "" ? "redshift-button-on" : "redshift-button-off"}" :onclick "scripts/redshift --toggle" "${redshift-icon}")
+          (button :class "redshift-button  ${redshift-icon == "" ? "redshift-button-on" : "redshift-button-off"}" :onclick "zsh scripts/redshift --toggle" "${redshift-icon}")
           (label :class "seperator" :text "|")
           (label :tooltip "No further configuration available for this applet." :class "redshift-arrow-btn ${redshift-icon == "" ? "redshift-arrow-btn-on" : "redshift-arrow-btn-off"}" :text ""))
         (label :class "redshift-label" :text "Night Light" :limit-width 14))
@@ -104,17 +104,18 @@
     (box :class "music-player-container" :orientation "v" :space-evenly "false"
       (box :class "music-player-box" :hexpand "false" :vexpand "false" :space-evenly "false"
         (box :class "music-player-album" :space-evenly "false" :style "background-image: url('${player-art}');")
-        (box :class "music-player-info-box" :space-evenly "true"
+        (box :class "music-player-info-box" :space-evenly "true" :orientation "v"
           (box :class "music-player-info" :space-evenly "false" :halign "start" :orientation "v"
             (box :class "music-player-name-box" :space-evenly "false"
               (label :class "music-player-name-icon" :text player-icon)
-              (label :class "music-player-name" :text player-name))
+              (label :class "music-player-name" :text "${player-name == "" ? "No player found" : player-name}")))
+          (box :class "music-player-info-more-box" :orientation "v" :space-evenly "false"
             (label :class "music-player-title" :halign "start" :limit-width 20 :text player-title)
             (label :class "music-player-artist" :halign "start" :limit-width 20 :text player-artist))))
       (box :class "player-buttons-box" :space-evenly "true"
-        (button :class "player-prev" :onclick "playerctl previous" "")
+        (button :class "player-prev" :onclick "playerctl previous" "劣")
         (button :class "player-pp" :onclick "playerctl play-pause" "${player-icon}")
-        (button :class "player-next" :onclick "playerctl next" "")))
+        (button :class "player-next" :onclick "playerctl next" "烈")))
     (box :class "bottom-row" :space-evenly "true"
       (box :class "battery-box" :space-evenly "false"
         (label :class "battery-icon ${battery-class == "" ? "battery-icon-charging" : "battery-icon-discharging"}" :text battery-icon)
@@ -128,5 +129,5 @@
 (defwindow system-menu :stacking "fg"
   :windowtype "dock"
   :wm-ignore true
-  :geometry (geometry :x -20 :y -80 :width "22%" :height "30%" :anchor "right bottom")
+  :geometry (geometry :x -20 :y -80 :width "25%" :height "30%" :anchor "right bottom")
   (system-menu))

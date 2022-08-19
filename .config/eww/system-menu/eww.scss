@@ -386,27 +386,28 @@ slider {
 
 .music-player-name-box {
     background-color: $bg;
-    border-radius: 30px
+    border-radius: 30px;
+    color: $purple;
 }
 
 .music-player-name-icon {
     font-size: 14px;
     padding: 3px 6px 3px 6px;
     border-radius: 100%;
-
+    font-weight: 900;
     margin: 5px 0px 5px 5px;
 }
 
 .music-player-name {
     font-size: 18px;
     font-weight: 600;
-    margin: 1px 10px 0px 10px;
+    margin: 2px 15px 0px 0px;
 }
 
 .music-player-title {
     font-weight: bold;
     font-size: 20px;
-    margin: 10px 0px 0px 5px;
+    margin: 0px 0px 0px 5px;
 }
 
 .music-player-artist {
