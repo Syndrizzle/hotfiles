@@ -1,0 +1,272 @@
+/* Color Pallette */
+/* Note: These variables should be used ONLY when needed across ALL of the color palettes. */
+:root {
+  /* Morning */
+  --flamingo: #f0c6c6;
+  --mauve: #c6a0f6;
+  --pink: #f5bde6;
+  --maroon: #ee99a0;
+  --red: #ed8796;
+  --peach: #f5a97f;
+  --yellow: #eed49f;
+  /* --yellow: #FAE3B0; */
+  --green: #a6da95;
+  --teal: #8bd5ca;
+  --blue: #8aadf4;
+  --sky: #91d7e3;
+  /* Night */
+  /* --black-0: #161320; */
+  --crust: #181926;
+  /* --black-1: #1A1826; */
+  --mantle: #1e2030;
+  /* --black-2: #1E1E2E;  */
+  --base: #24273a;
+  /* --black-3: #302D41; */
+  --surface0: #363a4f;
+  /* --black-4: #575268;  */
+  --surface1: #494d64; 
+  /* --gray-0: #6E6C7E;  */
+  --overlay0: #6e738d;
+  /* --gray-1: #988BA2; */
+  ---overlay1: #8087a2;
+  /* --gray-2: #C3BAC6; */
+  --overlay2: #939ab7;
+  /* --white: #D9E0EE; */
+  --text: #cad3f5;
+  --lavender: #b7bdf8;
+  --rosewater: #f4dbd6;
+ 
+}
+
+/* Buttons */
+.main-playButton-PlayButton.main-playButton-primary {
+    color: var(--spice-player);
+}
+
+.main-button-primary {
+    background-color: var(--spice-main);
+}
+.main-button-primary:active,
+.main-button-primary:focus,
+.main-button-primary:hover {
+    background-color: var(--spice-sidebar);
+}
+
+.main-view-container button:hover > div[class^='ButtonInner-sc-'] {
+    background-color: var(--spice-button);
+}
+
+.control-button-heart[aria-checked="true"],
+.main-addButton-active,
+.main-addButton-active:focus,
+.main-addButton-active:hover {
+    color: var(--red);
+}
+
+.main-addButton-active:hover {
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+}
+
+/* Progress bar */
+.x-progressBar-progressBarBg > div > div {
+    background-color: var(--spice-text);
+}
+
+/* Top bars */
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background,
+.main-view-container main[aria-label="Spotify – Web Player"] > div:first-child {
+    display: none;
+}
+
+.main-topBar-background {
+    background-color: var(--spice-main) !important;
+}
+
+.main-entityHeader-withBackgroundImage {
+    background-color: rgba(var(--spice-rgb-player), 0.2);
+}
+
+/* Sidebar */
+.main-navBar-navBar li:hover > div,
+.main-navBar-navBar li:hover > a:not(.main-navBar-navBarLinkActive),
+.spicetify-playlist-list li:hover {
+    background-color: var(--spice-main);
+}
+
+#spicetify-sticky-list li:hover > div {
+    border-radius: 4px;
+}
+
+/* Scrollbar */
+.os-theme-spotify > .os-scrollbar-horizontal,
+.os-theme-spotify > .os-scrollbar-vertical {
+    padding: 4px;
+}
+
+.os-theme-spotify.os-host-transition
+    > .os-scrollbar-horizontal
+    > .os-scrollbar-track
+    > .os-scrollbar-handle,
+.os-theme-spotify.os-host-transition
+    > .os-scrollbar-vertical
+    > .os-scrollbar-track
+    > .os-scrollbar-handle {
+    background-color: var(--decorative-base);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #575268;
+    border-radius: 4px;
+}
+
+/* Home */
+.main-home-homeHeader {
+    display: none;
+}
+
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div {
+    background-color: var(--spice-card);
+}
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div:hover {
+    background-color: var(--spice-misc);
+}
+
+.main-gridContainer-gridContainer > div,
+.main-gridContainer-gridContainer > div > div > div {
+    border-radius: 6px;
+}
+
+/* Cards */
+.main-card-card {
+    border-radius: 6px;
+}
+
+.main-card-imageContainer {
+    margin: -16px -16px 16px -16px;
+}
+
+.main-cardImage-imageWrapper,
+.main-cardImage-image {
+    border-radius: 6px 6px 0 0;
+}
+
+/* Settings */
+input:checked~.x-toggle-indicatorWrapper {
+  background-color: var(---overlay1);
+}
+
+input:hover:not([disabled]):not(:active)~.x-toggle-indicatorWrapper {
+  background-color: var(--spice-button-active);
+}
+
+select option:checked {
+  color: var(--spice-text);
+  font-weight: bold;
+}
+
+/* Animated equalizer */
+/* EQ color classes are specified here in case the js extension is not moved over
+ * The default green eq will be used in this case */
+.catppuccin-eq-rosewater .main-trackList-playingIcon,
+.catppuccin-eq-flamingo .main-trackList-playingIcon,
+.catppuccin-eq-mauve .main-trackList-playingIcon,
+.catppuccin-eq-pink .main-trackList-playingIcon,
+.catppuccin-eq-maroon .main-trackList-playingIcon,
+.catppuccin-eq-red .main-trackList-playingIcon,
+.catppuccin-eq-peach .main-trackList-playingIcon,
+.catppuccin-eq-yellow .main-trackList-playingIcon,
+.catppuccin-eq-green .main-trackList-playingIcon,
+.catppuccin-eq-teal .main-trackList-playingIcon,
+.catppuccin-eq-blue .main-trackList-playingIcon,
+.catppuccin-eq-sky .main-trackList-playingIcon,
+.catppuccin-eq-lavender .main-trackList-playingIcon,
+.catppuccin-eq-white .main-trackList-playingIcon {
+    background-size: cover;
+    padding-left: 100%;
+}
+
+.catppuccin-eq-rosewater .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-rosewater.gif");
+}
+.catppuccin-eq-flamingo .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-flamingo.gif");
+}
+.catppuccin-eq-mauve .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-mauve.gif");
+}
+.catppuccin-eq-pink .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-pink.gif");
+}
+.catppuccin-eq-maroon .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-maroon.gif");
+}
+.catppuccin-eq-red .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-red.gif");
+}
+.catppuccin-eq-peach .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-peach.gif");
+}
+.catppuccin-eq-yellow .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-yellow.gif");
+}
+.catppuccin-eq-green .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-green.gif");
+}
+.catppuccin-eq-teal .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-teal.gif");
+}
+.catppuccin-eq-blue .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-blue.gif");
+}
+.catppuccin-eq-sky .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-sky.gif");
+}
+.catppuccin-eq-lavender .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-lavender.gif");
+}
+.catppuccin-eq-lavender .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-white.gif");
+}
+
+/* For that small dot on podcasts that notify us of new episodes */
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div
+    span[aria-label],
+span[aria-label="New episode"],
+span[aria-label="New Podcast Episode"] {
+    background: var(--spice-accent, var(--spice-text));
+}
+
+/* Modals */
+.GenericModal[aria-label="Already added"] > div {
+    background-color: var(--spice-card);
+    color: var(--spice-subtext);
+}
+
+.GenericModal[aria-label="Already added"] button:first-child {
+    color: var(--spice-button-active);
+}
+
+.GenericModal[aria-label="Already added"] button:first-child:hover {
+    color: var(--spice-notification-error);
+}
+
+.GenericModal[aria-label="Already added"] button:last-child:hover > div {
+    background-color: var(--spice-button);
+}
+
+

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+bat=$(acpi -b)
+state=$(echo ${bat} | awk '{print $3}')
+
+if [[ "$state" = "Not" ]]; then
+    level=$(echo ${bat} | awk '{print $5}')
+    level=${level::-1}
+else
+    level=$(echo ${bat} | awk '{print $4}')
+    if [[ "$state" == *"Unknown"* ]]; then
+        level=${level::-1}
+    else
+        if [[ "$level" == "100%" ]]; then
+            level=${level::-1}
+        else
+            level=${level::-2}
+        fi
+    fi
+fi
+
+if [[ "$bat" == *"until"* ]]; then
+    eww update show_battery=true
+    echo $level
+else
+    eww update show_battery=false
+    echo $level
+fi

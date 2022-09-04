@@ -1,0 +1,46 @@
+#!/bin/bash
+
+if [[ $1 == "--rofi" ]]; then
+    cd || return
+    rofi -show combi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -combi-modi "drun,filebrowser" -combi-display-format "{text}"
+fi
+
+if [[ $1 == "--search" ]]; then
+    cd || return
+    albert toggle
+fi
+
+if [[ $1 == "--network" ]]; then
+    cd || return
+    networkmanager_dmenu
+fi
+
+if [[ $1 == "--volume" ]]; then
+    cd || return
+    pavucontrol
+fi
+
+if [[ $1 == "--bluetooth" ]]; then
+    cd || return
+    blueberry
+fi
+
+if [[ $1 == "--workspaces" ]]; then
+    cd || return
+    eww open workspaces
+fi
+
+if [[ $1 == "--notifications" ]]; then
+    cd || return
+    eww open --toggle notifications
+fi
+
+if [[ $1 == "--settings" ]]; then
+    eww close system-menu
+    xfce4-settings
+fi
+
+if [[ $1 == "--powermenu" ]]; then
+    eww close system-menu
+    eww open powermenu
+fi

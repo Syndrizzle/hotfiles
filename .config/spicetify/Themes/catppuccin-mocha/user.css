@@ -1,0 +1,497 @@
+/* Color Pallette */
+/* Note: These variables should be used ONLY when needed across ALL of the color palettes. */
+:root {
+  /* Morning */
+  --flamingo: #f2cdcd;
+  --mauve: #cba6f7;
+  --pink: #f5c2e7;
+  --maroon: #eba0ac;
+  --red: #f38ba8;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --blue: #89b4fa;
+  --sky: #89dceb;
+  /* Night */
+  /* --black-0: #161320; */
+  --crust: #11111B;
+  /* --black-1: #1A1826; */
+  --mantle: #181825;
+  /* --black-2: #1E1E2E;  */
+  --base: #1E1E2E;
+  /* --black-3: #302D41; */
+  --surface0: #313244;
+  /* --black-4: #575268;  */
+  --surface1: #45475A; 
+  /* --gray-0: #6E6C7E;  */
+  --overlay0: #6C7086;
+  /* --gray-1: #988BA2; */
+  ---overlay1: #7f849C;
+  /* --gray-2: #C3BAC6; */
+  --overlay2: #9399B2;
+  /* --white: #D9E0EE; */
+  --white: #d9e0ee;
+  --lavender: #b4befe;
+  --rosewater: #f5e0dc;
+}
+
+/* Buttons */
+.main-playButton-PlayButton.main-playButton-primary {
+    color: var(--spice-player);
+}
+
+.main-button-primary {
+    background-color: var(--spice-main);
+}
+.main-button-primary:active,
+.main-button-primary:focus,
+.main-button-primary:hover {
+    background-color: var(--spice-sidebar);
+}
+
+.main-view-container button:hover > div[class^='ButtonInner-sc-'] {
+    background-color: var(--spice-button);
+}
+
+.control-button-heart[aria-checked="true"],
+.main-addButton-active,
+.main-addButton-active:focus,
+.main-addButton-active:hover {
+    color: var(--red);
+}
+
+.main-addButton-active:hover {
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+}
+
+/* Progress bar */
+.x-progressBar-progressBarBg > div > div {
+    background-color: var(--spice-text);
+}
+
+/* Top bars */
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background,
+.main-view-container main[aria-label="Spotify – Web Player"] > div:first-child {
+    display: none;
+}
+
+.main-topBar-background {
+    background-color: var(--spice-main) !important;
+}
+
+.main-entityHeader-withBackgroundImage {
+    background-color: rgba(var(--spice-rgb-player), 0.2);
+}
+
+/* Sidebar */
+.main-navBar-navBar li:hover > div,
+.main-navBar-navBar li:hover > a:not(.main-navBar-navBarLinkActive),
+.spicetify-playlist-list li:hover {
+    background-color: var(--spice-main);
+}
+
+#spicetify-sticky-list li:hover > div {
+    border-radius: 4px;
+}
+
+/* Scrollbar */
+.os-theme-spotify > .os-scrollbar-horizontal,
+.os-theme-spotify > .os-scrollbar-vertical {
+    padding: 4px;
+}
+
+.os-theme-spotify.os-host-transition
+    > .os-scrollbar-horizontal
+    > .os-scrollbar-track
+    > .os-scrollbar-handle,
+.os-theme-spotify.os-host-transition
+    > .os-scrollbar-vertical
+    > .os-scrollbar-track
+    > .os-scrollbar-handle {
+    background-color: var(--decorative-base);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #575268;
+    border-radius: 4px;
+}
+
+/* Home */
+.main-home-homeHeader {
+    display: none;
+}
+
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div {
+    background-color: var(--spice-card);
+}
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div:hover {
+    background-color: var(--spice-misc);
+}
+
+.main-gridContainer-gridContainer > div,
+.main-gridContainer-gridContainer > div > div > div {
+    border-radius: 6px;
+}
+
+/* Cards */
+.main-card-card {
+    border-radius: 6px;
+}
+
+.main-card-imageContainer {
+    margin: -16px -16px 16px -16px;
+}
+
+.main-cardImage-imageWrapper,
+.main-cardImage-image {
+    border-radius: 6px 6px 0 0;
+}
+
+/* Settings */
+input:checked~.x-toggle-indicatorWrapper {
+  background-color: var(---overlay1);
+}
+
+input:hover:not([disabled]):not(:active)~.x-toggle-indicatorWrapper {
+  background-color: var(--spice-button-active);
+}
+
+select option:checked {
+  color: var(--spice-text);
+  font-weight: bold;
+}
+
+/* Animated equalizer */
+/* EQ color classes are specified here in case the js extension is not moved over
+ * The default green eq will be used in this case */
+.catppuccin-eq-rosewater .main-trackList-playingIcon,
+.catppuccin-eq-flamingo .main-trackList-playingIcon,
+.catppuccin-eq-mauve .main-trackList-playingIcon,
+.catppuccin-eq-pink .main-trackList-playingIcon,
+.catppuccin-eq-maroon .main-trackList-playingIcon,
+.catppuccin-eq-red .main-trackList-playingIcon,
+.catppuccin-eq-peach .main-trackList-playingIcon,
+.catppuccin-eq-yellow .main-trackList-playingIcon,
+.catppuccin-eq-green .main-trackList-playingIcon,
+.catppuccin-eq-teal .main-trackList-playingIcon,
+.catppuccin-eq-blue .main-trackList-playingIcon,
+.catppuccin-eq-sky .main-trackList-playingIcon,
+.catppuccin-eq-lavender .main-trackList-playingIcon,
+.catppuccin-eq-white .main-trackList-playingIcon {
+    background-size: cover;
+    padding-left: 100%;
+}
+
+.catppuccin-eq-rosewater .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-rosewater.gif");
+}
+.catppuccin-eq-flamingo .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-flamingo.gif");
+}
+.catppuccin-eq-mauve .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-mauve.gif");
+}
+.catppuccin-eq-pink .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-pink.gif");
+}
+.catppuccin-eq-maroon .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-maroon.gif");
+}
+.catppuccin-eq-red .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-red.gif");
+}
+.catppuccin-eq-peach .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-peach.gif");
+}
+.catppuccin-eq-yellow .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-yellow.gif");
+}
+.catppuccin-eq-green .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-green.gif");
+}
+.catppuccin-eq-teal .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-teal.gif");
+}
+.catppuccin-eq-blue .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-blue.gif");
+}
+.catppuccin-eq-sky .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-sky.gif");
+}
+.catppuccin-eq-lavender .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-lavender.gif");
+}
+.catppuccin-eq-lavender .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-white.gif");
+}
+
+/* For that small dot on podcasts that notify us of new episodes */
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div
+    span[aria-label],
+span[aria-label="New episode"],
+span[aria-label="New Podcast Episode"] {
+    background: var(--spice-accent, var(--spice-text));
+}
+
+/* Modals */
+.GenericModal[aria-label="Already added"] > div {
+    background-color: var(--spice-card);
+    color: var(--spice-subtext);
+}
+
+.GenericModal[aria-label="Already added"] button:first-child {
+    color: var(--spice-button-active);
+}
+
+.GenericModal[aria-label="Already added"] button:first-child:hover {
+    color: var(--spice-notification-error);
+}
+
+.GenericModal[aria-label="Already added"] button:last-child:hover > div {
+    background-color: var(--spice-button);
+}
+
+/* For versions below v1.66 */
+
+/* Context menu upgrade button */
+.upgrade-button, button[data-menu-item="upgrade-account"], .main-contextMenu-menuItem a[href="https://www.spotify.com/premium/"], button[id="upgradeAccount"] {
+  display: none !important;
+}
+
+/* Ad placeholder */
+.main-leaderboardComponent-container{
+  display: none !important; 
+}
+/* Upgrade button */
+.main-topBar-UpgradeButton {
+  display: none !important;
+}
+
+/* Pointer cursors for accessibility */
+.show-followButton-button,
+.main-dropDown-dropDown,
+.x-toggle-wrapper,
+.main-playlistEditDetailsModal-closeBtn,
+.main-trackList-rowPlayPauseButton,
+.main-rootlist-rootlistItemLink:link, .main-rootlist-rootlistItemLink:visited,
+.x-sortBox-sortDropdown,
+.main-contextMenu-menuItemButton,
+.main-trackList-column,
+.main-moreButton-button,
+.x-downloadButton-button,
+.main-playButton-PlayButton,
+.main-coverSlotExpandedCollapseButton-chevron,
+.main-coverSlotCollapsed-chevron,
+.control-button:focus, .control-button:hover,
+.main-repeatButton-button,
+.main-skipForwardButton-button,
+.main-playPauseButton-button,
+.main-skipBackButton-button,
+.main-shuffleButton-button,
+.main-addButton-button,
+.progress-bar__slider,
+.main-editImageButton-image {
+  cursor: pointer !important;
+}
+
+/* Home page ad section */
+.desktoproutes-homepage-takeover-ad-hptoComponent-parentContainer{
+  display: none !important;
+}
+
+/* Remove download button */
+.x-downloadButton-DownloadButton{
+  display:none !important;
+}
+
+/* Context menu download button */
+.main-contextMenu-disabled:not([as=a]) {
+  display: none !important;
+}
+
+
+/* For update v1.66+ */
+
+/* Upgrade button */
+.PzcmS_Z8j0D6n3ZEmv20[aria-label="Upgrade to Premium"] {
+  display: none !important
+}
+
+/* Ad placeholder */
+.snMc3rl8H2pM9cqkTpQ6 {
+  display: none !important
+}
+
+/* Context menu upgrade button */
+.tGu6COgM3S0NqMyh5Jx0 a[href="https://www.spotify.com/premium/"] {
+  display: none !important
+}
+
+/* Download button */
+._GVuKFHd7xr1QUKi_aWH {
+  display: none !important
+}
+
+/* Context menu download button */
+._qjkLyY1fy0hwCfzDZP7[aria-disabled=true] {
+  display: none !important
+}
+
+/* Find more button scale on hover */
+.tJAIYSfsDs3HsXDAPenF:hover {
+  transform: scale(1.06)
+}
+
+/* Pointer cursors for accessibility */
+.OBaPDV8g5lhQbNPmIEwf,
+._S0gp4_8E3h4YCh9EAY9,
+._qjkLyY1fy0hwCfzDZP7,
+.Xo36XRWGIbAh4SIj9FQB,
+.OSNOtcFz_LbegO1zggsb,
+.vBPFl8zuUaCexgJTw8Uc,
+.gro_tSi7cwspepH0as03,
+.vwGw2RO2v__qDU_9c5PE,
+.__1BGhJvHnvqYTPyG074,
+.h1OzWpjBctL_0cZqc4_w,
+.kyn0AY4_gXWvbdivdFgP,
+.kJVSjS2_BaEzRIoxwEhP,
+.mnhCDMSoY7L0E85V51mj,
+.QzuziJ2jGf1gnQA0IAU4,
+.jn05jgnCWyQjLZKqyKFa,
+.YFghzhgfbeZjLqvWpGN3,
+.XP_gp8Z91Ji6qbery2w3,
+._1bg4_fL__odhCd6G_B2,
+.tJAIYSfsDs3HsXDAPenF,
+._xAwo5THLGLKCTj5z4fF,
+.hzuVs5WHF7XZSJtOi_9H,
+.tIriT4RktlpCPFsZWXn2,
+.bC6V9kuel2ZewnjMAtZm,
+.ipxcyIaAWQfeUHO468Os,
+._kySQxSksHLKYgofFfhl,
+.giO6cIQ8auPNZuTvC4Y8,
+.giO6cIQ8auPNZuTvC4Y8 {
+  cursor: pointer !important
+}
+
+/* Remove homepage ad banner */
+.k6onUQZSeZIsonJ4cSpK {
+  display: none !important
+}
+
+/* Remove sponsor ads in playlists */
+.sponsor-container {
+  display: none !important
+}
+
+
+/* For update 1.1.72 or above */
+
+/* Upgrade button */
+.MgL79SorehxR01FG_x8G[aria-label="Upgrade to Premium"] {
+  display: none !important
+}
+
+/* Context menu upgrade button */
+.___vortwLX0Vo7zvuAq4[href="https://www.spotify.com/premium/"] {
+  display: none !important
+}
+
+/* Ad placeholder */
+.Aqm75shq2WwHcNTMz2Yq {
+  display: none !important
+}
+
+/* Download button */ 
+.q6RbWlHDlbjkbXsca2Yd {
+  display: none !important
+}
+
+/* Context menu download button */
+.___vortwLX0Vo7zvuAq4[aria-disabled="true"] {
+  display: none !important
+}
+
+/* Remove top padding above create playlist button */
+.vM_HBZN3SvOzSVabgF4l {
+  margin-top: unset !important
+}
+
+
+/* For update 1.1.74+ */
+
+/* Ad placeholder */
+.X871RxPwx9V0MqpQdMom {
+  display: none !important
+}
+
+/* Upgrade button */
+.Qt5xfSWikz6CLU8Vobxs[aria-label="Upgrade to Premium"] {
+  display: none !important
+}
+
+/* Context menu upgrade button */
+.DuEPSADpSwCcO880xjUG a[href="https://www.spotify.com/premium/"] {
+  display: none !important
+}
+
+/* Download button */
+.BKsbV2Xl786X9a09XROH {
+  display: none !important
+}
+
+/* Context menu download button */
+.wC9sIed7pfp47wZbmU6m[aria-disabled="true"] {
+  display: none !important
+}
+
+/* Remove top padding above create playlist button */
+.eFQFeXVbY8rrcTagg0oH {
+  margin-top: 0 !important
+}
+
+button {
+  cursor: pointer !important
+}
+
+ /* Remove upgrade button for v1.1.78 */
+.main-buttons-button[title="Upgrade to Premium"] {
+  display: none !important
+}
+
+/* Remove sponsored playlist in homepage */
+.WiPggcPDzbwGxoxwLWFf,
+.DHeG1dij5qSIc9nr0wDj, 
+.hx2D0g_ursHte5bm62U2 {
+  display: none !important
+}
+
+/* Remove top padding above create playlist button for 1.1.84+ */
+.LKgm9fCDTO7wqig_5U1q {
+  margin-top: 0 !important
+}
+
+/* Ad placeholder for 1.1.86+ */
+.ReyA3uE3K7oEz7PTTnAn {
+  display: none !important
+}
+
+.n87ifzfQlmGX8vkeYGDL {
+  background-color: #16161e !important;
+  background-image: none !important
+}

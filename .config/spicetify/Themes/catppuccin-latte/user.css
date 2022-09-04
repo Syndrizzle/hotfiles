@@ -1,0 +1,323 @@
+/* Color Pallette */
+/* Note: These variables should be used ONLY when needed across ALL of the color palettes. */
+:root {
+  /* Morning */
+  --flamingo: #dd7878;
+  --mauve: #8839ef;
+  --pink: #ea76cb;
+  --maroon: #e64553;
+  --red: #d20f39;
+  --peach: #fe640b;
+  --yellow: #df8e1d;
+  --green: #40a02b;
+  --teal: #179299;
+  --blue: #1e66f5;
+  --sky: #04a5e5;
+  /* Night */
+  /* --black-0: #161320; */
+  --crust: #dce0e8;
+  /* --black-1: #1A1826; */
+  --mantle: #e6e9ef;
+  /* --black-2: #1E1E2E;  */
+  --base: #eff1f5;
+  /* --black-3: #302D41; */
+  --surface0: #ccd0da;
+  /* --black-4: #575268;  */
+  --surface1: #bcc0cc; 
+  /* --gray-0: #6E6C7E;  */
+  --overlay0: #9ca0b0;
+  /* --gray-1: #988BA2; */
+  ---overlay1: #8c8fa1;
+  /* --gray-2: #C3BAC6; */
+  --overlay2: #7c7f93;
+  /* --white: #D9E0EE; */
+  --text: #4c4f69;
+  --lavender: #7287fd;
+  --rosewater: #dc8a78;
+}
+
+/* * { */
+/*     color: var(--text); */
+/* } */
+
+.button {
+  color: var(--text);
+}
+
+/* Buttons */
+.main-playButton-PlayButton.main-playButton-primary {
+    color: var(--spice-player);
+}
+.main-actionBar-ActionBar.contentSpacing {
+  color: var(--text);
+}
+/* .wCl7pMTEE68v1xuZeZiB */
+.main-actionBar-ActionBarRow > div > .button {
+  color: var(--text);
+}
+
+.HbKLiGoYM4dpuK8L4TMX, .Svg-sc-1bi12j5-0.jgfuCe.X1lXSiVj0pzhQCUo_72A, .main-moreButton-button, .wCl7pMTEE68v1xuZeZiB, .w6j_vX6SF5IxSXrrkYw5 {
+  color: var(--text);
+
+}
+
+.main-actionBar-ActionBarRow > div >  .input::placeholder {
+  color: var(--text);
+}
+/* Skip button, Forward button, repeat, karoke, lyrics, spotify-connect, volume */
+.main-skipBackButton-button, .main-skipForwardButton-button, .main-repeatButton-button, .ZMXGDTbwxKJhbmEDZlYy.control-button, .Button-sc-1dqy6lx-0.hyWUsx, .control-button.iUSAh1wdhXLk9hHSbkCA, .volume-bar__icon-button.control-button {
+  color: var(--text);
+}
+
+.Type__TypeElement-goli3j-0.cpSTHq.playback-bar__progress-time-elapsed, .Type__TypeElement-goli3j-0 cpSTHq main-playbackBarRemainingTime-container {
+  color: var(--text);
+}
+/* Search bar placeholder */
+.QZhV0hWVKlExlKr266jo::placeholder {
+  color: var(--text);
+}
+div.context-menu {
+  background-color: var(--crust);
+}
+.main-button-primary {
+    background-color: var(--spice-main);
+}
+.main-button-primary:active,
+.main-button-primary:focus,
+.main-button-primary:hover {
+    background-color: var(--spice-sidebar);
+}
+
+.main-view-container button:hover > div[class^='ButtonInner-sc-'] {
+    background-color: var(--spice-button);
+}
+
+.control-button-heart[aria-checked="true"],
+.main-addButton-active,
+.main-addButton-active:focus,
+.main-addButton-active:hover {
+    color: var(--red);
+}
+
+.main-addButton-active:hover {
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+}
+.QZhV0hWVKlExlKr266jo {
+  color: var(--text);
+}
+/* Progress bar */
+.x-progressBar-progressBarBg > div > div {
+    background-color: var(--spice-text);
+}
+
+/* Top bars */
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background,
+.main-view-container main[aria-label="Spotify – Web Player"] > div:first-child {
+    display: none;
+}
+
+.main-topBar-background {
+    background-color: var(--spice-main) !important;
+}
+
+.main-entityHeader-withBackgroundImage {
+    background-color: rgba(var(--spice-rgb-player), 0.2);
+}
+
+/* Sidebar */
+.main-navBar-navBar li:hover > div,
+.main-navBar-navBar li:hover > a:not(.main-navBar-navBarLinkActive),
+.spicetify-playlist-list li:hover {
+    background-color: var(--spice-main);
+}
+
+#spicetify-sticky-list li:hover > div {
+    border-radius: 4px;
+}
+/* div.jb9xD5ECTqKFK02qe3HZ {
+    background-color: var(--mantle);
+} */
+
+p.Type__TypeElement-goli3j-0.gAmaez.fUYMR7LuRXv0KJWFvRZA {
+    color: var(--spice-text);
+}
+span.UyzJidwrGk3awngSGIwv, .main-tag-container, .Type__TypeElement-goli3j-0.ebHsEf {
+    color: var(--spice-text);
+}
+
+
+/* Scrollbar */
+.os-theme-spotify > .os-scrollbar-horizontal,
+.os-theme-spotify > .os-scrollbar-vertical {
+    padding: 4px;
+}
+
+.os-theme-spotify.os-host-transition
+    > .os-scrollbar-horizontal
+    > .os-scrollbar-track
+    > .os-scrollbar-handle,
+.os-theme-spotify.os-host-transition
+    > .os-scrollbar-vertical
+    > .os-scrollbar-track
+    > .os-scrollbar-handle {
+    background-color: var(--decorative-base);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #575268;
+    border-radius: 4px;
+}
+
+/* Home */
+.main-home-homeHeader {
+    display: none;
+}
+
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div {
+    background-color: var(--spice-card);
+}
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div:hover {
+    background-color: var(--spice-misc);
+}
+
+.main-gridContainer-gridContainer > div,
+.main-gridContainer-gridContainer > div > div > div {
+    border-radius: 6px;
+}
+
+/* Cards */
+.main-card-card {
+    border-radius: 6px;
+    background-color: var(--mantle);
+}
+
+.main-card-imageContainer {
+    margin: -16px -16px 16px -16px;
+}
+
+.main-cardImage-imageWrapper,
+.main-cardImage-image {
+    border-radius: 6px 6px 0 0;
+}
+
+/* Settings */
+input:checked~.x-toggle-indicatorWrapper {
+  /* background-color: var(---overlay1); */
+  background-color: var(--text);
+}
+
+input:hover:not([disabled]):not(:active)~.x-toggle-indicatorWrapper {
+  background-color: var(--spice-button-active);
+}
+
+select option:checked {
+  color: var(--spice-text);
+  font-weight: bold;
+}
+
+/* Animated equalizer */
+/* EQ color classes are specified here in case the js extension is not moved over
+ * The default green eq will be used in this case */
+.catppuccin-eq-rosewater .main-trackList-playingIcon,
+.catppuccin-eq-flamingo .main-trackList-playingIcon,
+.catppuccin-eq-mauve .main-trackList-playingIcon,
+.catppuccin-eq-pink .main-trackList-playingIcon,
+.catppuccin-eq-maroon .main-trackList-playingIcon,
+.catppuccin-eq-red .main-trackList-playingIcon,
+.catppuccin-eq-peach .main-trackList-playingIcon,
+.catppuccin-eq-yellow .main-trackList-playingIcon,
+.catppuccin-eq-green .main-trackList-playingIcon,
+.catppuccin-eq-teal .main-trackList-playingIcon,
+.catppuccin-eq-blue .main-trackList-playingIcon,
+.catppuccin-eq-sky .main-trackList-playingIcon,
+.catppuccin-eq-lavender .main-trackList-playingIcon,
+.catppuccin-eq-white .main-trackList-playingIcon {
+    background-size: cover;
+    padding-left: 100%;
+}
+
+.catppuccin-eq-rosewater .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-rosewater.gif");
+}
+.catppuccin-eq-flamingo .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-flamingo.gif");
+}
+.catppuccin-eq-mauve .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-mauve.gif");
+}
+.catppuccin-eq-pink .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-pink.gif");
+}
+.catppuccin-eq-maroon .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-maroon.gif");
+}
+.catppuccin-eq-red .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-red.gif");
+}
+.catppuccin-eq-peach .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-peach.gif");
+}
+.catppuccin-eq-yellow .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-yellow.gif");
+}
+.catppuccin-eq-green .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-green.gif");
+}
+.catppuccin-eq-teal .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-teal.gif");
+}
+.catppuccin-eq-blue .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-blue.gif");
+}
+.catppuccin-eq-sky .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-sky.gif");
+}
+.catppuccin-eq-lavender .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-lavender.gif");
+}
+.catppuccin-eq-lavender .main-trackList-playingIcon {
+    background-image: url("equalizer-animated-white.gif");
+}
+
+/* For that small dot on podcasts that notify us of new episodes */
+.main-home-content
+    > section:first-child
+    > .main-gridContainer-gridContainer
+    > div
+    span[aria-label],
+span[aria-label="New episode"],
+span[aria-label="New Podcast Episode"] {
+    background: var(--spice-accent, var(--spice-text));
+}
+
+/* Modals */
+.GenericModal[aria-label="Already added"] > div {
+    background-color: var(--spice-card);
+    color: var(--spice-subtext);
+}
+
+.GenericModal[aria-label="Already added"] button:first-child {
+    color: var(--spice-button-active);
+}
+
+.GenericModal[aria-label="Already added"] button:first-child:hover {
+    color: var(--spice-notification-error);
+}
+
+.GenericModal[aria-label="Already added"] button:last-child:hover > div {
+    background-color: var(--spice-button);
+}
+
+

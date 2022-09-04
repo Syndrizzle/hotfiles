@@ -1,0 +1,29 @@
+#!/bin/bash
+
+fg=cdd6f4
+wrong=f38ba8
+highlight=45475a
+date=1e1e2e
+verify=a6e3a1
+
+slowfade () {
+    dis=$(echo -n "$DISPLAY" | tr -c '[:alnum:]' _)
+    ifc='com.github.chjj.compton'
+    obj='/com/github/chjj/compton'
+    if [[ "$1" == "start" ]]; then
+        dbus-send --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_in_step double:0.02
+        dbus-send --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_out_step double:0.02
+    else
+        dbus-send --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_in_step double:0.1
+        dbus-send --dest=$ifc.$dis \
+            $obj $ifc.opts_set string:fade_out_step double:0.1
+    fi
+}
+
+pkill -u "$USER" -USR1 dunst
+slowfade start
+i3lock -n --force-clock -i ~/.wallpapers/lock.png -e --indicator --radius=69 --ring-width=10 --inside-color="#45475a33" --ring-color=$fg --insidever-color="#45475a33" --ringver-color=$verify --insidewrong-color="#45475a33" --ringwrong-color=$wrong --line-uses-inside --keyhl-color=$verify --separator-color=$verify --bshl-color=$verify --time-str="%I:%M" --time-size=140 --date-str="%a, %d %b" --date-size=45 --verif-text="Verifying Password..." --wrong-text="Wrong Password!" --noinput-text="" --greeter-text="Type the password to Unlock" --ind-pos="w/2:h/4+417" --time-font="Clarity City:weight=150" --date-font="Clarity City" --verif-font="Clarity City:weight=200" --greeter-font="Clarity City" --wrong-font="Clarity City:weight=200" --verif-size=23 --greeter-size=23 --wrong-size=23 --time-pos="w/2:h/4-5" --date-pos="w/2:h/4+55" --greeter-pos="w/2:h/4+150" --wrong-pos="w/2:h/4+530" --verif-pos="w/2:h/4+550" --date-color=$date --time-color=$date --greeter-color=$highlight --wrong-color=$wrong --verif-color=$date --pointer=default --refresh-rate=0 --pass-media-keys --pass-volume-keys --no-modkey-text
+slowfade end

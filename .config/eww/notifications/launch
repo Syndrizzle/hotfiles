@@ -1,0 +1,33 @@
+#!/bin/bash
+
+## Files and cmd
+FILE="$HOME/.cache/eww_launch.notifications"
+EWW=$(which eww)
+NOHUP_CHECK=$(pgrep python --list-full | grep -c logger)
+
+## Run eww daemon if not running already
+if [[ ! $(pidof eww) ]]; then
+	${EWW} daemon
+	sleep 1
+fi
+
+## Open widgets 
+run_eww() {
+	${EWW} open notifications
+}
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+	if [[ $NOHUP_CHECK -eq 0 ]]; then
+		nohup python $HOME/.config/eww/scripts/logger.py init &
+		sleep 3
+		touch "$FILE"
+		run_eww
+	else
+		touch "$FILE"
+		run_eww
+	fi
+else
+	${EWW} close notifications
+	rm "$FILE"
+fi

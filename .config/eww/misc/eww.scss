@@ -1,0 +1,194 @@
+* {
+    all: unset;
+    transition: 200ms ease-in-out;
+}
+
+.workspaces {
+    margin: 10px 0px 0px 0px;
+    background-color: $bg;
+    border-radius: 20px;
+    padding: 14px 14px 14px 14px;
+}
+
+.workspaces-box {
+    font-size: 80px;
+    border-radius: 20px;
+    border: 1.5px solid $bg-alt;
+}
+
+.occupied-active:hover,
+.empty-active:hover,
+.occupied-inactive:hover,
+.empty-inactive:hover {
+    background-color: $bg-alt;
+    border-radius: 100px;
+}
+
+.occupied-active,
+.empty-active,
+.occupied-inactive,
+.empty-inactive {
+    padding: 5px;
+    text-shadow: 1px 5px 10px #000000;
+}
+
+.occupied-active {
+    color: $blue;
+}
+
+.empty-inactive {
+    color: $gray;
+}
+
+.empty-active {
+    color: $blue;
+}
+
+.occupied-inactive {
+    color: $yellow;
+}
+
+.workspaces-header {
+    font-size: 22px;
+    margin: 30px 0px 0px 0px;
+}
+
+.tip-header {
+    font-size: 30px;
+    color: $yellow;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 1px 5px 10px #000000;
+}
+
+.tip-body {
+    font-size: 22px;
+    margin: 10px 10px 10px 10px;
+}
+
+.tip-box {
+    background-color: $bg-alt-alt;
+    margin: 10px 20px 0px 20px;
+    border-radius: 15px;
+    border: 1.5px solid $gray;
+}
+
+.powermenu {
+    background-color: $bg;
+    border-radius: 20px;
+}
+
+.greeting {
+    background-color: $bg-alt;
+    border-radius: 20px 20px 0px 0px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-buttons-box {
+    background-color: $bg-alt;
+    margin: 20px 20px 20px 20px;
+    border-radius: 20px;
+}
+
+.shutdown {
+    background-color: $bg;
+    color: $red;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    font-size: 80px;
+}
+
+.reboot {
+    background-color: $bg;
+    color: $green;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px 20px 20px 0px;
+    font-size: 80px;
+}
+
+.reboot:hover,
+.shutdown:hover,
+.exit:hover,
+.lock:hover,
+.close-powermenu:hover {
+    background-color: $gray-alt;
+}
+
+.exit {
+    background-color: $bg;
+    color: $blue;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px 20px 20px 0px;
+    font-size: 80px;
+}
+
+.close-powermenu {
+    background-color: $bg;
+    color: $purple;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px 0px 20px 20px;
+    font-size: 80px;
+}
+
+.lock {
+    background-color: $bg;
+    color: $yellow;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px 20px 20px 0px;
+    font-size: 80px;
+}
+
+.calendar-row {
+    background-color: $bg;
+}
+
+.cal-box {
+    padding: 0.5em;
+    margin: 1em 0.75em 0.25em;
+}
+
+.month-year {
+    font-size: 24px;
+    color: $yellow;
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
+}
+
+.day-names {
+    margin: 1em 1em 0em;
+    font-size: 20px;
+    font-weight: bold;
+    color: $green;
+}
+
+.cal {
+    padding: 1em .75em 0em;
+}
+
+calendar {
+    font-weight: bold;
+    &:selected {
+        color: $blue;
+    }
+    &:indeterminate {
+        color: $gray;
+    }
+}
+
+calendar.button {
+    color: $red;
+}
+
+calendar.highlight {
+	color: $green;
+	font-weight: bold;
+	padding: 20px;
+	margin: 20px;
+}

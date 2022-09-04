@@ -1,0 +1,36 @@
+/** Colors *******************************************/
+$bg: #1e1e2e;
+$bg-alt: #313244;
+$bg-alt-alt: #45475a;
+$fg: #cdd6f4;
+$red: #f38ba8;
+$green: #a6e3a1;
+$yellow: #f9e2af;
+$blue: #89b4fa;
+$purple: #cba6f7;
+$cyan: #74c7ec;
+$gray: #585b70;
+$gray-alt: #6c7086;
+$fg-alt: #bac2de;
+$red-alt: #ed8796;
+$green-alt: #a6da95;
+$yellow-alt: #eed49f;
+$orange: #ef9f76;
+$orange-alt: #f5a97f;
+$blue-alt: #8aadf4;
+$purple-alt: #c6a0f6;
+$cyan-alt: #91d7e3;
+
+@import "./misc/eww.scss";
+@import "./notifications/eww.scss";
+@import "./system-menu/eww.scss";
+@import "./dashboard/eww.scss";
+
+tooltip {
+    background-color: $bg;
+    border: 2px solid $bg-alt-alt;
+}
+
+* {
+    font-family: "Clarity City", "Phosphor";
+}

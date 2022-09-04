@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [[ $1 == "inc" ]]; then
+	light -A 5 && volnoti-show -1 $HOME/.config/volnoti/themes/dark/display_brightness_low.svg \
+					-2 $HOME/.config/volnoti/themes/dark/display_brightness_low.svg \
+					-3 $HOME/.config/volnoti/themes/dark/display_brightness.svg \
+					-4 $HOME/.config/volnoti/themes/dark/display_brightness.svg \
+					$(light -G)
+elif [[ $1 == "dec" ]]; then
+	light -U 5 && volnoti-show -1 $HOME/.config/volnoti/themes/dark/display_brightness_low.svg \
+                                        -2 $HOME/.config/volnoti/themes/dark/display_brightness_low.svg \
+                                        -3 $HOME/.config/volnoti/themes/dark/display_brightness.svg \
+                                        -4 $HOME/.config/volnoti/themes/dark/display_brightness.svg \
+                                        $(light -G)
+else
+	echo "Usage ./brightness inc/dec"
+fi

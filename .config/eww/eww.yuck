@@ -1,0 +1,4 @@
+(include "./misc/eww.yuck")
+(include "./notifications/eww.yuck")
+(include "./system-menu/eww.yuck")
+(include "./dashboard/eww.yuck")

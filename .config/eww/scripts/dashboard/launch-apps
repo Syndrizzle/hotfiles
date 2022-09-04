@@ -1,0 +1,31 @@
+#!/bin/bash
+
+## Files and cmd
+FILE="$HOME/.cache/eww_launch.menu"
+CFG="$HOME/.config/eww/"
+EWW=`which eww`
+
+close_eww() {
+	${EWW} close system fetch dots spotify power applications
+	rm -rf "$FILE"
+}
+
+if [[ "$1" == "--firefox" ]]; then
+	close_eww && firefox &
+
+elif [[ "$1" == "--alacritty" ]]; then
+	close_eww && alacritty &
+
+elif [[ "$1" == "--files" ]]; then
+	close_eww && nautilus &
+
+elif [[ "$1" == "--spotify" ]]; then
+	close_eww && spotify &
+
+elif [[ "$1" == "--code" ]]; then
+	close_eww && code . &
+
+elif [[ "$1" == "--software" ]]; then
+	close_eww && pamac-manager &
+
+fi

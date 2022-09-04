@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+level=''
+icon=''
+
+function fetch() {
+    level=$(echo "($(light -G)+0.5)/1" | bc)
+    if [ "$level" -le 100 ]; then
+        icon=
+    elif [ "$level" -le 50 ]; then
+        icon=
+    fi
+    echo "{\"icon\": \"$icon\", \"level\": $level}"
+}
+
+function subscribe() {
+    local old new
+    fetch
+    old="$level"
+    while sleep 0.1; do
+        fetch
+        new="$level"
+        if [ "$new" -gt "$old" ]; then
+            old=$new
+        elif [ "$new" -lt "$old" ]; then
+            old=$new
+        fi
+    done
+}
+
+subscribe
+

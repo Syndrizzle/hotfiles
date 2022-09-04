@@ -1,0 +1,65 @@
+#!/bin/bash
+
+## Files and cmd
+FILE="$HOME/.cache/eww_launch.dashboard"
+EWW=$(which eww)
+
+## Run eww daemon if not running already
+if [[ ! $(pidof eww) ]]; then
+	${EWW} daemon
+	sleep 1
+fi
+
+## Open widgets 
+run_eww() {
+	bash $HOME/.config/eww/scripts/getInfo --weather --getdata
+	bash $HOME/.config/eww/scripts/dashboard/weather-info --getdata
+	${EWW} open background
+	${EWW} open close
+	${EWW} open profile
+	${EWW} open karma
+	${EWW} open brightness-slider
+	${EWW} open volume-slider
+	${EWW} open quote
+	${EWW} open battery
+	${EWW} open fetch
+	${EWW} open system
+	${EWW} open spotify
+	${EWW} open applications
+	${EWW} open links
+	${EWW} open clock
+	${EWW} open dots
+	${EWW} open power
+	${EWW} open weather
+	${EWW} open bluetooth
+    ${EWW} open mail
+}
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	run_eww
+else
+	${EWW} close \
+		   background \
+		   close \
+		   profile \
+		   karma \
+		   brightness-slider \
+		   volume-slider \
+		   quote \
+		   battery \
+		   fetch \
+		   system \
+		   spotify \
+		   applications \
+		   links \
+		   clock \
+		   dots \
+		   power \
+		   weather \
+		   bluetooth \
+           mail
+
+	rm "$FILE"
+fi

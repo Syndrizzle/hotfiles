@@ -1,0 +1,10 @@
+{ "notify": {
+    "limit": 50,
+    "interval": 0.5,
+    "cache_path": "$XDG_CACHE_HOME/dunst/notifications.txt",
+    "quote_path": "$XDG_CACHE_HOME/dunst/quotes.txt",
+    "default_quote": "To fake it is to stand guard over emptiness. \u2500\u2500 Arthur Herzog",
+    "timestamp": "%I:%M",
+    "excluded_appnames": ["Volume", "Backlight"]
+  }
+}

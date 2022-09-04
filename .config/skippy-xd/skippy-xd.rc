@@ -1,0 +1,59 @@
+# Copy this to ~/.skippy-xd.rc and edit it to your liking
+#
+# Notes:
+#
+# - keysym can be anything XStringToKeysym can handle
+#   (like F11, KP_Enter or implementation specific keysyms)
+#
+# - colors can be anything XAllocNamedColor can handle
+#   (like "black" or "#000000")
+#
+# - distance is a relative number, and is scaled according to the scale
+#   factor applied to windows
+#
+# - fonts are Xft font descriptions
+#
+# - booleans are "true" or anything but "true" (-> false)
+#
+
+#
+# - brighness is a floating point number (with 0.0 as neutral)
+#
+# - if the update frequency is a negative value, the mini-windows will only
+#   be updated when they're explicitly rendered (like, when they gain or
+#   lose focus).
+#
+# - the 'shadowText' option can be a color or 'none', in which case the
+#   drop-shadow effect is disabled
+#
+
+[general]
+keysym = F11
+distance = 40
+useNetWMFullscreen = true
+ignoreSkipTaskbar = true
+updateFreq = 10.0
+lazyTrans = false
+background = /home/syndrizzle/.wallpapers/blurred-bg.png
+
+[xinerama]
+showAll = true
+
+[normal]
+tint = black
+tintOpacity = 0
+opacity = 255
+
+[highlight]
+tint = #101020
+tintOpacity = 0
+opacity = 255
+
+[tooltip]
+show = false
+border = #e0e0e0
+background = #404040
+opacity = 255
+text = #e0e0e0
+textShadow = black
+font = Clartiy City:weight=bold

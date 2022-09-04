@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $1 == "inc" ]]; then
+	amixer set Master 5%+ && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)
+	mpv /usr/share/sounds/Pop/stereo/action/audio-volume-change.oga
+elif [[ $1 == "dec" ]]; then
+	amixer set Master 5%- && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)
+	mpv /usr/share/sounds/Pop/stereo/action/audio-volume-change.oga
+elif [[ $1 == "mute" ]]; then
+	amixer set Master toggle && if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi
+else
+	echo "Usage ./volume inc/dec/mute"
+fi
