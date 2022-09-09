@@ -1,0 +1,21 @@
+#!/bin/bash
+
+hidden=/tmp/syshide.lock
+file="$HOME/.config/polybar/config.ini"
+
+if [[ $(pidof plasmawindowed) ]]; then
+	if [[ ! -e $hidden ]]; then
+		polybar-msg action "#systray.hook.1"
+		xdo hide -n plasmawindowed
+		touch "$hidden"
+		perl -0 -i -pe 's/systray\ninitial=.*/systray\ninitial=2/g' "$file"
+	else
+		polybar-msg action "#systray.hook.0"
+		xdo show -n plasmawindowed
+		xdo raise -n plasmawindowed
+		rm "$hidden"
+		perl -0 -i -pe 's/systray\ninitial=.*/systray\ninitial=1/g' "$file"
+	fi
+else
+	plasmawindowed org.kde.plasma.systemtray &
+fi

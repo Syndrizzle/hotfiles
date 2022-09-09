@@ -1,0 +1,23 @@
+@icon,,28,17,16,16,0,left,top,#cdd6f4,#cdd6f4,/home/syndrizzle/.config/jgmenu/MenuIcons/search.png
+@search,,50,16,150,20,2,left,top,#cdd6f4,#1e1e2e,Search
+Terminal,kitty,/home/syndrizzle/.config/jgmenu/MenuIcons/terminal.png
+Web Browser,google-chrome-stable,/home/syndrizzle/.config/jgmenu/MenuIcons/web-browser.png
+File manager,nautilus,/home/syndrizzle/.config/jgmenu/MenuIcons/file-manager.png
+Text Editor,gedit,/home/syndrizzle/.config/jgmenu/MenuIcons/edit-note.png
+Music Player,spotify,/home/syndrizzle/.config/jgmenu/MenuIcons/music.png
+
+^sep()
+Applications,^checkout(lx-apps),/home/syndrizzle/.config/jgmenu/MenuIcons/applications.png
+Control Center,eww open --toggle notifications,/home/syndrizzle/.config/jgmenu/MenuIcons/dashboard.png
+System Menu,eww open --toggle system-menu,/home/syndrizzle/.config/jgmenu/MenuIcons/system-menu.png
+^sep()
+Exit,eww open-many --toggle background-closer powermenu,/home/syndrizzle/.config/jgmenu/MenuIcons/exit.png
+Plasma,^checkout(kde),/home/syndrizzle/.config/jgmenu/MenuIcons/bspwm.png
+
+^tag(kde)
+Website, xdg-open https://https://kde.org/, /home/syndrizzle/.config/jgmenu/MenuIcons/bspwm.png
+System Settings, systemsettings, /home/syndrizzle/.config/jgmenu/MenuIcons/edit-note.png
+Restart, plasmashell --replace && latte-dock --replace, /home/syndrizzle/.config/jgmenu/MenuIcons/restart.png
+Exit, qdbus org.kde.ksmserver /KSMServer logout 0 0 1, /home/syndrizzle/.config/jgmenu/MenuIcons/exit.png
+
+^tag(lx-apps)

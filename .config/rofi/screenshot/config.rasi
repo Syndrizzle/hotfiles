@@ -1,0 +1,59 @@
+  @import"theme.rasi"
+  
+window {
+  font: "Phosphor Bold 16";
+  transparency: "real";
+  background-color: @bg-col;
+  text-color: @fg-col;
+  border-color: @bg-col;
+  width: 4em;
+  x-offset: -40px;
+}
+
+textbox-prompt-colon, entry, prompt, inputbar {
+  enabled: false;
+}
+
+listview {
+  background-color: @bg-col;
+  columns: 1;
+  lines: 5;
+  spacing: 0.2em;
+  cycle: false;
+  layout: vertical;
+}
+
+mainbox {
+  background-color: @bg-col;
+  spacing: 0.15em;
+  padding: 0.38em;
+}
+
+element {
+  background-color: @bg-col;
+  text-color: @fg-col;
+  orientation: horizontal;
+  border-color: @bg-col;
+  padding: 0.5em;
+}
+  
+element-icon {
+  background-color: inherit;
+  text-color: inherit;
+  enabled: false;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  font: "Phosphor 25";
+  expand: true;
+  margin: 0.4em 0em 0em 0.57em;
+}
+
+element selected {
+  background-color: @border-col;
+  text-color: @blue;
+  border-radius: 10px;
+}
+

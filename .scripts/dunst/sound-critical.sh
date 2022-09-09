@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-mpv /usr/share/sounds/Pop/stereo/notification/battery-caution.oga
+mpv /usr/share/sounds/Yaru/stereo/battery-caution.oga

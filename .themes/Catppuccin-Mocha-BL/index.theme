@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Cattppuccin_Mocha_Borderless
+Comment=An elegant GTK theme with the 'Catppuccin Mocha' colour palette, and based on '@Vinceliuice's Graphite' GTK theme.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Cattppuccin_Mocha_Borderless
+MetacityTheme=Cattppuccin_Mocha_Borderless
+IconTheme=Cattppuccin_Mocha
+CursorTheme=Catppuccin_Mocha
+ButtonLayout=close,minimize,maximize:menu

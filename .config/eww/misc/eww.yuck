@@ -57,7 +57,7 @@
   (powermenu))
 
 (defwindow calendar
-  :geometry (geometry :x "-40px" :y "100px" :width "24%" :height "30%" :anchor "top right")
+  :geometry (geometry :x "-30px" :y "90px" :width "24%" :height "30%" :anchor "top right")
   :stacking "fg"
   :windowtype "dock"
   :monitor 0

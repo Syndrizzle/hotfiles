@@ -1,0 +1,2 @@
+#!/bin/bash
+/bin/python $HOME/.config/eww/scripts/logger.py init

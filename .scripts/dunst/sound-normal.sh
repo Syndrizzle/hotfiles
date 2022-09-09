@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-mpv /usr/share/sounds/Pop/stereo/notification/message-new-instant.oga
+mpv /usr/share/sounds/Yaru/stereo/message-new-instant.oga

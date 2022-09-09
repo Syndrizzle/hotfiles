@@ -326,10 +326,11 @@
 }
 
 .notifications-layout-box {
+    border: 1px solid $orange;
     background-color: $bg;
     font-family: "Clarity City", "Phosphor";
     padding-bottom: 1em;
-    border-radius: 1em;
+    border-radius: 15px;
 }
 
 .dnd-icon-label {

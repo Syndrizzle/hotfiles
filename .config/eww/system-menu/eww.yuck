@@ -47,7 +47,7 @@
           (button :class "wifi-button  ${wifi-class == "" ? "wifi-button-on" : "wifi-button-off"}" :onclick "scripts/wifi --toggle" "${wifi-icon}")
           (label :class "seperator" :text " ")
           (button :class "wifi-arrow-btn ${wifi-class == "" ? "wifi-arrow-btn-on" : "wifi-arrow-btn-off"}" :onclick "eww close system-menu && scripts/launchApps --network" ""))
-        (label :class "wifi-label" :tooltip "Wi-Fi: ${wifi-status}" :text "${wifi-status}" :limit-width 12))
+        (label :class "wifi-label" :tooltip "Wi-Fi: ${wifi-status}" :text "${wifi-status}" :limit-width 9))
       (box :class "bluetooth-box" :space-evenly "false" :orientation "v"
         (box :class "bluetooth-buttons-box" :space-evenly "false"
           (button :class "bluetooth-button  ${bluetooth-class == "" ? "bluetooth-button-on" : "bluetooth-button-off"}" :onclick "scripts/bluetooth --toggle" "${bluetooth-icon}")
@@ -128,7 +128,6 @@
 
 ;; windows
 (defwindow system-menu :stacking "fg"
-  :windowtype "dock"
   :wm-ignore true
   :geometry (geometry :x -20 :y 80 :width "25%" :height "30%" :anchor "right top")
   (system-menu))
