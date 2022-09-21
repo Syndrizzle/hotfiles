@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ ! $(pidof plasmawindowed) ]]; then
-	plasmawindowed org.kde.plasma.systemtray & &
+if [[ ! $(pidof stalonetray) ]]; then
+	stalonetray &
         sleep 0.5
-	xdo hide -N plasmawindowed
+	xdo hide -N stalonetray
 	touch "/tmp/syshide.lock"
 fi
 

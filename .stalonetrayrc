@@ -1,0 +1,8 @@
+# vim:filetype=config:tw=80:et
+
+background "#1e1e2e"
+vertical true 
+geometry 1x1-20+95
+grow_gravity NE 
+icon_gravity NE
+slot_size 32

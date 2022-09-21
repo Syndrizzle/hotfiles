@@ -1,6 +1,6 @@
 at_pointer           = 1
 stay_alive           = 1
-csv_cmd             = pmenu
+csv_cmd             = apps
 csv_no_dirs     =       0
 tint2_look           = 0
 terminal_exec        = alacritty &
@@ -28,6 +28,6 @@ color_menu_bg = #1e1e2e 100
 color_menu_border = #c0caf5
 color_norm_bg        = #1e1e2e 0
 color_norm_fg        = #cdd6f4 100
-color_sel_bg         = #f2cdcd 100
+color_sel_bg         = #cba6f7 100
 color_sel_fg         = #1e1e2e 100
 color_sep_fg         = #21262e 40       

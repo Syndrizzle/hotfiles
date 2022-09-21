@@ -343,7 +343,7 @@
 
 ;; battery
 (defwindow battery :stacking "fg" :monitor 0 :focusable "false" :screen 1
-  :geometry (geometry :x 820 :y 507 :width 92 :height 235)
+  :geometry (geometry :x 820 :y 507)
   (battery))
 
 (defwindow close :stacking "fg" :monitor 0 :focusable "false" :screen 1

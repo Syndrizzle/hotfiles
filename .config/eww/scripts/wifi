@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-STATUS=$(nmcli | grep wlan0 | awk 'FNR==1' | awk '{print $2}')
+STATUS=$(nmcli | grep wlp4s0 | awk 'FNR==1' | awk '{print $2}')
 SSID=$(iwgetid | awk -F '"' '{ print $2 }')
 STRENGTH=$(awk 'NR==3 {printf("%.0f",$3*10/7)}' /proc/net/wireless)
 

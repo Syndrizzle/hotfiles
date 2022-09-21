@@ -296,5 +296,5 @@
 (defwindow notifications :stacking "fg"
   :windowtype "dock"
   :wm-ignore true
-  :geometry (geometry :x 20 :y 30 :width "26%" :height "90%" :anchor "left center")
+  :geometry (geometry :x 18 :y 40 :width "26%" :height "90%" :anchor "left center")
   (notifications_layout))

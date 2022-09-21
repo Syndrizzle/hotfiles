@@ -1,0 +1,3 @@
+# Toggle right click context menu.
+~button3
+	  xqp 0 $(xwininfo -root | awk 'FNR==2 {print $4}') && jgmenu_run 
