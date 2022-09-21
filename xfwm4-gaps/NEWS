@@ -1,0 +1,952 @@
+4.16.1
+======
+
+- Catch more XErrors (#476, #486)
+- Untile window before switching to fullscreen (#478)
+- Allow interactive resizing with any keyboard modifier (#487)
+- Do not prefer Xpresent on AMD/Radeon (#490)
+- Use g_info/g_print instead of g_message for some message
+- I18n: Update translation:
+  ast, be, be@tarask, cs, el, et, eu, fi, he, hr, hu, ie, pl, pt_BR, zh_TW.
+
+4.16.0
+======
+- common: Avoid zero refresh rate for monitor
+- hints: Protect against XError from XGetTransientFor()
+- netwm: Allow above/below only for regular windows
+- netwm: Mark splashscreen as transient for groups
+- client: Complete client state even on different workspaces
+- build: Increase GTK+ requirement to 3.22
+- Add `cycle_minimized` option
+- compositor: Release overlay window last
+- compositor: Free GLX data when really using GLX
+- compositor: Remove useless trace message
+- compositor: Release current GLX context on teardown
+- display: Remove custom XError handler
+- compositor: Check for XError when adding windows
+- compositor: Trap XErrors when disabling compositor
+- main: Enable compositor by default
+- compositor: Remove automatic redirect support
+- main: Add short command line options
+- main: Add debug command line option
+- pixmap: Use a safer strncpy()
+- settings: Fix compiler warning
+- Remove useless autotools macros and Makefile targets
+- Use --enable-debug=yes when compiling from git
+- Revert "compositor: Do not damage on opaque region update"
+- themes: Use smaller, lighter shadows
+- compositor: Check if compositor is enabled
+- compositor: Avoid XError when disabling compositor
+- compositor: Warn for missing epoxy GL function
+- netwm: Do not raise window if activate is set to none
+- Remove GSourceFunc casts
+- compositor: Fix build with older epoxy versions
+- settings: Add 'Always on top' to the double click action
+- Settings: Remove default alphabetical sorting of keyboard shortcuts 
+  Closes: #451 (Disable initial sorting of keyboard shortcuts)
+- compositor: Handle XFixes XError
+- compositor: Add support for GL_ARB_sync
+- compositor: Return early if a Present swap is pending
+- debug: Fix build in debug mode
+- compositor: Fix compilation issue with Xpresent
+- compositor: Log fence and GLX swap time in debug mode
+- compositor: Move fence sync to redraw_glx
+- compositor: Move fence triggered to its own function
+- compositor: Set swap control if possible
+- compositor: Adjust to the actual number of buffers
+- compositor: Use a GLX drawable per buffer
+- client: Allow transients for group to be minimized
+- settings: Add a UI option for desktop zooming
+- themes: Remove title shadow
+- themes: Adjust shadows size/opacity
+- client: Make above/below consistent
+- compositor: Limit damage region to the screen
+- compositor: Optimize repaint without vblank
+- compositor: Only accumulate damage with multiple buffers
+- compositor: Copy entire content for GLX buffers
+- xsync: Handle XError
+- compositor: Ignore opaque region for shaded windows
+- compositor: Clip opaque region against window shape
+- client: Protect against XError in XKillClient()
+- compositor: Do not damage on opaque region update
+- compositor: Opaque region applies to client window
+- compositor: Reuse client size
+- client: Toggle tiling on key shortcut
+- client: Small cleanup
+- Add README.md to EXTRA_DIST
+- client: Keep tiled size of windows
+- compositor: No need to update compositor window on configure
+- compositor: Limit opaque region clipping to window extents
+- compositor: Damage on opaque region update only if visible
+- client: Send synthetic configure on force redraw
+- Post release tag bump
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Belarusian
+  (Tarask), Bengali, Bulgarian, Catalan, Chinese (China), Chinese (Hong
+  Kong), Chinese (Taiwan), Croatian, Czech, Danish, Dutch, Eastern
+  Armenian, English (Australia), English (Canada), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Latvian, Lithuanian, Malay,
+  Norwegian Bokmål, Norwegian Nynorsk, Occitan (post 1500), Persian
+  (Iran), Polish, Portuguese, Portuguese (Brazil), Romanian, Russian,
+  Serbian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish,
+  Ukrainian, Urdu, Urdu (Pakistan), Uyghur
+
+4.15.3
+======
+
+- Fix opaque regions leaving trails of unpainted areas
+
+4.15.2
+======
+
+- Add support for opaque regions in the compositor
+- Make cursor zoom optional (xfce/xfwm4#439)
+- Remove the deprecated options "--daemon" (Pablo Mazzini)
+- Disable Xi2 support by default
+- Add column sorting in settings
+- Optimize window matching in the compositor with a hash table (Michael
+  Banack)
+- Add more XErrors traps
+- I18n: Updated translations: ar, ast, be, be@tarask, bg, bn, ca, cs, da,
+  de, el, en_AU, en_CA, en_GB, es, et, eu, fa_IR, fi, fr, gl, he, hr, hu,
+  hy_AM, hye, id, ie, is, it, ja, ka, kk, ko, lt, lv, ms, nb, nl, nn, oc,
+  pl, pt, pt_BR, ro, ru, sk, sl, sq, sr, sv, th, tr, ug, uk, ur, ur_PK,
+  vi, zh_CN, zh_HK, zh_TW
+  New translations: be@tarask, fa_IR, hye, ka
+
+4.15.1
+======
+
+- Fix an error leak in compositor (xfce/xfwm4#351)
+- Fix compositor selection atom misuse
+- Prefer zero initialized memory allocation functions
+- Use g_slice allocator for compositor windows
+
+4.15.0
+======
+
+- First 4.15.x development release
+- Show tabwin only on primary monitor if set
+- All fixes and i18n as found in 4.14.4
+
+4.14.0
+======
+- settings-dialog: Replace GtkStock buttons
+- Translation Updates:
+  Galician, Italian, Norwegian Bokmål, Norwegian Nynorsk
+
+4.13.4
+======
+
+- Fix GL texture filter (bug #15676)
+- Fix zooming without GL
+- Place windows on current monitor (bug #14959)
+- Fix raising of parent transients (bug #15580)
+- Enable root pixmap with compositor (bug #15709)
+- I18n: Update translations: fi, hy_AM, ja, kk, nb, pt_BR, sr, th, uk
+
+4.13.3
+======
+
+- Update CSS for tabwinb only on theme change (Viktor Odintsev)
+- HiDPI: Use GTK3 scaling attributes for window titles (Viktor Odintsev)
+- HiDPI: Adjust default theme with scale
+- Fix initial pointer location when zooming
+- Fix double-click distance setting (Adam K)
+- Allow the top of the frame to be cropped when maximised (Adam K,
+  bug #14470)
+- Update default theme to use maximized cropping
+- Fix build without compositor (bug #15432)
+- Improved GLX support with NVIDIA proprietary/closed source driver
+  (bug #15453)
+- Compositor updates with GLX
+- Small optimization with zoom on GLX
+- Increase X11 client priority of xfwm4
+- Change default compositor background to plain black
+- Fallback to resource class name for icons (Iharob Al Asimi, bug #15510)
+- Clear shortcut in settings-dialog when removed (bug #12802)
+- Remove icons from window menu
+- Fix regression with maximized window (bug #15638)
+- I18n: Update translations: bg, ca, cs, da, de, es, fr, gl, hr, hu,
+  hy_AM, id, ie, it, lt, ms, nl, pl, pt, pt_BR, ru, sr, tr, zh_CN, zh_TW
+
+4.13.2
+======
+ - Fix flickering with GLX backend (bug #14564, bug #13519)
+ - Fix monitor geometry with scaled UI (bug #14566)
+ - Fix issue with Android Virtual Device emulator (bug #12206)
+ - Fix XI2 mask (bug #14695, Timo Teras)
+ - Fix preview with shaded windows (bug #14899)
+ - Fix tabwin placement with scaled UI (bug #14931, Jonas Zetterberg)
+ - Add xfconf setting for selecting permanent vblank method
+ - Fix maximization with GTK clients using size increments (bug #13954)
+ - Add style class to tabwin modes (Andre Miranda)
+ - Fix crash/stack smash in startup-notification on some architectures
+   (bug #15028, Martin Husemann)
+ - Avoid crash with button layout setting (bug #14606)
+ - Raise on activate only with raise-on-focus (bug #14656)
+ - Fix use after release of client picture with hidden (bug #14990)
+ - Fix monitor output size update (bug #15085)
+ - Allow transients to be minimized (bug #14953)
+ - Raise all transients together (bug #15303)
+ - Fix menu alignment with scaled UI (Jason Zaman)
+ - Fix a regression where the client would remain visible if closed while
+   cycling (bug #15318)
+ - Withdraw the frame before the client window (bug #15061)
+ - Revert to GLX as default vblank method (bug #15325)
+ - Reduce repaint timeout (bug #14335)
+ - Fix support for 1bpp icons
+ - Use cairo for pixmaps and masks
+ - Allow hiding windows using NET_WM_STATE_HIDDEN (bug #15356,
+   pnd23@telenet.be)
+ - Fix size increment with scaled UI
+ - Various compositor improvements and optimizations with GLX
+ - Check for appropriate XSync version and increase xfwm4 priority
+ - Adjust zoom update based on monitor refresh rate (bug #15391, Alistair
+   Buxton)
+ - Fix window type for broken clients (bug #15399)
+ - Fix pointer enter/leave with decoration buttons (bug #14741)
+ - New default theme
+ - I18n: Update translations: ar, ast, be, bg, bn, ca, cs, da, de, el,
+   en_AU, en_CA, en_GB, es, eu, fi, fr, gl, he, hr, hu, id, is, it, ja,
+   kk, ko, lt, lv, ms, nb, nl, nn, oc, pl, pt, pt_BR, ro, ru, sk, sl,
+   sq, sr, sv, th, tr, ug, uk, ur, ur_PK, zh_CN, zh_HK, zh_TW
+
+4.13.1
+======
+ - Use the pimrary monitor by default for placement (bug #13454)
+ - Use ximerama indices for EWMH's NET_WM_FULLSCREEN_MONITORS (bug #9351,
+   bug #13608)
+ - Remove the old vblank code (bug #13613, Błażej Szczygieł)
+ - Update "presentproto" requirement to avoid XPresent issue on 32bit
+   (bug #13257)
+ - Remove support for environment variable "XFWM4_USE_PRESENT"
+ - Allow to resize borderless maximized window with [Alt] + mouse
+ - Add support for GTK3 (Viktor Odintsev)
+ - Add XI2 support (Viktor Odintsev)
+ - Fix maximization on expected output (bug #13284, P. Pronk, bug #13954)
+ - Fix logic error in bottom struts validation (bug #13964, Andrey
+   Alekseenkov)
+ - Add command line option "--vblank" to select vblank method
+ - Optionally raise window while cycling (bug #2701, David Siroky)
+ - Ignore XErrors caused by damages
+ - Fix build out of tree (bug #14542, Stephane Gourichon)
+ - Fix GTK_FRAME_EXTENTS support (bug #14511
+ - Add support for NET_WM_BYPASS_COMPOSITOR (bug #12434)
+ - Various bug fixes (bug #11960, bug #12534, bug #13257, bug #13954,
+   bug #14164, bug #14174, bug #14181, bug #14240, bug #14323, bug #14514)
+ - I18n: new en_CA translation
+ - I18n: Update translations: ar, ast, be, bg, bn, ca, cs, da, de, el,
+   en_AU, en_GB, es, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, kk, ko,
+   lt, lv, ms, nb, nl, nn, oc, pl, pt, pt_BR, ro, ru, sk, sl, sq, sr, sv,
+   th, tr, ug, uk, ur, ur_PK, zh_CN, zh_HK, zh_TW
+
+4.13.0
+======
+ - Add support for VSYNC using either Present or OpenGL
+ - Support for scaled cursor when zooming
+ - Daemon mode is now deprecated (--daemon has no effect)
+ - Bug fixes and I18n improvements
+
+4.12.0
+======
+ - Add support for gtk window menu
+ - Avoid window decorations in preview
+ - Clean-up compositor state in case of error
+ - Compute struts based on reported screen size
+ - Do not tile windows if they don't fit in
+ - Enable compositing by default
+ - Enable window preview in cycling by default
+ - Fix build with compositor disabled
+ - Fix window menu positioning with CSD
+ - Fix window preview disappearing on themes reload
+ - Reuse client macros in compositor
+ - Revert "Optionally remove frame on tiling as well"
+ - Set maximum valid struts values
+ - Use larger window preview by default
+ - Use opaque background color for preview
+ - Use smallest screen area
+ - Translation Updates (ast, bg, de, es, fi, he, is, it, nb, pt, ro,
+   sk, sl, tr, zh_CN)
+
+4.11.3
+======
+ - Add a zoom_desktop xfconf setting
+ - Add corner tiling
+ - Add support for extended XSync counter
+ - Add support for GTK frame extents
+ - Add support for GTK hide titlebar on maximize
+ - Add support for NET_WM_STATE_FOCUSED
+ - Add titleless maximization feature
+ - Allow color substitution in themerc
+ - Allow cycling during drag'n drop
+ - Allow shadow under dock ARGB windows
+ - Allow tiling and workspace wrap on move
+ - Changed wireframe to cairo drawing when using the compositor
+ - Fix cycle vs. focus follow mouse
+ - Fix fullscreen mode not working correctly for QT apps)
+ - Fix gravity on configure request
+ - Fix keyboard shortcuts after keyboard layout changes
+ - Fix maximizing when window is tiled vertically or horizontally
+ - Fix maximum host name length.
+ - Fix opacity being reset on theme change
+ - Fix reparenting with compositor
+ - Fix selection with mouse in multi-monitor alt-tab dialog
+ - Fix size increment
+ - Limit parallel pointer moves before wrapping
+ - New default window decoration themes (including HDPI and xHDPI)
+ - On canceled move, restore all maximizations states
+ - Optionally remove frame on tiling as well
+ - Optionnally use window preview in tabwin
+ - Prevent CSD windows from being moved too far up
+ - Remove horizontal tyling on move
+ - Remove maximize button from non-resizable windows
+ - Remove restore-on-move option
+ - Send debug messages to a log file
+ - Update desktop geometry on xrandr events
+ - Use cairo wireframe for move/resize
+ - Use correct type on platforms where time_t is 64bits like OpenBSD
+ - Use source indication in activate window
+ - Use the correct drm/dri device on OpenBSD
+ - Workaround for NET_WORKAREA with multimonitor
+ - Lot of translations updates (ast, bg, cs, da ,de, en_AU, es, fi, fr,
+   he ,hr ,hu, id, it, ja ,kk, ko, ms ,nl, pl, pt_BR, ru ,sr ,th, tr,
+   uk, zh_CN)
+
+4.11.2
+======
+- Improve auto-maximize fn to maximize windows which size is equal to
+  the available size.
+- Restore original window size after untiling (Bug 8765).
+- Add improved tab-win dialog.
+- Translation updates: Asturian, Bulgarian, Czech, German, English
+  (Australia), Spanish (Castilian), French, Croatian, Indonesian,
+  Icelandic, Italian, Japanese, Kazakh, Korean, Malay, Norwegian
+  Bokmal, Dutch (Flemish), Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazilian), Russian, Serbian, Swedish, Thai, Turkish,
+  Ukrainian, Chinese (China), Chinese (Hong Kong), Chinese (Taiwan)
+
+4.11.1
+======
+- Remove unnecessary clipping of the rootPicture.
+- If making a solid fill, use XRenderCreateSolidFill.
+- Repaint the screen when background changes.
+- Ignore when root atoms are unset.
+- Implement zooming.
+- Add tweak setting to toggle roll up feature (bug #10563).
+- Disable roll up feature by default (bug #10563).
+- Translation updates: Asturian, Bulgarian, Bengali, Catalan
+  (Valencian), Danish, German, Greek, Spanish (Castilian), Basque,
+  Finnish, Galician, Hungarian, Indonesian, Icelandic, Japanese,
+  Kazakh, Lithuanian, Latvian, Malay, Norwegian Bokmal, Norwegian
+  Nynorsk, Occitan (post 1500), Portuguese (Brazilian), Romanian,
+  Slovak, Albanian, Serbian, Swedish, Ukrainian, Urdu, Urdu (Pakistan),
+  Chinese (Hong Kong), Chinese (Taiwan).
+
+
+4.11.0
+======
+- Fix duplicated accelerators (bug #5256).
+- Do not write empty session files.
+- Optimize smart placement (bug #5785).
+- Improvements in accelerator handling.
+- Remove unmaintained translations.
+- Make the xfwm4-settings dialog use less height.
+- Fixup padding in keyboard shortcuts tab.
+- Autotools updates.
+- Add Vsync support for the compositor (bug #8898).
+- Translation updates: Arabic, Azerbaijani, Belarusian, Bulgarian,
+  Bengali (India), Catalan (Valencian), Czech, Danish, German,
+  Dzongkha, Greek, English (United Kingdom), Spanish (Castilian),
+  Basque, Persian, French, Gujarati, Hebrew, Hindi, Croatian,
+  Hungarian, Indonesian, Icelandic, Italian, Georgian, Kazakh, Korean,
+  Macedonian, Marathi, Malay, Dutch (Flemish), Polish, Portuguese,
+  Portuguese (Brazilian), Russian, Slovak, Serbian, Tamil, Thai,
+  Turkish, Uyghur, Ukrainian, Chinese (China), Chinese (Taiwan).
+
+4.10.0
+======
+- Translation updates: Czech, English (United Kingdom), Spanish
+  (Castilian), French, Galician, Croatian, Hungarian, Italian, Kazakh,
+  Korean, Dutch (Flemish), Portuguese, Romanian, Russian, Slovak,
+  Chinese (China), Chinese (Taiwan).
+
+4.9.1
+=====
+- Improve tiling.
+- Reduce tiling distance (bug #8628).
+- Keep pointer position relative to the window being moved (bug #8629).
+- Set spacing to avoid overlap with some themes (bug #8501).
+- Add workspace settings in a notebook.
+- Improve workspace dialog subtitle/comment.
+- Generate default icon during make dist.
+- Update FSF address in settings dialogs.
+- Add missing license.
+- Restore button press/release mask as removing it breaks switching
+  workspaces with scroll wheel (bug #8656).
+- Add UI option to WM tweaks for tiling.
+- Resize fullscreen windows on screen size changes (bug #8622).
+- Don't use deprecated g_str(n)casecmp (bug #8688).
+- Translation updates: Amharic, Arabic, Asturian, Azerbaijani,
+  Belarusian, Bulgarian, Bengali, Bengali (India), Catalan (Valencian),
+  Czech, Danish, German, Dzongkha, Greek, English (United Kingdom),
+  Esperanto, Spanish (Castilian), Estonian, Basque, Persian, Finnish,
+  French, Galician, Gujarati, Hebrew, Hindi, Croatian, Hungarian,
+  Indonesian, Icelandic, Italian, Japanese, Georgian, Kazakh, Korean,
+  Lithuanian, Latvian, Macedonian, Marathi, Malay, Norwegian Bokmal,
+  Dutch (Flemish), Norwegian Nynorsk, Panjabi (Punjabi), Polish,
+  Portuguese, Portuguese (Brazilian), Romanian, Russian, Sinhala,
+  Slovak, Albanian, Swedish, Tamil, Telugu, Turkish, Uyghur, Ukrainian,
+  Urdu, Urdu (Pakistan), Vietnamese, Chinese (China), Chinese (Taiwan).
+
+4.9.0
+=====
+- Add tiling feature (bug #6648).
+- Navigate with arrows in task switcher (bug #4752).
+- Show dialogs in settings category.
+- Do not cancel pending focus transition and use actual meaningful
+  timestamp to avoid setting focus on wrong window in focus follow
+  mouse (Bug #8323).
+- Remove docbook documentation.
+- Remove older themes from main package (moved to xfwm4-themes now).
+- Add patch for themeable tab-window (bug #8238).
+- Use themeable icons for the settings manager and the menu, rework
+  the default icons for the settings manager and the window menu and
+  add SVG version.
+- Reintroduce the double-click timeout.
+- Drop AC_PROG_LIBTOOL in favor of LT_PREREQ and LT_INIT.
+- Simply double click detection logic.
+- Add special icons for the button layout in settings.
+- Remove some XFlush() calls.
+- Upon restart, restore the previous selected workspace.
+- Improve horizontal/vertical maximization toggle so that de-maximizing
+  in either direction while fully maximized gives the expected
+  maximization result.
+- Change the default theme to differentiate from 4.8.
+- Update mouse cursor theme and size dynamically (bug #6854).
+- Optimize transients for group evaluation while withdrawing windows.
+- Increase timeout for other WM to exit with "--replace",
+- Rework focus and fullscreen windows to make xfwm4 simpler and
+  more predictable.
+- Get rid or of old GNOME 1.x protocol.
+- Get rif of legacy fullscreen emulation.
+- Translation updates: Amharic, Arabic, Asturian, Azerbaijani,
+  Belarusian, Bulgarian, Bengali, Bengali (India), Catalan (Valencian),
+  Czech, Danish, German, Dzongkha, Greek, English (United Kingdom),
+  Esperanto, Spanish (Castilian), Estonian, Basque, Persian, Finnish,
+  French, Galician, Gujarati, Hebrew, Hindi, Croatian, Hungarian,
+  Indonesian, Icelandic, Italian, Japanese, Georgian, Kazakh, Korean,
+  Lithuanian, Latvian, Macedonian, Marathi, Malay, Norwegian Bokmal,
+  Dutch (Flemish), Norwegian Nynorsk, Panjabi (Punjabi), Polish,
+  Portuguese, Portuguese (Brazilian), Romanian, Russian, Sinhala,
+  Slovak, Albanian, Swedish, Tamil, Telugu, Turkish, Uyghur, Ukrainian,
+  Urdu, Urdu (Pakistan), Vietnamese, Chinese (China), Chinese (Taiwan).
+
+
+4.8.x
+=====
+- Workaround Adobe AIR setting workspace to 0xFF instead of 0xFFFFFFFF
+  as per EWMH specifications (bug #8304).
+- Name the window manager when one is already running to help debugging
+  sessions issues.
+- Add missing bit from master causing pidgin buddy list to be shown on
+  all workspaces (bug #8263).
+- Avoid entering the move/resize loop twice (can happen when using
+  NET_WM_MOVERESIZE client message).
+
+
+4.8.3
+=====
+- Do not exit the move/resize loop when just any key is pressed unless the
+  operation is triggered via the keyboard (this should be enough to fix the
+  remaining part of Bug #8233)
+- Reverting from desktop view may not focus the top most window (Bug #8173)
+- Recompute window's position/maximization state even if the overall size of
+  the screen hasn't changed as the actual layout of the monitors may have
+  changed nevertheless.
+- Check for both forward and backward cycling modifier to be released before
+  exiting the cycle loop (Bug #6508)
+- Fix a couple of memory leaks
+- Fix some events being lost causing the tabwin window to remain sometimes
+  after the key has been released
+- Fix crash when workspace count is set to negative values (Bug #8002)
+- Fix crash in signal handler
+- Fix a bug with transients for group (including utility windows)
+  being withdrawn as many times as parent windows where in the group, causing
+  utility windows to disapear when switching workspaces (this bug was affecting
+  The GIMP and reported initially bugzilla.gnome.org as bug #651454).
+- Do not allow applications to change the win layer on dialogs to prevent
+  dialogs to be unreachable in some Java based applications
+- Do not enforce the size increment only if the size request comes
+  from the application itself (refix Bug #7445)
+- On docs installation, create relative paths in symlinks to images
+- Translations updates: de, fi, hr, is, ko, ro, zh_CN, zh_TW
+
+
+4.8.2
+=====
+- Relax resize wrt to size increments.
+- Allow menu shortcut to work even for non-decorated windows (bug #7300).
+- Keep window fully visible on screen on size request.
+- Fix panel plugins such as verve not receiving focus in focus follow
+  mouse mode (bug #6617, bug #6649).
+- Display session's struct memeber needs to be set even when not
+  connected otherwise bad things may happen when quitting.
+- Translation updates: be, es, ja, ko, ms, nl, pt_BR, ro, ru, sk,
+  te, zh_CN.
+- Manual translation updates: ru, tr, zh_CN.
+
+
+4.8.1
+=====
+- Allow images without an alpha channel to be used in themes as well.
+- Restore the release keyboard events.
+- Updated translations: Russian, Basque, Swedish, Turkish.
+
+
+4.8.0
+=====
+- Update copyright year.
+- Updated translations: Greek, Croatian, Polish, Romanian,
+  Frensh, Arabic.
+
+
+4.7.4
+=====
+- Fix bug #6651 Shape Mask Changes not Immediately Recognized by Xfwm4.
+- Use Xsettings standard double-click-distance (bug 6334).
+- Fix bug #6334.
+- Bug 6334: Use lower prio for double click timeout.
+- Thinner bottom frame.
+- Double-click on edges trigger window fill in any given direction.
+- Fix bug 6989.
+- Fix bug #6589.
+- Fix bug #6902.
+- Fix application cycling.
+- Translation updates (zh_TW, fi, uk, ca, nb, cs, ja, el, de,
+  en_GB, sv, id, pt).
+
+
+4.7.3
+=====
+- Panel won't focus entries in focus follow mode (bug #6649).
+- Adjusted sizes when a maximized window is undecorated (bug #6543).
+- Unshade windows when given focus with Alt-Tab (bug #5931).
+- Fix hang when closing a submenu (bug #6562).
+- New theme for 4.8.
+- Focus-follows-mouse activate/raise should not do focus (bug #4679).
+- Translation updates (pt, pt_BR, it).
+
+
+4.7.2
+=====
+- Fix corrupted button layouts by obtaining the button IDs correctly
+  (bug #6824).
+- Bump the GTK+ dependency to 2.14 which is the minimum version
+  required for Xfce 4.8.
+- Properly implement session handling (bug #6330).
+- Make the settings dialog smaller so it fits on netbooks screens.
+- Depend on libxfce4ui 4.7.5 for crucial fix in the
+  save-state-extended signal.
+- Translation updates (it, gl, pt, da, de, kk, hu, zh_CN).
+
+
+4.7.1
+=====
+- Fix break with latest API changes in libxfce4ui.
+- Translation updates (zh_TW, ug, it, gl, ja, sv).
+
+
+4.7.0
+=====
+- Fix window positioning problem when output it removed (bug #6209).
+- Do not clear the show desktop flag upon activation of
+  already visible windows
+- Transition fullscreen windows back to their original layer
+  when another window is activated (bug #3551).
+- Add new keyboard shortcut to switch between windows of the
+  same application.
+- Add new keyboard shortcut to switch between windows of different
+  applications only.
+- Port to libxfce4ui + GtkBuilder and drop libxfcegui4 dependency.
+- Display an app switcher window per physical monitor (bug #5229).
+- Fix opacity for newly mapped window not focused by default (bug #5706).
+- Add new option "cycle_apps_only" to switch between regular toplevels only
+  (avoiding dialogs - This option coupled with the new shortcut allows for
+  faster window selection through keyboard)
+- Implement prelinminary support for snap on resize.
+- Implement a workaround to avoid loosing key release events.
+- Add linkage to libm when compositor is used (bug #6231).
+- Check for invalid type for GValue to avoid a crash (bug #6195).
+- Don't save the settings dialogs when saving the session.
+- Watch workspace changes in wnck and update treeview accordingly.
+- Move helper-dialog to $libdir/xfce4/xfwm4.
+- Build documentation in make dist.
+- Various theme updates.
+- Translation updates (ja, es, pl, uk, da, ro, ast, lv, sq, gl, ru, sk, pt,
+  fi, hu, it, de, pt_BR, cs, kk, si, hr, id, zh_TW)
+
+
+4.6.2
+=====
+
+- Build fixes for GIT.
+- Fix mixed RTL/LTR text not rendering properly in title and tabwin.
+- Place windows on top of stack even when not focused in focus
+  follow mouse (bug #5479).
+- Increase menu button height and redice width (bug #5567).
+- Do not set the "demand attention" flag when the window is already
+  focused.
+- Keep windows entirely visible on screen change (bug #5795).
+- Various compilation warnings fixed.
+- Compute screen size based on each monitor size and layout and
+  avoid using reported size (bug #5795).
+- Reloading settings on keys-changed signal is a huge overhead and
+  complete nonsense (bug #5964).
+- Recent Xorg drivers disable the output when the lid is closed,
+  leaving no active monitor, in that case simply ignore the event to
+  avoid messing with windows' positions (bug #6209).
+- Add linkage to libm when compositor is used (bug #6231).
+- Check for invalid type for GValue to avoid a crash (bug #6195).
+- Allow only regular windows to be placed either above or below.
+- Translation updates (cs, el, es, gl, it, pl, pt, sv, tr, uk, lv,
+  ur, ur_PK, ro, ru, nl, ug).
+
+
+4.6.1
+=====
+
+- Reduce repaint timeout in the compositor (Bug #5080)
+- Fix applications getting focused when focus on map is unset even
+  without focus stealing prevention enabled (Bug #5044)
+- Reduce minimum timeout for focus delay in focus follow mouse (100ms was way
+  too much)
+- Fix raise delay settings in xfwm4 dialog being totally ignored
+- Avoid unecessary warnings about timestamps at startup
+- Fix a long standing bug in xfwm4 4.6 were activating a transient would not
+  regrab the mouse on parent window.
+- Do not go over adjacent windows with fill (Bug #5152)
+- Do not actually change window layer when status is above, below or fullscreen
+  (Bug #5030)
+- Check fullscreen status against each monitor and not just the overall screen
+  size in the compositor.
+- Fix remaining active grab if shortcut is not used (Bug #5207)
+- Plug various memory leaks
+
+
+4.6.0
+=====
+
+- Fix possible monitor cache size inconsistency when the screen size changes.
+- Fix fill function not working with multiscreen.
+- Fix size not properly computed by the fill function with a dock on top or
+  left (Bug #4960).
+- Only display the shortcut conflict dialog if the conflict is with a different
+  shortcut than the one being edited.
+- When stealing a shortcut from another shortcuts provider, clear the shortcut
+  of that provider first.
+- Fix focus stealing prevention with applications which support the
+  NET_WM_USER_TIME_WINDOW protocol
+- Do not automatically give focus to windows placed on lower layers, but
+  focus those on upper layers at first map.
+- Fix compilation failure in debug full without render
+- Fix ICCCM synthetic unmap notify handling causing a race condition with
+  amule when started hidden to system tray (Bug #4928)
+- Fix margin max value (Bug #4931)
+- Apply font settings changes in real time (DPI, hinting, hint style, rgba).
+- Fix key "Super" remaining sticky when used as a modifier shortcut
+  (Bug #4959).
+
+4.5.99.1 (Xfce 4.6rc1)
+======================
+
+- Fix a crash when removing a monitor with xrandr 1.2.
+- Command line option "--daemon" would have no effect when xfwm4 connects to
+  the session manager (Bug #4839).
+- Fix settings not being set at startup (Bug #4845).
+- Flatten default theme.
+- Add support for NET_WM_FULLSCREEN_MONITORS.
+- Fix dragging button layout when the dialog is embedded in the settings
+  dialog (Bug #4524).
+- Make title alignment and button layout insensitive when not supported by the
+  theme selected.
+- Use gtk_selection_data_get_data() only if available (Bug #4855).
+
+4.5.93 (Xfce 4.6beta3)
+======================
+
+- Work around a problem affecting the use of the "Super" key as modifier for
+  moving windows (Bug #4632).
+- Fix smart placement not working for windows with height or width larger than
+  actual screen size (Bug# 3126).
+- Remove maximization if a client updates its size max size hint (Bug #4706).
+- String review by Josh Saddler <nightmorph@gentoo.org> (Bug #4703).
+- Fix fill horizontally and vertically not working as expected (Bug #4712).
+- Prevent "fill" from expanding beyond physical monitor.
+- Do not mark gtk+ stock labels as translatable (Bug #4722).
+- Change default shadow radius and position.
+- Fix some controls not being localized (Bug #4740).
+- Remove markup not supported by xfce_message_dialog() (Bug #4786).
+- Avoid placing unfocused windows on top of the current focused window when not
+  focusing new windows (Bug #4795).
+
+4.5.92 (Xfce 4.6beta2)
+======================
+
+- Add support for restart style SmRestartImmediately.
+- Add support for NET_MOVERESIZE_WINDOW.
+- Add client windows to save set to avoid loosing all windows in case of crash.
+- Rework the window menu to improve consistency with libwnck menu (Bug #4531).
+- Simplify management of transients.
+- Add support for keyboard shortcuts (Bug #4492).
+- Add new option do disable blinking of urgent windows.
+- Fix possible crash when the dbl_click_action setting gets unset.
+- Fix workspaces names not being set in the workspace settings GUI.
+- Do not display warnings for values that are not configurable via xfconf
+  (typically theme settings).
+- Draw focus in tabwin to make sure the selection is visible even with themes
+  that do not show selected items.
+- Add key shortcut for reverse cycling (Bug #2778)
+
+4.5.91 (Xfce 4.6beta1)
+======================
+
+- Add support for NET_WM_PING protocol.
+- Add support for NET_WM_PID to be able to kill apps (when not responding to
+  NET_WM_PING).
+- Make shadow opacity configurable (bug #4447).
+- Make wireframe while cycling user configurable (Bug #4443).
+- Rework visual depth selection of the frame window (Bug #4452).
+- Add new user option to set/unset repeat blinking of urgent windows (Bug #4440).
+- Add margins configuration in workspace settings (Bug #4438).
+- Loosen the rule that prevents an application from iconifying itself when
+  skip_taskbar is set (Bug #4434).
+- Fix NET_WM_STATE claiming maximization vertical and horizontal even if only
+  horizontal of vertical is actually set (Bug #3969).
+- Add an option to set default window placement w/out smart placement missing from
+  the wmtweaks GUI.
+- Allow any modifier to be used for easy move, including disabling the functionality
+  entirely.
+- Add embedding support to all xfwm4 settings dialogs.
+- Sort theme alphabetically (Bug #4318).
+- Implement workspace name changing.
+- Do not allocate window extents if the window is not visible (Bug #4363).
+- Improve centering of windows with Xinerama.
+- Lot of settings dialogs fixes and enhancements
+- Update Basque translation
+- Update German translation
+- Update Korean translation
+- Update Slovene translation
+
+4.5.90 (Xfce 4.6alpha)
+======================
+
+- Add button prelight in window frames (Bug #3219).
+- Add resize from top of window.
+- Rewritten move/resize operations with keyboard.
+- Add hooks in the compositor to reduce flickering during resize (bug #4283,
+  #4268).
+- Support for EWMH 1.4 NET_WM_USER_TIME_WINDOW.
+- Window menu includes more operations (fullscreen, above, below, move, resize).
+- Support for xrandr 1.2 (requires gtk+ 2.14).
+- Iconified windows are sent to the end of the focus ring.
+- Add a --replace option to replace ICCCM2 compliant window managers
+  (Bug #3731).
+- Compositor supports overlays from Composite extension version 0.3 if
+  available.
+- Reworked transient/parent relationship to improve compatibility with libwnck
+  tasklist.
+- Add "fill" operation to make a window as large as available space.
+- Various optimizations to reduce the frame redraws.
+- Rework the event filter to avoid passing all events to gtk+.
+- Treat dialogs and utility windows as transients for group (bug #3102).
+- Add support for shape input with XShape extension 1.1 (Bug #3092).
+- Make the title button in the xfwm4 settings manager dragable (bug #3000).
+- Fix a misinterpretation of ICCCM about when to send a synthetic
+  configureNotify event (bug #2977).
+- Add option to instruct xfwm4 not to bring window back on
+  current workspace when activated (bug #2961).
+- Place splash screen windows on the normal layer, so that dialogs that
+  get mapped during startup have a chance to be placed above the splash
+  screen.
+- Raise focused window on workspace switch (bug #2960).
+- Sort Z-order on workspace change (bug #2960).
+- Fix the small lag before icon update at first map and when updating all
+  frames at once.
+- Use timeout for frame redraw, check actual WM name changes to work around
+  apps that falsely update their WM name property (Bug #2810).
+- Update Hungarian translation
+- Update Catalan translation
+- Update Italian translation
+- Update Polish translation
+- Update German translation
+- Update Japanese translation
+- Update Turkish translation
+- Update Ukrainian translation
+- Update Dutch translation
+- Update Chinese (simplified) translations by Wu Li and fixed some
+  accelerators in the French translations.
+- New Albanian translations by Besnik Bleta
+- New British English translations by Jeff Bailes
+
+4.4.0
+=====
+
+- Use screen from xevent instead of client for keypress (Bug #2749)
+- Raise/focus when using alt+left-click for resize for consistency with move
+- Be more permissive toward stick/unstick (bug #2735)
+- Ignore focus stealing prevention between windows of the same group or
+  between windows that have a transient relationship.
+- Rework grab release (bug #2694)
+- Fix display of ARGB32 windows with compositing enabled but without
+  compositor active (bug #2710).
+- Apply NET_WM_STATE_DEMANDS_ATTENTION changes (otherwise it breaks xfwm4
+  demand attention mechanism), but do not obey client state change requests
+  for NET_WM_STATE_DEMANDS_ATTENTION if the client is already focused.
+- Apply patch from Mike Massonnet that fixes an error in Stonage decoration
+  theme (Bug #2696)
+- Do not apply NET_WM_STATE_DEMANDS_ATTENTION if client is already focused, as
+  some apps seem to request NET_WM_STATE_DEMANDS_ATTENTION state even while
+  focused (See comment #14 in bug #2678)
+- Set the demands attention flag with focus prevention enabled only (Bug #2678)
+- Update the NET_WM_STATE when the client requests an update of
+  NET_WM_STATE_DEMANDS_ATTENTION (Bug #2678)
+- Focus the internal fallback window
+  when focus is transferred to a window that doesn't have InputHint set but
+  still use WM_PROTOCOLS_TAKE_FOCUS (ie, there is no way for the window
+  manager to tell whether or not the client will accept focus in the end
+  since focus is set by the client alone through the 'take focus' mechanism)
+  (Fix bug #1853 without breaking bug #2410)
+- Fix redraw problem with compositor
+- Update application icon asynchronously to avoid queuing useless icon updates
+  (Ubuntu/Launchpad bug #61424)
+- Fix user focus timetamp being falsely reset to 0 causing some windows to be
+  started un-focused (Bug #2664), re-add some traces (which compile with
+  -Werror this time), small code/api cleanup.
+- Remove shadow on dock-type windows (bug #2648)
+- Prevent fullscreen windows from being maximized (Bug #2663).
+- Use timestamp provided by NET_ACTIVE_WINDOW and NET_CURRENT_DESKTOP messages
+  from EWMH version 1.3 and above, fix focus transition with
+  NET_CURRENT_DESKTOP messages causing either flickering or wrong restacking
+  on workspace switch (bug #2654),
+- Quit nicely when MANAGE client message is received, so that xfwm4 obeys to
+  ICCCM2 standard (bug #2374)
+- Fix demands attention being activated when it shouldn't
+- Improve focus stealing prevention.
+- Auto-maximize regular windows only.
+- Be a lot more paranoid about what broken apps set as struts.
+- Plug a huge X resources leak in handleMappingNotify () (bug #2618)
+- Do not prevent stick when skip taskbar is set
+- Re-enable focus passing to previously focused window (req. on ML)
+- Focus windows that raise themselves if focus stealing prevention is
+  disabled, and set demands attention flag otherwise, that should improve
+  focus prevention.
+- Keep focus on sticky windows only for regular windows w/out skip
+  taskbar/pager property (Bug 2603)
+- Improve resize (Bug #2597)
+- Be more permissive with resizes towards struts (Bug #2597, bis), optimize
+  shape use.
+- Fix off-by-one causing windows to be moved wrongly via keyboard
+  (patch from Darren Salt (bug #2594)
+- Enter key doesn't work for "Add keybinding theme" dialog (Bug #2560, patch
+  by Brian Tarricone
+- Use focus pending with with apps that use WM_FLAG_TAKEFOCUS protocol too
+  (Bug #2561)
+- Hide as more windows when showing desktop (Bug #2518)
+- Don't skip windows that have the skip pager/taskbar properties when
+  searching for windows below the pointer (bug #2550)
+- Fix focus transitioning to root taking into account the pending focus too,
+  so that focus doesn't return to the fallback internal window when it should
+  return to some other client window (like when an application closes with a
+  modal dialog opened).
+- Check for valid transient or modal when switching workspaces, to avoid
+  missing windows to unmap (bug #2518).
+- Use X server time to restore focus when sent to the root window (bug #2472)
+
+
+4.3.99.2 (rc2)
+==============
+
+- Add new option to enable/disable borderless maximization (Bug
+  #2257).
+- Rework keyboard shortcuts grabs, saving a lot of grabs and fixing
+  keyboard shortcuts not working on shaded windows (Bug #2291).
+- Fix compiler warning when build w/out compositor support (Bug
+  #2335).
+- Fix restore of original size/position of maximized windows
+  restored by session management, do not match windows that aren't
+  placed by the WM, that avoids some misplacements.).
+- Add cancel option when cycling (Bug #2373).
+- Add new window operations menu shortcut (Bug #2400).
+- Set focus on desktop with showing desktop (Bug #2410).
+- Improve workspace switch, reduce expose events (Bug #2409).
+- Improve focus transition (Bug #2408).
+- Rework error handling in pixbuf loading, fixes a crash.
+- Do not raise on WM_TRANSIENT_FOR property change, required for
+  Java 1.6 (Bug #2483).
+- Add support for XSync protocol.
+- Add support to NET_WM_MOVERESIZE.
+- New SVG based default theme (using PNG for speend and
+  compatibility although xfwm4 is able to use SVG theme), previous
+  theme renamed as "Sassandra".
+- Fix compositor unredirect with Xorg 7.1 (bug #64115 in Ubuntu
+  Launchpad).
+- Fix compositor availability check (Bug #2418
+  <http://bugzilla.xfce.org/show_bug.cgi?id=2418>, #2428
+  <http://bugzilla.xfce.org/show_bug.cgi?id=2428>).
+- Fix visual/depth/colormap with and without render (Bug #1617
+  <http://bugzilla.xfce.org/show_bug.cgi?id=1617>).
+- Rework focus management to fix some issues (Bug #2472
+  <http://bugzilla.xfce.org/show_bug.cgi?id=2472>).
+- Allow use of Alt+C in shortcuts.
+- Lot of optimizations and code cleanup.
+
+4.3.99.1 (rc1)
+==============
+
+- Implement borderless full maximization (Bug #1750).
+- Rework maximization switches (Bug #2047).
+- Unmap the client window when shaded (Bug #2168).
+- Fix a crash in compositor when the client vanishes (Bug #2105).
+- Make sure the icon selected in the tabwin matches the selected window in all
+  cases (Bug #2008).
+- Add <Xutil.h> include for building on Solaris.
+- Add new option to enable/disable unredirection of fullscreen override windows
+  (overlays).
+- Prevent shaped windows to request a frame.
+- Fix meaning of the Xfwm/CycleMinimum option in the WM tweak plugin
+  (Bug #2058).
+- Fix focus transition back to regular window when an override window grabbing
+  keyboard is unmapped (Bug #2090).
+- Allow pkg-config to be more verbose (Bug #2178).
+- Add a fallback to the configure script to check for libXrender on Solaris 10
+  (Bug #2165).
+- Plug a few memory leaks.
+- Reduce Xserver's memory usage my disabling frame caching.
+- Fix bogus high CPU usage on loading themes that miss the menu button.
+
+4.3.90.2 (beta2)
+================
+
+- Get rid of libXpm dependency by implementing an XPM loader with color
+  symbol substitution.
+- Add support for svg, png, bmp, gif, jpg file formats for themes
+  components.
+- Embedded compositor can be enabled/disabled on the fly from the WM tweaks
+  plugin without restarting the WM.
+- Transparency of inactive windows configurable through the WM tweaks
+  plugin.
+- Automatically unredirect fullscreen override windows, fixing the
+  performance penalty of using unredirected rendering.
+- Add host name to window title when running apps from other hosts.
+- Rework default theme, add new themes (Moheli, Daloa).
+- Clean up modifer code in shortcut editor.
+- Lot of optimizations, including in the embedded compositor.
+- Lot of bug fixes.
+
+4.3.90.1 (beta1)
+================
+
+- First public release for xfce-4.4

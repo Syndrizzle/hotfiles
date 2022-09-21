@@ -1,0 +1,53 @@
+Authors :
+---------
+
+Olivier Fourdan <fourdan@xfce.org>
+
+Contributors :
+--------------
+
+Adam K <chkboom@safe-mail.net>
+Adam Purkrt <adam@purkrt.net>
+Alistair Buxton <a.j.buxton@gmail.com>
+Andre Miranda <andreldm@xfce.org>
+Andrey Alekseenkov <zyx1984@gmail.com>
+Aquila Deus <aquila_deus@yahoo.co.uk>
+Aurelien Foret <orelien@chez.com>
+Benedikt Meurer <Benedikt.Meurer@unix-ag.uni-siegen.de>
+Błażej Szczygieł <spaz16@wp.pl>
+Damon Harper <dl+xfce4-dev@usrbin.ca>
+Darren Salt <linux@youmustbejoking.demon.co.uk>
+David Siroky <siroky@dasir.cz>
+Ian Morgan <imorgan@webcon.ca>
+Iharob Al Asimi <iharob@gmail.com>
+Jason Zaman <jason@perfinion.com>
+Jens Guballa <J.Guballa@t-online.de>
+Jonas Zetterberg <jozz@jozz.se>
+Joshua Blanton <jblanton@irg.cs.ohiou.edu>
+Juho Vaha-Herttua <juhovh@iki.fi>
+Marcel Partap <mpartap@gmx.net>
+Martin Husemann <martin@NetBSD.org>
+May THO <thobouli@yahoo.fr>
+Nils Rennebarth <Nils.Rennebarth@web.de>
+Ori Bernstein <rand_chars@rogers.com>
+Paramjit Oberoi <param@cs.wisc.edu>
+Phil Vandry <vandry@tzone.org>
+pnd23@telenet.be <pnd23@telenet.be>
+P. Pronk <xfce@pronk.nl>
+Thomas Leonard <tal@ecs.soton.ac.uk>
+Timo <timo.teras@iki.fi>
+Viktor Odintsev <ninetls@xfce.org>
+
+Credits :
+---------
+
+Portions of code based on the following projects :
+
+Oroborus: Ken Lynch <kenlynch@blueyonder.co.uk>
+Metacity: Havoc Pennington <hp@redhat.com>
+Sawfish:  John Harper <jsh@unfactored.org>
+xcompmgr: Copyright © 2003 Keith Packard
+
+gen-color-table.pl comes from gtk/gdk-pixbuf/gen-color-table.pl and has been
+copied as is without any modification so original copyright/license remain on
+this file.

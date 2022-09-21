@@ -1,0 +1,6 @@
+style "titlebar"
+{
+  font_name = "Sans 10"
+}
+
+widget "xfwm"        style "titlebar"

@@ -1,0 +1,158 @@
+Compositing manager notes.
+==========================
+
+xfwm4 now features a compositing manager. This code is new and has received only
+a moderate amount of testing, so it's disabled by default.
+
+So, if you want to stay safe, keep the compositor disabled...
+
+If you still want to try the compositor extensions with xfwm4, here follows how
+to enable the compositing manager in xfwm4.
+
+1) Enabling the compositor manager in xfwm4
+-------------------------------------------
+
+To enable the compositing manager in xfwm4, add --enable-compositor when running
+the configure script.
+
+eg:
+
+sh configure --prefix=/usr --sysconfdir=/etc --enable-compositor
+
+[...]
+checking for xcomposite >= 1.0 xfixes xdamage xrender... yes
+checking COMPOSITOR_CFLAGS... -DXTHREADS -D_REENTRANT -DXUSE_MTSAFE_API -I/usr/X11R6/include
+checking COMPOSITOR_LIBS... -L/usr/X11R6/lib -lXcomposite -lXdamage -lXfixes -lXrender -lX11 -lXext
+[...]
+
+2) Enabling the compositor extension in the Xserver
+---------------------------------------------------
+
+At this time, the compositor extensions are included in the X.org Xserver. I do
+not know if there are any plan to include these extension in XFree86, nor when
+it's planned.
+
+The following tips apply to the X.org Xserver X11R6.8.x
+
+- Edit the xorg.conf configure file (usually in /etc/X11/xorg.conf)
+- Add the following section:
+
+Section "Extensions"
+      Option "Composite" "Enable"
+EndSection
+
+- Save the configuration file and restart the Xserver.
+
+3) Troubleshooting
+------------------
+
+The composite extensions in X.org look fairly new and there are several problems
+that may arise when using the compositing manager in xfwm4:
+
+- Windows aren't correctly refreshed
+- Scrolling may leave glitches
+- Xv and composite extension don't always play nice together
+- Xinerama and composite extension have problems too
+
+All this is not specifically related to the xfwm4's compositing manager. It's
+not worth filling bugs in Xfce's bugzilla.
+
+If you still think you have found a bug in xfwm4 compositing manager, here
+are a few hints that could help categorizing the problem:
+
+- Does it happen when xfwm4 compositor is disabled?
+  ie, when running "xfwm4 --compositor=off"
+- Does it happen with xcompmgr?
+  ie, when running "xfwm4 --compositor=off; xcompmgr -c"
+- Does it show with the Xserver embedded compositor manager?
+  ie, when running "xfwm4 --compositor=auto"
+
+If the problem with xcompmgr and/or with the Xserver compositor, then there
+is a good chance that the problem is not with xfwm4...
+
+4) Tips
+-------
+
+The following tips are from my own experience. I am not connected to any graphic
+card vendor.
+
+If you have usefull tips to improve XRender performance for your favorite video
+card, feel free to submit your own tips.
+
+4.1) NVidia
+~~~~~~~~~~~
+
+The XRender extension can be very CPU consuming. The NVidia binary closed source
+drivers are able to perform the rendering in hardware.
+
+If you have an NVidia video card and the NVidia binary closed source drivers,
+you can enable the XRender in hardwareby adding the following option to your
+xorg.conf file:
+
+        Option      "RenderAccel" "true"
+
+in the device section:
+
+eg:
+Section "Device"
+        Identifier  "Videocard0"
+        Driver      "nvidia"
+        VendorName  "Videocard vendor"
+        BoardName   "NVIDIA GeForce 4 (generic)"
+        Option      "RenderAccel" "true"
+EndSection
+
+4.2) EXA
+~~~~~~~~
+
+On some card, you may want to try the EXA acceleration by adding
+
+        Option "AccelMethod" "exa"
+
+to the card's Device section in xorg.conf.
+
+4.3) vblank and tearing
+======================
+
+Starting with version 4.13, xfwm4 now supports vblank via two different
+methods, either using GLX or the Present X11 extension.
+
+xfwm4 relies on libepoxy for GLX, and on libXpresent for Present support.
+
+Support for those features can be checked using "xfwm4 --version":
+
+	Build configuration and supported features:
+        ...
+	- Xpresent support:                             Yes
+	- Embedded compositor:                          Yes
+	- Epoxy support:                                Yes
+        ...
+
+If both vblank methods are available, xfwm4 will first try GLX and fallback
+to Present if available.
+
+To select a different vblank method, either use the "--vblank" command
+line options:
+
+  $ xfwm4 --replace --vblank=glx &
+  $ xfwm4 --replace --vblank=xpresent &
+  $ xfwm4 --replace --vblank=off &
+
+Or the "/general/vblank_mode" xfconf setting.
+
+Use "auto" to let xfwm4 decide (default):
+
+ $ xfconf-query -c xfwm4 -p /general/vblank_mode -s auto
+
+Use "glx" to set GLX as vblank method (if enabled at build time):
+
+  $ xfconf-query -c xfwm4 -p /general/vblank_mode -s glx
+
+Use "xpresent" to set GLX as vblank method (if enabled at build time):
+
+  $ xfconf-query -c xfwm4 -p /general/vblank_mode -s xpresent
+
+Use "off" to disable vblank altogether:
+
+  $ xfconf-query -c xfwm4 -p /general/vblank_mode -s off
+

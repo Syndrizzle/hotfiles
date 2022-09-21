@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+_Name=Window Manager Tweaks
+_Comment=Fine-tune window behaviour and effects
+_Keywords=windows;behavior;settings;preferences;cycling;cycle;switching;focus;raises;accessibility;key;dragging;move;moving;hide;frame;title bar;maximized;tile;screen;edge;hot corner;snapping;mouse wheel;roll up;workspaces;placement;compositor;compositing;enable;disable;shadows;decorations;opacity;resize;inactive;preview;compiz;transitions;
+Exec=xfwm4-tweaks-settings
+Icon=org.xfce.xfwm4-tweaks
+Terminal=false
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+StartupNotify=true
+OnlyShowIn=XFCE;
+X-XfcePluggable=true
+X-XfceHelpComponent=xfwm4
+X-XfceHelpPage=wmtweaks

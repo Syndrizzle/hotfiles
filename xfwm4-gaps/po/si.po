@@ -1,0 +1,1055 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Danishka Navin, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-18 22:23+0200\n"
+"PO-Revision-Date: 2010-03-13 18:58+0530\n"
+"Last-Translator: Akila Wajirasena <akila.wajirasena@gmail.com>\n"
+"Language-Team: Sinhala <info@hanthana.org>\n"
+"Language: si\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: ../helper-dialog/helper-dialog.c:94
+msgid ""
+"This window might be busy and is not responding.\n"
+"Do you want to terminate the application?"
+msgstr ""
+"මෙම කවුළුව කාර්යබහුල අතර එය ප්‍රතිචාර නොදක්වයි.\n"
+"ඔබට මෙම යෙදුම නැවත්වීමට අවශ්‍යද?"
+
+#: ../helper-dialog/helper-dialog.c:99
+msgid "Warning"
+msgstr "අවවාදයයි"
+
+#: ../settings-dialogs/tweaks-settings.c:55
+msgid "None"
+msgstr "කිසිවක් නැත"
+
+#: ../settings-dialogs/tweaks-settings.c:472
+msgid "Session manager socket"
+msgstr "සැසි කළමනාකරන සොකට්ටුව"
+
+#: ../settings-dialogs/tweaks-settings.c:472
+#: ../settings-dialogs/workspace-settings.c:398
+#: ../settings-dialogs/xfwm4-settings.c:248
+#, fuzzy
+msgid "SOCKET ID"
+msgstr "SOCKET ID"
+
+#: ../settings-dialogs/tweaks-settings.c:473
+#: ../settings-dialogs/workspace-settings.c:399
+#: ../settings-dialogs/xfwm4-settings.c:250
+msgid "Version information"
+msgstr "අනුවාද තොරතුරු"
+
+#: ../settings-dialogs/tweaks-settings.c:491
+#: ../settings-dialogs/workspace-settings.c:416
+#: ../settings-dialogs/xfwm4-settings.c:907
+msgid "."
+msgstr "."
+
+#: ../settings-dialogs/tweaks-settings.c:495
+#: ../settings-dialogs/workspace-settings.c:420
+#: ../settings-dialogs/xfwm4-settings.c:911
+#, fuzzy, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+
+#: ../settings-dialogs/workspace-settings.c:81
+#: ../settings-dialogs/workspace-settings.c:96
+#, fuzzy, c-format
+msgid "Workspace %d"
+msgstr "වැඩ අවකාශය  %d"
+
+#: ../settings-dialogs/workspace-settings.c:286
+#, fuzzy
+msgid "Workspace Name"
+msgstr "වැඩ අවකාශ නාමය"
+
+#: ../settings-dialogs/workspace-settings.c:398
+#: ../settings-dialogs/xfwm4-settings.c:248
+msgid "Settings manager socket"
+msgstr "සැකසුම් කළමනාකරන සොකට්ටුව"
+
+#: ../settings-dialogs/xfce-wm-settings.desktop.in.h:1
+#: ../settings-dialogs/xfwm4-dialog.glade.h:1
+msgid "Window Manager"
+msgstr "කවුළු කළමනාකරු"
+
+#: ../settings-dialogs/xfce-wm-settings.desktop.in.h:2
+#: ../settings-dialogs/xfwm4-dialog.glade.h:2
+msgid "Configure window behavior and shortcuts"
+msgstr "කවුළු හැසිරීම් හා කෙටිමං වින්‍යාස කරන්න "
+
+#: ../settings-dialogs/xfce-wmtweaks-settings.desktop.in.h:1
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:1
+msgid "Window Manager Tweaks"
+msgstr ""
+
+#: ../settings-dialogs/xfce-wmtweaks-settings.desktop.in.h:2
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:2
+msgid "Fine-tune window behaviour and effects"
+msgstr "Fine-tune window behaviour and effects"
+
+#: ../settings-dialogs/xfce-workspaces-settings.desktop.in.h:1
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:1
+msgid "Workspaces"
+msgstr "වැඩ අවකාශ"
+
+#: ../settings-dialogs/xfce-workspaces-settings.desktop.in.h:2
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:2
+msgid "Configure layout, names and margins"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:3
+#, fuzzy
+msgid "<b>The_me</b>"
+msgstr "<b>තේමාව (_T)</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:4
+msgid "<b>Title fon_t</b>"
+msgstr "<b>සිරසි ෆොන්ටය (_t)</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:5
+msgid "<b>Title _alignment</b>"
+msgstr "<b>සිරැසි පෙළගැස්ම (_a)</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:6
+msgid "Click and drag the buttons to change the layout"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:7
+msgid "Title"
+msgstr "සිරැසිය"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:8
+msgid "The window title cannot be removed"
+msgstr "මෙම කවුළු සිරසිය ඉවත් කළ නොහැක"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:9
+msgid "Active"
+msgstr "සක්‍රීය"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:10
+msgid "Menu"
+msgstr "මෙනුව"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:11
+#, fuzzy
+msgid "Stick"
+msgstr "ඇලවෙන්න"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:12
+#, fuzzy
+msgid "Shade"
+msgstr "අඳුරු කිරීම"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:13
+#, fuzzy
+msgid "Minimize"
+msgstr "හකුළන්න (_n)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:14
+#, fuzzy
+msgid "Maximize"
+msgstr "විහිදන්න"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:15
+msgid "Close"
+msgstr "වසන්න"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:16
+msgid "Hidden"
+msgstr "සැඟවුණු"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:17
+msgid "<b>Button layout</b>"
+msgstr "<b>බොත්තම් පිරිසැලසුම</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:18
+msgid "_Style"
+msgstr "විලාසය (_S)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:19
+msgid "Define shortcuts to perform _window manager actions:"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:20
+msgid "_Reset to Defaults"
+msgstr "පෙරනිමියට යළි පිහිටුවන්න (_R)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:21
+#, fuzzy
+msgid "_Keyboard"
+msgstr "යතුරුපුවරුව (_y)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:22
+#, fuzzy
+msgid "Click to foc_us"
+msgstr "යොමුවීම සඳහා ක්ලික් කරන්න"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:23
+msgid "Focus follows _mouse"
+msgstr "යොමුවීම මූසිකය අනුගමනය කරයි (_m)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:24
+msgid "_Delay before window receives focus:"
+msgstr ""
+
+#. Raise focus delay
+#: ../settings-dialogs/xfwm4-dialog.glade.h:26
+msgid "<i>Short</i>"
+msgstr "<i>කෙටි</i>"
+
+#. Raise focus delay
+#: ../settings-dialogs/xfwm4-dialog.glade.h:28
+msgid "<i>Long</i>"
+msgstr "<i>දිග</i>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:29
+msgid "<b>Focus model</b>"
+msgstr "<b>යොමු ආකෘතිය</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:30
+msgid "Automatically give focus to _newly created windows"
+msgstr "අලුතින් ඇතිවූ කවුළු වෙත ස්වයංක්‍රීයවම යොමු වෙන්න (_n)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:31
+msgid "<b>New window focus</b>"
+msgstr "<b>නව කවුළු යොමුව</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:32
+msgid "Automatically _raise windows when they receive focus"
+msgstr "කවුළු වෙත යොමු වූ පසු ස්වයංක්‍රීයවම ඒවා නගන්න (_r)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:33
+msgid "Delay _before raising focused window:"
+msgstr "යොමුවූ කවුළුව නැගීමට පෙර පමාව (_b): "
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:34
+#, fuzzy
+msgid "<b>Raise on focus</b>"
+msgstr "<b>යොමු විමේදී නගන්න</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:35
+#, fuzzy
+msgid "Raise window when clicking _inside application window"
+msgstr "යෙදුම් කවුළුව තුල ක්ලික් කිරීමේදී කවුළුව නගන්න (_i)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:36
+#, fuzzy
+msgid "<b>Raise on click</b>"
+msgstr "<b>ක්ලික් කිරිමේදී නගන්න</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:37
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:17
+#, fuzzy
+msgid "_Focus"
+msgstr "යොමුව (_F)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:38
+#, fuzzy
+msgid "To screen _borders"
+msgstr "කවුළු තිර දාරය වෙත අද්දවන්න (_w)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:39
+#, fuzzy
+msgid "To other _windows"
+msgstr "කවුළුව හෙලන්න"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:40
+msgid "Dis_tance:"
+msgstr "දුර (_s):"
+
+#. Edge resistance
+#. Smart placement size
+#: ../settings-dialogs/xfwm4-dialog.glade.h:42
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:36
+msgid "<i>Small</i>"
+msgstr "<i>කුඩා</i>"
+
+#. Edge resistance
+#: ../settings-dialogs/xfwm4-dialog.glade.h:44
+msgid "<i>Wide</i>"
+msgstr "<i>පළල්</i>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:45
+#, fuzzy
+msgid "<b>Windows snapping</b>"
+msgstr " <b>කවුළු එකට ඇදීම</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:46
+#, fuzzy
+msgid "With the mouse _pointer"
+msgstr "මූසික දක්වනය යට (_p)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:47
+#, fuzzy
+msgid "With a _dragged window"
+msgstr "කවුළුව අඳුරු කරන්න."
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:48
+msgid "_Edge resistance:"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:49
+#, fuzzy
+msgid "<b>Wrap workspaces when reaching the screen edge</b>"
+msgstr "දක්වනය තිරයේ දාරයට ගියවිට වැඩතල වෙළන්න (_p)"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:50
+msgid "When _moving"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:51
+msgid "When _resizing"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:52
+#, fuzzy
+msgid "<b>Hide content of windows</b>"
+msgstr "එහාමෙහා යාමේදී කවුළු අන්තර්ගතය සඟවන්න (_m) "
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:53
+msgid "The action to perform when the title-bar is double-clicked"
+msgstr "ක්‍රියාව සිදුවන්නේ නාම තීරුව ද්වි ක්ලික් කළ විටය"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:54
+msgid "<b>Double click _action</b>"
+msgstr "<b>ද්වි ක්ලික්  ක්‍රියාව (_a)</b>"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:55
+msgid "Ad_vanced"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-settings.c:227
+#, fuzzy
+msgid "Shade window"
+msgstr "කවුළුව අඳුරු කරන්න."
+
+#: ../settings-dialogs/xfwm4-settings.c:228
+msgid "Hide window"
+msgstr "කවුළුව සඟවන්න"
+
+#: ../settings-dialogs/xfwm4-settings.c:229
+msgid "Maximize window"
+msgstr "කවුළුව විහිදන්න"
+
+#: ../settings-dialogs/xfwm4-settings.c:230
+#, fuzzy
+msgid "Fill window"
+msgstr "කවුළුව පුරවන්න"
+
+#: ../settings-dialogs/xfwm4-settings.c:231
+msgid "Nothing"
+msgstr "කිසිවක් නැත"
+
+#: ../settings-dialogs/xfwm4-settings.c:236
+msgid "Left"
+msgstr "වම"
+
+#: ../settings-dialogs/xfwm4-settings.c:237
+msgid "Center"
+msgstr "මැද"
+
+#: ../settings-dialogs/xfwm4-settings.c:238
+msgid "Right"
+msgstr "දකුණ"
+
+#: ../settings-dialogs/xfwm4-settings.c:387
+msgid "Theme"
+msgstr "තේමාව"
+
+#: ../settings-dialogs/xfwm4-settings.c:542
+#, fuzzy
+msgid "Action"
+msgstr "ක්‍රියාව"
+
+#: ../settings-dialogs/xfwm4-settings.c:547
+msgid "Shortcut"
+msgstr "කෙටිමඟ "
+
+#: ../settings-dialogs/xfwm4-settings.c:936
+#, c-format
+msgid "Failed to initialize xfconf. Reason: %s"
+msgstr "xfconf ඇරභීමට නොහැකිවිය. හේතුව: %s"
+
+#: ../settings-dialogs/xfwm4-settings.c:947
+msgid "Could not create the settings dialog."
+msgstr "සැකසුම් සංවාද කොටුව තැනීමට නොහැකි විය."
+
+#: ../settings-dialogs/xfwm4-settings.c:1946
+msgid ""
+"This will reset all shortcuts to their default values. Do you really want to "
+"do this?"
+msgstr ""
+"මෙමගින් සියලු කෙටිමං ඒවායේ පෙරනිමි තත්වයට පත් කරනු ඇත. ඔබට ඇත්තටම මෙය කිරීමට අවශ්‍යද? "
+
+#: ../settings-dialogs/xfwm4-settings.c:1948
+msgid "Reset to Defaults"
+msgstr "පෙරනිමියට යළි  පිහිටුවන්න"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:3
+msgid ""
+"S_kip windows that have \"skip pager\"\n"
+"or \"skip taskbar\" properties set"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:5
+#, fuzzy
+msgid "_Include hidden (i.e. iconified) windows"
+msgstr "සැඟවුනු (i.e. iconified) කවුළුත්  අඩංගු කරන්න (_I)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:6
+msgid "Cycle _through windows on all workspaces"
+msgstr "සියලු වැඩ අවකාශ වල ඇති කවුළු හරහා චක්‍රියව යන්න (_t)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:7
+msgid "_Draw frame around selected window while cycling"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:8
+#, fuzzy
+msgid "_Raise windows while cycling"
+msgstr "කවුළුව නගන්න"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:9
+#, fuzzy
+msgid "Cycle through windows in a _list"
+msgstr "සියලු වැඩ අවකාශ වල ඇති කවුළු හරහා චක්‍රියව යන්න (_t)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:10
+#, fuzzy
+msgid "C_ycling"
+msgstr "චක්‍රීය ලෙස යෑම (_y)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:11
+msgid "Activate foc_us stealing prevention"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:12
+msgid "Honor _standard ICCCM focus hint"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:13
+msgid "When a window raises itself:"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:14
+msgid "_Bring window on current workspace"
+msgstr "වත්මන් වැඩ අවකායට කවුළුව ගෙනෙන්න (_B)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:15
+msgid "Switch to win_dow's workspace"
+msgstr "කවුළුවේ වැඩ අවකාශය වෙත මාරුවන්න (_d)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:16
+msgid "Do _nothing"
+msgstr "කිසිවක් කරන්න එපා (_n)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:18
+msgid "Key used to _grab and move windows:"
+msgstr "කවුළු අල්ලා එහාමෙහා ගෙනයාමට භාවිත කරන යතුර (_g):"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:19
+msgid "_Raise windows when any mouse button is pressed"
+msgstr "ඔනැම මූසික බොත්තමක් තද කල විට කවුළුව නගන්න (_R)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:20
+#, fuzzy
+msgid "Hide frame of windows when ma_ximized"
+msgstr "විහිදී ඇති විට කවුළු රාමුව සඟවන්න (_f)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:21
+#, fuzzy
+msgid "Hide title of windows when maximized"
+msgstr "විහිදී ඇති විට කවුළු රාමුව සඟවන්න (_f)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:22
+#, fuzzy
+msgid "Automatically _tile windows when moving toward the screen edge"
+msgstr "කවුළු වෙත යොමු වූ පසු ස්වයංක්‍රීයවම ඒවා නගන්න (_r)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:23
+msgid "Use _edge resistance instead of window snapping"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:24
+msgid "Notify of _urgency by making window's decoration blink"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:25
+msgid "Keep urgent windows _blinking repeatedly"
+msgstr "හදිසි කවුළු "
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:26
+msgid "Use mouse wheel on title bar to ro_ll up the window"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:27
+msgid "_Accessibility"
+msgstr "ප්‍රවේශ්‍යතාව"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:28
+msgid "Use the _mouse wheel on the desktop to switch workspaces"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:29
+msgid ""
+"_Remember and recall previous workspace\n"
+"when switching via keyboard shortcuts"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:31
+msgid "Wrap workspaces depending on the actual desktop _layout"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:32
+#, fuzzy
+msgid "Wrap workspaces when _the first or the last workspace is reached"
+msgstr "දක්වනය තිරයේ දාරයට ගියවිට වැඩතල වෙළන්න (_p)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:33
+msgid "_Workspaces"
+msgstr "වැඩ අවකාශ (_W)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:34
+msgid "_Minimum size of windows to trigger smart placement:"
+msgstr ""
+
+#. Smart placement size
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:38
+msgid "<i>Large</i>"
+msgstr "<i>විශාල</i>"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:39
+#, fuzzy
+msgid "By default, place windows:"
+msgstr "පෙරනිමියෙන්, කවුළු පිහිටුවන්න:"
+
+# තිරයේ මැදදී (_c)
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:40
+#, fuzzy
+msgid "At the c_enter of the screen"
+msgstr "තිරයේ මැද (_c)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:41
+#, fuzzy
+msgid "U_nder the mouse pointer"
+msgstr "මූසික දක්වනය යට (_p)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:42
+#, fuzzy
+msgid "_Placement"
+msgstr "පිහිටැවුම (_P)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:43
+msgid "_Enable display compositing"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:44
+msgid "Display _fullscreen overlay windows directly"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:45
+msgid "Show windows preview in place of icons when cycling"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:46
+#, fuzzy
+msgid "Show shadows under pop_up windows"
+msgstr "පැනුම් කවුලළු යටින් සෙවනැලි පෙන්වන්න (_u)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:47
+msgid "Show shadows under _dock windows"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:48
+msgid "Show shadows under _regular windows"
+msgstr "සාමාන්‍ය කවුළු යටින් සෙවනැලි පෙන්වන්න (_r)"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:49
+msgid "Opaci_ty of window decorations:"
+msgstr "කවුළු අලංකරණයේ පාරාන්ධතාව (_t): "
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:50
+#, fuzzy
+msgid "<i>Transparent</i>"
+msgstr "<i>පාරදෘශ්‍ය</i>"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:51
+#, fuzzy
+msgid "<i>Opaque</i>"
+msgstr "<i>පාරාන්ධ</i>"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:52
+#, fuzzy
+msgid "Opacity of _inactive windows:"
+msgstr "අකර්මණ්‍ය කවුළු වල පාරාන්ධතාව (_i):"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:53
+#, fuzzy
+msgid "Opacity of windows during _move:"
+msgstr "කවුළු ගමන් කරන අතරතුර පාරාන්ධතාව (_m):"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:54
+#, fuzzy
+msgid "Opacity of windows during resi_ze:"
+msgstr "කවුළු ප්‍රමාණය වෙනස්කරන   අතරතුර පාරාන්ධතාව (_m):"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:55
+#, fuzzy
+msgid "Opacity of popup wi_ndows:"
+msgstr "මතු වන කවුළු වල පාරාන්ධතාව (_s):"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:56
+#, fuzzy
+msgid "C_ompositor"
+msgstr "වර්ණයෝජක (_o)"
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:3
+msgid "_Number of workspaces:"
+msgstr "වැඩ අවකාශ ගණන (_N):"
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:4
+msgid "Layout"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:5
+#, fuzzy
+msgid "Names"
+msgstr "නම (_N):"
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:6
+msgid "_General"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:7
+msgid ""
+"Margins are areas on the edges of the screen where no window will be placed"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:8
+#, fuzzy
+msgid "_Margins"
+msgstr "<b>මායිම් ඉඩ</b>"
+
+#. TRANSLATORS: "(on %s)" is like "running on" the name of the other host
+#: ../src/client.c:186
+#, fuzzy, c-format
+msgid "%s (on %s)"
+msgstr "%s (මත %s)"
+
+#: ../src/keyboard.c:144 ../src/settings.c:160
+#, c-format
+msgid "Unsupported keyboard modifier '%s'"
+msgstr ""
+
+#: ../src/main.c:695
+msgid "Fork to the background (not supported)"
+msgstr ""
+
+#: ../src/main.c:697
+msgid "Set the compositor mode"
+msgstr ""
+
+#: ../src/main.c:698
+msgid "Set the vblank mode"
+msgstr ""
+
+#: ../src/main.c:707
+msgid "Replace the existing window manager"
+msgstr ""
+
+#: ../src/main.c:708
+#, fuzzy
+msgid "Print version information and exit"
+msgstr "අනුවාද තොරතුරු"
+
+#: ../src/main.c:752
+msgid "[ARGUMENTS...]"
+msgstr ""
+
+#: ../src/main.c:759
+#, c-format
+msgid "Type \"%s --help\" for usage."
+msgstr ""
+
+#: ../src/menu.c:51
+msgid "Ma_ximize"
+msgstr "විහිදන්න (_x)"
+
+#: ../src/menu.c:52
+msgid "Unma_ximize"
+msgstr "නොවිහිදන්න (_x)"
+
+#: ../src/menu.c:53
+msgid "Mi_nimize"
+msgstr "හකුළන්න (_n)"
+
+#: ../src/menu.c:54
+msgid "Minimize _Other Windows"
+msgstr "අනෙක් සියලු කවුළු හකුලන්න (_A)"
+
+#: ../src/menu.c:55
+msgid "S_how"
+msgstr "පෙන්වන්න (_h)"
+
+#: ../src/menu.c:56
+msgid "_Move"
+msgstr ""
+
+#: ../src/menu.c:57
+msgid "_Resize"
+msgstr ""
+
+#. --------------------------------------------------------
+#: ../src/menu.c:59
+#, fuzzy
+msgid "Always on _Top"
+msgstr "සැම විටම ඉහලින්"
+
+#: ../src/menu.c:60
+#, fuzzy
+msgid "_Same as Other Windows"
+msgstr "අනෙක් කවුළු ලෙසම"
+
+#: ../src/menu.c:61
+#, fuzzy
+msgid "Always _Below Other Windows"
+msgstr "සැම විටම අනෙක් කවුළු වලට පහළින්"
+
+#: ../src/menu.c:62
+#, fuzzy
+msgid "Roll Window Up"
+msgstr "කවුළුව ඉහළට අකුලන්න"
+
+#: ../src/menu.c:63
+#, fuzzy
+msgid "Roll Window Down"
+msgstr "කවුළුව පහළට අකුලන්න"
+
+# තිරය පුරා
+#: ../src/menu.c:64
+#, fuzzy
+msgid "_Fullscreen"
+msgstr "මුලු තිරයේම (_F)"
+
+# තිරය පුරා
+#: ../src/menu.c:65
+#, fuzzy
+msgid "Leave _Fullscreen"
+msgstr "මුලු තිරයේම පෙන්වීමෙන් ඉවත් වන්න (_F)"
+
+#: ../src/menu.c:66
+msgid "Context _Help"
+msgstr ""
+
+#. --------------------------------------------------------
+#: ../src/menu.c:68
+#, fuzzy
+msgid "Always on _Visible Workspace"
+msgstr "සැම විටම දෘෂ්‍ය වැඩ අවකාශයේ"
+
+#: ../src/menu.c:69
+#, fuzzy
+msgid "Only _Visible on This Workspace"
+msgstr "මෙමෙ වැඩ අවකාශයේ පමණි"
+
+#: ../src/menu.c:70
+#, fuzzy
+msgid "Move to Another _Workspace"
+msgstr "වෙනත් වැඩ අවකාශයකට ගෙනයන්න"
+
+#. --------------------------------------------------------
+#: ../src/menu.c:72
+msgid "_Close"
+msgstr "වසන්න (_C)"
+
+#. --------------------------------------------------------
+#: ../src/menu.c:75
+msgid "Destroy"
+msgstr ""
+
+#: ../src/menu.c:78
+msgid "_Quit"
+msgstr "පිටවෙන්න (_Q)"
+
+#: ../src/menu.c:79
+msgid "Restart"
+msgstr "යළි අරඔන්න"
+
+#: ../src/menu.c:553
+#, c-format
+msgid "%s: GtkMenu failed to grab the pointer\n"
+msgstr ""
+
+#: ../src/terminate.c:77
+#, c-format
+msgid "Error reading data from child process: %s\n"
+msgstr ""
+
+#: ../src/terminate.c:135
+#, c-format
+msgid "Cannot spawn helper-dialog: %s\n"
+msgstr ""
+"උදව් සංවාද කොටුව ඉපදවීමට නොහැක: %s\n"
+"\r\n"
+
+#~ msgid "<b>Window _shortcuts</b>"
+#~ msgstr "<b>කවුළු කෙටිමං (_s)</b>"
+
+#, fuzzy
+#~ msgid "Snap windows to other _windows"
+#~ msgstr "කවුළු අනෙක් කවුළු වලට අද්දවන්න (_w)"
+
+#, fuzzy
+#~ msgid "Wrap workspaces when _dragging a window off the screen"
+#~ msgstr "තිරයෙන් පිටතට කවුළුවක් ඇදගෙන යාමේදී වැඩතල වෙළන්න (_d)"
+
+#, fuzzy
+#~ msgid "<b>Wrap workspaces</b>"
+#~ msgstr "<b> වැඩතල වෙළන්න</b>"
+
+#~ msgid "Hide content of windows when _resizing"
+#~ msgstr "ප්‍රමානය වෙනස් කිරීමේදී කවුළු අන්තර්ගතය සඟවන්න (_r)"
+
+#~ msgid "Window operations menu"
+#~ msgstr "කවුළු කාර්යකරණ මෙනුව"
+
+#~ msgid "Up"
+#~ msgstr "ඉහළ"
+
+#~ msgid "Down"
+#~ msgstr "පහළ"
+
+#, fuzzy
+#~ msgid "Cancel"
+#~ msgstr "අවලංගුකරන්න"
+
+#, fuzzy
+#~ msgid "Cycle windows"
+#~ msgstr "කවුළු අතර චක්‍රීය ලෙස යන්න"
+
+#, fuzzy
+#~ msgid "Cycle windows (Reverse)"
+#~ msgstr "කවුළු අතර (අනෙක් අතට) චක්‍රීය ලෙස යන්න"
+
+#, fuzzy
+#~ msgid "Switch window for same application"
+#~ msgstr "එකම යෙදුම සඳහා කවුළුව අතර මාරු වන්න"
+
+#~ msgid "Switch application"
+#~ msgstr "යෙදුම මාරු කරන්න"
+
+#~ msgid "Close window"
+#~ msgstr "කවුළුව වසන්න"
+
+#~ msgid "Maximize window horizontally"
+#~ msgstr "කවුළුව තිරස්ව විහිදන්න"
+
+#~ msgid "Maximize window vertically"
+#~ msgstr "කවුළුව සිරස්ව විහිදන්න"
+
+#~ msgid "Move window"
+#~ msgstr "කවුළුව එහා මෙහා කරන්න"
+
+#, fuzzy
+#~ msgid "Resize window"
+#~ msgstr "කවුළු ප්‍රමාණය වෙනස් කරන්න"
+
+#, fuzzy
+#~ msgid "Stick window"
+#~ msgstr "කවුළුව අලවන්න"
+
+#, fuzzy
+#~ msgid "Raise or lower window"
+#~ msgstr "කවුළුව නගන්න"
+
+# පුරවන්න
+#, fuzzy
+#~ msgid "Fill window horizontally"
+#~ msgstr "කවුළු තිරස්ව පිහිටුවන්න"
+
+# පුරවන්න
+#, fuzzy
+#~ msgid "Fill window vertically"
+#~ msgstr "කවුළු සිරස්ව පිහිටුවන්න"
+
+#, fuzzy
+#~ msgid "Toggle above"
+#~ msgstr "ඉහළ සමඟ මාරු වන්න"
+
+#~ msgid "Move window to upper workspace"
+#~ msgstr "කවුළුව  ඉහළ වැඩ අවකාශයට ගෙනයනන්න"
+
+#~ msgid "Move window to bottom workspace"
+#~ msgstr "කවුළුව  පහළ වැඩ අවකාශයට ගෙනයනන්න"
+
+#~ msgid "Move window to left workspace"
+#~ msgstr "කවුළුව වම් වැඩ අවකාශයට ගෙනයනන්න"
+
+#~ msgid "Move window to right workspace"
+#~ msgstr "කවුළුව දකුණු වැඩ අවකාශයට ගෙනයනන්න"
+
+#~ msgid "Move window to previous workspace"
+#~ msgstr "කවුළුව කලින් වැඩ අවකාශයට ගෙනයනන්න"
+
+#~ msgid "Move window to next workspace"
+#~ msgstr "කවුළුව ඊලඟ වැඩ අවකාශයට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 1"
+#~ msgstr "කවුළුව වැඩ අවකාශ 1 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 2"
+#~ msgstr "කවුළුව වැඩ අවකාශ 2 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 3"
+#~ msgstr "කවුළුව වැඩ අවකාශ 3 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 4"
+#~ msgstr "කවුළුව වැඩ අවකාශ 4 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 5"
+#~ msgstr "කවුළුව වැඩ අවකාශ 5 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 6"
+#~ msgstr "කවුළුව වැඩ අවකාශ 6 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 7"
+#~ msgstr "කවුළුව වැඩ අවකාශ 7 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 8"
+#~ msgstr "කවුළුව වැඩ අවකාශ 8 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 9"
+#~ msgstr "කවුළුව වැඩ අවකාශ 9 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 10"
+#~ msgstr "කවුළුව වැඩ අවකාශ 10 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 11"
+#~ msgstr "කවුළුව වැඩ අවකාශ 11 ට ගෙනයනන්න"
+
+#~ msgid "Move window to workspace 12"
+#~ msgstr "කවුළුව වැඩ අවකාශ 12 ට ගෙනයනන්න"
+
+#, fuzzy
+#~ msgid "Tile window to the top"
+#~ msgstr "කවුළුව වම් වැඩ අවකාශයට ගෙනයනන්න"
+
+#, fuzzy
+#~ msgid "Tile window to the bottom"
+#~ msgstr "කවුළුව  පහළ වැඩ අවකාශයට ගෙනයනන්න"
+
+#, fuzzy
+#~ msgid "Tile window to the left"
+#~ msgstr "කවුළුව වම් වැඩ අවකාශයට ගෙනයනන්න"
+
+#, fuzzy
+#~ msgid "Tile window to the right"
+#~ msgstr "කවුළුව දකුණු වැඩ අවකාශයට ගෙනයනන්න"
+
+#~ msgid "Show desktop"
+#~ msgstr "වැඩතලය පෙන්වන්න"
+
+#~ msgid "Upper workspace"
+#~ msgstr "ඉහළ වැඩ අවකාශය"
+
+#~ msgid "Bottom workspace"
+#~ msgstr "පහළ වැඩ අවකාශය"
+
+#~ msgid "Left workspace"
+#~ msgstr "වම් වැඩ අවකාශය"
+
+#~ msgid "Right workspace"
+#~ msgstr "දකුණු වැඩ අවකාශය"
+
+#~ msgid "Previous workspace"
+#~ msgstr "කලින් වැඩ අවකාශය"
+
+#~ msgid "Next workspace"
+#~ msgstr "ඊලඟ වැඩ අවකාශය"
+
+#~ msgid "Workspace 1"
+#~ msgstr "වැඩ අවකාශය 1"
+
+#~ msgid "Workspace 2"
+#~ msgstr "වැඩ අවකාශය 2"
+
+#~ msgid "Workspace 3"
+#~ msgstr "වැඩ අවකාශය 3"
+
+#~ msgid "Workspace 4"
+#~ msgstr "වැඩ අවකාශය 4"
+
+#~ msgid "Workspace 5"
+#~ msgstr "වැඩ අවකාශය 5"
+
+#~ msgid "Workspace 6"
+#~ msgstr "වැඩ අවකාශය 6"
+
+#~ msgid "Workspace 7"
+#~ msgstr "වැඩ අවකාශය 7"
+
+#~ msgid "Workspace 8"
+#~ msgstr "වැඩ අවකාශය 8"
+
+#~ msgid "Workspace 9"
+#~ msgstr "වැඩ අවකාශය 9"
+
+#~ msgid "Workspace 10"
+#~ msgstr "වැඩ අවකාශය 10"
+
+#~ msgid "Workspace 11"
+#~ msgstr "වැඩ අවකාශය 11"
+
+#~ msgid "Workspace 12"
+#~ msgstr "වැඩ අවකාශය 12"
+
+#~ msgid "Add workspace"
+#~ msgstr "වැඩ අවකාශයක් එක් කරන්න "
+
+#~ msgid "Add adjacent workspace"
+#~ msgstr "යාබද වැඩ අවකාශයක් එක් කරන්න"
+
+# last = final or last = previous
+#, fuzzy
+#~ msgid "Delete last workspace"
+#~ msgstr "අවසන් වැඩ අවකාශය මකා දමන්න"
+
+#, fuzzy
+#~ msgid "Delete active workspace"
+#~ msgstr "සක්‍රීය වැඩ අවකාශය මකා දමන්න"
+
+#~ msgid "%s: Cannot allocate color %s\n"
+#~ msgstr "%s: වර්ණය වෙන්කිරීමට නොහැක %s\n"
+
+#, fuzzy
+#~ msgid "Set number and names of workspaces"
+#~ msgstr "වැඩ අවකාශ අංකය හා නම් පිහිටුවන්න"
+
+#~ msgid "<b>Workspaces</b>"
+#~ msgstr "<b>වැඩ අවකාශ</b>"
+
+#~ msgid "Change workspace name"
+#~ msgstr "වැඩ අවකාශ නාමය වෙනස් කරන්න"
+
+#~ msgid "Hide"
+#~ msgstr "සඟවන්න"
+
+#, fuzzy
+#~ msgid "%s: Segmentation fault"
+#~ msgstr "%s: ඛණ්ඩන දෝෂය"

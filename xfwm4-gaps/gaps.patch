@@ -1,0 +1,99 @@
+diff --git a/src/client.c b/src/client.c
+index 3923dd98b..009f3dd58 100644
+--- a/src/client.c
++++ b/src/client.c
+@@ -3296,6 +3296,9 @@ clientNewMaxState (Client *c, XWindowChanges *wc, int mode)
+     }
+ }
+ 
++// @gaps@
++#define GAPS_SIZE 15
++
+ static gboolean
+ clientNewTileSize (Client *c, XWindowChanges *wc, GdkRectangle *rect, tilePositionType tile)
+ {
+@@ -3331,36 +3334,72 @@ clientNewTileSize (Client *c, XWindowChanges *wc, GdkRectangle *rect, tilePositi
+             wc->y = full_y + frameExtentTop (c);
+             wc->width = full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE;
++            wc->y += GAPS_SIZE;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE * 2;
++
+             break;
+         case TILE_RIGHT:
+             wc->x = full_x + full_w / 2 + frameExtentLeft (c);
+             wc->y = full_y + frameExtentTop (c);
+             wc->width = full_w - full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE / 2;
++            wc->y += GAPS_SIZE;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE * 2;
++
+             break;
+         case TILE_DOWN_LEFT:
+             wc->x = full_x + frameExtentLeft (c);
+             wc->y = full_y + full_h / 2 + frameExtentTop (c);
+             wc->width = full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h - full_h / 2 - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE;
++            wc->y += GAPS_SIZE / 2;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE + (GAPS_SIZE / 2);
++
+             break;
+         case TILE_DOWN_RIGHT:
+             wc->x = full_x + full_w /2 + frameExtentLeft (c);
+             wc->y = full_y + full_h / 2 + frameExtentTop (c);
+             wc->width = full_w - full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h - full_h / 2 - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE / 2;
++            wc->y += GAPS_SIZE / 2;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE + (GAPS_SIZE / 2);
++
+             break;
+         case TILE_UP_LEFT:
+             wc->x = full_x + frameExtentLeft (c);
+             wc->y = full_y + frameExtentTop (c);
+             wc->width = full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h / 2 - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE;
++            wc->y += GAPS_SIZE;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE + (GAPS_SIZE / 2);
++
+             break;
+         case TILE_UP_RIGHT:
+             wc->x = full_x + full_w /2 + frameExtentLeft (c);
+             wc->y = full_y + frameExtentTop (c);
+             wc->width = full_w - full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h / 2 - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE / 2;
++            wc->y += GAPS_SIZE;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE + (GAPS_SIZE / 2);
++
+             break;
+         default:
+             break;
+@@ -3400,6 +3439,11 @@ clientNewMaxSize (Client *c, XWindowChanges *wc, GdkRectangle *rect)
+         wc->height = full_h - frameExtentTop (c) - frameExtentBottom (c);
+     }
+ 
++    wc->x += GAPS_SIZE;
++    wc->y += GAPS_SIZE;
++    wc->width -= GAPS_SIZE * 2;
++    wc->height -= GAPS_SIZE * 2;
++
+     return ((wc->height >= c->size->min_height) && (wc->height <= c->size->max_height) &&
+             (wc->width >= c->size->min_width) && (wc->width <= c->size->max_width));
+ }

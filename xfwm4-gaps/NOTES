@@ -1,0 +1,7 @@
+Developer notes:
+----------------
+
+	* I18n: Do NOT ever edit the po/Makefile.in.in or run glib-gettextize
+	  or gettextize in this directory, as it'll break the locales
+	  install stuff. If you think you need to change something,
+	  ask Benedikt Meurer first (benedikt.meurer@unix-ag.uni-siegen.de).

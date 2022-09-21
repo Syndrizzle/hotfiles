@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+_Name=Workspaces
+_Comment=Configure layout, names and margins
+_Keywords=workspaces;settings;preferences;virtual desktops;number;windows;screen;margins;
+Exec=xfwm4-workspace-settings
+Icon=org.xfce.workspaces
+Terminal=false
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+StartupNotify=true
+OnlyShowIn=XFCE;
+X-XfcePluggable=true
+X-XfceHelpComponent=xfwm4
+X-XfceHelpPage=workspaces

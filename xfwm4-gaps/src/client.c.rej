@@ -1,0 +1,75 @@
+--- src/client.c
++++ src/client.c
+@@ -3334,36 +3337,72 @@ clientNewTileSize (Client *c, XWindowChanges *wc, GdkRectangle *rect, tilePositi
+             wc->y = full_y + frameExtentTop (c);
+             wc->width = full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE;
++            wc->y += GAPS_SIZE;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE * 2;
++
+             break;
+         case TILE_RIGHT:
+             wc->x = full_x + full_w / 2 + frameExtentLeft (c);
+             wc->y = full_y + frameExtentTop (c);
+             wc->width = full_w - full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE / 2;
++            wc->y += GAPS_SIZE;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE * 2;
++
+             break;
+         case TILE_DOWN_LEFT:
+             wc->x = full_x + frameExtentLeft (c);
+             wc->y = full_y + full_h / 2 + frameExtentTop (c);
+             wc->width = full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h - full_h / 2 - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE;
++            wc->y += GAPS_SIZE / 2;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE + (GAPS_SIZE / 2);
++
+             break;
+         case TILE_DOWN_RIGHT:
+             wc->x = full_x + full_w /2 + frameExtentLeft (c);
+             wc->y = full_y + full_h / 2 + frameExtentTop (c);
+             wc->width = full_w - full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h - full_h / 2 - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE / 2;
++            wc->y += GAPS_SIZE / 2;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE + (GAPS_SIZE / 2);
++
+             break;
+         case TILE_UP_LEFT:
+             wc->x = full_x + frameExtentLeft (c);
+             wc->y = full_y + frameExtentTop (c);
+             wc->width = full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h / 2 - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE;
++            wc->y += GAPS_SIZE;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE + (GAPS_SIZE / 2);
++
+             break;
+         case TILE_UP_RIGHT:
+             wc->x = full_x + full_w /2 + frameExtentLeft (c);
+             wc->y = full_y + frameExtentTop (c);
+             wc->width = full_w - full_w / 2 - frameExtentLeft (c) - frameExtentRight (c);
+             wc->height = full_h / 2 - frameExtentTop (c) - frameExtentBottom (c);
++
++            wc->x += GAPS_SIZE / 2;
++            wc->y += GAPS_SIZE;
++            wc->width -= GAPS_SIZE + (GAPS_SIZE / 2);
++            wc->height -= GAPS_SIZE + (GAPS_SIZE / 2);
++
+             break;
+         default:
+             break;

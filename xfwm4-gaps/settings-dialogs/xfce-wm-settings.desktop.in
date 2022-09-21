@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+_Name=Window Manager
+_Comment=Configure window behavior and shortcuts
+_Keywords=windows;management;settings;preferences;themes;styles;decorations;title bar;font;buttons;menu;minimize;maximize;shade;roll up;layout;keyboard shortcuts;focus;snapping;screen;workspaces;edges;corner;hide content;move;resize;moving;resizing;double click;
+Exec=xfwm4-settings
+Icon=org.xfce.xfwm4
+Terminal=false
+Type=Application
+Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+StartupNotify=true
+OnlyShowIn=XFCE;
+X-XfcePluggable=true
+X-XfceHelpComponent=xfwm4
+X-XfceHelpPage=preferences

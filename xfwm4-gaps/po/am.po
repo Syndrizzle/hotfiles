@@ -1,0 +1,1674 @@
+# Amharic translation to xfwm4.
+# Copyright (C) 2002-2007 The Xfce development team.
+# This file is distributed under the same license as the xfwm4 package.
+# Tegegne Tefera <tefera@mekuria.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfwm4 4.4.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-18 22:23+0200\n"
+"PO-Revision-Date: 2007-07-07 10:35+0100\n"
+"Last-Translator: tegegne tefera <tefera@mekuria.com>\n"
+"Language-Team: Amharic <l10n-am@googlegroups.com>\n"
+"Language: am\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Bookmarks: -1,104,-1,-1,-1,-1,-1,-1,-1,-1\n"
+
+#: ../helper-dialog/helper-dialog.c:94
+msgid ""
+"This window might be busy and is not responding.\n"
+"Do you want to terminate the application?"
+msgstr ""
+
+#: ../helper-dialog/helper-dialog.c:99
+msgid "Warning"
+msgstr ""
+
+#: ../settings-dialogs/tweaks-settings.c:55
+msgid "None"
+msgstr "ምንም"
+
+#: ../settings-dialogs/tweaks-settings.c:472
+msgid "Session manager socket"
+msgstr ""
+
+#: ../settings-dialogs/tweaks-settings.c:472
+#: ../settings-dialogs/workspace-settings.c:398
+#: ../settings-dialogs/xfwm4-settings.c:248
+msgid "SOCKET ID"
+msgstr ""
+
+#: ../settings-dialogs/tweaks-settings.c:473
+#: ../settings-dialogs/workspace-settings.c:399
+#: ../settings-dialogs/xfwm4-settings.c:250
+msgid "Version information"
+msgstr ""
+
+#: ../settings-dialogs/tweaks-settings.c:491
+#: ../settings-dialogs/workspace-settings.c:416
+#: ../settings-dialogs/xfwm4-settings.c:907
+msgid "."
+msgstr ""
+
+#: ../settings-dialogs/tweaks-settings.c:495
+#: ../settings-dialogs/workspace-settings.c:420
+#: ../settings-dialogs/xfwm4-settings.c:911
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+
+#: ../settings-dialogs/workspace-settings.c:81
+#: ../settings-dialogs/workspace-settings.c:96
+#, c-format
+msgid "Workspace %d"
+msgstr "የስራ ቦታ %d"
+
+#: ../settings-dialogs/workspace-settings.c:286
+#, fuzzy
+msgid "Workspace Name"
+msgstr "የስራ ቦታ ስሞች"
+
+#: ../settings-dialogs/workspace-settings.c:398
+#: ../settings-dialogs/xfwm4-settings.c:248
+msgid "Settings manager socket"
+msgstr ""
+
+#: ../settings-dialogs/xfce-wm-settings.desktop.in.h:1
+#: ../settings-dialogs/xfwm4-dialog.glade.h:1
+msgid "Window Manager"
+msgstr "ማስኮት አስተዳዳሪ"
+
+#: ../settings-dialogs/xfce-wm-settings.desktop.in.h:2
+#: ../settings-dialogs/xfwm4-dialog.glade.h:2
+#, fuzzy
+msgid "Configure window behavior and shortcuts"
+msgstr "የመስኮት ድርጊትን ሰርዝ"
+
+#: ../settings-dialogs/xfce-wmtweaks-settings.desktop.in.h:1
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:1
+msgid "Window Manager Tweaks"
+msgstr "የመስኮት አስተዳዳሪ ማሰማመር"
+
+#: ../settings-dialogs/xfce-wmtweaks-settings.desktop.in.h:2
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:2
+#, fuzzy
+msgid "Fine-tune window behaviour and effects"
+msgstr "የመስኮት ድርጊትን ሰርዝ"
+
+#: ../settings-dialogs/xfce-workspaces-settings.desktop.in.h:1
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:1
+msgid "Workspaces"
+msgstr "የስራ ገበታ"
+
+#: ../settings-dialogs/xfce-workspaces-settings.desktop.in.h:2
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:2
+msgid "Configure layout, names and margins"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:3
+#, fuzzy
+msgid "<b>The_me</b>"
+msgstr "የአርዕስት ስልፍ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:4
+#, fuzzy
+msgid "<b>Title fon_t</b>"
+msgstr "የአርዕስት ፊደል-ቅርጽ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:5
+#, fuzzy
+msgid "<b>Title _alignment</b>"
+msgstr "የአርዕስት ስልፍ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:6
+#, fuzzy
+msgid "Click and drag the buttons to change the layout"
+msgstr "ገጽታውን ለመቀየር ጠቁመው ይጎትቱ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:7
+msgid "Title"
+msgstr "አርዕስት"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:8
+#, fuzzy
+msgid "The window title cannot be removed"
+msgstr "የመስኮት አርዕስት፣ ለሰረዝ አይችልም"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:9
+msgid "Active"
+msgstr "በስራላይ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:10
+msgid "Menu"
+msgstr "ምናሌ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:11
+msgid "Stick"
+msgstr "ሰካ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:12
+msgid "Shade"
+msgstr "ጥላ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:13
+#, fuzzy
+msgid "Minimize"
+msgstr "አተልቅ _x"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:14
+msgid "Maximize"
+msgstr "አተልቅ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:15
+msgid "Close"
+msgstr "ዝጋ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:16
+msgid "Hidden"
+msgstr "ድብቅ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:17
+#, fuzzy
+msgid "<b>Button layout</b>"
+msgstr "የአዝራር አጣጣል"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:18
+#, fuzzy
+msgid "_Style"
+msgstr "ሙና"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:19
+#, fuzzy
+msgid "Define shortcuts to perform _window manager actions:"
+msgstr "የሸፍሲ 4 የመስኮት አስተዳዳሪ ስየማዎች"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:20
+msgid "_Reset to Defaults"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:21
+#, fuzzy
+msgid "_Keyboard"
+msgstr "ፊደል-ሠሌዳ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:22
+#, fuzzy
+msgid "Click to foc_us"
+msgstr "ለመጠቆም ይጫኑ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:23
+#, fuzzy
+msgid "Focus follows _mouse"
+msgstr "ጠቋሚው አይጥን ይከተላል"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:24
+#, fuzzy
+msgid "_Delay before window receives focus:"
+msgstr "የተጠቆመ መስኮትን ከምንሳት በፊት ምን ያህል ይዘግይ?፦"
+
+#. Raise focus delay
+#: ../settings-dialogs/xfwm4-dialog.glade.h:26
+#, fuzzy
+msgid "<i>Short</i>"
+msgstr "ብርሃን አሳላፊ"
+
+#. Raise focus delay
+#: ../settings-dialogs/xfwm4-dialog.glade.h:28
+#, fuzzy
+msgid "<i>Long</i>"
+msgstr "መጠን| ትልቅ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:29
+#, fuzzy
+msgid "<b>Focus model</b>"
+msgstr "የማነጣጠር ሞዴል"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:30
+#, fuzzy
+msgid "Automatically give focus to _newly created windows"
+msgstr "አዲስ ለተፈጠረ መስኮት ኢላማን ስጥ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:31
+#, fuzzy
+msgid "<b>New window focus</b>"
+msgstr "አዲስ መስኮት ጠቁም"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:32
+#, fuzzy
+msgid "Automatically _raise windows when they receive focus"
+msgstr "ኢላማ ሲሰጠው መስኮትን አስነሳ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:33
+#, fuzzy
+msgid "Delay _before raising focused window:"
+msgstr "የተጠቆመ መስኮትን ከምንሳት በፊት ምን ያህል ይዘግይ?፦"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:34
+#, fuzzy
+msgid "<b>Raise on focus</b>"
+msgstr "ሲጠቆም ይነሳ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:35
+#, fuzzy
+msgid "Raise window when clicking _inside application window"
+msgstr "በፕሮግራሙ መስኮት ውስጥ ሲጠቆም መስኮቱን አስነሳ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:36
+#, fuzzy
+msgid "<b>Raise on click</b>"
+msgstr "ሲጫን ይነሳ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:37
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:17
+#, fuzzy
+msgid "_Focus"
+msgstr "ጠቋሚ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:38
+#, fuzzy
+msgid "To screen _borders"
+msgstr "መስኮትን ከስክሪን ወሰን ጋር ማሰለፍ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:39
+#, fuzzy
+msgid "To other _windows"
+msgstr "መስኮትን ዝቅ አድርግ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:40
+#, fuzzy
+msgid "Dis_tance:"
+msgstr "ርቀት፦"
+
+#. Edge resistance
+#. Smart placement size
+#: ../settings-dialogs/xfwm4-dialog.glade.h:42
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:36
+#, fuzzy
+msgid "<i>Small</i>"
+msgstr "መጠን|ትንሽ"
+
+#. Edge resistance
+#: ../settings-dialogs/xfwm4-dialog.glade.h:44
+#, fuzzy
+msgid "<i>Wide</i>"
+msgstr "ርቀት|ሰፊ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:45
+#, fuzzy
+msgid "<b>Windows snapping</b>"
+msgstr "መስኮት ማሰለፍ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:46
+msgid "With the mouse _pointer"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:47
+#, fuzzy
+msgid "With a _dragged window"
+msgstr "መስኮትን አጥላ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:48
+#, fuzzy
+msgid "_Edge resistance:"
+msgstr "ጠርዝ ተቃርኖ፦"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:49
+#, fuzzy
+msgid "<b>Wrap workspaces when reaching the screen edge</b>"
+msgstr "ጠቋሚው ስክሪን ጠርዝ ሲደርስ የስራ ገበታን እጠፍ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:50
+msgid "When _moving"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:51
+msgid "When _resizing"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:52
+#, fuzzy
+msgid "<b>Hide content of windows</b>"
+msgstr "ሲንቀሳቀስ የመስኮቱ ይዘት ይታይ"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:53
+#, fuzzy
+msgid "The action to perform when the title-bar is double-clicked"
+msgstr "በአርዕስት ማስጫ ላይ ሁለቴ ሲጫን ምን ይገበር?፦"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:54
+#, fuzzy
+msgid "<b>Double click _action</b>"
+msgstr "ሁለቴ መጫን ተግባር"
+
+#: ../settings-dialogs/xfwm4-dialog.glade.h:55
+#, fuzzy
+msgid "Ad_vanced"
+msgstr "ጠለቅ"
+
+#: ../settings-dialogs/xfwm4-settings.c:227
+msgid "Shade window"
+msgstr "መስኮትን አጥላ"
+
+#: ../settings-dialogs/xfwm4-settings.c:228
+msgid "Hide window"
+msgstr "መስኮትን ደብቅ"
+
+#: ../settings-dialogs/xfwm4-settings.c:229
+msgid "Maximize window"
+msgstr "መስኮትን አተልቅ"
+
+#: ../settings-dialogs/xfwm4-settings.c:230
+#, fuzzy
+msgid "Fill window"
+msgstr "መስኮትን ደብቅ"
+
+#: ../settings-dialogs/xfwm4-settings.c:231
+msgid "Nothing"
+msgstr "ምንም"
+
+#: ../settings-dialogs/xfwm4-settings.c:236
+msgid "Left"
+msgstr "ግራ"
+
+#: ../settings-dialogs/xfwm4-settings.c:237
+msgid "Center"
+msgstr "ምሃከል"
+
+#: ../settings-dialogs/xfwm4-settings.c:238
+msgid "Right"
+msgstr "ቀኝ"
+
+#: ../settings-dialogs/xfwm4-settings.c:387
+msgid "Theme"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-settings.c:542
+#, fuzzy
+msgid "Action"
+msgstr "በስራላይ"
+
+#: ../settings-dialogs/xfwm4-settings.c:547
+#, fuzzy
+msgid "Shortcut"
+msgstr "አቋራጭ የለም"
+
+#: ../settings-dialogs/xfwm4-settings.c:936
+#, c-format
+msgid "Failed to initialize xfconf. Reason: %s"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-settings.c:947
+msgid "Could not create the settings dialog."
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-settings.c:1946
+msgid ""
+"This will reset all shortcuts to their default values. Do you really want to "
+"do this?"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-settings.c:1948
+msgid "Reset to Defaults"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:3
+#, fuzzy
+msgid ""
+"S_kip windows that have \"skip pager\"\n"
+"or \"skip taskbar\" properties set"
+msgstr "የ\"skip pager\" ወይም \"skip taskbar\" ባህሪዎች የተሰየመባቸውን መስኮቶች ዝለል።"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:5
+#, fuzzy
+msgid "_Include hidden (i.e. iconified) windows"
+msgstr "የተደበቁ (በምልክት ይተተኩ) መኮቶችን ጫምር"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:6
+#, fuzzy
+msgid "Cycle _through windows on all workspaces"
+msgstr "ሁሉም የስራ ገበታ ላይ ያሉ መስኮቶችን አስስ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:7
+msgid "_Draw frame around selected window while cycling"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:8
+#, fuzzy
+msgid "_Raise windows while cycling"
+msgstr "መስኮትን ከፍ አድርግ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:9
+#, fuzzy
+msgid "Cycle through windows in a _list"
+msgstr "ሁሉም የስራ ገበታ ላይ ያሉ መስኮቶችን አስስ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:10
+#, fuzzy
+msgid "C_ycling"
+msgstr "መዘወር"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:11
+#, fuzzy
+msgid "Activate foc_us stealing prevention"
+msgstr "ጥቋሚ መስረቅን ከልክል"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:12
+#, fuzzy
+msgid "Honor _standard ICCCM focus hint"
+msgstr "የICCCM ጠቋሚ ዘዴን ደረጃ ተጠቀም"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:13
+msgid "When a window raises itself:"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:14
+#, fuzzy
+msgid "_Bring window on current workspace"
+msgstr "መስኮቱን ወደሚቀጥለው የስራ ገበታ ውሰድ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:15
+#, fuzzy
+msgid "Switch to win_dow's workspace"
+msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:16
+#, fuzzy
+msgid "Do _nothing"
+msgstr "ምንም"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:18
+#, fuzzy
+msgid "Key used to _grab and move windows:"
+msgstr "መስኮቶችን ይዞ መውሰጃ ቁልፍ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:19
+#, fuzzy
+msgid "_Raise windows when any mouse button is pressed"
+msgstr "የትኛውም የአይጥ ቁልፍ ሲጫን መስኮትን አስነሳ "
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:20
+#, fuzzy
+msgid "Hide frame of windows when ma_ximized"
+msgstr "ሲያድግ የመስኮት ፍሬምን  ደብቅ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:21
+#, fuzzy
+msgid "Hide title of windows when maximized"
+msgstr "ሲያድግ የመስኮት ፍሬምን  ደብቅ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:22
+#, fuzzy
+msgid "Automatically _tile windows when moving toward the screen edge"
+msgstr "ኢላማ ሲሰጠው መስኮትን አስነሳ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:23
+#, fuzzy
+msgid "Use _edge resistance instead of window snapping"
+msgstr "ከመስኮት ማሰለፍ ይልቅ ጠርዝ ተቃርኖን ተጠቀም"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:24
+msgid "Notify of _urgency by making window's decoration blink"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:25
+msgid "Keep urgent windows _blinking repeatedly"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:26
+msgid "Use mouse wheel on title bar to ro_ll up the window"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:27
+#, fuzzy
+msgid "_Accessibility"
+msgstr "ቀለልነት"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:28
+msgid "Use the _mouse wheel on the desktop to switch workspaces"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:29
+#, fuzzy
+msgid ""
+"_Remember and recall previous workspace\n"
+"when switching via keyboard shortcuts"
+msgstr "በፊደል ገበታ አማካይነት ሲቀየር የቀድሞውን የስራ ገበታ አስታውስ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:31
+#, fuzzy
+msgid "Wrap workspaces depending on the actual desktop _layout"
+msgstr "ከገበታው አቀራረብ ላይ በመነሳት የስራ ገበታን እጠፍ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:32
+#, fuzzy
+msgid "Wrap workspaces when _the first or the last workspace is reached"
+msgstr "የመጀመሪያው ወይም የመጨረሻው የስራ ገበታ ሲደረስ የስራ ገበታን እጠፍ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:33
+#, fuzzy
+msgid "_Workspaces"
+msgstr "የስራ ገበታ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:34
+#, fuzzy
+msgid "_Minimum size of windows to trigger smart placement:"
+msgstr "Minimum size of windows to trigger smart placement"
+
+#. Smart placement size
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:38
+#, fuzzy
+msgid "<i>Large</i>"
+msgstr "መጠን| ትልቅ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:39
+msgid "By default, place windows:"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:40
+msgid "At the c_enter of the screen"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:41
+msgid "U_nder the mouse pointer"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:42
+#, fuzzy
+msgid "_Placement"
+msgstr "ቦታ አያያዝ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:43
+#, fuzzy
+msgid "_Enable display compositing"
+msgstr "Enable display compositing"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:44
+#, fuzzy
+msgid "Display _fullscreen overlay windows directly"
+msgstr "Display full screen overlay windows directly"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:45
+msgid "Show windows preview in place of icons when cycling"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:46
+#, fuzzy
+msgid "Show shadows under pop_up windows"
+msgstr "በፖፕባይ መስኮት ስር ጥላ አሳይ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:47
+#, fuzzy
+msgid "Show shadows under _dock windows"
+msgstr "በፖፕባይ መስኮት ስር ጥላ አሳይ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:48
+#, fuzzy
+msgid "Show shadows under _regular windows"
+msgstr "በመስኮት ስር ጥላ አሳይ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:49
+#, fuzzy
+msgid "Opaci_ty of window decorations:"
+msgstr "የመስኮቱ ጌጥ ውስጠ-ትይነት"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:50
+#, fuzzy
+msgid "<i>Transparent</i>"
+msgstr "ብርሃን አሳላፊ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:51
+#, fuzzy
+msgid "<i>Opaque</i>"
+msgstr "ብርሃን አጋጅ"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:52
+#, fuzzy
+msgid "Opacity of _inactive windows:"
+msgstr "በስራ ላይ ያልሆነ መስኮት ውስጠ አሳይነት"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:53
+#, fuzzy
+msgid "Opacity of windows during _move:"
+msgstr "መስኮት ሲንቀሳቀስ ያለው ውስጠ አሳይነት"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:54
+#, fuzzy
+msgid "Opacity of windows during resi_ze:"
+msgstr "መስኮት ሲመጠን ያለው ውስጠ አሳይነት"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:55
+#, fuzzy
+msgid "Opacity of popup wi_ndows:"
+msgstr "የፖፕባይ መስኮት ውስጠ አሳይነት"
+
+#: ../settings-dialogs/xfwm4-tweaks-dialog.glade.h:56
+#, fuzzy
+msgid "C_ompositor"
+msgstr "Compositor"
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:3
+#, fuzzy
+msgid "_Number of workspaces:"
+msgstr "የስራ ቦታ ቁጥሮች፦"
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:4
+msgid "Layout"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:5
+#, fuzzy
+msgid "Names"
+msgstr "ስም፦"
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:6
+msgid "_General"
+msgstr ""
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:7
+msgid ""
+"Margins are areas on the edges of the screen where no window will be placed"
+msgstr "እንዚህ ድንበሮች ማለት በስክሪኑ ጠርዝ ላይ ያሉ ምንም መስኮት የማይቀመጥባቸው ማለት ነው"
+
+#: ../settings-dialogs/xfwm4-workspace-dialog.glade.h:8
+#, fuzzy
+msgid "_Margins"
+msgstr "ድንበሮች"
+
+#. TRANSLATORS: "(on %s)" is like "running on" the name of the other host
+#: ../src/client.c:186
+#, c-format
+msgid "%s (on %s)"
+msgstr "%s ( %s)"
+
+#: ../src/keyboard.c:144 ../src/settings.c:160
+#, c-format
+msgid "Unsupported keyboard modifier '%s'"
+msgstr ""
+
+#: ../src/main.c:695
+msgid "Fork to the background (not supported)"
+msgstr ""
+
+#: ../src/main.c:697
+msgid "Set the compositor mode"
+msgstr ""
+
+#: ../src/main.c:698
+msgid "Set the vblank mode"
+msgstr ""
+
+#: ../src/main.c:707
+#, fuzzy
+msgid "Replace the existing window manager"
+msgstr "የሸፍሲ 4 የመስኮት አስተዳዳሪ ስየማዎች"
+
+#: ../src/main.c:708
+msgid "Print version information and exit"
+msgstr ""
+
+#: ../src/main.c:752
+msgid "[ARGUMENTS...]"
+msgstr ""
+
+#: ../src/main.c:759
+#, c-format
+msgid "Type \"%s --help\" for usage."
+msgstr ""
+
+#: ../src/menu.c:51
+msgid "Ma_ximize"
+msgstr "አተልቅ _x"
+
+#: ../src/menu.c:52
+#, fuzzy
+msgid "Unma_ximize"
+msgstr "አሳንስ _m"
+
+#: ../src/menu.c:53
+#, fuzzy
+msgid "Mi_nimize"
+msgstr "አተልቅ _x"
+
+#: ../src/menu.c:54
+msgid "Minimize _Other Windows"
+msgstr "መስኮቶችን ከለሎች መስኮቶች አሰልፍ"
+
+#: ../src/menu.c:55
+msgid "S_how"
+msgstr "አሳይ _h"
+
+#: ../src/menu.c:56
+msgid "_Move"
+msgstr ""
+
+#: ../src/menu.c:57
+msgid "_Resize"
+msgstr ""
+
+#. --------------------------------------------------------
+#: ../src/menu.c:59
+#, fuzzy
+msgid "Always on _Top"
+msgstr "ሁሌም ከላይ"
+
+#: ../src/menu.c:60
+#, fuzzy
+msgid "_Same as Other Windows"
+msgstr "መስኮቶችን ከለሎች መስኮቶች አሰልፍ"
+
+#: ../src/menu.c:61
+#, fuzzy
+msgid "Always _Below Other Windows"
+msgstr "መስኮቶችን ከለሎች መስኮቶች አሰልፍ"
+
+#: ../src/menu.c:62
+#, fuzzy
+msgid "Roll Window Up"
+msgstr "መስኮትን ደብቅ"
+
+#: ../src/menu.c:63
+#, fuzzy
+msgid "Roll Window Down"
+msgstr "መስኮትን ወደታች ውሰድ"
+
+#: ../src/menu.c:64
+#, fuzzy
+msgid "_Fullscreen"
+msgstr "ሙሉ-ስክሪን አድርግ"
+
+#: ../src/menu.c:65
+#, fuzzy
+msgid "Leave _Fullscreen"
+msgstr "ሙሉ-ስክሪን አድርግ"
+
+#: ../src/menu.c:66
+#, fuzzy
+msgid "Context _Help"
+msgstr "ወቅታዊ መመሪያ _h"
+
+#. --------------------------------------------------------
+#: ../src/menu.c:68
+#, fuzzy
+msgid "Always on _Visible Workspace"
+msgstr "ሁሌም ከላይ"
+
+#: ../src/menu.c:69
+#, fuzzy
+msgid "Only _Visible on This Workspace"
+msgstr "ሁሌም ከላይ"
+
+#: ../src/menu.c:70
+#, fuzzy
+msgid "Move to Another _Workspace"
+msgstr "መስኮቱን ወደሚቀጥለው የስራ ገበታ ውሰድ"
+
+#. --------------------------------------------------------
+#: ../src/menu.c:72
+msgid "_Close"
+msgstr "ዝጋ _C"
+
+#. --------------------------------------------------------
+#: ../src/menu.c:75
+msgid "Destroy"
+msgstr "አጥፋ"
+
+#: ../src/menu.c:78
+msgid "_Quit"
+msgstr "ውጣ _Q"
+
+#: ../src/menu.c:79
+msgid "Restart"
+msgstr "እንደገና አስጀምር"
+
+#: ../src/menu.c:553
+#, c-format
+msgid "%s: GtkMenu failed to grab the pointer\n"
+msgstr "%s: Gtkምናሌ ጠቋሚውን መያዝ አልቻለም\n"
+
+#: ../src/terminate.c:77
+#, c-format
+msgid "Error reading data from child process: %s\n"
+msgstr ""
+
+#: ../src/terminate.c:135
+#, c-format
+msgid "Cannot spawn helper-dialog: %s\n"
+msgstr ""
+
+#, fuzzy
+#~ msgid "<b>Window _shortcuts</b>"
+#~ msgstr "የመስኮት አቋራጭ"
+
+#, fuzzy
+#~ msgid "Ke_yboard"
+#~ msgstr "ፊደል-ሠሌዳ"
+
+#, fuzzy
+#~ msgid "Clic_k to focus"
+#~ msgstr "ለመጠቆም ይጫኑ"
+
+#, fuzzy
+#~ msgid "Snap windows to other _windows"
+#~ msgstr "መስኮቶችን ከለሎች መስኮቶች አሰልፍ"
+
+#, fuzzy
+#~ msgid "Wrap workspaces when _dragging a window off the screen"
+#~ msgstr "መስኮትን ከስክሪኑ ወድያ ሲጎተት የስራ ገበታን እጠፍ"
+
+#, fuzzy
+#~ msgid "<b>Wrap workspaces</b>"
+#~ msgstr "የስራ ቦታን እጠፍ"
+
+#, fuzzy
+#~ msgid "Hide content of windows when _resizing"
+#~ msgstr "ሲመጠን የመስኮቱ ይዘት ይታይ"
+
+#, fuzzy
+#~ msgid "<b>Box move and resize</b>"
+#~ msgstr "ሲመጠንና ሲንቀሳቀስ ጥቁር ይሁን"
+
+#~ msgid "Window operations menu"
+#~ msgstr "የመስኮት ስራ ምናሌ"
+
+#~ msgid "Cancel"
+#~ msgstr "ሰርዝ"
+
+#~ msgid "Cycle windows"
+#~ msgstr "መስኮትን ፈትሽ"
+
+#, fuzzy
+#~ msgid "Cycle windows (Reverse)"
+#~ msgstr "መስኮትን ፈትሽ"
+
+#, fuzzy
+#~ msgid "Switch window for same application"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#~ msgid "Close window"
+#~ msgstr "መስኮት ዝጋ"
+
+#~ msgid "Maximize window horizontally"
+#~ msgstr "መስኮትን አግድም አተልቅ"
+
+#~ msgid "Maximize window vertically"
+#~ msgstr "መስኮትን ሽቅብ አተልቅ"
+
+#, fuzzy
+#~ msgid "Move window"
+#~ msgstr "መስኮትን ወደላይ ውሰድ"
+
+#, fuzzy
+#~ msgid "Resize window"
+#~ msgstr "መስኮትን ወደላይ መጥን"
+
+#~ msgid "Stick window"
+#~ msgstr "መስኮትን ሰካ"
+
+#, fuzzy
+#~ msgid "Raise or lower window"
+#~ msgstr "መስኮትን ከፍ አድርግ"
+
+#, fuzzy
+#~ msgid "Fill window horizontally"
+#~ msgstr "መስኮትን አግድም አተልቅ"
+
+#, fuzzy
+#~ msgid "Fill window vertically"
+#~ msgstr "መስኮትን ሽቅብ አተልቅ"
+
+#~ msgid "Toggle fullscreen"
+#~ msgstr "ሙሉ-ስክሪን አድርግ"
+
+#~ msgid "Move window to upper workspace"
+#~ msgstr "መስኮቱን ወደላይኛው የስራ ገበታ ውሰድ"
+
+#~ msgid "Move window to bottom workspace"
+#~ msgstr "መስኮቱን ወደታችናው የስራ ገበታ ውሰድ"
+
+#~ msgid "Move window to left workspace"
+#~ msgstr "መስኮቱን ወደግራ የስራ ገበታ ውሰድ"
+
+#~ msgid "Move window to right workspace"
+#~ msgstr "መስኮቱን ወደቀኝ የስራ ገበታ ውሰድ"
+
+#~ msgid "Move window to previous workspace"
+#~ msgstr "መስኮቱን ወደቀድሞው የስራ ገበታ ውሰድ"
+
+#~ msgid "Move window to next workspace"
+#~ msgstr "መስኮቱን ወደሚቀጥለው የስራ ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 1"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 2"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 3"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 4"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 5"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 6"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 7"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 8"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 9"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 10"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 11"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Move window to workspace 12"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Tile window to the top"
+#~ msgstr "መስኮቱን ወደግራ የስራ ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Tile window to the bottom"
+#~ msgstr "መስኮቱን ወደታችናው የስራ ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Tile window to the left"
+#~ msgstr "መስኮትን ወደግራ መጥን"
+
+#, fuzzy
+#~ msgid "Tile window to the right"
+#~ msgstr "መስኮትን ወደቀኝ መጥን"
+
+#~ msgid "Show desktop"
+#~ msgstr "ገበታን አሳይ"
+
+#~ msgid "Upper workspace"
+#~ msgstr "የላይኛው ስራ ቦታ"
+
+#~ msgid "Bottom workspace"
+#~ msgstr "የታችኛው ስራ ቦታ"
+
+#~ msgid "Left workspace"
+#~ msgstr "የግራ ስራ ቦታ"
+
+#~ msgid "Right workspace"
+#~ msgstr "የቀኝ ስራ ቦታ"
+
+#~ msgid "Previous workspace"
+#~ msgstr "የቀድሞው ስራ ቦታ"
+
+#~ msgid "Next workspace"
+#~ msgstr "የሚቀጥለው ስራ ቦታ"
+
+#, fuzzy
+#~ msgid "Workspace 1"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 2"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 3"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 4"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 5"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 6"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 7"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 8"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 9"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 10"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 11"
+#~ msgstr "የስራ ቦታ %i"
+
+#, fuzzy
+#~ msgid "Workspace 12"
+#~ msgstr "የስራ ቦታ %i"
+
+#~ msgid "Add workspace"
+#~ msgstr "የስራ ቦታ ጨምር"
+
+#, fuzzy
+#~ msgid "Add adjacent workspace"
+#~ msgstr "የስራ ቦታ ጨምር"
+
+#, fuzzy
+#~ msgid "Delete last workspace"
+#~ msgstr "የስራ ቦታ ሰርዝ"
+
+#, fuzzy
+#~ msgid "Delete active workspace"
+#~ msgstr "የስራ ቦታ ሰርዝ"
+
+#, fuzzy
+#~ msgid "Activate _focus stealing prevention"
+#~ msgstr "ጥቋሚ መስረቅን ከልክል"
+
+#, fuzzy
+#~ msgid "Hide _frame of windows when maximized"
+#~ msgstr "ሲያድግ የመስኮት ፍሬምን  ደብቅ"
+
+#, fuzzy
+#~ msgid "Restore original _size of maximized windows when moving"
+#~ msgstr "ሲወሰድ ቀዳሚ የተለቀ መስኮት መጠንን አድርግ "
+
+#~ msgid "%s: Cannot allocate color %s\n"
+#~ msgstr "%s: %s ቀለምን መስጠት አልተቻለም\n"
+
+#~ msgid "%s: Cannot parse color %s\n"
+#~ msgstr "%s: %s ቀለምን መተርጎም አልተቻለም\n"
+
+#, fuzzy
+#~ msgid "Set number and names of workspaces"
+#~ msgstr "የስራ ቦታ ቁጥሮች፦"
+
+#, fuzzy
+#~ msgid "<b>Margins</b>"
+#~ msgstr "ድንበሮች"
+
+#, fuzzy
+#~ msgid "<b>Workspaces</b>"
+#~ msgstr "የስራ ቦታን እጠፍ"
+
+#, fuzzy
+#~ msgid "Change workspace name"
+#~ msgstr "የስራ ቦታ ስሞች"
+
+#, fuzzy
+#~ msgid "_Name:"
+#~ msgstr "ስም፦"
+
+#~ msgid "Hide"
+#~ msgstr "ደብቅ"
+
+#~ msgid "%s: Segmentation fault"
+#~ msgstr "%s: Segmentation fault"
+
+#, fuzzy
+#~ msgid "Distance|<i>Small</i>"
+#~ msgstr "ርቀት|ትንሽ"
+
+#, fuzzy
+#~ msgid "Resistance|<i>Small</i>"
+#~ msgstr "ተቃርኖ|ትንሽ"
+
+#, fuzzy
+#~ msgid "Resistance|<i>Wide</i>"
+#~ msgstr "ተቃርኖ|ስፋት"
+
+#, fuzzy
+#~ msgid ">Window Manager"
+#~ msgstr "ማስኮት አስተዳዳሪ"
+
+#, fuzzy
+#~ msgid "gtk-clear"
+#~ msgstr "ሰርዝ"
+
+#, fuzzy
+#~ msgid "gtk-cancel"
+#~ msgstr "ሰርዝ"
+
+#, fuzzy
+#~ msgid "gtk-save"
+#~ msgstr "ሰርዝ"
+
+#~ msgid "Workspace Margins"
+#~ msgstr "የስራ ገበታ ድንበር"
+
+#~ msgid "Left :"
+#~ msgstr "ግራ፦"
+
+#~ msgid "Right :"
+#~ msgstr "ቀኝ፦"
+
+#~ msgid "Top :"
+#~ msgstr "ላይ፦"
+
+#~ msgid "Bottom :"
+#~ msgstr "ታች፦"
+
+#, fuzzy
+#~ msgid "Bring window on current workspace"
+#~ msgstr "መስኮቱን ወደሚቀጥለው የስራ ገበታ ውሰድ"
+
+#, fuzzy
+#~ msgid "Do nothing"
+#~ msgstr "ምንም"
+
+#, fuzzy
+#~ msgid ""
+#~ "Skip windows that have \"skip pager\" or \"skip taskbar\" properties set"
+#~ msgstr "የ\"skip pager\" ወይም \"skip taskbar\" ባህሪዎች የተሰየመባቸውን መስኮቶች ዝለል።"
+
+#, fuzzy
+#~ msgid "Include hidden (i.e. iconified) windows"
+#~ msgstr "የተደበቁ (በምልክት ይተተኩ) መኮቶችን ጫምር"
+
+#, fuzzy
+#~ msgid "Cycle through windows from all workspaces"
+#~ msgstr "ሁሉም የስራ ገበታ ላይ ያሉ መስኮቶችን አስስ"
+
+#, fuzzy
+#~ msgid "Cycling"
+#~ msgstr "መዘወር"
+
+#, fuzzy
+#~ msgid "Honor the standard ICCCM focus hint"
+#~ msgstr "የICCCM ጠቋሚ ዘዴን ደረጃ ተጠቀም"
+
+#, fuzzy
+#~ msgid "Focus"
+#~ msgstr "ጠቋሚ"
+
+#, fuzzy
+#~ msgid "Key used to grab and move windows"
+#~ msgstr "መስኮቶችን ይዞ መውሰጃ ቁልፍ"
+
+#, fuzzy
+#~ msgid "Raise windows when any mouse button is pressed"
+#~ msgstr "የትኛውም የአይጥ ቁልፍ ሲጫን መስኮትን አስነሳ "
+
+#, fuzzy
+#~ msgid "Restore original size of maximized windows when moving"
+#~ msgstr "ሲወሰድ ቀዳሚ የተለቀ መስኮት መጠንን አድርግ "
+
+#, fuzzy
+#~ msgid "Use edge resistance instead of windows snapping"
+#~ msgstr "ከመስኮት ማሰለፍ ይልቅ ጠርዝ ተቃርኖን ተጠቀም"
+
+#, fuzzy
+#~ msgid "Accessibility"
+#~ msgstr "ቀለልነት"
+
+#~ msgid "Switch workspaces using the mouse wheel over the desktop"
+#~ msgstr "የአይጥ መዘውርን በገበታ ላይ በመጠቀ የስራ ገበታን ቀይር"
+
+#, fuzzy
+#~ msgid ""
+#~ "Remember and recall previous workspace when switching via keyboard "
+#~ "shortcuts"
+#~ msgstr "በፊደል ገበታ አማካይነት ሲቀየር የቀድሞውን የስራ ገበታ አስታውስ"
+
+#, fuzzy
+#~ msgid "Wrap workspaces depending on the actual desktop layout"
+#~ msgstr "ከገበታው አቀራረብ ላይ በመነሳት የስራ ገበታን እጠፍ"
+
+#, fuzzy
+#~ msgid "Wrap workspaces when the first or last workspace is reached"
+#~ msgstr "የመጀመሪያው ወይም የመጨረሻው የስራ ገበታ ሲደረስ የስራ ገበታን እጠፍ"
+
+#, fuzzy
+#~ msgid "Minimum size of windows to trigger smart placement"
+#~ msgstr "Minimum size of windows to trigger smart placement"
+
+#, fuzzy
+#~ msgid "Size|Small"
+#~ msgstr "መጠን|ትንሽ"
+
+#, fuzzy
+#~ msgid "Size|Large"
+#~ msgstr "መጠን| ትልቅ"
+
+#, fuzzy
+#~ msgid "Default positionning of windows without smart placement:"
+#~ msgstr "Minimum size of windows to trigger smart placement"
+
+#, fuzzy
+#~ msgid "Placement"
+#~ msgstr "ቦታ አያያዝ"
+
+#, fuzzy
+#~ msgid "Enable display compositing"
+#~ msgstr "Enable display compositing"
+
+#, fuzzy
+#~ msgid "Display full screen overlay windows directly"
+#~ msgstr "Display full screen overlay windows directly"
+
+#, fuzzy
+#~ msgid "Show shadows under dock windows"
+#~ msgstr "በፖፕባይ መስኮት ስር ጥላ አሳይ"
+
+#, fuzzy
+#~ msgid "Show shadows under regular windows"
+#~ msgstr "በመስኮት ስር ጥላ አሳይ"
+
+#, fuzzy
+#~ msgid "Show shadows under popup windows"
+#~ msgstr "በፖፕባይ መስኮት ስር ጥላ አሳይ"
+
+#, fuzzy
+#~ msgid "Opacity of window decorations"
+#~ msgstr "የመስኮቱ ጌጥ ውስጠ-ትይነት"
+
+#, fuzzy
+#~ msgid "Transparent"
+#~ msgstr "ብርሃን አሳላፊ"
+
+#, fuzzy
+#~ msgid "Opaque"
+#~ msgstr "ብርሃን አጋጅ"
+
+#, fuzzy
+#~ msgid "Opacity of inactive windows"
+#~ msgstr "በስራ ላይ ያልሆነ መስኮት ውስጠ አሳይነት"
+
+#, fuzzy
+#~ msgid "Opacity of windows during move"
+#~ msgstr "መስኮት ሲንቀሳቀስ ያለው ውስጠ አሳይነት"
+
+#, fuzzy
+#~ msgid "Opacity of windows during resize"
+#~ msgstr "መስኮት ሲመጠን ያለው ውስጠ አሳይነት"
+
+#, fuzzy
+#~ msgid "Opacity of popup windows"
+#~ msgstr "የፖፕባይ መስኮት ውስጠ አሳይነት"
+
+#, fuzzy
+#~ msgid "Compositor"
+#~ msgstr "Compositor"
+
+#~ msgid "Button Label|Window Manager Tweaks"
+#~ msgstr "አዝራር መለዮ|መስኮት አስተዳዳሪ Tweaks"
+
+#~ msgid "These settings cannot work with your current window manager (%s)"
+#~ msgstr "ባለዎት የምስኮት አስተዳዳሪ እነዚህ ስየማዎች አይሰሩም (%s)"
+
+#~ msgid "Change name"
+#~ msgstr "ስም ቀይር"
+
+#~ msgid "Click on a workspace name to edit it"
+#~ msgstr "ለማረም በስራ ገበታው ላይ ይጠቁሙ "
+
+#, fuzzy
+#~ msgid "Number of workspaces:"
+#~ msgstr "የስራ ቦታ ቁጥሮች፦"
+
+#, fuzzy
+#~ msgid "Workspace names"
+#~ msgstr "የስራ ቦታ ስሞች"
+
+#~ msgid "Button Label|Workspaces and Margins"
+#~ msgstr "የአዝራር ስም| የስራ ገበታ እና ድንበሮች"
+
+#~ msgid "Workspaces and Margins"
+#~ msgstr "የስራ ቦታና  ድንበር"
+
+#~ msgid "Window Manager Settings"
+#~ msgstr "መስኮት አስተዳዳሪ ስየማዎች"
+
+#~ msgid "Xfce 4 Window Manager Settings"
+#~ msgstr "የሸፍሲ 4 የመስኮት አስተዳዳሪ ስየማዎች"
+
+#~ msgid "Advanced Configuration"
+#~ msgstr "ጥልቅ ስንድት"
+
+#~ msgid "Xfce 4 Window Manager Tweaks"
+#~ msgstr "የሸፍሲ 4 የመስኮት አስተዳዳሪ ስየማዎች"
+
+#~ msgid "Workspaces Settings"
+#~ msgstr "የስራቦታ ስየማ"
+
+#~ msgid "Xfce 4 Workspaces Settings"
+#~ msgstr "የሸፍሲ 4 የስራቦታ ስየማዎች"
+
+#, fuzzy
+#~ msgid "Click and drag buttons to change the layout"
+#~ msgstr "ገጽታውን ለመቀየር ጠቁመው ይጎትቱ"
+
+#~ msgid "Font Selection Dialog"
+#~ msgstr "የፊደል ቅርጽ መረጣ መጠይቅ"
+
+#, fuzzy
+#~ msgid "Title font"
+#~ msgstr "የአርዕስት ፊደል-ቅርጽ"
+
+#, fuzzy
+#~ msgid "Title Alignment"
+#~ msgstr "የአርዕስት ስልፍ"
+
+#~ msgid "Text alignment inside title bar :"
+#~ msgstr "በአርዕስት ማስጫ ላይ ያለ የጽሁፍ ሰልፍ፦"
+
+#, fuzzy
+#~ msgid "Button layout"
+#~ msgstr "የአዝራር አጣጣል"
+
+#, fuzzy
+#~ msgid "Style"
+#~ msgstr "ሙና"
+
+#, fuzzy
+#~ msgid "Window shortcuts"
+#~ msgstr "የመስኮት አቋራጭ"
+
+#, fuzzy
+#~ msgid "Command"
+#~ msgstr "ትዕዛዝ"
+
+#, fuzzy
+#~ msgid "Focus model"
+#~ msgstr "የማነጣጠር ሞዴል"
+
+#, fuzzy
+#~ msgid "Focus follows mouse"
+#~ msgstr "ጠቋሚው አይጥን ይከተላል"
+
+#, fuzzy
+#~ msgid "Delay before window receives focus"
+#~ msgstr "የተጠቆመ መስኮትን ከምንሳት በፊት ምን ያህል ይዘግይ?፦"
+
+#~ msgid "Slow"
+#~ msgstr "ቀስ"
+
+#~ msgid "Fast"
+#~ msgstr "ፈጠን"
+
+#, fuzzy
+#~ msgid "Automatically give focus to newly created windows"
+#~ msgstr "አዲስ ለተፈጠረ መስኮት ኢላማን ስጥ"
+
+#, fuzzy
+#~ msgid "New window focus"
+#~ msgstr "አዲስ መስኮት ጠቁም"
+
+#, fuzzy
+#~ msgid "Raise on focus"
+#~ msgstr "ሲጠቆም ይነሳ"
+
+#, fuzzy
+#~ msgid "Automatically raise windows when they receive focus"
+#~ msgstr "ኢላማ ሲሰጠው መስኮትን አስነሳ"
+
+#, fuzzy
+#~ msgid "Delay before raising focused window :"
+#~ msgstr "የተጠቆመ መስኮትን ከምንሳት በፊት ምን ያህል ይዘግይ?፦"
+
+#, fuzzy
+#~ msgid "Raise window when clicking inside application window"
+#~ msgstr "በፕሮግራሙ መስኮት ውስጥ ሲጠቆም መስኮቱን አስነሳ"
+
+#, fuzzy
+#~ msgid "Raise on click"
+#~ msgstr "ሲጫን ይነሳ"
+
+#, fuzzy
+#~ msgid "Windows snapping"
+#~ msgstr "መስኮት ማሰለፍ"
+
+#, fuzzy
+#~ msgid "Snap windows to screen border"
+#~ msgstr "መስኮትን ከስክሪን ወሰን ጋር ማሰለፍ"
+
+#, fuzzy
+#~ msgid "Snap windows to other windows"
+#~ msgstr "መስኮቶችን ከለሎች መስኮቶች አሰልፍ"
+
+#, fuzzy
+#~ msgid "Distance :"
+#~ msgstr "ርቀት፦"
+
+#, fuzzy
+#~ msgid "Distance|Small"
+#~ msgstr "ርቀት|ትንሽ"
+
+#, fuzzy
+#~ msgid "Distance|Wide"
+#~ msgstr "ርቀት|ሰፊ"
+
+#, fuzzy
+#~ msgid "Wrap workspaces"
+#~ msgstr "የስራ ቦታን እጠፍ"
+
+#, fuzzy
+#~ msgid "Wrap workspaces when the pointer reaches a screen edge"
+#~ msgstr "ጠቋሚው ስክሪን ጠርዝ ሲደርስ የስራ ገበታን እጠፍ"
+
+#, fuzzy
+#~ msgid "Wrap workspaces when dragging a window off the screen"
+#~ msgstr "መስኮትን ከስክሪኑ ወድያ ሲጎተት የስራ ገበታን እጠፍ"
+
+#, fuzzy
+#~ msgid "Edge Resistance :"
+#~ msgstr "ጠርዝ ተቃርኖ፦"
+
+#, fuzzy
+#~ msgid "Resistance|Small"
+#~ msgstr "ተቃርኖ|ትንሽ"
+
+#, fuzzy
+#~ msgid "Resistance|Wide"
+#~ msgstr "ተቃርኖ|ስፋት"
+
+#, fuzzy
+#~ msgid "Opaque move and resize"
+#~ msgstr "ሲመጠንና ሲንቀሳቀስ ጥቁር ይሁን"
+
+#, fuzzy
+#~ msgid "Display content of windows when resizing"
+#~ msgstr "ሲመጠን የመስኮቱ ይዘት ይታይ"
+
+#, fuzzy
+#~ msgid "Display content of windows when moving"
+#~ msgstr "ሲንቀሳቀስ የመስኮቱ ይዘት ይታይ"
+
+#, fuzzy
+#~ msgid "Double click action"
+#~ msgstr "ሁለቴ መጫን ተግባር"
+
+#, fuzzy
+#~ msgid "Action to perform when double clicking on title bar :"
+#~ msgstr "በአርዕስት ማስጫ ላይ ሁለቴ ሲጫን ምን ይገበር?፦"
+
+#, fuzzy
+#~ msgid "Advanced"
+#~ msgstr "ጠለቅ"
+
+#~ msgid "Button Label|Window Manager"
+#~ msgstr "የአዝራር ስም| መስኮት አስተዳዳሪ"
+
+#~ msgid "Do you really want to remove this keybinding theme ?"
+#~ msgstr "የዚህ ቁልፍ ማሰሪያ ጭብጥን በርግጥ መሰረዝ ይፈልጋሉ"
+
+#~ msgid "Add keybinding theme"
+#~ msgstr "ቁልፍ ማሰሪያ ጭብጥን ጨምር"
+
+#, fuzzy
+#~ msgid "Enter a name for the theme:"
+#~ msgstr "የጭብጡን ስም ያስገቡ፦"
+
+#~ msgid "A keybinding theme with the same name already exists"
+#~ msgstr "ይህ ስም ያለው ቁልፍ ማሰሪያ ጭብጥ ከበፊትም አለ"
+
+#~ msgid "You have to provide a name for the keybinding theme"
+#~ msgstr "ለቁልፍ ማሰሪያ ጭብጥ ስም ሊሰጡት ይገባል"
+
+#, fuzzy
+#~ msgid "Move window to workspace %d"
+#~ msgstr "መስኮቱን ወደ%d ገበታ ውሰድ"
+
+#~ msgid "Cannot open the theme directory !"
+#~ msgstr "የጭብጥ ዶሴን መክፈት አልተቻለም።"
+
+#~ msgid ""
+#~ "Cannot open %s : \n"
+#~ "%s"
+#~ msgstr ""
+#~ "%sን መክፈት አልተቻለም : \n"
+#~ "%s"
+
+#~ msgid ""
+#~ "Cannot write in %s : \n"
+#~ "%s"
+#~ msgstr ""
+#~ "%s ላይ መጻፍ አልተቻለም: \n"
+#~ "%s"
+
+#, fuzzy
+#~ msgid ""
+#~ "Shortcut already in use !\n"
+#~ "Are you sure you want to use it ?"
+#~ msgstr ""
+#~ "አቋራጩ በጥቅም ላይ ውሏል!\n"
+#~ "ለመጠቀም እንደሚፈልጉ ርግጠኛ ነዎት?"
+
+#~ msgid "Compose shortcut for :"
+#~ msgstr "ለ...አቋራጭ ሰይም፦"
+
+#~ msgid "Compose shortcut"
+#~ msgstr "አቋራጭ ሰይም"
+
+#, fuzzy
+#~ msgid "No shortcut"
+#~ msgstr "አቋራጭ ሰይም"
+
+#, fuzzy
+#~ msgid "Change the name of workspace %d"
+#~ msgstr "የስራ ቦታ ቁጥሮች፦"
+
+#, fuzzy
+#~ msgid "Advanced window manager settings"
+#~ msgstr "የሸፍሲ 4 የመስኮት አስተዳዳሪ ስየማዎች"
+
+#, fuzzy
+#~ msgid ""
+#~ "This shortcut is already being used by <b>another window manager action</"
+#~ "b>. Which action do you want to use?"
+#~ msgstr ""
+#~ "አቋራጩ በጥቅም ላይ ውሏል!\n"
+#~ "ለመጠቀም እንደሚፈልጉ ርግጠኛ ነዎት?"
+
+#, fuzzy
+#~ msgid ""
+#~ "The shortcut is already being used by a <b>window manager action</b>. "
+#~ "Which action do you want to use?"
+#~ msgstr ""
+#~ "አቋራጩ በጥቅም ላይ ውሏል!\n"
+#~ "ለመጠቀም እንደሚፈልጉ ርግጠኛ ነዎት?"
+
+#, fuzzy
+#~ msgid "The shortcut is already being used for something else."
+#~ msgstr ""
+#~ "አቋራጩ በጥቅም ላይ ውሏል!\n"
+#~ "ለመጠቀም እንደሚፈልጉ ርግጠኛ ነዎት?"
+
+#, fuzzy
+#~ msgid "Action: %s"
+#~ msgstr "በስራላይ"
+
+#, fuzzy
+#~ msgid "Enter shortcut"
+#~ msgstr "አቋራጭ የለም"
+
+#, fuzzy
+#~ msgid "Shortcut:"
+#~ msgstr "አቋራጭ የለም"
+
+#, fuzzy
+#~ msgid "(Un)Ma_ximize"
+#~ msgstr "አተልቅ _x"
+
+#~ msgid "Hide _all others"
+#~ msgstr "ሌላውን ሁሉ ደብቅ _a"
+
+#~ msgid "_Shade"
+#~ msgstr "ጥላ ጣል _S"
+
+#, fuzzy
+#~ msgid "(Un)_Shade"
+#~ msgstr "ጥላ አንሳ _s"
+
+#~ msgid "S_tick"
+#~ msgstr "ውጋ _t"
+
+#, fuzzy
+#~ msgid "(Un)S_tick"
+#~ msgstr "ንቀል _t"
+
+#, fuzzy
+#~ msgid "Below"
+#~ msgstr "ቀስ"
+
+#~ msgid "Send to..."
+#~ msgstr "ለ...ላክ"
+
+#~ msgid "Workspace %i (%s)"
+#~ msgstr "የስራ ቦታ %i (%s)"
+
+#, fuzzy
+#~ msgid "Ctrl"
+#~ msgstr "ምሃከል"
+
+#, fuzzy
+#~ msgid "Button"
+#~ msgstr "የአዝራር አጣጣል"
+
+#, fuzzy
+#~ msgid "Add Shortcut Theme"
+#~ msgstr "አቋራጭ"
+
+#~ msgid "Move window left"
+#~ msgstr "መስኮትን ወደግራ ውሰድ"
+
+#~ msgid "Move window right"
+#~ msgstr "መስኮትን ወደቃኝ ውሰድ"
+
+#~ msgid "Resize window down"
+#~ msgstr "መስኮትን ወደታች መጥን"
+
+#~ msgid "Cancel move/resize window"
+#~ msgstr "መስኮትን ውሰድ/መጥንን ሰርዝ"
+
+#~ msgid "_Hide"
+#~ msgstr "ደብቅ _H"

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/xfce/xfwm4">
+    <file preprocess="to-pixdata" alias="monitor-icon.pixdata">monitor-icon.svg</file>
+  </gresource>
+</gresources>
