@@ -1,0 +1,16 @@
+[Sound Theme]
+Name=Pop
+Comment=The Pop Sound Theme
+Directories=stereo/alert stereo/action stereo/notification
+
+[stereo/alert]
+Context=Alert
+OutputProfile=stereo
+
+[stereo/action]
+Context=Action
+OutputProfile=stereo
+
+[stereo/notification]
+Context=Notification
+OutputProfile=stereo

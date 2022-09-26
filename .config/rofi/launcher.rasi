@@ -11,6 +11,7 @@
 configuration {
 	modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;
+    icon-theme:			"Papirus-Dark";
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";

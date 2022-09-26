@@ -240,7 +240,7 @@ echo -e " ┏━━━━━━━━━━━━━━━━━━━━━━�
 echo -e " ┃ ${c1}r${c2}x${c7}f${c4}e${c5}t${c6}${c7}c${c1}h${c0}      ${c5}${c0}  ${c7}${c0}  ${c6}${c0} ┃  ${c1}$(whoami)${c5}@${c1}${c2}$(cat /etc/hostname)"
 echo -e " ┣━━━━━━━━━━━━━━━━━━━━━━┫"
 echo -e " ┃                      ┃  ${c1}os${c3}     $(get_distro_name)"
-echo -e " ┃          ${c3}•${c8}_${c3}•${c0}         ┃  ${c2}ker${c3}    $(echo '5.17.9 ZEN')" #Added the echo just because the uname -r command was printing it too long. u can change it to 'uname -r'
+echo -e " ┃          ${c3}•${c8}_${c3}•${c0}         ┃  ${c2}ker${c3}    $(uname -r)"
 echo -e " ┃          ${c8}${c0}${c9}oo${c0}${c8}|${c0}         ┃  ${c7}pkgs${c3}   $(get_package_info)"
 echo -e " ┃         ${c8}/${c0}${c10} ${c0}${c8}'\'${c0}        ┃  ${c4}sh${c3}     ${SHELL##*/}"
 echo -e " ┃        ${c9}(${c0}${c8}\_;/${c0}${c9})${c0}        ┃  ${c6}ram${c3}    $(get_mem)"

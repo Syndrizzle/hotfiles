@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PID=$(lsof -e /run/user/1000/gvfs /dev/snd/pcm*c | wc -c)
+PID=$(lsof -w /dev/snd/pcm*c | wc -c)
 
 if [[ $PID -eq 0 ]]
 then
