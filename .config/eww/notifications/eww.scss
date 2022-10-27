@@ -1,4 +1,5 @@
 .notifications-cardimage-eventbox {
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     background-color: $bg-alt;
     border-radius: 0.6em;
 }
@@ -80,6 +81,7 @@
 }
 
 .notifications-cardprog-eventbox {
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     background: $bg-alt;
     border-radius: 0.5em;
 }
@@ -181,6 +183,7 @@
 }
 
 .notifications-cardscr-eventbox {
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     background-color: $bg-alt;
     border-radius: 0.6em;
 }
@@ -267,6 +270,7 @@
     background-color: $bg-alt;
     background-size: cover;
     background-repeat: no-repeat;
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     margin-right: 1em;
     margin-left: 1em;
     border-radius: 0.8em;
@@ -313,6 +317,7 @@
 
 .notifications-empty-label {
     padding: 3em 1em 0em 1em;
+    text-shadow: 0 0 0.5em rgba($color: #000000, $alpha: 1.0);
     color: $fg;
     font-weight: 600;
     font-size: 18;
@@ -321,16 +326,17 @@
 .notifications-separator {
     font-size: 0.5;
     border-radius: 100%;
-    background-color: $bg-alt;
+    background-color: $bg;
     margin: 35em 25em 35em 25em;
 }
 
 .notifications-layout-box {
     border: 5px solid $bg-alt;
     border-radius: 20px;
-    box-shadow: inset 0 0 8 1px #11111b;
+    box-shadow: inset 0 0 8 2px #000000;
     background-color: $bg;
-    font-family: "Clarity City", "Phosphor";
+    background-size: cover;
+    font-family: "Inter", "Phosphor";
     padding-bottom: 1em;
 }
 
@@ -339,14 +345,18 @@
 }
 
 .notifications-headers {
-    padding: 1em 2em 0 2em;
-    margin-bottom: 1.5em;
+    padding: 1em 2em 1em 2em;
+    margin: 1.0em;
+    border-radius: 10px;
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     color: $green;
+    background-color: $bg;
 }
 
 .notifications-headers-label {
     font-size: 25;
     font-weight: bold;
+    font-family: Creepster;
     color: $green;
     opacity: 0.8;
 }
@@ -392,6 +402,7 @@
 }
 
 .mail-button-box {
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     border-radius: 0.5em;
     background-color: $bg-alt;
     font-size: 2em;
@@ -445,18 +456,21 @@
 }
 
 .reddit-button-box {
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     border-radius: 0.5em;
     background-color: $bg-alt;
     font-size: 2em;
 }
 
 .github-button-box {
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     border-radius: 0.5em;
     background-color: $bg-alt;
     font-size: 2em;
 }
 
 .weather-button-box {
+    box-shadow: 0 0 0.5em 0.1em rgba($color: #000000, $alpha: 0.75);
     border-radius: 0.5em;
     background-color: $bg-alt;
     font-size: 2em;

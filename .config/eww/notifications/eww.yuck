@@ -10,7 +10,7 @@
 (defpoll dunst_displayed :interval "10s" "dunstctl count displayed")
 (defpoll dunst_history :interval "10s" "dunstctl count history")
 (defpoll dunst_waiting :interval "10s" "dunstctl count waiting")
-
+(defvar background "/home/syndrizzle/.config/eww/images/texture.png")
 ;; Widgets
 (defwidget dnd [total total_label label dnd_icon state action]
   (box :vexpand false
@@ -43,6 +43,7 @@
   (box :orientation "vertical"
     :space-evenly false
     :class "notifications-layout-box"
+    :style "background-image: url('${background}');"
     (box :space-evenly false
       :class "notifications-headers"
       :spacing 6

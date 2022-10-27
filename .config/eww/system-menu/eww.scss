@@ -15,7 +15,7 @@
 }
 
 .wifi-buttons-box {
-    margin: 10px 10px 0px 15px;
+    margin: 10px 15px 0px 15px;
     border-radius: 100px;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .bluetooth-button {
-    padding: 10px 10px 10px 15px;
+    padding: 8px 10px 9px 15px;
     font-size: 24px;
 }
 
@@ -260,12 +260,12 @@
 }
 
 .first-row-system {
-    margin-left: 9px;
+    margin-left: 13px;
     padding: 20px;
 }
 
 .second-row-system {
-    margin-left: 9px;
+    margin-left: 13px;
     padding: 10px 20px 20px 20px;
 }
 
@@ -348,7 +348,7 @@ slider {
 }
 
 .profile-image {
-    margin: 25px 0px 20px 100px;
+    margin: 35px 0px 20px 160px;
     min-width: 52px;
     min-height: 52px;
     background-size: 52px;
@@ -358,13 +358,17 @@ slider {
 }
 
 .time {
+    font-family: Creepster;
     font-size: 60px;
     margin: 20px 10px 0px 30px;
 }
 
+.day, .date {
+    font-family: Creepster;
+}
 .date-box {
     font-size: 20px;
-    margin: 33px 0px 10px 0px;
+    margin: 35px 0px 10px 0px;
 }
 
 .music-player-container {

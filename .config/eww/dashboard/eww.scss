@@ -2,12 +2,13 @@
 * {
         all: unset;
         transition: 200ms ease-out;
-        font-family: "Clarity City", "Phosphor";
+        font-family: "Inter", "Phosphor";
 }
 
 /** Background ***************************************/
 .bg {
-        background-image: url("images/dashboard/bg.png");
+        background-image: url("images/texture.png");
+        background-size: cover;
         background-color: $bg;
         opacity: 1;
 }
@@ -174,7 +175,7 @@ scale trough highlight {
 /** Spotify ********************************************/
 .spotify-album {
         background-repeat: no-repeat;
-        background-size: 130px;
+        background-size: cover;
         min-height: 130px;
         min-width: 130px;
         margin: 35px 0px 30px 35px;
@@ -212,7 +213,7 @@ scale trough highlight {
 }
 
 .spotify-box {
-        padding: 0px 25px 0px 35px;
+        padding: 0px 25px 0px 85px;
 }
 
 
@@ -435,26 +436,31 @@ scale trough highlight {
 }
 
 .bt-icon-box {
+        background-color: $yellow;
         margin-top: 16px;
         padding-left: 100px;
         padding-right: 80px;
+        border-radius: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 7px;
+        margin-bottom: 10px;
 }
 
 .bt-icon {
         font-size: 26px;
         font-weight: bold;
-        font-family: "Material Design Icons Desktop";
-        border-radius: 20px;
-        background-color: $yellow;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 5px;
+        font-family: "Phosphor";
         padding-bottom: 5px;
-        margin-bottom: 10px;
 }
 
-.bluetooth-box {
-        padding-left: 15px;
+.bt-battery {
+        font-weight: bold;
+        margin-bottom: 5px;
+}
+
+.bluetooth-box-dashboard {
+        padding-left: 65px;
         padding-top: 5px;
 }
 

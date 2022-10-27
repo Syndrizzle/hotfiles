@@ -1,0 +1,4 @@
+[Icon Theme]
+Name=macOS-Catppuccin
+Comment=Catppuccin macOS cursors.
+Inherits="hicolor"

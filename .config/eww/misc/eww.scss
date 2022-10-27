@@ -158,7 +158,9 @@
 }
 
 .month-year {
-    font-size: 24px;
+    font-size: 28px;
+    text-shadow: 1px 5px 10px rgba($color: #000000, $alpha: 0.5);
+    font-family: Creepster;
     color: $yellow;
     font-weight: bold;
     margin: 10px 0px 0px 0px;

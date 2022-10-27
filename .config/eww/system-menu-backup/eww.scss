@@ -1,0 +1,505 @@
+* {
+    transition: 200ms ease-in-out;
+}
+
+.system-menu-box {
+    border: 5px solid $bg-alt;
+    border-radius: 20px;
+    box-shadow: inset 0 0 8 1px #11111b;
+    background-color: $bg;
+}
+
+.wifi-label {
+    font-size: 18px;
+    padding: 10px 0px 0px 10px;
+}
+
+.wifi-buttons-box {
+    margin: 10px 10px 0px 15px;
+    border-radius: 100px;
+}
+
+.wifi-button {
+    font-size: 24px;
+    padding: 7px 13px 7px 13px;
+
+}
+
+.wifi-arrow-btn {
+    padding: 13px 16px 13px 14px;
+}
+
+.wifi-button-on {
+    background-color: $blue;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.wifi-button-off {
+    background-color: $bg-alt;
+    border-radius: 100px 0px 0px 100px;
+}
+
+
+.wifi-arrow-btn-on {
+    background-color: $blue;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.wifi-arrow-btn-off {
+    background-color: $bg-alt;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.bluetooth-buttons-box {
+    margin: 10px 10px 0px 5px;
+    border-radius: 100px;
+}
+
+.bluetooth-button {
+    padding: 10px 10px 10px 15px;
+    font-size: 24px;
+}
+
+.bluetooth-arrow-btn {
+    padding: 13px 16px 13px 14px;
+}
+
+.bluetooth-button-on {
+    background-color: $blue;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.bluetooth-button-off {
+    background-color: $bg-alt;
+    border-radius: 100px 0px 0px 100px;
+}
+
+
+.bluetooth-arrow-btn-on {
+    background-color: $blue;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.bluetooth-arrow-btn-off {
+    background-color: $bg-alt;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.bluetooth-label {
+    font-size: 18px;
+    padding: 10px 0px 0px 0px;
+}
+
+.seperator {
+    font-size: 2px;
+}
+
+.airplane-buttons-box {
+    margin: 10px 10px 0px 10px;
+    border-radius: 100px;
+}
+
+.airplane-button {
+    padding: 10px 15px 8px 15px;
+    font-size: 22px;
+}
+
+.airplane-arrow-btn {
+    padding: 13px 16px 13px 14px;
+}
+
+.airplane-button-on {
+    background-color: $blue;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.airplane-button-off {
+    background-color: $bg-alt;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.airplane-arrow-btn {
+    color: $gray;
+}
+
+.airplane-arrow-btn-on {
+    background-color: $blue;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.airplane-arrow-btn-off {
+    background-color: $bg-alt;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.airplane-label {
+    font-size: 18px;
+    padding: 10px 0px 0px 5px;
+}
+
+.redshift-buttons-box {
+    margin: 10px 12px 0px 15px;
+    border-radius: 100px;
+}
+
+.redshift-button {
+    padding: 1px 15px 0px 15px;
+    font-size: 22px;
+}
+
+.redshift-arrow-btn {
+    color: $gray;
+    padding: 13px 16px 13px 14px;
+}
+
+.redshift-button-on {
+    background-color: $blue;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.redshift-button-off {
+    background-color: $bg-alt;
+    border-radius: 100px 0px 0px 100px;
+}
+
+
+.redshift-arrow-btn-on {
+    background-color: $blue;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.redshift-arrow-btn-off {
+    background-color: $bg-alt;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.redshift-label {
+    font-size: 18px;
+    padding: 10px 0px 0px 10px;
+}
+
+.power-saver-buttons-box {
+    margin: 10px 0px 0px 20px;
+    border-radius: 100px;
+}
+
+.power-saver-button {
+    padding: 2px 14px 0px 14px;
+    font-size: 22px;
+}
+
+.power-saver-arrow-btn {
+    padding: 13px 16px 13px 14px;
+    color: $gray;
+}
+
+.power-saver-button-on {
+    background-color: $blue;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.power-saver-button-off {
+    background-color: $bg-alt;
+    border-radius: 100px 0px 0px 100px;
+}
+
+
+.power-saver-arrow-btn-on {
+    background-color: $blue;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.power-saver-arrow-btn-off {
+    background-color: $bg-alt;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.power-saver-label {
+    font-size: 18px;
+    padding: 10px 18px 0px 17px;
+}
+
+.dnd-buttons-box {
+    margin: 10px 5px 0px -5px;
+    border-radius: 100px;
+}
+
+.dnd-button {
+    padding: 2px 13px 0px 17px;
+    font-size: 22px;
+}
+
+.dnd-arrow-btn {
+    padding: 13px 16px 13px 14px;
+}
+
+.dnd-button-on {
+    background-color: $blue;
+    border-radius: 100px 0px 0px 100px;
+}
+
+.dnd-button-off {
+    background-color: $bg-alt;
+    border-radius: 100px 0px 0px 100px;
+}
+
+
+.dnd-arrow-btn-on {
+    background-color: $blue;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.dnd-arrow-btn-off {
+    background-color: $bg-alt;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.dnd-label {
+    font-size: 18px;
+    padding: 10px 0px 0px 0px;
+}
+
+.first-row-system {
+    margin-left: 9px;
+    padding: 20px;
+}
+
+.second-row-system {
+    margin-left: 9px;
+    padding: 10px 20px 20px 20px;
+}
+
+.sliders {
+    background-color: $bg-alt;
+    margin: 10px 20px 25px 20px;
+    padding: 20px 5px 20px 30px;
+    border-radius: 15px;
+}
+
+.volume-slider-icon {
+    color: $green;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0px 0px 4px #000000;
+}
+
+.brightness-slider-icon {
+    color: $yellow;
+    font-size: 24px;
+    text-shadow: 0px 0px 4px #000000;
+}
+
+.volume-slider {
+    margin-left: 25px;
+}
+
+slider {
+    background: transparent;
+}
+
+.volume-slider trough {
+    background-color: $gray-alt;
+    border-radius: 15px;
+}
+
+.volume-slider highlight {
+    padding: 0.2em;
+    background-color: $green;
+    border-radius: 15px;
+}
+
+
+.brightness-slider {
+    margin-left: 25px;
+}
+
+.brightness-slider trough {
+    background-color: $gray-alt;
+    border-radius: 15px;
+}
+
+.brightness-slider highlight {
+    padding: 0.2em;
+    background-color: $yellow;
+    border-radius: 15px;
+}
+
+.volume-slider-button {
+    font-size: 16px;
+    margin: 0px 20px 0px 21px;
+    background-color: $gray-alt;
+    padding: 6px 7px 6px 6px;
+    border-radius: 100%;
+
+}
+
+.brightness-slider-button {
+    font-size: 16px;
+    margin: 0px 20px 0px 19px;
+    background-color: $gray-alt;
+    padding: 6px 7px 6px 6px;
+    border-radius: 100%;
+    color: $fg;
+
+}
+
+.brightness-slider-button:hover, .volume-slider-button:hover {
+    background-color: $gray;
+}
+
+.profile-image {
+    margin: 25px 0px 20px 100px;
+    min-width: 52px;
+    min-height: 52px;
+    background-size: 52px;
+    border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.time {
+    font-family: "Creepster";
+    font-size: 60px;
+    margin: 20px 10px 0px 30px;
+}
+
+.date-box {
+    font-size: 20px;
+    margin: 33px 0px 10px 0px;
+}
+
+.music-player-container {
+    background-color: $bg-alt;
+    margin: 0px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+.music-player-album {
+    background-size: contain;
+    background-color: $bg;
+    min-width: 80px;
+    min-height: 80px;
+    margin: 25px 15px 15px 25px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    background-position: center;
+}
+
+.music-player-info {
+    margin: 20px 0px 0px 0px;
+}
+
+.music-player-name-box {
+    background-color: $bg;
+    border-radius: 30px;
+    color: $purple;
+}
+
+.music-player-name-icon {
+    font-size: 14px;
+    padding: 3px 6px 3px 6px;
+    border-radius: 100%;
+    font-weight: 900;
+    margin: 5px 0px 5px 5px;
+}
+
+.music-player-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 2px 15px 0px 0px;
+}
+
+.music-player-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px 0px 0px 5px;
+}
+
+.music-player-artist {
+    font-size: 16px;
+    margin: 10px 0px 0px 5px;
+}
+
+.player-buttons-box {
+    font-size: 20px;
+    margin: 10px 0px 20px 0px;
+
+}
+
+.player-prev:hover,
+.player-pp:hover,
+.player-next:hover {
+    color: $red;
+}
+
+.battery-box {
+    margin: 0px 20px 20px 25px;
+}
+
+.battery-icon {
+    font-family: "Phosphor";
+    font-size: 30px;
+}
+
+.battery-icon-charging {
+    color: $green;
+}
+
+.battery-icon-discharging {
+    color: $fg;
+}
+
+.battery-text {
+    font-size: 20px;
+    margin: 4px 10px 0px 10px;
+}
+
+.side-options-box {
+    margin: 0px 25px 20px 20px;
+
+}
+
+.power-button,
+.exit-button,
+.settings-button {
+    background-color: $bg-alt;
+    padding: 9px 10px 9px 10px;
+    border-radius: 100%;
+}
+
+.power-button:hover,
+.exit-button:hover,
+.settings-button:hover {
+    background-color: $gray-alt;
+    color: $blue;
+}
+
+.wifi-button-off:hover,
+.wifi-arrow-btn-off:hover,
+.bluetooth-arrow-btn-off:hover,
+.bluetooth-button-off:hover,
+.airplane-arrow-btn-off:hover,
+.airplane-button-off:hover,
+.redshift-arrow-btn-off:hover,
+.redshift-button-off:hover,
+.power-saver-arrow-btn-off:hover,
+.power-saver-button-off:hover,
+.dnd-arrow-btn-off:hover,
+.dnd-button-off:hover {
+    background-color: $gray-alt;
+}
+
+.wifi-button-on:hover,
+.wifi-arrow-btn-on:hover,
+.bluetooth-arrow-btn-on:hover,
+.bluetooth-button-on:hover,
+.airplane-arrow-btn-on:hover,
+.airplane-button-on:hover,
+.redshift-arrow-btn-on:hover,
+.redshift-button-on:hover,
+.power-saver-arrow-btn-on:hover,
+.power-saver-button-on:hover,
+.dnd-arrow-btn-on:hover,
+.dnd-button-on:hover {
+    background-color: $cyan;
+}

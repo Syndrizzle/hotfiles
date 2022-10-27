@@ -185,7 +185,7 @@
 ;; bluetooth
 (defwidget bluetooth []
   (box :class "genwin" :space-evenly "false" :vexpand "false" :hexpand "false"
-    (box :orientation "v" :vexpand "false" :hexpand "false" :spacing 0 :space-evenly "false" :class "bluetooth-box"
+    (box :orientation "v" :vexpand "false" :hexpand "false" :spacing 0 :space-evenly "false" :class "bluetooth-box-dashboard"
       (box :orientation "v" :class "bt-icon-box" :valign "start" :halign "center"
         (button :valign "start" :class "bt-icon" :onclick "scripts/dashboard/bluetooth --toggle" "${bluetooth-icon} ${bt-battery}"))
       (box :orientation "v" :spacing 0 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"

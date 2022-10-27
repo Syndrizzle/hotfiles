@@ -8,7 +8,7 @@ toggle() {
         notify-send --urgency=normal "Power Saver" "Power saving mode has been turned on!" -i power-profile-power-saver-symbolic
     else
         system76-power profile balanced
-        light -S 60
+        light -S 80
         notify-send --urgency=normal "Power Saver" "Power saving mode has been turned off!" -i power-profile-balanced-symbolic
     fi
 }

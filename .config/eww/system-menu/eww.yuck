@@ -41,7 +41,7 @@
         (label :class "date" :text date)
         (label :class "day" :halign "start" :text day))
       (box :class "profile-image" :tooltip profile-name :space-evenly false :style "background-image: url('${profile-path}');"))
-    (box :class "first-row-system" :hexpand "false" :vexpand "false" :space-evenly "false" :spacing 12
+    (box :class "first-row-system" :hexpand "false" :vexpand "false" :space-evenly "false" :spacing 20
       (box :class "wifi-box" :space-evenly "false" :orientation "v" :hexpand "false" :vexpand "false"
         (box :class "wifi-buttons-box" :space-evenly "false"
           (button :class "wifi-button  ${wifi-class == "" ? "wifi-button-on" : "wifi-button-off"}" :onclick "scripts/wifi --toggle" "${wifi-icon}")
@@ -53,13 +53,13 @@
           (button :class "bluetooth-button  ${bluetooth-class == "" ? "bluetooth-button-on" : "bluetooth-button-off"}" :onclick "scripts/bluetooth --toggle" "${bluetooth-icon}")
           (label :class "seperator" :text "|")
           (button :class "bluetooth-arrow-btn ${bluetooth-class == "" ? "bluetooth-arrow-btn-on" : "bluetooth-arrow-btn-off"}" :onclick "eww close system-menu && scripts/launchApps --bluetooth" ""))
-        (label :class "bluetooth-label" :tooltip "${bluetooth-tooltip}" :text "${bluetooth-status}" :limit-width 14))
+        (label :class "bluetooth-label" :tooltip "${bluetooth-tooltip}" :text "${bluetooth-status}" :limit-width 9))
       (box :class "airplane-box" :space-evenly "false" :orientation "v"
         (box :class "airplane-buttons-box" :space-evenly "false"
           (button :class "airplane-button  ${airplane-icon == "" ? "airplane-button-on" : "airplane-button-off"}" :onclick "scripts/airplane --toggle" "${airplane-icon}")
           (label :class "seperator" :text "|")
           (label :tooltip "No further configuration available for this applet." :class "airplane-arrow-btn ${airplane-icon == "" ? "airplane-arrow-btn-on" : "airplane-arrow-btn-off"}" :text ""))
-        (label :class "airplane-label" :text "Airplane Mode" :limit-width 14)))
+        (label :class "airplane-label" :text "Airplane" :limit-width 14)))
     (box :class "second-row-system" :hexpand "false" :vexpand "false" :space-evenly "false" :spacing 10
       (box :class "redshift-box" :space-evenly "false" :orientation "v"
         (box :class "redshift-buttons-box" :space-evenly "false"
@@ -78,7 +78,7 @@
           (button :class "dnd-button  ${dnd-icon == "" ? "dnd-button-on" : "dnd-button-off"}" :onclick "scripts/dnd --toggle" "${dnd-icon}")
           (label :class "seperator" :text "|")
           (button :class "dnd-arrow-btn ${dnd-icon == "" ? "dnd-arrow-btn-on" : "dnd-arrow-btn-off"}" :onclick "eww open notifications && eww close system-menu" ""))
-        (label :class "dnd-label" :text "Focus Mode" :limit-width 14)))
+        (label :class "dnd-label" :text "DND" :limit-width 14)))
     (box :class "sliders" :space-evenly "false" :orientation "v" :spacing 15
       (box :orientation "h" :class "volume-slider-stuff" :space-evenly "false"
         (button :onclick "amixer set Master toggle" :class "volume-slider-icon" volume)
