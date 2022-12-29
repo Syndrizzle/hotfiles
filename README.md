@@ -147,7 +147,6 @@ cd ~/Downloads
 git clone https://github.com/syndrizzle/hotfiles.git -b bspwm
 cd hotfiles
 cp -r .config .scripts .local .cache .wallpapers ~/
-sudo cp -r usr/ /usr/
 cp .xinitrc .gtkrc-2.0 ~/
 ```
 Install Fonts:
@@ -162,9 +161,9 @@ Again assuming you are in the `hotfiles` folder
 cd etc/
 mv slim.conf environment /etc/
 ```
-Move items in `usr` folder to their respective places:
+Copy items in `usr` folder to their respective places:
 ```bash
-sudo mv usr/ /usr/
+sudo cp -r usr/* /usr/
 ```
 The usr folder contains the cursor theme and some executable scripts.
 
