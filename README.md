@@ -77,7 +77,7 @@ sudo mv eww /usr/bin/eww
 That installs eww to our root filesystem, which is then sourced from the `$PATH`.
 
 #### 2. xqp
-xqp comes from the author of `bspwm`.  It outputs the pointer ID under the window, basically, it is needed for the right click menu to function when clicking the root window in bspwm. The method of doing this was taken from [beyond9thousand](https://github.con/beyond9thousand)
+xqp comes from the author of `bspwm`.  It outputs the pointer ID under the window, basically, it is needed for the right click menu to function when clicking the root window in bspwm. The method of doing this was taken from [beyond9thousand](https://github.com/beyond9thousand)
 
 NOTE: You need `base-devel` installed before this:
 ```bash
