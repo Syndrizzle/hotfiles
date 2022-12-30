@@ -4,7 +4,7 @@
 <p align="center"><a href="#installation"><img alt="picture 2" src="https://i.imgur.com/Y7PKn7x.png" width="220"/></a><a href="#gallery"><img alt="picture 3" src="https://i.imgur.com/i9rmhBC.png" width="220"/></a><a href ="#support"><img alt="picture 1" src="https://i.imgur.com/LLIkH4D.png" width="220"/></a><a href="#credits"><img alt="picture 5" src="https://i.imgur.com/QA23l5X.png" width="220"/></a><a href="#tips"><img alt="picture 4" src="https://i.imgur.com/cg3KPZc.png" width="220"/></a></p>
 
 
-<p align="center"><img src="https://img.shields.io/github/stars/syndrizzle/hotfiles?color=%231a1b26&label=STARGAZERS&labelColor=%231a1b26&style=for-the-badge"/>&nbsp;&nbsp;<img src="https://visitor-badge-reloaded.herokuapp.com/badge?color=1a1b26&page_id=syndrizzle/hotfiles&style=for-the-badge&lcolor=1a1b26"/>&nbsp;&nbsp;<img src="https://img.shields.io/github/issues/syndrizzle/hotfiles?color=1a1b26&labelColor=1a1b26&style=for-the-badge"/>&nbsp;&nbsp;<img src="https://img.shields.io/github/license/syndrizzle/hotfiles?color=1a1b26&labelColor=1a1b26&style=for-the-badge"/></p>  
+<p align="center"><img src="https://img.shields.io/github/stars/syndrizzle/hotfiles?color=%231a1b26&label=STARGAZERS&labelColor=%231a1b26&style=for-the-badge"/>&nbsp;&nbsp;<img src="https://vbr.wocr.tk/badge?color=1a1b26&page_id=syndrizzle/hotfiles&style=for-the-badge&lcolor=1a1b26"/>&nbsp;&nbsp;<img src="https://img.shields.io/github/issues/syndrizzle/hotfiles?color=1a1b26&labelColor=1a1b26&style=for-the-badge"/>&nbsp;&nbsp;<img src="https://img.shields.io/github/license/syndrizzle/hotfiles?color=1a1b26&labelColor=1a1b26&style=for-the-badge"/></p>  
 
 
 ### Thanks for Visiting! 
@@ -77,7 +77,7 @@ sudo mv eww /usr/bin/eww
 That installs eww to our root filesystem, which is then sourced from the `$PATH`.
 
 #### 2. xqp
-xqp comes from the author of `bspwm`.  It outputs the pointer ID under the window, basically, it is needed for the right click menu to function when clicking the root window in bspwm. The method of doing this was taken from [beyond9thousand](https://github.con/beyond9thousand)
+xqp comes from the author of `bspwm`.  It outputs the pointer ID under the window, basically, it is needed for the right click menu to function when clicking the root window in bspwm. The method of doing this was taken from [beyond9thousand](https://github.com/beyond9thousand)
 
 NOTE: You need `base-devel` installed before this:
 ```bash
@@ -147,7 +147,6 @@ cd ~/Downloads
 git clone https://github.com/syndrizzle/hotfiles.git -b bspwm
 cd hotfiles
 cp -r .config .scripts .local .cache .wallpapers ~/
-sudo cp -r usr/ /usr/
 cp .xinitrc .gtkrc-2.0 ~/
 ```
 Install Fonts:
@@ -162,9 +161,9 @@ Again assuming you are in the `hotfiles` folder
 cd etc/
 mv slim.conf environment /etc/
 ```
-Move items in `usr` folder to their respective places:
+Copy items in `usr` folder to their respective places:
 ```bash
-sudo mv usr/ /usr/
+sudo cp -r usr/* /usr/
 ```
 The usr folder contains the cursor theme and some executable scripts.
 
