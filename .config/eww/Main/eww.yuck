@@ -11,8 +11,6 @@
 (defpoll calendar-day :interval "20h" "+%d")
 (defpoll calendar-year :interval "20h" "+%Y")
 (defpoll calendar-month :interval "20h" "%+B")
-(defpoll volume :interval "1s" "Main/scripts/system --vol")
-(defpoll brightness :interval "1s" "Main/scripts/system --bri")
 (defpoll cpu :interval "1s" "Main/scripts/system --cpu")
 (defpoll memory :interval "1s" "Main/scripts/system --mem")
 (defpoll profile-image :interval "10h" "Main/scripts/details --image")
