@@ -8,7 +8,7 @@ import requests
 import sys
 import pytz
 
-api = "https://api.textyl.co/api/lyrics?"
+api = "https://lyricsapi-seven.vercel.app/api/lyrics?"
 
 # change source to %any ig
 source = "spotify"
@@ -31,10 +31,16 @@ if not resp:
 
 lrc = f"[ti:{title}]\n[ar:{artist}]\n"
 for line in resp:
-    secs = int(line['seconds'])
-    words = line['lyrics']
-    time = datetime.fromtimestamp(secs, pytz.timezone("UTC"))
-    lrc += f"[{time.strftime('%M:%S')}] {words}\n"
+    milli = int(line['time'])
+    words = line['words']
+    time = datetime.fromtimestamp(milli/1000.0)
+
+    lrc += f"[{time.strftime('%M:%S:%f')[:8]}] {words}\n"
+
+
+
+
+
 
 lrc = lrc[:-1]
 file.write(lrc)
